@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-27T18:05:03.118Z",
+  "generatedAt": "2026-07-27T19:06:35.360Z",
   "windowDays": 56,
   "groupingNote": "Metrics are grouped by real Jira project (no Pod/DM field exists yet). Update PROJECTS + grouping in fetch-jira-data.js once Pods/DMs are tracked in Jira.",
   "projects": [
@@ -312,7 +312,7 @@
       "focusIntegrityWeekly": [
         4,
         4,
-        3,
+        4,
         4,
         2,
         3,
@@ -335,7 +335,8 @@
         [
           "INV-618",
           "INV-604",
-          "INV-651"
+          "INV-651",
+          "INV-784"
         ],
         [
           "INV-784",
@@ -1124,7 +1125,7 @@
           "blockedEpicKey": "INV-71"
         }
       ],
-      "oldestWipAgeDays": 881.8,
+      "oldestWipAgeDays": 881.9,
       "agingWipCount": 108,
       "agingWipIssues": [
         {
@@ -1132,7 +1133,7 @@
           "summary": "Copy an expense",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 881.8,
+          "ageDays": 881.9,
           "epicKey": "INV-116",
           "lane": "Backlog"
         },
@@ -1141,7 +1142,7 @@
           "summary": "Copy an Expense Report",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 881.8,
+          "ageDays": 881.9,
           "epicKey": "INV-116",
           "lane": "Backlog"
         },
@@ -1296,7 +1297,7 @@
           "summary": "Cutover + soak",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 4.1,
+          "ageDays": 4.2,
           "epicKey": "INV-958",
           "lane": "Ready for Development"
         },
@@ -1305,7 +1306,7 @@
           "summary": "Full functional regression pass (zero regressions)",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 4.1,
+          "ageDays": 4.2,
           "epicKey": "INV-958",
           "lane": "Ready for Development"
         },
@@ -1314,7 +1315,7 @@
           "summary": "Silent-failure VERIFY confirmation (pre-flip gate)",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 4.1,
+          "ageDays": 4.2,
           "epicKey": "INV-958",
           "lane": "Ready for Development"
         },
@@ -1323,7 +1324,7 @@
           "summary": "EXPENSE_USE_PHP_SERVICE flag + dual-path routing (Online + Wombat)",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 4.1,
+          "ageDays": 4.2,
           "epicKey": "INV-958",
           "lane": "Ready for Development"
         },
@@ -1332,7 +1333,7 @@
           "summary": "PHP service/expense backend parity finalization (including the sweep)",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 4.1,
+          "ageDays": 4.2,
           "epicKey": "INV-958",
           "lane": "Ready for Development"
         },
@@ -1341,7 +1342,7 @@
           "summary": "Dev verification + remediation of the ARCH-566 branch",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 4.1,
+          "ageDays": 4.2,
           "epicKey": "INV-958",
           "lane": "Ready for Development"
         },
@@ -1350,7 +1351,7 @@
           "summary": "Finish-line validation &amp; QA pass (feature-complete + QA-passed, auth-on)",
           "status": "Ready for QA",
           "type": "Story",
-          "ageDays": 11.1,
+          "ageDays": 11.2,
           "epicKey": "INV-964",
           "lane": "Other"
         },
@@ -1359,7 +1360,7 @@
           "summary": "Shared AI foundation: schema, owl↔ai API-key auth, flag-gating, dead-stack removal",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 11.1,
+          "ageDays": 11.2,
           "epicKey": "INV-964",
           "lane": "Done"
         },
@@ -1395,7 +1396,7 @@
           "summary": "KYC — UAT to Live validation + E2E QA coordination",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 14.1,
+          "ageDays": 14.2,
           "epicKey": "INV-604",
           "lane": "Ready for Development"
         },
@@ -1404,7 +1405,7 @@
           "summary": "KYC — Finalize generation/rendering/save engine (integration + hardening)",
           "status": "Ready for QA",
           "type": "Story",
-          "ageDays": 14.1,
+          "ageDays": 14.2,
           "epicKey": "INV-604",
           "lane": "Other"
         },
@@ -1413,7 +1414,7 @@
           "summary": "KYC — KYC task status from report completion",
           "status": "In QA",
           "type": "Story",
-          "ageDays": 14.1,
+          "ageDays": 14.2,
           "epicKey": "INV-604",
           "lane": "In QA"
         },
@@ -1422,7 +1423,7 @@
           "summary": "KYC — Consent form tile on the company recap",
           "status": "Ready for QA",
           "type": "Story",
-          "ageDays": 14.1,
+          "ageDays": 14.2,
           "epicKey": "INV-604",
           "lane": "Other"
         },
@@ -1431,7 +1432,7 @@
           "summary": "KYC — Real consent in the Account Verification (CBV) request",
           "status": "Ready for QA",
           "type": "Story",
-          "ageDays": 14.1,
+          "ageDays": 14.2,
           "epicKey": "INV-604",
           "lane": "Other"
         },
@@ -1440,7 +1441,7 @@
           "summary": "KYC — Consent-gated Account Verification generation",
           "status": "Ready for QA",
           "type": "Story",
-          "ageDays": 14.1,
+          "ageDays": 14.2,
           "epicKey": "INV-604",
           "lane": "Other"
         },
@@ -1449,7 +1450,7 @@
           "summary": "KYC — Foundation: consent table + onboarding-form-type registration",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 14.1,
+          "ageDays": 14.2,
           "epicKey": "INV-604",
           "lane": "Done"
         },
@@ -1458,7 +1459,7 @@
           "summary": "Minor Adjustments - Templates & Automation Rules",
           "status": "Ready for Release",
           "type": "Dev Task",
-          "ageDays": 17.1,
+          "ageDays": 17.2,
           "epicKey": "INV-784",
           "lane": "Done"
         },
@@ -1467,7 +1468,7 @@
           "summary": "KYC — Consent onboarding form (#7 Consent for KYB/KYC Verifications)",
           "status": "Ready for QA",
           "type": "Story",
-          "ageDays": 19.8,
+          "ageDays": 19.9,
           "epicKey": "INV-604",
           "lane": "Other"
         },
@@ -1485,7 +1486,7 @@
           "summary": "Adversarial code review findings — INV-Owl-2026.07.08 (PR #17257)",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 26.1,
+          "ageDays": 26.2,
           "epicKey": null,
           "lane": "Done"
         },
@@ -1494,7 +1495,7 @@
           "summary": "Addl. Enhancements - Automated Mapping Generation (MVP)",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 28.1,
+          "ageDays": 28.2,
           "epicKey": "INV-649",
           "lane": "To Do"
         },
@@ -1503,7 +1504,7 @@
           "summary": "Make KYC PDF renderer pluggable via DI-injected implementation",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 29.1,
+          "ageDays": 29.2,
           "epicKey": null,
           "lane": "Ready for Development"
         },
@@ -1530,7 +1531,7 @@
           "summary": "Update the \"Documents\" status on the APS landing page",
           "status": "Ready for Acceptance",
           "type": "Story",
-          "ageDays": 31.9,
+          "ageDays": 32,
           "epicKey": "INV-651",
           "lane": "Acceptance"
         },
@@ -1548,7 +1549,7 @@
           "summary": "Employee Expense Report Not Saving. ",
           "status": "Backlog",
           "type": "Bug",
-          "ageDays": 39.1,
+          "ageDays": 39.2,
           "epicKey": null,
           "lane": "Backlog"
         },
@@ -1584,7 +1585,7 @@
           "summary": "APS-Online: migrate MileageCalcMap to Routes API New + Places API New",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 69.9,
+          "ageDays": 70,
           "epicKey": "INV-934",
           "lane": "Ready for Development"
         },
@@ -1593,7 +1594,7 @@
           "summary": "Expense Itinerary in Mobile — APS-Online MileageCalcMap migration (Strategy 1)",
           "status": "In Progress",
           "type": "Epic",
-          "ageDays": 69.9,
+          "ageDays": 70,
           "epicKey": "INV-209",
           "lane": "In Development"
         },
@@ -1611,7 +1612,7 @@
           "summary": "[QA Testing] KYC Verification (End-to-End)",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 75.9,
+          "ageDays": 76,
           "epicKey": "INV-604",
           "lane": "Ready for Development"
         },
@@ -1620,7 +1621,7 @@
           "summary": "KYC — Generate Report & Preview",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 81.9,
+          "ageDays": 82,
           "epicKey": "INV-604",
           "lane": "Done"
         },
@@ -1629,7 +1630,7 @@
           "summary": "Prevent users from generating the onboarding packet if the necessary forms have not been submitted",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 82.1,
+          "ageDays": 82.2,
           "epicKey": "INV-651",
           "lane": "Done"
         },
@@ -1638,7 +1639,7 @@
           "summary": "INV Q2 2026 bugs",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 102.9,
+          "ageDays": 103,
           "epicKey": "INV-909",
           "lane": "To Do"
         },
@@ -1647,7 +1648,7 @@
           "summary": "Misc Enhancements & Bugs",
           "status": "To Do",
           "type": "Project",
-          "ageDays": 102.9,
+          "ageDays": 103,
           "epicKey": "INV-908",
           "lane": "To Do"
         },
@@ -1656,7 +1657,7 @@
           "summary": "Misc Enhancements & Bugs",
           "status": "To Do",
           "type": "Initiative",
-          "ageDays": 102.9,
+          "ageDays": 103,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -1701,7 +1702,7 @@
           "summary": "[Exp Mgmt] Enhancements & Bugfixes - 2026",
           "status": "In Progress",
           "type": "Epic",
-          "ageDays": 187.9,
+          "ageDays": 188,
           "epicKey": "INV-209",
           "lane": "In Development"
         },
@@ -1710,7 +1711,7 @@
           "summary": "Enable users to change language & theme",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 236,
+          "ageDays": 236.1,
           "epicKey": "INV-789",
           "lane": "Backlog"
         },
@@ -1719,7 +1720,7 @@
           "summary": "[Exp Mngt] Disable edit button on expenses with inactive/deleted category.",
           "status": "Backlog",
           "type": "Dev Task",
-          "ageDays": 236,
+          "ageDays": 236.1,
           "epicKey": null,
           "lane": "Backlog"
         },
@@ -1728,7 +1729,7 @@
           "summary": "[VAR App] VAR Clients Onboarding (v1)",
           "status": "To Do",
           "type": "Project",
-          "ageDays": 236.8,
+          "ageDays": 236.9,
           "epicKey": "INV-603",
           "lane": "To Do"
         },
@@ -1764,7 +1765,7 @@
           "summary": "Shift Trading",
           "status": "In Progress",
           "type": "Initiative",
-          "ageDays": 256.9,
+          "ageDays": 257,
           "epicKey": null,
           "lane": "In Development"
         },
@@ -1773,7 +1774,7 @@
           "summary": "3. Document Templates & Automation Rules",
           "status": "In Progress",
           "type": "Epic",
-          "ageDays": 258.8,
+          "ageDays": 258.9,
           "epicKey": "INV-649",
           "lane": "In Development"
         },
@@ -1782,7 +1783,7 @@
           "summary": "Global onboarding monitoring",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 259,
+          "ageDays": 259.1,
           "epicKey": "INV-653",
           "lane": "Backlog"
         },
@@ -1872,7 +1873,7 @@
           "summary": "View existing company users",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 269.1,
+          "ageDays": 269.2,
           "epicKey": "INV-857",
           "lane": "Backlog"
         },
@@ -1881,7 +1882,7 @@
           "summary": "Edit/Inactivate a company user",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 269.1,
+          "ageDays": 269.2,
           "epicKey": "INV-857",
           "lane": "Backlog"
         },
@@ -1890,7 +1891,7 @@
           "summary": "Create a company user",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 269.1,
+          "ageDays": 269.2,
           "epicKey": "INV-857",
           "lane": "Backlog"
         },
@@ -1899,7 +1900,7 @@
           "summary": "Insights Innovation - Pending Prioritization",
           "status": "To Do",
           "type": "Initiative",
-          "ageDays": 300.8,
+          "ageDays": 300.9,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -1908,7 +1909,7 @@
           "summary": "[Shift Trading] Insights - Pending Prioritization",
           "status": "To Do",
           "type": "Project",
-          "ageDays": 320.1,
+          "ageDays": 320.2,
           "epicKey": "INV-697",
           "lane": "To Do"
         },
@@ -1944,7 +1945,7 @@
           "summary": "Create the GuideCX project (automated)",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 331.9,
+          "ageDays": 332,
           "epicKey": "INV-653",
           "lane": "Backlog"
         },
@@ -1953,7 +1954,7 @@
           "summary": "Project Management & GuideCX integration",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 331.9,
+          "ageDays": 332,
           "epicKey": "INV-787",
           "lane": "To Do"
         },
@@ -1962,7 +1963,7 @@
           "summary": "3. Onboarding Packet Management",
           "status": "In Progress",
           "type": "Epic",
-          "ageDays": 331.9,
+          "ageDays": 332,
           "epicKey": "INV-649",
           "lane": "In Development"
         },
@@ -1971,7 +1972,7 @@
           "summary": "[VAR App] VAR Clients Onboarding (MVP)",
           "status": "In Progress",
           "type": "Project",
-          "ageDays": 331.9,
+          "ageDays": 332,
           "epicKey": "INV-603",
           "lane": "In Development"
         },
@@ -1980,7 +1981,7 @@
           "summary": "[VAR App] Direct Clients Onboarding",
           "status": "To Do",
           "type": "Project",
-          "ageDays": 331.9,
+          "ageDays": 332,
           "epicKey": "INV-603",
           "lane": "To Do"
         },
@@ -1989,7 +1990,7 @@
           "summary": "VAR App - Research GuideCX Developer API",
           "status": "Backlog",
           "type": "Research Task",
-          "ageDays": 349,
+          "ageDays": 349.1,
           "epicKey": "INV-653",
           "lane": "Backlog"
         },
@@ -2052,7 +2053,7 @@
           "summary": "Enable managers to assign a department to a report",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 451.1,
+          "ageDays": 451.2,
           "epicKey": "INV-526",
           "lane": "Backlog"
         },
@@ -2061,7 +2062,7 @@
           "summary": "Enable employees to assign a department to an expense report",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 493,
+          "ageDays": 493.1,
           "epicKey": "INV-526",
           "lane": "Backlog"
         },
@@ -2070,7 +2071,7 @@
           "summary": "Departments allocations",
           "status": "In Progress",
           "type": "Epic",
-          "ageDays": 495.8,
+          "ageDays": 495.9,
           "epicKey": "INV-276",
           "lane": "In Development"
         },
@@ -2088,7 +2089,7 @@
           "summary": "Expense Management in ReactJS - eSS/mSS",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 599.1,
+          "ageDays": 599.2,
           "epicKey": "INV-209",
           "lane": "To Do"
         },
@@ -2124,7 +2125,7 @@
           "summary": "Provide a Shift Trade report in the report manager",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 662.9,
+          "ageDays": 663,
           "epicKey": "INV-315",
           "lane": "Backlog"
         },
@@ -2142,7 +2143,7 @@
           "summary": "[Expense Mgmt] Insights - Pending Prioritization",
           "status": "To Do",
           "type": "Project",
-          "ageDays": 697.1,
+          "ageDays": 697.2,
           "epicKey": "INV-697",
           "lane": "To Do"
         },
@@ -2169,7 +2170,7 @@
           "summary": "Expense Reimbursements",
           "status": "In Progress",
           "type": "Initiative",
-          "ageDays": 804.8,
+          "ageDays": 804.9,
           "epicKey": null,
           "lane": "In Development"
         },
@@ -2187,7 +2188,7 @@
           "summary": "[Expense Mgmt] Enhancements & Bugfixes - Insights",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 835.9,
+          "ageDays": 836,
           "epicKey": "INV-276",
           "lane": "To Do"
         },
@@ -2196,7 +2197,7 @@
           "summary": "Remove Deleted Reports and Expenses from the database",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 844.8,
+          "ageDays": 844.9,
           "epicKey": "INV-116",
           "lane": "Backlog"
         },
@@ -2214,7 +2215,7 @@
           "summary": "Setup alert thresholds on Expense amounts (admin)",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 857,
+          "ageDays": 857.1,
           "epicKey": "INV-98",
           "lane": "Backlog"
         },
@@ -2223,7 +2224,7 @@
           "summary": "Alerts implementation",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 857,
+          "ageDays": 857.1,
           "epicKey": "INV-276",
           "lane": "To Do"
         },
@@ -2241,7 +2242,7 @@
           "summary": "Provide a setup recap report",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 861,
+          "ageDays": 861.1,
           "epicKey": "INV-116",
           "lane": "Backlog"
         },
@@ -2250,7 +2251,7 @@
           "summary": "Automated check on the mileage expenses (distance)",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 864.8,
+          "ageDays": 864.9,
           "epicKey": "INV-70",
           "lane": "Backlog"
         },
@@ -2259,7 +2260,7 @@
           "summary": "Corporate card management",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 864.8,
+          "ageDays": 864.9,
           "epicKey": "INV-276",
           "lane": "To Do"
         },
@@ -2268,7 +2269,7 @@
           "summary": "Manage multiple expense policies",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 866.9,
+          "ageDays": 867,
           "epicKey": "INV-276",
           "lane": "To Do"
         },
@@ -2277,7 +2278,7 @@
           "summary": "Multi-level validation for Expense Management",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 866.9,
+          "ageDays": 867,
           "epicKey": "INV-276",
           "lane": "To Do"
         },
@@ -2340,7 +2341,7 @@
           "summary": "Copy an expense",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 881.8,
+          "ageDays": 881.9,
           "epicKey": "INV-116",
           "lane": "Backlog"
         },
@@ -2349,7 +2350,7 @@
           "summary": "Copy an Expense Report",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 881.8,
+          "ageDays": 881.9,
           "epicKey": "INV-116",
           "lane": "Backlog"
         }
@@ -2366,7 +2367,7 @@
         "sampleSize": 74
       },
       "flowEfficiencyPct": 30.8,
-      "throughput7d": 10,
+      "throughput7d": 8,
       "throughputWindowTotal": 74,
       "throughputAvgPerWeek": 9.3,
       "qualityLoopbackRatePct": 39.2,
@@ -2376,8 +2377,8 @@
       "weekly": [
         {
           "label": "Jun 1–Jun 8",
-          "weekStart": "2026-06-01T18:03:58.112Z",
-          "weekEnd": "2026-06-08T18:03:58.112Z",
+          "weekStart": "2026-06-01T19:05:20.836Z",
+          "weekEnd": "2026-06-08T19:05:20.836Z",
           "throughput": 8,
           "cycleTimeAvg": 58.8,
           "leadTimeAvg": 140.3,
@@ -2389,8 +2390,8 @@
         },
         {
           "label": "Jun 8–Jun 15",
-          "weekStart": "2026-06-08T18:03:58.112Z",
-          "weekEnd": "2026-06-15T18:03:58.112Z",
+          "weekStart": "2026-06-08T19:05:20.836Z",
+          "weekEnd": "2026-06-15T19:05:20.836Z",
           "throughput": 8,
           "cycleTimeAvg": 27.7,
           "leadTimeAvg": 97.5,
@@ -2402,8 +2403,8 @@
         },
         {
           "label": "Jun 15–Jun 22",
-          "weekStart": "2026-06-15T18:03:58.112Z",
-          "weekEnd": "2026-06-22T18:03:58.112Z",
+          "weekStart": "2026-06-15T19:05:20.836Z",
+          "weekEnd": "2026-06-22T19:05:20.836Z",
           "throughput": 9,
           "cycleTimeAvg": 16,
           "leadTimeAvg": 63.7,
@@ -2415,68 +2416,68 @@
         },
         {
           "label": "Jun 22–Jun 29",
-          "weekStart": "2026-06-22T18:03:58.112Z",
-          "weekEnd": "2026-06-29T18:03:58.112Z",
-          "throughput": 10,
-          "cycleTimeAvg": 17,
-          "leadTimeAvg": 94.1,
-          "flowEfficiencyPct": 18.1,
-          "qualityLoopbackRatePct": 50,
-          "qualityLoopbackCount": 5,
-          "qualityLoopbackSampleSize": 10,
-          "aiLeverageRatePct": 0
-        },
-        {
-          "label": "Jun 29–Jul 6",
-          "weekStart": "2026-06-29T18:03:58.112Z",
-          "weekEnd": "2026-07-06T18:03:58.112Z",
-          "throughput": 10,
-          "cycleTimeAvg": 46.4,
-          "leadTimeAvg": 143.7,
-          "flowEfficiencyPct": 32.3,
-          "qualityLoopbackRatePct": 30,
-          "qualityLoopbackCount": 3,
-          "qualityLoopbackSampleSize": 10,
-          "aiLeverageRatePct": 0
-        },
-        {
-          "label": "Jul 6–Jul 13",
-          "weekStart": "2026-07-06T18:03:58.112Z",
-          "weekEnd": "2026-07-13T18:03:58.112Z",
+          "weekStart": "2026-06-22T19:05:20.836Z",
+          "weekEnd": "2026-06-29T19:05:20.836Z",
           "throughput": 11,
-          "cycleTimeAvg": 78.3,
-          "leadTimeAvg": 185.7,
-          "flowEfficiencyPct": 42.2,
+          "cycleTimeAvg": 16.2,
+          "leadTimeAvg": 91.7,
+          "flowEfficiencyPct": 17.7,
           "qualityLoopbackRatePct": 54.5,
           "qualityLoopbackCount": 6,
           "qualityLoopbackSampleSize": 11,
           "aiLeverageRatePct": 0
         },
         {
-          "label": "Jul 13–Jul 20",
-          "weekStart": "2026-07-13T18:03:58.112Z",
-          "weekEnd": "2026-07-20T18:03:58.112Z",
-          "throughput": 8,
-          "cycleTimeAvg": 35.5,
-          "leadTimeAvg": 69.5,
-          "flowEfficiencyPct": 51.1,
-          "qualityLoopbackRatePct": 25,
+          "label": "Jun 29–Jul 6",
+          "weekStart": "2026-06-29T19:05:20.836Z",
+          "weekEnd": "2026-07-06T19:05:20.836Z",
+          "throughput": 12,
+          "cycleTimeAvg": 96.9,
+          "leadTimeAvg": 244,
+          "flowEfficiencyPct": 39.7,
+          "qualityLoopbackRatePct": 16.7,
           "qualityLoopbackCount": 2,
+          "qualityLoopbackSampleSize": 12,
+          "aiLeverageRatePct": 0
+        },
+        {
+          "label": "Jul 6–Jul 13",
+          "weekStart": "2026-07-06T19:05:20.836Z",
+          "weekEnd": "2026-07-13T19:05:20.836Z",
+          "throughput": 8,
+          "cycleTimeAvg": 19.2,
+          "leadTimeAvg": 60.5,
+          "flowEfficiencyPct": 31.7,
+          "qualityLoopbackRatePct": 75,
+          "qualityLoopbackCount": 6,
           "qualityLoopbackSampleSize": 8,
-          "aiLeverageRatePct": 12.5
+          "aiLeverageRatePct": 0
+        },
+        {
+          "label": "Jul 13–Jul 20",
+          "weekStart": "2026-07-13T19:05:20.836Z",
+          "weekEnd": "2026-07-20T19:05:20.836Z",
+          "throughput": 10,
+          "cycleTimeAvg": 33.2,
+          "leadTimeAvg": 64.1,
+          "flowEfficiencyPct": 51.8,
+          "qualityLoopbackRatePct": 30,
+          "qualityLoopbackCount": 3,
+          "qualityLoopbackSampleSize": 10,
+          "aiLeverageRatePct": 20
         },
         {
           "label": "Jul 20–Jul 27",
-          "weekStart": "2026-07-20T18:03:58.112Z",
-          "weekEnd": "2026-07-27T18:03:58.112Z",
-          "throughput": 10,
-          "cycleTimeAvg": 20.5,
-          "leadTimeAvg": 234.4,
-          "flowEfficiencyPct": 8.7,
-          "qualityLoopbackRatePct": 40,
-          "qualityLoopbackCount": 4,
-          "qualityLoopbackSampleSize": 10,
-          "aiLeverageRatePct": 60
+          "weekStart": "2026-07-20T19:05:20.836Z",
+          "weekEnd": "2026-07-27T19:05:20.836Z",
+          "throughput": 8,
+          "cycleTimeAvg": 18.5,
+          "leadTimeAvg": 282.4,
+          "flowEfficiencyPct": 6.6,
+          "qualityLoopbackRatePct": 37.5,
+          "qualityLoopbackCount": 3,
+          "qualityLoopbackSampleSize": 8,
+          "aiLeverageRatePct": 62.5
         }
       ],
       "ticketMetrics": [
@@ -2545,7 +2546,7 @@
         },
         {
           "epicKey": null,
-          "weekIndex": 7,
+          "weekIndex": 6,
           "cycleTimeDays": 4.27768875,
           "leadTimeDays": 19.178070810185186,
           "hadTransition": true,
@@ -2788,7 +2789,7 @@
         },
         {
           "epicKey": "INV-604",
-          "weekIndex": 7,
+          "weekIndex": 6,
           "cycleTimeDays": 46.25742878472222,
           "leadTimeDays": 65.93645537037037,
           "hadTransition": true,
@@ -2851,7 +2852,7 @@
         },
         {
           "epicKey": "INV-652",
-          "weekIndex": 4,
+          "weekIndex": 3,
           "cycleTimeDays": 8.455886944444444,
           "leadTimeDays": 67.85032166666667,
           "hadTransition": true,
@@ -2905,7 +2906,7 @@
         },
         {
           "epicKey": "INV-249",
-          "weekIndex": 5,
+          "weekIndex": 4,
           "cycleTimeDays": 136.8580914699074,
           "leadTimeDays": 136.88829613425926,
           "hadTransition": true,
@@ -3130,7 +3131,7 @@
         },
         {
           "epicKey": "INV-786",
-          "weekIndex": 5,
+          "weekIndex": 4,
           "cycleTimeDays": 285.0095568287037,
           "leadTimeDays": 704.8720213310186,
           "hadTransition": true,
@@ -3139,7 +3140,7 @@
         },
         {
           "epicKey": "INV-249",
-          "weekIndex": 5,
+          "weekIndex": 4,
           "cycleTimeDays": 285.00955659722223,
           "leadTimeDays": 717.1041432175925,
           "hadTransition": true,
@@ -3444,9 +3445,9 @@
       "focusIntegrityTotalEpics": 24,
       "focusIntegrityWeekly": [
         5,
-        8,
+        9,
         5,
-        6,
+        7,
         4,
         7,
         4,
@@ -3461,6 +3462,7 @@
           "APCOM-139"
         ],
         [
+          "APCOM-84",
           "APCOM-87",
           "APCOM-127",
           "APCOM-297",
@@ -3483,6 +3485,7 @@
           "APCOM-108",
           "APCOM-297",
           "APCOM-272",
+          "APCOM-139",
           "APCOM-64"
         ],
         [
@@ -4035,7 +4038,7 @@
           "blockedEpicKey": "APCOM-65"
         }
       ],
-      "oldestWipAgeDays": 2077.8,
+      "oldestWipAgeDays": 2077.9,
       "agingWipCount": 90,
       "agingWipIssues": [
         {
@@ -4043,7 +4046,7 @@
           "summary": "Intacct - Improvements",
           "status": "In Progress",
           "type": "Epic",
-          "ageDays": 2077.8,
+          "ageDays": 2077.9,
           "epicKey": null,
           "lane": "In Development"
         },
@@ -4061,7 +4064,7 @@
           "summary": "\"Enable Intacct Integration\" doesn't always add the generic integration",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 1255.9,
+          "ageDays": 1256,
           "epicKey": "APCOM-64",
           "lane": "Backlog"
         },
@@ -4070,7 +4073,7 @@
           "summary": "Partner API",
           "status": "To Do",
           "type": "Project",
-          "ageDays": 622,
+          "ageDays": 622.1,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -4090,7 +4093,7 @@
           "summary": "online_runner.sh: --test path still rpc-filters non-rpc suites + unit suites run twice per CI invocation",
           "status": "Ready for Development",
           "type": "Bug",
-          "ageDays": 4.1,
+          "ageDays": 4.2,
           "epicKey": null,
           "lane": "Ready for Development"
         },
@@ -4171,7 +4174,7 @@
           "summary": "Meerkat: labor cost data for scheduling dashboard, templates & open shifts (EMP-904 backend)",
           "status": "Code Review",
           "type": "Story",
-          "ageDays": 31,
+          "ageDays": 31.1,
           "epicKey": "APCOM-307",
           "lane": "Other"
         },
@@ -4180,7 +4183,7 @@
           "summary": "[Internal API][EIP] Permission-based change-type filtering on EmployeeChangeRequests endpoints",
           "status": "Ready for QA",
           "type": "Story",
-          "ageDays": 31.9,
+          "ageDays": 32,
           "epicKey": "APCOM-139",
           "lane": "Other"
         },
@@ -4198,7 +4201,7 @@
           "summary": "[Salesforce] Phase B — Field mapping + production hardening (weekly reconcile)",
           "status": "Backlog",
           "type": "Dev Task",
-          "ageDays": 38.1,
+          "ageDays": 38.2,
           "epicKey": "APCOM-310",
           "lane": "Backlog"
         },
@@ -4207,7 +4210,7 @@
           "summary": "[Salesforce] Phase A — Meerkat reconcile service POC (SOQL pull → smart)",
           "status": "Backlog",
           "type": "Dev Task",
-          "ageDays": 38.1,
+          "ageDays": 38.2,
           "epicKey": "APCOM-310",
           "lane": "Backlog"
         },
@@ -4216,7 +4219,7 @@
           "summary": "[Salesforce] Phase 0 — SmartDbContext (Smart DB access for Meerkat)",
           "status": "Backlog",
           "type": "Dev Task",
-          "ageDays": 38.1,
+          "ageDays": 38.2,
           "epicKey": "APCOM-310",
           "lane": "Backlog"
         },
@@ -4225,7 +4228,7 @@
           "summary": "Salesforce → smart Sync (weekly reconcile)",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 38.1,
+          "ageDays": 38.2,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -4261,7 +4264,7 @@
           "summary": "[Internal API] Team schedule visibility endpoint — GET /EmployeeSchedules/team",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 41.7,
+          "ageDays": 41.8,
           "epicKey": "APCOM-87",
           "lane": "Done"
         },
@@ -4351,7 +4354,7 @@
           "summary": "Auto-generate API Documentation",
           "status": "In Progress",
           "type": "Epic",
-          "ageDays": 48.9,
+          "ageDays": 49,
           "epicKey": null,
           "lane": "In Development"
         },
@@ -4369,7 +4372,7 @@
           "summary": "Intacct Phase 5.4 — Remove XML SDK dependency",
           "status": "Backlog",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "Backlog"
         },
@@ -4378,7 +4381,7 @@
           "summary": "Intacct Phase 5.3 — Benchmark REST vs XML for largest clients",
           "status": "Ready for Development",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "Ready for Development"
         },
@@ -4387,7 +4390,7 @@
           "summary": "Intacct Phase 5.2 — Per-company feature flag for REST rollout",
           "status": "Ready for Development",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "Ready for Development"
         },
@@ -4396,7 +4399,7 @@
           "summary": "Intacct Phase 5.1 — Implement RestApiClient satisfying IntacctApiClient",
           "status": "Ready for Development",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "Ready for Development"
         },
@@ -4405,7 +4408,7 @@
           "summary": "Intacct Phase 4.5 — Dimension Mapping admin UI panel",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "Ready for Development"
         },
@@ -4414,7 +4417,7 @@
           "summary": "Intacct Phase 4.4 — Fix department mapping inconsistency",
           "status": "Ready for Release",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "Done"
         },
@@ -4423,7 +4426,7 @@
           "summary": "Intacct Phase 4.3 — Implement cash requirement default dimension fallback",
           "status": "Ready for Release",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "Done"
         },
@@ -4432,7 +4435,7 @@
           "summary": "Intacct Phase 4.2 — Fix split-line rounding bug",
           "status": "Ready for Development",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "Ready for Development"
         },
@@ -4441,7 +4444,7 @@
           "summary": "Intacct Phase 4.1 — Build unified DimensionSyncService",
           "status": "Ready for Development",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "Ready for Development"
         },
@@ -4450,7 +4453,7 @@
           "summary": "Intacct Phase 3.7 — Delete deprecated legacy files",
           "status": "Ready for Development",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "Ready for Development"
         },
@@ -4459,7 +4462,7 @@
           "summary": "Intacct Phase 3.6 — Migrate employee-detail variants (EMP_DETAIL_6, EMP_DETAIL_8, EMP_DETAIL_LIFESONG, BATCH_EMP_DETAIL_APSPM_4787)",
           "status": "In Development",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "In Development"
         },
@@ -4468,7 +4471,7 @@
           "summary": "Intacct Phase 3.5 — Migrate batch variants (EASTER_SEALS, SEVIERVILLE_FBC, BY_BATCH_8, BY_BATCH_13)",
           "status": "In Development",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "In Development"
         },
@@ -4477,7 +4480,7 @@
           "summary": "Intacct Phase 3.4 — Migrate check-date variants (SKY_RANCHES, ONE_WORLD)",
           "status": "In Development",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "In Development"
         },
@@ -4486,7 +4489,7 @@
           "summary": "Intacct Phase 3.3 — Migrate numbered generics (INTACCT_12, INTACCT_21, INTACCT_23)",
           "status": "In Development",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "In Development"
         },
@@ -4495,7 +4498,7 @@
           "summary": "Intacct Phase 3.2 — Migrate INTACCT_DIMENSION companies to new class",
           "status": "In Development",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "In Development"
         },
@@ -4504,7 +4507,7 @@
           "summary": "Intacct Phase 3.1 — Migrate base INTACCT companies to new class",
           "status": "In Development",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "In Development"
         },
@@ -4513,7 +4516,7 @@
           "summary": "Intacct Phase 2.7 — Shadow mode: preview comparison framework",
           "status": "Ready for Release",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "Done"
         },
@@ -4522,7 +4525,7 @@
           "summary": "Intacct Phase 2.6 — Create rpc/intacct.php endpoint",
           "status": "Ready for Release",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "Done"
         },
@@ -4531,7 +4534,7 @@
           "summary": "Intacct Phase 2.5 — Create IntacctGlConfig class",
           "status": "Ready for Release",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "Done"
         },
@@ -4540,7 +4543,7 @@
           "summary": "Intacct Phase 2.4 — Create IntacctGlWithDimensions.php",
           "status": "Ready for Release",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "Done"
         },
@@ -4549,7 +4552,7 @@
           "summary": "Intacct Phase 2.3 — Create IntacctGl.php extending IntegrationBase",
           "status": "Ready for Release",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "Done"
         },
@@ -4558,7 +4561,7 @@
           "summary": "Intacct Phase 2.2 — Implement XmlSdkClient (wraps existing SDK)",
           "status": "Ready for Release",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "Done"
         },
@@ -4567,7 +4570,7 @@
           "summary": "Intacct Phase 2.1 — Create IntacctApiClient interface",
           "status": "Ready for Release",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "Done"
         },
@@ -4576,7 +4579,7 @@
           "summary": "Intacct Phase 0.2 — Audit and deprecate dormant Intacct integrations",
           "status": "Ready for Release",
           "type": "Dev Task",
-          "ageDays": 62,
+          "ageDays": 62.1,
           "epicKey": "APCOM-272",
           "lane": "Done"
         },
@@ -4594,7 +4597,7 @@
           "summary": "[Meerkat Partner API] Add field-level OAuth2 scope gating for compensation and DOB data (P2)",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 76.8,
+          "ageDays": 76.9,
           "epicKey": "APCOM-87",
           "lane": "Backlog"
         },
@@ -4603,7 +4606,7 @@
           "summary": "Account Summary — Internal APS View",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 82.8,
+          "ageDays": 82.9,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -4612,7 +4615,7 @@
           "summary": "[Paystub] Determine Whether ESS Paystub Should Respect \"Combine Incomes on Paycheck\" Company Setting",
           "status": "Backlog",
           "type": "Research Task",
-          "ageDays": 94.1,
+          "ageDays": 94.2,
           "epicKey": "APCOM-186",
           "lane": "Backlog"
         },
@@ -4621,7 +4624,7 @@
           "summary": "[Paystub] Show Accruals Totals Row in ESS Paystub",
           "status": "Ready for Acceptance",
           "type": "Story",
-          "ageDays": 94.1,
+          "ageDays": 94.2,
           "epicKey": "APCOM-186",
           "lane": "Acceptance"
         },
@@ -4630,7 +4633,7 @@
           "summary": "[Paystub] Show \"Less Tips\" / \"Less Sales\" Lines in ESS Paystub Net Pay Section",
           "status": "In QA",
           "type": "Story",
-          "ageDays": 94.1,
+          "ageDays": 94.2,
           "epicKey": "APCOM-186",
           "lane": "In QA"
         },
@@ -4648,7 +4651,7 @@
           "summary": "[SPIKE] Year-End Prepays - Automate In-App Messaging and CS Macro(s) ready",
           "status": "Backlog",
           "type": "Research Task",
-          "ageDays": 96.1,
+          "ageDays": 96.2,
           "epicKey": null,
           "lane": "Backlog"
         },
@@ -4657,7 +4660,7 @@
           "summary": "[Internal API][EIP] Company-wide list of scheduled EIP changes",
           "status": "Ready for Acceptance",
           "type": "Story",
-          "ageDays": 96.6,
+          "ageDays": 96.7,
           "epicKey": "APCOM-139",
           "lane": "Acceptance"
         },
@@ -4684,7 +4687,7 @@
           "summary": "APCOM Q2 2026 bugs",
           "status": "In Progress",
           "type": "Epic",
-          "ageDays": 104.9,
+          "ageDays": 105,
           "epicKey": null,
           "lane": "In Development"
         },
@@ -4693,7 +4696,7 @@
           "summary": "EIP - Improvements",
           "status": "In Progress",
           "type": "Epic",
-          "ageDays": 131,
+          "ageDays": 131.1,
           "epicKey": null,
           "lane": "In Development"
         },
@@ -4774,7 +4777,7 @@
           "summary": "Account Summary - Feature Usage",
           "status": "In Progress",
           "type": "Epic",
-          "ageDays": 284.9,
+          "ageDays": 285,
           "epicKey": null,
           "lane": "In Development"
         },
@@ -4864,7 +4867,7 @@
           "summary": "Expense Management Updates",
           "status": "In Progress",
           "type": "Epic",
-          "ageDays": 172.1,
+          "ageDays": 172.2,
           "epicKey": null,
           "lane": "In Development"
         },
@@ -4873,7 +4876,7 @@
           "summary": "Intacct - Improvements",
           "status": "In Progress",
           "type": "Epic",
-          "ageDays": 2077.8,
+          "ageDays": 2077.9,
           "epicKey": null,
           "lane": "In Development"
         },
@@ -4882,7 +4885,7 @@
           "summary": "R365 Overhaul",
           "status": "In Progress",
           "type": "Epic",
-          "ageDays": 180,
+          "ageDays": 180.1,
           "epicKey": null,
           "lane": "In Development"
         },
@@ -4891,7 +4894,7 @@
           "summary": "Employee Navigator 2.0",
           "status": "In Progress",
           "type": "Epic",
-          "ageDays": 180.1,
+          "ageDays": 180.2,
           "epicKey": null,
           "lane": "In Development"
         },
@@ -4900,7 +4903,7 @@
           "summary": "\"Enable Intacct Integration\" doesn't always add the generic integration",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 1255.9,
+          "ageDays": 1256,
           "epicKey": "APCOM-64",
           "lane": "Backlog"
         },
@@ -4927,7 +4930,7 @@
           "summary": "[Expense Management] Travel Itinerary Fields For Mileage Expenses",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 273.1,
+          "ageDays": 273.2,
           "epicKey": "APCOM-65",
           "lane": "Backlog"
         },
@@ -4936,7 +4939,7 @@
           "summary": "Partner API",
           "status": "To Do",
           "type": "Project",
-          "ageDays": 622,
+          "ageDays": 622.1,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -4990,8 +4993,8 @@
       "weekly": [
         {
           "label": "Jun 1–Jun 8",
-          "weekStart": "2026-06-01T18:04:11.579Z",
-          "weekEnd": "2026-06-08T18:04:11.579Z",
+          "weekStart": "2026-06-01T19:05:34.909Z",
+          "weekEnd": "2026-06-08T19:05:34.909Z",
           "throughput": 4,
           "cycleTimeAvg": 41,
           "leadTimeAvg": 333.1,
@@ -5003,8 +5006,8 @@
         },
         {
           "label": "Jun 8–Jun 15",
-          "weekStart": "2026-06-08T18:04:11.579Z",
-          "weekEnd": "2026-06-15T18:04:11.579Z",
+          "weekStart": "2026-06-08T19:05:34.909Z",
+          "weekEnd": "2026-06-15T19:05:34.909Z",
           "throughput": 11,
           "cycleTimeAvg": 15.2,
           "leadTimeAvg": 222.5,
@@ -5016,34 +5019,34 @@
         },
         {
           "label": "Jun 15–Jun 22",
-          "weekStart": "2026-06-15T18:04:11.579Z",
-          "weekEnd": "2026-06-22T18:04:11.579Z",
-          "throughput": 12,
-          "cycleTimeAvg": 8.8,
-          "leadTimeAvg": 21.1,
-          "flowEfficiencyPct": 41.7,
-          "qualityLoopbackRatePct": 8.3,
-          "qualityLoopbackCount": 1,
-          "qualityLoopbackSampleSize": 12,
+          "weekStart": "2026-06-15T19:05:34.909Z",
+          "weekEnd": "2026-06-22T19:05:34.909Z",
+          "throughput": 13,
+          "cycleTimeAvg": 12.5,
+          "leadTimeAvg": 24.3,
+          "flowEfficiencyPct": 51.4,
+          "qualityLoopbackRatePct": 15.4,
+          "qualityLoopbackCount": 2,
+          "qualityLoopbackSampleSize": 13,
           "aiLeverageRatePct": 0
         },
         {
           "label": "Jun 22–Jun 29",
-          "weekStart": "2026-06-22T18:04:11.579Z",
-          "weekEnd": "2026-06-29T18:04:11.579Z",
-          "throughput": 25,
-          "cycleTimeAvg": 10.6,
-          "leadTimeAvg": 14.1,
-          "flowEfficiencyPct": 75.2,
-          "qualityLoopbackRatePct": 24,
-          "qualityLoopbackCount": 6,
-          "qualityLoopbackSampleSize": 25,
+          "weekStart": "2026-06-22T19:05:34.909Z",
+          "weekEnd": "2026-06-29T19:05:34.909Z",
+          "throughput": 24,
+          "cycleTimeAvg": 8.7,
+          "leadTimeAvg": 12,
+          "flowEfficiencyPct": 72.5,
+          "qualityLoopbackRatePct": 20.8,
+          "qualityLoopbackCount": 5,
+          "qualityLoopbackSampleSize": 24,
           "aiLeverageRatePct": 0
         },
         {
           "label": "Jun 29–Jul 6",
-          "weekStart": "2026-06-29T18:04:11.579Z",
-          "weekEnd": "2026-07-06T18:04:11.579Z",
+          "weekStart": "2026-06-29T19:05:34.909Z",
+          "weekEnd": "2026-07-06T19:05:34.909Z",
           "throughput": 7,
           "cycleTimeAvg": 14.8,
           "leadTimeAvg": 78.3,
@@ -5055,8 +5058,8 @@
         },
         {
           "label": "Jul 6–Jul 13",
-          "weekStart": "2026-07-06T18:04:11.579Z",
-          "weekEnd": "2026-07-13T18:04:11.579Z",
+          "weekStart": "2026-07-06T19:05:34.909Z",
+          "weekEnd": "2026-07-13T19:05:34.909Z",
           "throughput": 6,
           "cycleTimeAvg": 19,
           "leadTimeAvg": 36.4,
@@ -5068,8 +5071,8 @@
         },
         {
           "label": "Jul 13–Jul 20",
-          "weekStart": "2026-07-13T18:04:11.579Z",
-          "weekEnd": "2026-07-20T18:04:11.579Z",
+          "weekStart": "2026-07-13T19:05:34.909Z",
+          "weekEnd": "2026-07-20T19:05:34.909Z",
           "throughput": 8,
           "cycleTimeAvg": 35.6,
           "leadTimeAvg": 44.9,
@@ -5081,8 +5084,8 @@
         },
         {
           "label": "Jul 20–Jul 27",
-          "weekStart": "2026-07-20T18:04:11.579Z",
-          "weekEnd": "2026-07-27T18:04:11.579Z",
+          "weekStart": "2026-07-20T19:05:34.909Z",
+          "weekEnd": "2026-07-27T19:05:34.909Z",
           "throughput": 9,
           "cycleTimeAvg": 13.1,
           "leadTimeAvg": 35.4,
@@ -5771,7 +5774,7 @@
         },
         {
           "epicKey": "APCOM-87",
-          "weekIndex": 3,
+          "weekIndex": 2,
           "cycleTimeDays": 53.17835017361111,
           "leadTimeDays": 63.069164444444446,
           "hadTransition": true,
@@ -5919,7 +5922,7 @@
         2,
         1,
         1,
-        2,
+        3,
         3
       ],
       "focusIntegrityWeeklyEpics": [
@@ -5945,6 +5948,7 @@
         ],
         [
           "EMP-905",
+          "EMP-933",
           "EMP-762"
         ],
         [
@@ -6196,7 +6200,7 @@
           "blockedEpicKey": "EMP-762"
         }
       ],
-      "oldestWipAgeDays": 746.1,
+      "oldestWipAgeDays": 746.2,
       "agingWipCount": 31,
       "agingWipIssues": [
         {
@@ -6204,7 +6208,7 @@
           "summary": "Scheduling",
           "status": "In Progress",
           "type": "Initiative",
-          "ageDays": 746.1,
+          "ageDays": 746.2,
           "epicKey": null,
           "lane": "In Development"
         },
@@ -6231,7 +6235,7 @@
           "summary": "[Spike] How are duplicate emails being put in the send_email table",
           "status": "Ready for Release",
           "type": "Research Task",
-          "ageDays": 486.2,
+          "ageDays": 486.3,
           "epicKey": "EMP-546",
           "lane": "Done"
         },
@@ -6260,7 +6264,7 @@
           "summary": "eSS Desktop: Time Card defaults to past dates and fails to update on week selection",
           "status": "Backlog",
           "type": "Bug",
-          "ageDays": 3.9,
+          "ageDays": 4,
           "epicKey": "EMP-905",
           "lane": "Backlog"
         },
@@ -6269,7 +6273,7 @@
           "summary": "ESS Desktop| Align DailyPay Direct Deposit update rules during Offboarding process",
           "status": "Backlog",
           "type": "Bug",
-          "ageDays": 5.1,
+          "ageDays": 5.2,
           "epicKey": "EMP-905",
           "lane": "Backlog"
         },
@@ -6278,7 +6282,7 @@
           "summary": "Employee | ESS Employee Address Edit — React Island with Google Address Validation",
           "status": "Estimate",
           "type": "Story",
-          "ageDays": 94,
+          "ageDays": 94.1,
           "epicKey": "BOA-1943",
           "lane": "Other"
         },
@@ -6314,7 +6318,7 @@
           "summary": "Post-hire document handoff to legacy employee vault (copy-on-hire)",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 13.9,
+          "ageDays": 14,
           "epicKey": "EMP-762",
           "lane": "Backlog"
         },
@@ -6323,7 +6327,7 @@
           "summary": "Require Mobile clock in",
           "status": "In Progress",
           "type": "Epic",
-          "ageDays": 14.1,
+          "ageDays": 14.2,
           "epicKey": null,
           "lane": "In Development"
         },
@@ -6350,7 +6354,7 @@
           "summary": "Schedule Templates - Template selection window",
           "status": "Estimate",
           "type": "Story",
-          "ageDays": 21.1,
+          "ageDays": 21.2,
           "epicKey": "EMP-866",
           "lane": "Other"
         },
@@ -6494,7 +6498,7 @@
           "summary": "Onboarding refresh token hashing (phase 2 — security uplift)",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 96.8,
+          "ageDays": 96.9,
           "epicKey": "EMP-762",
           "lane": "Done"
         },
@@ -6503,7 +6507,7 @@
           "summary": "Onboarding rate limiting infrastructure (phase 2)",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 96.8,
+          "ageDays": 96.9,
           "epicKey": "EMP-762",
           "lane": "Done"
         },
@@ -6512,7 +6516,7 @@
           "summary": "Onboarding documents: CRUD + assignment/action model, copy-on-assign & company-doc picker",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 96.8,
+          "ageDays": 96.9,
           "epicKey": "EMP-762",
           "lane": "Done"
         },
@@ -6521,7 +6525,7 @@
           "summary": "Q2 2026 Miscellaneous Employee updates",
           "status": "In Progress",
           "type": "Epic",
-          "ageDays": 126.2,
+          "ageDays": 126.3,
           "epicKey": null,
           "lane": "In Development"
         },
@@ -6530,7 +6534,7 @@
           "summary": "Spike - Attendance Change Audit Not Capturing Who removed Timeclock Punches.",
           "status": "Ready for Release",
           "type": "Research Task",
-          "ageDays": 132.1,
+          "ageDays": 132.2,
           "epicKey": "EMP-749",
           "lane": "Done"
         },
@@ -6539,7 +6543,7 @@
           "summary": "Employee onboarding",
           "status": "In Progress",
           "type": "Epic",
-          "ageDays": 208,
+          "ageDays": 208.1,
           "epicKey": null,
           "lane": "In Development"
         },
@@ -6557,7 +6561,7 @@
           "summary": "[Spike] How are duplicate emails being put in the send_email table",
           "status": "Ready for Release",
           "type": "Research Task",
-          "ageDays": 486.2,
+          "ageDays": 486.3,
           "epicKey": "EMP-546",
           "lane": "Done"
         },
@@ -6584,7 +6588,7 @@
           "summary": "Scheduling",
           "status": "In Progress",
           "type": "Initiative",
-          "ageDays": 746.1,
+          "ageDays": 746.2,
           "epicKey": null,
           "lane": "In Development"
         }
@@ -6611,8 +6615,8 @@
       "weekly": [
         {
           "label": "Jun 1–Jun 8",
-          "weekStart": "2026-06-01T18:04:23.463Z",
-          "weekEnd": "2026-06-08T18:04:23.463Z",
+          "weekStart": "2026-06-01T19:05:48.664Z",
+          "weekEnd": "2026-06-08T19:05:48.664Z",
           "throughput": 3,
           "cycleTimeAvg": 11.9,
           "leadTimeAvg": 37.9,
@@ -6624,8 +6628,8 @@
         },
         {
           "label": "Jun 8–Jun 15",
-          "weekStart": "2026-06-08T18:04:23.463Z",
-          "weekEnd": "2026-06-15T18:04:23.463Z",
+          "weekStart": "2026-06-08T19:05:48.664Z",
+          "weekEnd": "2026-06-15T19:05:48.664Z",
           "throughput": 12,
           "cycleTimeAvg": 13.9,
           "leadTimeAvg": 112,
@@ -6637,8 +6641,8 @@
         },
         {
           "label": "Jun 15–Jun 22",
-          "weekStart": "2026-06-15T18:04:23.463Z",
-          "weekEnd": "2026-06-22T18:04:23.463Z",
+          "weekStart": "2026-06-15T19:05:48.664Z",
+          "weekEnd": "2026-06-22T19:05:48.664Z",
           "throughput": 10,
           "cycleTimeAvg": 11.1,
           "leadTimeAvg": 107,
@@ -6650,8 +6654,8 @@
         },
         {
           "label": "Jun 22–Jun 29",
-          "weekStart": "2026-06-22T18:04:23.463Z",
-          "weekEnd": "2026-06-29T18:04:23.463Z",
+          "weekStart": "2026-06-22T19:05:48.664Z",
+          "weekEnd": "2026-06-29T19:05:48.664Z",
           "throughput": 15,
           "cycleTimeAvg": 6.6,
           "leadTimeAvg": 5.5,
@@ -6663,8 +6667,8 @@
         },
         {
           "label": "Jun 29–Jul 6",
-          "weekStart": "2026-06-29T18:04:23.463Z",
-          "weekEnd": "2026-07-06T18:04:23.463Z",
+          "weekStart": "2026-06-29T19:05:48.664Z",
+          "weekEnd": "2026-07-06T19:05:48.664Z",
           "throughput": 3,
           "cycleTimeAvg": 4.3,
           "leadTimeAvg": 65.8,
@@ -6676,8 +6680,8 @@
         },
         {
           "label": "Jul 6–Jul 13",
-          "weekStart": "2026-07-06T18:04:23.463Z",
-          "weekEnd": "2026-07-13T18:04:23.463Z",
+          "weekStart": "2026-07-06T19:05:48.664Z",
+          "weekEnd": "2026-07-13T19:05:48.664Z",
           "throughput": 3,
           "cycleTimeAvg": 3.9,
           "leadTimeAvg": 27.9,
@@ -6689,8 +6693,8 @@
         },
         {
           "label": "Jul 13–Jul 20",
-          "weekStart": "2026-07-13T18:04:23.463Z",
-          "weekEnd": "2026-07-20T18:04:23.463Z",
+          "weekStart": "2026-07-13T19:05:48.664Z",
+          "weekEnd": "2026-07-20T19:05:48.664Z",
           "throughput": 6,
           "cycleTimeAvg": 65.7,
           "leadTimeAvg": 174.9,
@@ -6702,8 +6706,8 @@
         },
         {
           "label": "Jul 20–Jul 27",
-          "weekStart": "2026-07-20T18:04:23.463Z",
-          "weekEnd": "2026-07-27T18:04:23.463Z",
+          "weekStart": "2026-07-20T19:05:48.664Z",
+          "weekEnd": "2026-07-27T19:05:48.664Z",
           "throughput": 8,
           "cycleTimeAvg": 5.4,
           "leadTimeAvg": 40.9,
@@ -7565,12 +7569,12 @@
       "focusIntegrityTotalEpics": 25,
       "focusIntegrityWeekly": [
         6,
-        3,
+        4,
         6,
         7,
         5,
         5,
-        9,
+        8,
         8
       ],
       "focusIntegrityWeeklyEpics": [
@@ -7584,6 +7588,7 @@
         ],
         [
           "CORE-1469",
+          "CORE-1468",
           "CORE-1253",
           "CORE-1364"
         ],
@@ -7624,7 +7629,6 @@
           "CORE-1528",
           "CORE-1411",
           "CORE-1594",
-          "CORE-1364",
           "CORE-1336",
           "CORE-1447",
           "CORE-1249"
@@ -8521,7 +8525,7 @@
           "blockedEpicKey": "CORE-194"
         }
       ],
-      "oldestWipAgeDays": 2284.8,
+      "oldestWipAgeDays": 2284.9,
       "agingWipCount": 201,
       "agingWipIssues": [
         {
@@ -8529,7 +8533,7 @@
           "summary": "FE to systematically update Gazelle when provider changes in Online.  Affects clients using EB for Cobra.",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 2284.8,
+          "ageDays": 2284.9,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         },
@@ -8538,7 +8542,7 @@
           "summary": "Total Compensation Class Update - Move income references to special types",
           "status": "Backlog",
           "type": "Dev Task",
-          "ageDays": 1950.1,
+          "ageDays": 1950.2,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         },
@@ -8547,7 +8551,7 @@
           "summary": "Allow users to change the frequency on the Scheduled Earnings Interface",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 1874.9,
+          "ageDays": 1875,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         },
@@ -8556,7 +8560,7 @@
           "summary": "Support State of CA RROP (DLSE)",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 1650.8,
+          "ageDays": 1650.9,
           "epicKey": "APSPM-9516",
           "lane": "To Do"
         },
@@ -8565,7 +8569,7 @@
           "summary": "Capture and use a snapshot of employee rates in the batch",
           "status": "Backlog",
           "type": "Dev Task",
-          "ageDays": 1531.8,
+          "ageDays": 1531.9,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         }
@@ -8612,7 +8616,7 @@
           "summary": "Payroll>Accrual Overage Check not flagging hours on Step 5 ",
           "status": "Backlog",
           "type": "Bug",
-          "ageDays": 4,
+          "ageDays": 4.1,
           "epicKey": "CORE-1573",
           "lane": "Backlog"
         },
@@ -8621,7 +8625,7 @@
           "summary": "Fringe Benefits – Offset Income Validation & FRINGE_BENEFITS GA Promotion",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 4,
+          "ageDays": 4.1,
           "epicKey": null,
           "lane": "Ready for Development"
         },
@@ -8666,7 +8670,7 @@
           "summary": "UX Design: Employee List Dashboard Prototype Review",
           "status": "Design Review",
           "type": "Design Task",
-          "ageDays": 5.1,
+          "ageDays": 5.2,
           "epicKey": "CORE-1701",
           "lane": "Other"
         },
@@ -8675,7 +8679,7 @@
           "summary": "Employee List Dashboard Phase 2",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 5.1,
+          "ageDays": 5.2,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -8693,7 +8697,7 @@
           "summary": "CORE | Employee Address Edit — React Island with Google Address Validation (Admin + Add Wizard Step 2)",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 94,
+          "ageDays": 94.1,
           "epicKey": "BOA-1943",
           "lane": "Ready for Development"
         },
@@ -8702,7 +8706,7 @@
           "summary": "Payroll Voucher Amount Dropping the Trailing Zero When Net Pay Ends in 0",
           "status": "Ready for Development",
           "type": "Bug",
-          "ageDays": 9.9,
+          "ageDays": 10,
           "epicKey": "CORE-1573",
           "lane": "Ready for Development"
         },
@@ -8711,7 +8715,7 @@
           "summary": "EE Record React — Direct Deposit button + accounts modal (Details tab)",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 10.9,
+          "ageDays": 11,
           "epicKey": "CORE-1594",
           "lane": "Backlog"
         },
@@ -8738,7 +8742,7 @@
           "summary": "Effective Dating - Phase 2 - Status Changes - Fix after Reverting",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 14.1,
+          "ageDays": 14.2,
           "epicKey": "CORE-1101",
           "lane": "Done"
         },
@@ -8963,7 +8967,7 @@
           "summary": "Employee Self-Onboarding Form (ui/onboarding/)",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 26.8,
+          "ageDays": 26.9,
           "epicKey": "CORE-1656",
           "lane": "Backlog"
         },
@@ -8972,7 +8976,7 @@
           "summary": "Employer-side Add Employee Wizard (React, 4-step full-page replacement)",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 26.8,
+          "ageDays": 26.9,
           "epicKey": "CORE-1656",
           "lane": "Backlog"
         },
@@ -8981,7 +8985,7 @@
           "summary": "SSN Duplicate Check backend endpoint (service/onboarding)",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 26.8,
+          "ageDays": 26.9,
           "epicKey": "CORE-1656",
           "lane": "Backlog"
         },
@@ -8990,7 +8994,7 @@
           "summary": "Foundation: ADD_EMPLOYEE_WIZARD feature flag, host wiring, and PhoneInput story",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 26.8,
+          "ageDays": 26.9,
           "epicKey": "CORE-1656",
           "lane": "Backlog"
         },
@@ -8999,7 +9003,7 @@
           "summary": "React Conversion — Add Employee Wizard",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 26.8,
+          "ageDays": 26.9,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -9053,7 +9057,7 @@
           "summary": "Company Setup React: Foundation — feature flag, host registration, i18n skeleton",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 28.1,
+          "ageDays": 28.2,
           "epicKey": "CORE-1635",
           "lane": "Backlog"
         },
@@ -9062,7 +9066,7 @@
           "summary": "Company Setup React: ESS Configuration",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 28.1,
+          "ageDays": 28.2,
           "epicKey": "CORE-1635",
           "lane": "Backlog"
         },
@@ -9071,7 +9075,7 @@
           "summary": "Company Setup React: Attendance Setup",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 28.1,
+          "ageDays": 28.2,
           "epicKey": "CORE-1635",
           "lane": "Backlog"
         },
@@ -9080,7 +9084,7 @@
           "summary": "Company Setup React: General Ledger Setup",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 28.1,
+          "ageDays": 28.2,
           "epicKey": "CORE-1635",
           "lane": "Backlog"
         },
@@ -9089,7 +9093,7 @@
           "summary": "Company Setup React: Core Settings Pages",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 28.1,
+          "ageDays": 28.2,
           "epicKey": "CORE-1635",
           "lane": "Backlog"
         },
@@ -9098,7 +9102,7 @@
           "summary": "Company Setup React: Wire-In Nine Existing React Pages",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 28.1,
+          "ageDays": 28.2,
           "epicKey": "CORE-1635",
           "lane": "Backlog"
         },
@@ -9107,7 +9111,7 @@
           "summary": "Company Setup React: Storybook Backfill — Eight Existing React Admin Pages",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 28.1,
+          "ageDays": 28.2,
           "epicKey": "CORE-1635",
           "lane": "Backlog"
         },
@@ -9116,7 +9120,7 @@
           "summary": "Company Setup React: Admin Console Shell",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 28.1,
+          "ageDays": 28.2,
           "epicKey": "CORE-1635",
           "lane": "Backlog"
         },
@@ -9125,7 +9129,7 @@
           "summary": "React Conversion: Company Setup",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 28.1,
+          "ageDays": 28.2,
           "epicKey": "CORE-1634",
           "lane": "To Do"
         },
@@ -9134,7 +9138,7 @@
           "summary": "React Conversion — Company Setup",
           "status": "To Do",
           "type": "Project",
-          "ageDays": 28.1,
+          "ageDays": 28.2,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -9152,7 +9156,7 @@
           "summary": "EE Record>  Filtering by Department Causes \"The ID is Invalid on Rates and Deductions Tab",
           "status": "Ready for Development",
           "type": "Bug",
-          "ageDays": 30.9,
+          "ageDays": 31,
           "epicKey": "CORE-1573",
           "lane": "Ready for Development"
         },
@@ -9179,7 +9183,7 @@
           "summary": "Preferred Name in Workforce Reports",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 31.1,
+          "ageDays": 31.2,
           "epicKey": "CORE-439",
           "lane": "Ready for Development"
         },
@@ -9188,7 +9192,7 @@
           "summary": "Preferred Name in Attendance Reports - Section 2",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 31.1,
+          "ageDays": 31.2,
           "epicKey": "CORE-439",
           "lane": "Ready for Development"
         },
@@ -9197,7 +9201,7 @@
           "summary": "Preferred Name in Attendance Reports - Section 1",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 31.1,
+          "ageDays": 31.2,
           "epicKey": "CORE-439",
           "lane": "Ready for Development"
         },
@@ -9206,7 +9210,7 @@
           "summary": "Preferred Name in HR Reports - Section 2",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 31.1,
+          "ageDays": 31.2,
           "epicKey": "CORE-439",
           "lane": "Ready for Development"
         },
@@ -9215,7 +9219,7 @@
           "summary": "Preferred Name in HR Reports - Section 1",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 31.1,
+          "ageDays": 31.2,
           "epicKey": "CORE-439",
           "lane": "Ready for Development"
         },
@@ -9224,7 +9228,7 @@
           "summary": "Preferred Name in Payroll Reports - Section 2",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 31.1,
+          "ageDays": 31.2,
           "epicKey": "CORE-439",
           "lane": "Ready for Development"
         },
@@ -9449,7 +9453,7 @@
           "summary": "Display Employee Profile Images",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 33.9,
+          "ageDays": 34,
           "epicKey": "CORE-1469",
           "lane": "Ready for Development"
         },
@@ -9458,7 +9462,7 @@
           "summary": "Year End 2026: Tax Settings in Online",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 34.9,
+          "ageDays": 35,
           "epicKey": null,
           "lane": "Ready for Development"
         },
@@ -9467,7 +9471,7 @@
           "summary": "React Redesign of Report Manager - UX/UI Design Request",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 40.1,
+          "ageDays": 40.2,
           "epicKey": "CORE-1434",
           "lane": "Backlog"
         },
@@ -9476,7 +9480,7 @@
           "summary": "Add Tracking to Existing Global Reports",
           "status": "Ready for QA",
           "type": "Story",
-          "ageDays": 40.1,
+          "ageDays": 40.2,
           "epicKey": "CORE-1469",
           "lane": "Other"
         },
@@ -9503,7 +9507,7 @@
           "summary": "180 day limit on Scheduled Changes on EE Record, Scheduled Changes, Mass Updates",
           "status": "Ready for QA",
           "type": "Story",
-          "ageDays": 45.9,
+          "ageDays": 46,
           "epicKey": "CORE-1411",
           "lane": "Other"
         },
@@ -9512,7 +9516,7 @@
           "summary": "Proactive Payroll - MVP+ - Blocking changing payroll run type when payroll template is selected",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 52,
+          "ageDays": 52.1,
           "epicKey": "CORE-1364",
           "lane": "Done"
         },
@@ -9521,7 +9525,7 @@
           "summary": "Exempt 1099 employees from DOB requirement in EE wizard (W-9 does not capture DOB)",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 52.1,
+          "ageDays": 52.2,
           "epicKey": null,
           "lane": "Done"
         },
@@ -9530,7 +9534,7 @@
           "summary": "Report Builder: DailyPay Enrollment Status",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 53.9,
+          "ageDays": 54,
           "epicKey": "CORE-1469",
           "lane": "Backlog"
         },
@@ -9539,7 +9543,7 @@
           "summary": "ACA tiptool and check marks being cut off",
           "status": "Backlog",
           "type": "Bug",
-          "ageDays": 55.9,
+          "ageDays": 56,
           "epicKey": "CORE-1336",
           "lane": "Backlog"
         },
@@ -9584,7 +9588,7 @@
           "summary": "Review Core-1113 and PO Box addresses in Year End Workflow",
           "status": "In QA",
           "type": "Story",
-          "ageDays": 73.1,
+          "ageDays": 73.2,
           "epicKey": "CORE-1336",
           "lane": "In QA"
         },
@@ -9602,7 +9606,7 @@
           "summary": "Gross-Up Payroll Enhancements - Multiple Incomes",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 76,
+          "ageDays": 76.1,
           "epicKey": "CORE-1336",
           "lane": "Done"
         },
@@ -9620,7 +9624,7 @@
           "summary": "Fringe Benefits - Batch",
           "status": "Ready for Acceptance",
           "type": "Story",
-          "ageDays": 76.9,
+          "ageDays": 77,
           "epicKey": "CORE-1336",
           "lane": "Acceptance"
         },
@@ -9638,7 +9642,7 @@
           "summary": "Secure 2.0 Compliance",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 87.9,
+          "ageDays": 88,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -9692,7 +9696,7 @@
           "summary": "NACHA Compliance - PreNotes",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 124,
+          "ageDays": 124.1,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -9701,7 +9705,7 @@
           "summary": "Mass Updates Phase 3 - Scheduled Incomes",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 126,
+          "ageDays": 126.1,
           "epicKey": "CORE-1249",
           "lane": "Done"
         },
@@ -9719,7 +9723,7 @@
           "summary": "Payroll Comparison Tools",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 140.1,
+          "ageDays": 140.2,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -9791,7 +9795,7 @@
           "summary": "CORE Year End 2026",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 226.8,
+          "ageDays": 226.9,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -9809,7 +9813,7 @@
           "summary": "Employee List Dashboard Revamp",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 327.1,
+          "ageDays": 327.2,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -9818,7 +9822,7 @@
           "summary": "Effective Dating - Phase 2 - Add to GA",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 327.1,
+          "ageDays": 327.2,
           "epicKey": "CORE-1101",
           "lane": "Done"
         },
@@ -9827,7 +9831,7 @@
           "summary": "Mass Updates - Phase 3 - Effective Dating",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 333,
+          "ageDays": 333.1,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -9854,7 +9858,7 @@
           "summary": "Mass Updates - Updates/Changes to Step 4",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 362.1,
+          "ageDays": 362.2,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         },
@@ -9863,7 +9867,7 @@
           "summary": "Mass Updates - Updates/Changes to Step 3",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 362.1,
+          "ageDays": 362.2,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         },
@@ -9872,7 +9876,7 @@
           "summary": "Account Support- Change to Support Team",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 364,
+          "ageDays": 364.1,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         },
@@ -9881,7 +9885,7 @@
           "summary": "Mass Updates - Updates/Changes to Step 1",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 369.9,
+          "ageDays": 370,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         },
@@ -9890,7 +9894,7 @@
           "summary": "Prevent users from removing a department from the EE record if there are pending expense reports",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 377.9,
+          "ageDays": 378,
           "epicKey": "INV-526",
           "lane": "Backlog"
         },
@@ -9908,7 +9912,7 @@
           "summary": "Reporting Window - Make Larger ",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 416.1,
+          "ageDays": 416.2,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         },
@@ -9926,7 +9930,7 @@
           "summary": "Support Subject Federal Withholding and Subject State Withholding updates on Approve Employee Updates page",
           "status": "Backlog",
           "type": "Bug",
-          "ageDays": 447.9,
+          "ageDays": 448,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         },
@@ -9935,7 +9939,7 @@
           "summary": "Auto-Adjust Custom Report Builder \"My Reports\" section",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 452.1,
+          "ageDays": 452.2,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         },
@@ -9962,7 +9966,7 @@
           "summary": "Request Employee Paycheck Approvals and Display Review Dashboard",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 461.6,
+          "ageDays": 461.7,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         },
@@ -10016,7 +10020,7 @@
           "summary": "Do not allow Incomes to be Marked Inactive/Deleted when on Current or Future Timecards",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 479.8,
+          "ageDays": 479.9,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         },
@@ -10025,7 +10029,7 @@
           "summary": "Expedited Payroll - Cut Off Date/Time for Finalize Page",
           "status": "Backlog",
           "type": "Bug",
-          "ageDays": 489.9,
+          "ageDays": 490,
           "epicKey": "CORE-446",
           "lane": "Backlog"
         },
@@ -10043,7 +10047,7 @@
           "summary": "Employees tied to Inactive Department - Payroll Warning",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 585.1,
+          "ageDays": 585.2,
           "epicKey": "CORE-1411",
           "lane": "Ready for Development"
         },
@@ -10061,7 +10065,7 @@
           "summary": "Money Service Admin - Phase 2 - Items Due to Review Tab",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 689.9,
+          "ageDays": 690,
           "epicKey": "CORE-804",
           "lane": "Backlog"
         },
@@ -10070,7 +10074,7 @@
           "summary": "Money Service Admin - Phase 2 - Completed Items - Backend Functionality",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 689.9,
+          "ageDays": 690,
           "epicKey": "CORE-804",
           "lane": "Backlog"
         },
@@ -10079,7 +10083,7 @@
           "summary": "Money Service Admin - Phase 2 - Direct Deposit Returns",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 689.9,
+          "ageDays": 690,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -10097,7 +10101,7 @@
           "summary": "Unposted Items - Page Update",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 705,
+          "ageDays": 705.1,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         },
@@ -10106,7 +10110,7 @@
           "summary": "Payroll Summary Report - Income amount totals are adding fringe incomes",
           "status": "Backlog",
           "type": "Bug",
-          "ageDays": 733.9,
+          "ageDays": 734,
           "epicKey": "CORE-988",
           "lane": "Backlog"
         },
@@ -10124,7 +10128,7 @@
           "summary": "Approve Timecards - Online User eSignatures",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 783.9,
+          "ageDays": 784,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         },
@@ -10196,7 +10200,7 @@
           "summary": "Preferred Name in Employee Reports - Section 2",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 858.9,
+          "ageDays": 859,
           "epicKey": "CORE-439",
           "lane": "Ready for Development"
         },
@@ -10223,7 +10227,7 @@
           "summary": "Dimension Data not Applied to Income Rules when Different Dimensions are present on the Time Card - Clock 5",
           "status": "Backlog",
           "type": "Bug",
-          "ageDays": 873,
+          "ageDays": 873.1,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         },
@@ -10232,7 +10236,7 @@
           "summary": "Dimension Data not Applied to Income Rules when Different Dimensions are present on the Time Card - Clock 4",
           "status": "Backlog",
           "type": "Bug",
-          "ageDays": 873,
+          "ageDays": 873.1,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         },
@@ -10259,7 +10263,7 @@
           "summary": "Expedited Payroll ",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 923.7,
+          "ageDays": 923.8,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -10277,7 +10281,7 @@
           "summary": "Preferred name Integration in Online",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 927.1,
+          "ageDays": 927.2,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -10286,7 +10290,7 @@
           "summary": "Review current state and next steps",
           "status": "Backlog",
           "type": "Research Task",
-          "ageDays": 964.1,
+          "ageDays": 964.2,
           "epicKey": "CORE-357",
           "lane": "Backlog"
         },
@@ -10304,7 +10308,7 @@
           "summary": "Batch - Move Base Department Update Logic to Batch Load",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 973,
+          "ageDays": 973.1,
           "epicKey": "CORE-1411",
           "lane": "Ready for Development"
         },
@@ -10313,7 +10317,7 @@
           "summary": "Ability to delete unused APS Default notification templates",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 1008.1,
+          "ageDays": 1008.2,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         },
@@ -10340,7 +10344,7 @@
           "summary": "Income Wizard Double Time logic",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 1067.9,
+          "ageDays": 1068,
           "epicKey": "CORE-34",
           "lane": "Backlog"
         },
@@ -10349,7 +10353,7 @@
           "summary": "DLSE - Fix Double Time Rate Blending",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 1105.8,
+          "ageDays": 1105.9,
           "epicKey": "CORE-34",
           "lane": "Backlog"
         },
@@ -10358,7 +10362,7 @@
           "summary": "AFP - Statuses other than 'Terminated' included in batch",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 1109.9,
+          "ageDays": 1110,
           "epicKey": "CORE-194",
           "lane": "Backlog"
         },
@@ -10367,7 +10371,7 @@
           "summary": "Prepay, void a prepay after paying final wages",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 1122.8,
+          "ageDays": 1122.9,
           "epicKey": "CORE-194",
           "lane": "Backlog"
         },
@@ -10385,7 +10389,7 @@
           "summary": "Allow users to change the frequency on the Scheduled Earnings Interface",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 1874.9,
+          "ageDays": 1875,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         },
@@ -10394,7 +10398,7 @@
           "summary": "Total Compensation Class Update - Move income references to special types",
           "status": "Backlog",
           "type": "Dev Task",
-          "ageDays": 1950.1,
+          "ageDays": 1950.2,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         },
@@ -10403,7 +10407,7 @@
           "summary": "Capture and use a snapshot of employee rates in the batch",
           "status": "Backlog",
           "type": "Dev Task",
-          "ageDays": 1531.8,
+          "ageDays": 1531.9,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         },
@@ -10412,7 +10416,7 @@
           "summary": "[User Levels in Online] - Fix new has_access using PHPUnit Tests",
           "status": "Backlog",
           "type": "Dev Task",
-          "ageDays": 1244,
+          "ageDays": 1244.1,
           "epicKey": "CORE-357",
           "lane": "Backlog"
         },
@@ -10457,7 +10461,7 @@
           "summary": "Employee in Multiple Active Batches",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 1134,
+          "ageDays": 1134.1,
           "epicKey": "CORE-194",
           "lane": "Backlog"
         },
@@ -10493,7 +10497,7 @@
           "summary": "Final Pay Upon Employee Transfer Termination",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 1144,
+          "ageDays": 1144.1,
           "epicKey": "CORE-194",
           "lane": "Backlog"
         },
@@ -10502,7 +10506,7 @@
           "summary": "Active for payroll : batch changes",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 1146.8,
+          "ageDays": 1146.9,
           "epicKey": "CORE-194",
           "lane": "Backlog"
         },
@@ -10511,7 +10515,7 @@
           "summary": "Stored procedure not adding zero-value items",
           "status": "Backlog",
           "type": "Dev Task",
-          "ageDays": 1375.8,
+          "ageDays": 1375.9,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         },
@@ -10520,7 +10524,7 @@
           "summary": "FE to systematically update Gazelle when provider changes in Online.  Affects clients using EB for Cobra.",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 2284.8,
+          "ageDays": 2284.9,
           "epicKey": "CORE-1411",
           "lane": "Backlog"
         },
@@ -10529,7 +10533,7 @@
           "summary": "Support State of CA RROP (DLSE)",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 1650.8,
+          "ageDays": 1650.9,
           "epicKey": "APSPM-9516",
           "lane": "To Do"
         }
@@ -10556,8 +10560,8 @@
       "weekly": [
         {
           "label": "Jun 1–Jun 8",
-          "weekStart": "2026-06-01T18:04:28.889Z",
-          "weekEnd": "2026-06-08T18:04:28.889Z",
+          "weekStart": "2026-06-01T19:05:54.533Z",
+          "weekEnd": "2026-06-08T19:05:54.533Z",
           "throughput": 10,
           "cycleTimeAvg": 16.5,
           "leadTimeAvg": 36.8,
@@ -10569,8 +10573,8 @@
         },
         {
           "label": "Jun 8–Jun 15",
-          "weekStart": "2026-06-08T18:04:28.889Z",
-          "weekEnd": "2026-06-15T18:04:28.889Z",
+          "weekStart": "2026-06-08T19:05:54.533Z",
+          "weekEnd": "2026-06-15T19:05:54.533Z",
           "throughput": 27,
           "cycleTimeAvg": 23.1,
           "leadTimeAvg": 154.2,
@@ -10582,8 +10586,8 @@
         },
         {
           "label": "Jun 15–Jun 22",
-          "weekStart": "2026-06-15T18:04:28.889Z",
-          "weekEnd": "2026-06-22T18:04:28.889Z",
+          "weekStart": "2026-06-15T19:05:54.533Z",
+          "weekEnd": "2026-06-22T19:05:54.533Z",
           "throughput": 18,
           "cycleTimeAvg": 8.9,
           "leadTimeAvg": 112.2,
@@ -10595,8 +10599,8 @@
         },
         {
           "label": "Jun 22–Jun 29",
-          "weekStart": "2026-06-22T18:04:28.889Z",
-          "weekEnd": "2026-06-29T18:04:28.889Z",
+          "weekStart": "2026-06-22T19:05:54.533Z",
+          "weekEnd": "2026-06-29T19:05:54.533Z",
           "throughput": 25,
           "cycleTimeAvg": 16.6,
           "leadTimeAvg": 275,
@@ -10608,8 +10612,8 @@
         },
         {
           "label": "Jun 29–Jul 6",
-          "weekStart": "2026-06-29T18:04:28.889Z",
-          "weekEnd": "2026-07-06T18:04:28.889Z",
+          "weekStart": "2026-06-29T19:05:54.533Z",
+          "weekEnd": "2026-07-06T19:05:54.533Z",
           "throughput": 10,
           "cycleTimeAvg": 9.3,
           "leadTimeAvg": 433.7,
@@ -10621,8 +10625,8 @@
         },
         {
           "label": "Jul 6–Jul 13",
-          "weekStart": "2026-07-06T18:04:28.889Z",
-          "weekEnd": "2026-07-13T18:04:28.889Z",
+          "weekStart": "2026-07-06T19:05:54.533Z",
+          "weekEnd": "2026-07-13T19:05:54.533Z",
           "throughput": 10,
           "cycleTimeAvg": 13.8,
           "leadTimeAvg": 208.8,
@@ -10634,8 +10638,8 @@
         },
         {
           "label": "Jul 13–Jul 20",
-          "weekStart": "2026-07-13T18:04:28.889Z",
-          "weekEnd": "2026-07-20T18:04:28.889Z",
+          "weekStart": "2026-07-13T19:05:54.533Z",
+          "weekEnd": "2026-07-20T19:05:54.533Z",
           "throughput": 9,
           "cycleTimeAvg": 24.2,
           "leadTimeAvg": 194.5,
@@ -10647,8 +10651,8 @@
         },
         {
           "label": "Jul 20–Jul 27",
-          "weekStart": "2026-07-20T18:04:28.889Z",
-          "weekEnd": "2026-07-27T18:04:28.889Z",
+          "weekStart": "2026-07-20T19:05:54.533Z",
+          "weekEnd": "2026-07-27T19:05:54.533Z",
           "throughput": 23,
           "cycleTimeAvg": 36.1,
           "leadTimeAvg": 114.5,
@@ -12098,8 +12102,8 @@
       "focusIntegrityTotalEpics": 20,
       "focusIntegrityWeekly": [
         8,
+        5,
         4,
-        3,
         6,
         4,
         2,
@@ -12108,23 +12112,25 @@
       ],
       "focusIntegrityWeeklyEpics": [
         [
-          "MOBILE-889",
           "MOBILE-751",
           "MOBILE-1029",
           "MOBILE-990",
           "MOBILE-842",
           "MOBILE-769",
+          "MOBILE-816",
           "MOBILE-783",
           "MOBILE-827"
         ],
         [
           "MOBILE-989",
+          "MOBILE-843",
           "MOBILE-871",
           "MOBILE-769",
           "MOBILE-816"
         ],
         [
           "MOBILE-989",
+          "MOBILE-843",
           "MOBILE-769",
           "MOBILE-816"
         ],
@@ -12161,7 +12167,7 @@
         null,
         1,
         1,
-        null,
+        1,
         1,
         null,
         1
@@ -12173,7 +12179,7 @@
       "thisWeekSleAdherencePct": 86.4,
       "riskStatus": "OK",
       "wipByStatus": {
-        "Backlog": 4,
+        "Backlog": 5,
         "To Do": 19,
         "Ready for Development": 2,
         "In Development": 13,
@@ -12183,7 +12189,7 @@
         "Done": 65,
         "Other": 12
       },
-      "wipTotal": 117,
+      "wipTotal": 118,
       "dependencies": [
         {
           "blockerKey": "MOBILE-1068",
@@ -12627,7 +12633,7 @@
           "blockedEpicKey": null
         }
       ],
-      "oldestWipAgeDays": 746.1,
+      "oldestWipAgeDays": 746.2,
       "agingWipCount": 112,
       "agingWipIssues": [
         {
@@ -12635,7 +12641,7 @@
           "summary": "Mobile Redesign",
           "status": "In Progress",
           "type": "Initiative",
-          "ageDays": 746.1,
+          "ageDays": 746.2,
           "epicKey": null,
           "lane": "In Development"
         },
@@ -12644,7 +12650,7 @@
           "summary": "APS Tablet App Redesign",
           "status": "In Progress",
           "type": "Initiative",
-          "ageDays": 634.9,
+          "ageDays": 635,
           "epicKey": null,
           "lane": "In Development"
         },
@@ -12653,7 +12659,7 @@
           "summary": "Expense Reimbursements - Mobile",
           "status": "In Progress",
           "type": "Project",
-          "ageDays": 620.9,
+          "ageDays": 621,
           "epicKey": "INV-183",
           "lane": "In Development"
         },
@@ -12678,11 +12684,20 @@
       ],
       "wipDetailed": [
         {
+          "key": "MOBILE-1072",
+          "summary": "MOBILE APP REVIEW: \"What can we do to improve?\" Text Entry covered by device keyboard (ANDROID ONLY)",
+          "status": "Backlog",
+          "type": "Bug",
+          "ageDays": 0,
+          "epicKey": null,
+          "lane": "Backlog"
+        },
+        {
           "key": "MOBILE-1071",
           "summary": "Mobile: One Final run through for Dev for the App review project",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 5,
+          "ageDays": 5.1,
           "epicKey": "MOBILE-783",
           "lane": "Done"
         },
@@ -12691,7 +12706,7 @@
           "summary": "Inconsistent Department display on Tablet App",
           "status": "Ready for Development",
           "type": "Bug",
-          "ageDays": 5.1,
+          "ageDays": 5.2,
           "epicKey": "MOBILE-1029",
           "lane": "Ready for Development"
         },
@@ -12718,7 +12733,7 @@
           "summary": "Custom eSignature Certification Message Not Displaying on Mobile App ",
           "status": "Ready for Release",
           "type": "Bug",
-          "ageDays": 11.9,
+          "ageDays": 12,
           "epicKey": "MOBILE-1029",
           "lane": "Done"
         },
@@ -12754,7 +12769,7 @@
           "summary": "Storybook [Wave-2 Spike] — enable Reanimated + gesture-handler + bottom-sheet on the catalog RNW/Vite path",
           "status": "Ready for Release",
           "type": "Research Task",
-          "ageDays": 17.1,
+          "ageDays": 17.2,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -12763,7 +12778,7 @@
           "summary": "Mobile: Storybook [W7] — generic/progressBar story",
           "status": "Ready for QA",
           "type": "Story",
-          "ageDays": 17.1,
+          "ageDays": 17.2,
           "epicKey": "MOBILE-989",
           "lane": "Other"
         },
@@ -12772,7 +12787,7 @@
           "summary": "Mobile: Storybook [W6] — generic/pagerView story",
           "status": "Ready for QA",
           "type": "Story",
-          "ageDays": 17.1,
+          "ageDays": 17.2,
           "epicKey": "MOBILE-989",
           "lane": "Other"
         },
@@ -12781,7 +12796,7 @@
           "summary": "Mobile: Storybook [W5] — generic/textInputWithInlineError story",
           "status": "Ready for QA",
           "type": "Story",
-          "ageDays": 17.1,
+          "ageDays": 17.2,
           "epicKey": "MOBILE-989",
           "lane": "Other"
         },
@@ -12790,7 +12805,7 @@
           "summary": "Mobile: Storybook [W4] — generic/textInputWIthNumber story",
           "status": "Ready for QA",
           "type": "Story",
-          "ageDays": 17.1,
+          "ageDays": 17.2,
           "epicKey": "MOBILE-989",
           "lane": "Other"
         },
@@ -12799,7 +12814,7 @@
           "summary": "Mobile: Storybook [W2] — generic/commentBox story",
           "status": "Ready for QA",
           "type": "Story",
-          "ageDays": 17.1,
+          "ageDays": 17.2,
           "epicKey": "MOBILE-989",
           "lane": "Other"
         },
@@ -12808,7 +12823,7 @@
           "summary": "Mobile: Storybook [W1] — generic/textInput story",
           "status": "Ready for QA",
           "type": "Story",
-          "ageDays": 17.1,
+          "ageDays": 17.2,
           "epicKey": "MOBILE-989",
           "lane": "Other"
         },
@@ -12817,7 +12832,7 @@
           "summary": "Mobile: Storybook [S2] — generic/time-input story (state-coupled)",
           "status": "Ready for QA",
           "type": "Story",
-          "ageDays": 17.1,
+          "ageDays": 17.2,
           "epicKey": "MOBILE-989",
           "lane": "Other"
         },
@@ -12826,7 +12841,7 @@
           "summary": "Mobile: Storybook [P20] — generic/labelErrorContainer story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 17.1,
+          "ageDays": 17.2,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -12835,7 +12850,7 @@
           "summary": "Mobile: Storybook [P19] — generic/shadow story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 17.1,
+          "ageDays": 17.2,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -12844,7 +12859,7 @@
           "summary": "Mobile: Storybook [P18] — generic/stack story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 17.1,
+          "ageDays": 17.2,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -12853,7 +12868,7 @@
           "summary": "Mobile: Storybook [P17] — generic/logo story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 17.1,
+          "ageDays": 17.2,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -12862,7 +12877,7 @@
           "summary": "Mobile: Storybook [P16] — generic/esign story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 17.1,
+          "ageDays": 17.2,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -12871,7 +12886,7 @@
           "summary": "Mobile: Storybook [P15] — generic/weekSwitcher story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 17.1,
+          "ageDays": 17.2,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -12880,7 +12895,7 @@
           "summary": "Mobile: Storybook [P14] — generic/calendar story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 17.1,
+          "ageDays": 17.2,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -12889,7 +12904,7 @@
           "summary": "Mobile: Storybook [P13] — generic/radioButtonGroup story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 17.1,
+          "ageDays": 17.2,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -12898,7 +12913,7 @@
           "summary": "Mobile: Storybook [P12] — generic/dropdown story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 17.1,
+          "ageDays": 17.2,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -12907,7 +12922,7 @@
           "summary": "Mobile: Storybook [P11] — generic/switch story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 17.1,
+          "ageDays": 17.2,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -12916,7 +12931,7 @@
           "summary": "Mobile: Storybook [P10] — generic/radioButton story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 17.1,
+          "ageDays": 17.2,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -12925,7 +12940,7 @@
           "summary": "Mobile: Storybook [P9] — generic/checkbox story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 17.1,
+          "ageDays": 17.2,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -12952,7 +12967,7 @@
           "summary": "Q3 Bugs and Improvements for Mobile",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 19.9,
+          "ageDays": 20,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -12961,7 +12976,7 @@
           "summary": "Research: Integrate APCOM-216 DailyPay status endpoint into Mobile DD blocking",
           "status": "Ready for Release",
           "type": "Research Task",
-          "ageDays": 19.9,
+          "ageDays": 20,
           "epicKey": "MOBILE-1036",
           "lane": "Done"
         },
@@ -12979,7 +12994,7 @@
           "summary": "Mobile: Storybook [S1] — userHeader story (state-coupled anchor)",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -12988,7 +13003,7 @@
           "summary": "Mobile: Storybook [FC5] — cards/newsfeedPostCard story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -12997,7 +13012,7 @@
           "summary": "Mobile: Storybook [FC4] — cards/employeeTimeOffCard story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13006,7 +13021,7 @@
           "summary": "Mobile: Storybook [FC3] — cards/directDepositCard story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13015,7 +13030,7 @@
           "summary": "Mobile: Storybook [FC2] — cards/accrualBalanceCard story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13024,7 +13039,7 @@
           "summary": "Mobile: Storybook [FC1] — cards/payCard story (exemplar, loading/empty/error via props)",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13033,7 +13048,7 @@
           "summary": "Mobile: Storybook [C2] — cards/emptyListCard story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13042,7 +13057,7 @@
           "summary": "Mobile: Storybook [C1] — cards/alertCard story (exemplar)",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13051,7 +13066,7 @@
           "summary": "Mobile: Storybook [P8] — lineItem story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13060,7 +13075,7 @@
           "summary": "Mobile: Storybook [P7] — menuItem story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13069,7 +13084,7 @@
           "summary": "Mobile: Storybook [P6] — skeleton story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13078,7 +13093,7 @@
           "summary": "Mobile: Storybook [P5] — section-title story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13087,7 +13102,7 @@
           "summary": "Mobile: Storybook [P4] — alertBox story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13096,7 +13111,7 @@
           "summary": "Mobile: Storybook [P3] — linkButton story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13105,7 +13120,7 @@
           "summary": "Mobile: Storybook [P2] — generic/iconButton story",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13114,7 +13129,7 @@
           "summary": "Mobile: Storybook [P1] — generic/button story (exemplar)",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13123,7 +13138,7 @@
           "summary": "Mobile: Storybook foundation [F10] — populated/empty/error variants for notifications handlers",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13132,7 +13147,7 @@
           "summary": "Mobile: Storybook foundation [F9] — MSW + Navigation decorators (foundation gate)",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13141,7 +13156,7 @@
           "summary": "Mobile: Storybook foundation [F8] — Redux store decorator",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13150,7 +13165,7 @@
           "summary": "Mobile: Storybook foundation [F7] — react-native-config shim with MSW URL contract",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13159,7 +13174,7 @@
           "summary": "Mobile: Storybook foundation [F6] — fail-loud shim harness",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13168,7 +13183,7 @@
           "summary": "Mobile: Storybook foundation [F5] — replicate Wombat path aliases",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13177,7 +13192,7 @@
           "summary": "Mobile: Storybook foundation [F4] — RNW alias + React/RTK dedupe",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13186,7 +13201,7 @@
           "summary": "Mobile: Storybook foundation [F3] — install Storybook 9 + RNW-Vite framework",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13195,7 +13210,7 @@
           "summary": "Mobile: Storybook foundation [F2] — exclude catalog/ from Metro",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13204,7 +13219,7 @@
           "summary": "Mobile: Storybook foundation [F1] — bootstrap catalog/ workspace",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 46.9,
+          "ageDays": 47,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -13213,7 +13228,7 @@
           "summary": "End to End Testing: Colby",
           "status": "In Progress",
           "type": "Sub-task",
-          "ageDays": 48,
+          "ageDays": 48.1,
           "epicKey": "MOBILE-999",
           "lane": "In Development"
         },
@@ -13222,7 +13237,7 @@
           "summary": "End to End Testing: Eliot",
           "status": "In Progress",
           "type": "Sub-task",
-          "ageDays": 48,
+          "ageDays": 48.1,
           "epicKey": "MOBILE-999",
           "lane": "In Development"
         },
@@ -13231,7 +13246,7 @@
           "summary": "End to End Testing: Darren",
           "status": "To Do",
           "type": "Sub-task",
-          "ageDays": 48.2,
+          "ageDays": 48.3,
           "epicKey": "MOBILE-999",
           "lane": "To Do"
         },
@@ -13240,7 +13255,7 @@
           "summary": "Mobile: App Review Project - End to End testing",
           "status": "In QA",
           "type": "Story",
-          "ageDays": 48.2,
+          "ageDays": 48.3,
           "epicKey": "MOBILE-783",
           "lane": "In QA"
         },
@@ -13258,7 +13273,7 @@
           "summary": "Tablet: RNW Storybook for Tablet App",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 66.1,
+          "ageDays": 66.2,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -13267,7 +13282,7 @@
           "summary": "Mobile: RNW Storybook work for the Mobile App",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 66.1,
+          "ageDays": 66.2,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -13294,7 +13309,7 @@
           "summary": "Shift Trading Mobile: Manager menu + list + Approve/Deny",
           "status": "Code Review",
           "type": "Story",
-          "ageDays": 68.9,
+          "ageDays": 69,
           "epicKey": "MOBILE-769",
           "lane": "Other"
         },
@@ -13303,7 +13318,7 @@
           "summary": "Shift Trading Mobile: Alerts grid — Trade Requests card",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 68.9,
+          "ageDays": 69,
           "epicKey": "MOBILE-769",
           "lane": "Done"
         },
@@ -13312,7 +13327,7 @@
           "summary": "Shift Trading Mobile: Initiate Swap / Drop / Release from Schedule",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 68.9,
+          "ageDays": 69,
           "epicKey": "MOBILE-769",
           "lane": "Done"
         },
@@ -13321,7 +13336,7 @@
           "summary": "Shift Trading Mobile: Available Shifts / Pickup",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 68.9,
+          "ageDays": 69,
           "epicKey": "MOBILE-769",
           "lane": "Done"
         },
@@ -13330,7 +13345,7 @@
           "summary": "Shift Trading Mobile: My Shift Requests (list + filter + cancel + accept/decline)",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 68.9,
+          "ageDays": 69,
           "epicKey": "MOBILE-769",
           "lane": "Done"
         },
@@ -13339,7 +13354,7 @@
           "summary": "Shift Trading Mobile: Shift Trades sub-tab under Time",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 68.9,
+          "ageDays": 69,
           "epicKey": "MOBILE-769",
           "lane": "Done"
         },
@@ -13348,7 +13363,7 @@
           "summary": "Shift Trading Mobile: Foundation (RTK services, i18n, permissions, routes)",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 68.9,
+          "ageDays": 69,
           "epicKey": "MOBILE-769",
           "lane": "Done"
         },
@@ -13357,7 +13372,7 @@
           "summary": "Cross-platform calculation parity QA (fixture-set verification)",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 69.9,
+          "ageDays": 70,
           "epicKey": "MOBILE-816",
           "lane": "Done"
         },
@@ -13366,7 +13381,7 @@
           "summary": "Manager review of itinerary on expense review screen",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 69.9,
+          "ageDays": 70,
           "epicKey": "MOBILE-816",
           "lane": "Done"
         },
@@ -13375,7 +13390,7 @@
           "summary": "Employee read-only: itinerary on expense detail screen",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 69.9,
+          "ageDays": 70,
           "epicKey": "MOBILE-816",
           "lane": "Done"
         },
@@ -13384,7 +13399,7 @@
           "summary": "Edit Expense: open existing itinerary, recompute on mutation",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 69.9,
+          "ageDays": 70,
           "epicKey": "MOBILE-816",
           "lane": "Done"
         },
@@ -13393,7 +13408,7 @@
           "summary": "Add Expense form: Provide Itinerary toggle + Itinerary Details link",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 69.9,
+          "ageDays": 70,
           "epicKey": "MOBILE-816",
           "lane": "Done"
         },
@@ -13402,7 +13417,7 @@
           "summary": "Itinerary modal — multi-stop entry, autocomplete, route preview, calculate (direct Google APIs)",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 69.9,
+          "ageDays": 70,
           "epicKey": "MOBILE-816",
           "lane": "Done"
         },
@@ -13411,7 +13426,7 @@
           "summary": "Foundation: Wombat deps, API keys, i18n, feature flag, types (itinerary)",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 69.9,
+          "ageDays": 70,
           "epicKey": "MOBILE-816",
           "lane": "Done"
         },
@@ -13420,7 +13435,7 @@
           "summary": "Mobile: App review - updating the modals to dark mode",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 72.9,
+          "ageDays": 73,
           "epicKey": "MOBILE-783",
           "lane": "Done"
         },
@@ -13429,7 +13444,7 @@
           "summary": "Mobile - Creating a way to view the negative feedback from the app review in Posthog",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 74,
+          "ageDays": 74.1,
           "epicKey": "MOBILE-783",
           "lane": "Done"
         },
@@ -13438,7 +13453,7 @@
           "summary": "Mobile: Placing the app review modals on time card and time sheet",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 75.1,
+          "ageDays": 75.2,
           "epicKey": "MOBILE-783",
           "lane": "Done"
         },
@@ -13447,7 +13462,7 @@
           "summary": "Mobile: Creating the Review modals",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 76.1,
+          "ageDays": 76.2,
           "epicKey": "MOBILE-783",
           "lane": "Done"
         },
@@ -13483,7 +13498,7 @@
           "summary": "Mobile Team - Q2 2026 Production Bugs",
           "status": "In Progress",
           "type": "Epic",
-          "ageDays": 104.9,
+          "ageDays": 105,
           "epicKey": null,
           "lane": "In Development"
         },
@@ -13501,7 +13516,7 @@
           "summary": "Mobile: Dark Mode - Bugs and Improvements before MVP",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 116.1,
+          "ageDays": 116.2,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -13537,7 +13552,7 @@
           "summary": "Expense Management - Bugs",
           "status": "In Progress",
           "type": "Epic",
-          "ageDays": 145.1,
+          "ageDays": 145.2,
           "epicKey": "MOBILE-211",
           "lane": "In Development"
         },
@@ -13546,7 +13561,7 @@
           "summary": "Expense Management - Itinerary in Mobile",
           "status": "In Progress",
           "type": "Epic",
-          "ageDays": 151.9,
+          "ageDays": 152,
           "epicKey": "MOBILE-211",
           "lane": "In Development"
         },
@@ -13582,7 +13597,7 @@
           "summary": "Shift Trading for Mobile App",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 177.8,
+          "ageDays": 177.9,
           "epicKey": "MOBILE-252",
           "lane": "To Do"
         },
@@ -13600,7 +13615,7 @@
           "summary": "Having Dark Mode added to the Mobile App",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 193,
+          "ageDays": 193.1,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -13609,7 +13624,7 @@
           "summary": "Integrating Frist Dollar into the Mobile app",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 193,
+          "ageDays": 193.1,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -13663,7 +13678,7 @@
           "summary": "Tablet App - Linking - QR Code Linking Process (Online) ",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 480.9,
+          "ageDays": 481,
           "epicKey": null,
           "lane": "Backlog"
         },
@@ -13672,7 +13687,7 @@
           "summary": "Tablet App - Linking - QR Code Linking Process (Tablet) ",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 480.9,
+          "ageDays": 481,
           "epicKey": null,
           "lane": "Backlog"
         },
@@ -13708,7 +13723,7 @@
           "summary": "Expense Reimbursements - Mobile",
           "status": "In Progress",
           "type": "Project",
-          "ageDays": 620.9,
+          "ageDays": 621,
           "epicKey": "INV-183",
           "lane": "In Development"
         },
@@ -13717,7 +13732,7 @@
           "summary": "APS Tablet App Redesign",
           "status": "In Progress",
           "type": "Initiative",
-          "ageDays": 634.9,
+          "ageDays": 635,
           "epicKey": null,
           "lane": "In Development"
         },
@@ -13726,7 +13741,7 @@
           "summary": "Mobile Redesign",
           "status": "In Progress",
           "type": "Initiative",
-          "ageDays": 746.1,
+          "ageDays": 746.2,
           "epicKey": null,
           "lane": "In Development"
         }
@@ -13753,34 +13768,34 @@
       "weekly": [
         {
           "label": "Jun 1–Jun 8",
-          "weekStart": "2026-06-01T18:04:43.727Z",
-          "weekEnd": "2026-06-08T18:04:43.727Z",
-          "throughput": 1,
-          "cycleTimeAvg": null,
-          "leadTimeAvg": 0.2,
-          "flowEfficiencyPct": null,
+          "weekStart": "2026-06-01T19:06:11.827Z",
+          "weekEnd": "2026-06-08T19:06:11.827Z",
+          "throughput": 2,
+          "cycleTimeAvg": 4,
+          "leadTimeAvg": 2.1,
+          "flowEfficiencyPct": 190.5,
           "qualityLoopbackRatePct": 0,
           "qualityLoopbackCount": 0,
-          "qualityLoopbackSampleSize": 1,
+          "qualityLoopbackSampleSize": 2,
           "aiLeverageRatePct": 0
         },
         {
           "label": "Jun 8–Jun 15",
-          "weekStart": "2026-06-08T18:04:43.727Z",
-          "weekEnd": "2026-06-15T18:04:43.727Z",
-          "throughput": 16,
-          "cycleTimeAvg": 15.6,
-          "leadTimeAvg": 21.6,
-          "flowEfficiencyPct": 72.2,
-          "qualityLoopbackRatePct": 31.3,
+          "weekStart": "2026-06-08T19:06:11.827Z",
+          "weekEnd": "2026-06-15T19:06:11.827Z",
+          "throughput": 15,
+          "cycleTimeAvg": 16.4,
+          "leadTimeAvg": 22.8,
+          "flowEfficiencyPct": 71.9,
+          "qualityLoopbackRatePct": 33.3,
           "qualityLoopbackCount": 5,
-          "qualityLoopbackSampleSize": 16,
-          "aiLeverageRatePct": 18.8
+          "qualityLoopbackSampleSize": 15,
+          "aiLeverageRatePct": 20
         },
         {
           "label": "Jun 15–Jun 22",
-          "weekStart": "2026-06-15T18:04:43.727Z",
-          "weekEnd": "2026-06-22T18:04:43.727Z",
+          "weekStart": "2026-06-15T19:06:11.827Z",
+          "weekEnd": "2026-06-22T19:06:11.827Z",
           "throughput": 8,
           "cycleTimeAvg": 3.2,
           "leadTimeAvg": 10.5,
@@ -13792,8 +13807,8 @@
         },
         {
           "label": "Jun 22–Jun 29",
-          "weekStart": "2026-06-22T18:04:43.727Z",
-          "weekEnd": "2026-06-29T18:04:43.727Z",
+          "weekStart": "2026-06-22T19:06:11.827Z",
+          "weekEnd": "2026-06-29T19:06:11.827Z",
           "throughput": 3,
           "cycleTimeAvg": 8.1,
           "leadTimeAvg": 22.1,
@@ -13805,8 +13820,8 @@
         },
         {
           "label": "Jun 29–Jul 6",
-          "weekStart": "2026-06-29T18:04:43.727Z",
-          "weekEnd": "2026-07-06T18:04:43.727Z",
+          "weekStart": "2026-06-29T19:06:11.827Z",
+          "weekEnd": "2026-07-06T19:06:11.827Z",
           "throughput": 13,
           "cycleTimeAvg": 8.9,
           "leadTimeAvg": 61.9,
@@ -13818,8 +13833,8 @@
         },
         {
           "label": "Jul 6–Jul 13",
-          "weekStart": "2026-07-06T18:04:43.727Z",
-          "weekEnd": "2026-07-13T18:04:43.727Z",
+          "weekStart": "2026-07-06T19:06:11.827Z",
+          "weekEnd": "2026-07-13T19:06:11.827Z",
           "throughput": 8,
           "cycleTimeAvg": 12.5,
           "leadTimeAvg": 49.1,
@@ -13831,8 +13846,8 @@
         },
         {
           "label": "Jul 13–Jul 20",
-          "weekStart": "2026-07-13T18:04:43.727Z",
-          "weekEnd": "2026-07-20T18:04:43.727Z",
+          "weekStart": "2026-07-13T19:06:11.827Z",
+          "weekEnd": "2026-07-20T19:06:11.827Z",
           "throughput": 14,
           "cycleTimeAvg": 12.3,
           "leadTimeAvg": 33,
@@ -13844,8 +13859,8 @@
         },
         {
           "label": "Jul 20–Jul 27",
-          "weekStart": "2026-07-20T18:04:43.727Z",
-          "weekEnd": "2026-07-27T18:04:43.727Z",
+          "weekStart": "2026-07-20T19:06:11.827Z",
+          "weekEnd": "2026-07-27T19:06:11.827Z",
           "throughput": 23,
           "cycleTimeAvg": 9.8,
           "leadTimeAvg": 20.7,
@@ -14327,7 +14342,7 @@
         },
         {
           "epicKey": "MOBILE-889",
-          "weekIndex": 1,
+          "weekIndex": 0,
           "cycleTimeDays": 4.014310173611111,
           "leadTimeDays": 4.037565532407408,
           "hadTransition": true,
@@ -14738,7 +14753,7 @@
           "status": "To Do",
           "childTotal": 22,
           "childDone": 14,
-          "childActive": 3,
+          "childActive": 2,
           "percentDone": 63.6,
           "dueDate": null,
           "createdDate": "2026-05-17T21:20:49.446-0500",
@@ -14905,7 +14920,7 @@
       "focusIntegrityTotalEpics": 22,
       "focusIntegrityWeekly": [
         4,
-        3,
+        4,
         3,
         4,
         5,
@@ -14922,6 +14937,7 @@
         ],
         [
           "EXP-929",
+          "EXP-849",
           "EXP-915",
           "EXP-881"
         ],
@@ -14980,12 +14996,12 @@
         "Backlog": 20,
         "To Do": 23,
         "Ready for Development": 5,
-        "In Development": 12,
-        "Ready for Code Review": 0,
+        "In Development": 10,
+        "Ready for Code Review": 1,
         "In QA": 1,
         "Acceptance": 1,
         "Done": 16,
-        "Other": 3
+        "Other": 4
       },
       "wipTotal": 81,
       "dependencies": [
@@ -15143,7 +15159,7 @@
           "blockedEpicKey": "EXP-881"
         }
       ],
-      "oldestWipAgeDays": 1134,
+      "oldestWipAgeDays": 1134.1,
       "agingWipCount": 75,
       "agingWipIssues": [
         {
@@ -15151,7 +15167,7 @@
           "summary": "Workforce Planning - 3rd Party Position Pay Integration",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 1134,
+          "ageDays": 1134.1,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -15187,7 +15203,7 @@
           "summary": "WFP - 3rd Party Pay Data",
           "status": "To Do",
           "type": "Project",
-          "ageDays": 745.8,
+          "ageDays": 745.9,
           "epicKey": "EXP-354",
           "lane": "To Do"
         }
@@ -15225,7 +15241,7 @@
           "summary": "Workforce Org Builder: save_canvas_state save path broken + silent data loss + additions tenant-isolation gap (post-merge, PR #17056)",
           "status": "In Development",
           "type": "Bug",
-          "ageDays": 11.9,
+          "ageDays": 12,
           "epicKey": "EXP-881",
           "lane": "In Development"
         },
@@ -15243,7 +15259,7 @@
           "summary": "Validated auto-activation of Workforce suite on Setup completion (post-Activate Workforce hardening)",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 12.8,
+          "ageDays": 12.9,
           "epicKey": "EXP-881",
           "lane": "Ready for Development"
         },
@@ -15306,27 +15322,27 @@
           "summary": "position onboarding drawer adjustments",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 19.9,
+          "ageDays": 20,
           "epicKey": "EXP-881",
           "lane": "Done"
         },
         {
           "key": "EXP-954",
           "summary": "[EXP-903] Dev tests: modal close-icon + backdrop-click close",
-          "status": "In Development",
+          "status": "Code Review",
           "type": "Dev Task",
           "ageDays": 20.1,
           "epicKey": "EXP-881",
-          "lane": "In Development"
+          "lane": "Other"
         },
         {
           "key": "EXP-953",
           "summary": "[EXP-902] Dev tests: orphan-reparent persistence + multi-level descendant drag",
-          "status": "In Development",
+          "status": "Ready for Code Review",
           "type": "Dev Task",
           "ageDays": 20.1,
           "epicKey": "EXP-881",
-          "lane": "In Development"
+          "lane": "Ready for Code Review"
         },
         {
           "key": "EXP-952",
@@ -15342,7 +15358,7 @@
           "summary": "Multi-Approvals - Workflow control enhancements. ",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 27.9,
+          "ageDays": 28,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -15360,7 +15376,7 @@
           "summary": "Add Employee profile Avatar to the New Hires insight - Headcount Dashboard",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 34.2,
+          "ageDays": 34.3,
           "epicKey": "EXP-849",
           "lane": "Done"
         },
@@ -15369,7 +15385,7 @@
           "summary": "Add Employee profile Avatar to Position Level Grid - Pos Mgmt - Headcount",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 34.2,
+          "ageDays": 34.3,
           "epicKey": "EXP-849",
           "lane": "Done"
         },
@@ -15378,7 +15394,7 @@
           "summary": "Add Employee profile Avatar to Position Level Grid - Pos Mgmt - Discrepancies",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 34.2,
+          "ageDays": 34.3,
           "epicKey": "EXP-849",
           "lane": "Done"
         },
@@ -15387,7 +15403,7 @@
           "summary": "Add Employee profile Avatar to Position Level Grid - Pos Mgmt - Position Count ",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 34.2,
+          "ageDays": 34.3,
           "epicKey": "EXP-849",
           "lane": "Done"
         },
@@ -15396,7 +15412,7 @@
           "summary": "Workforce Org Chart - lateral order changes each time the chart is refreshed",
           "status": "Backlog",
           "type": "Bug",
-          "ageDays": 39.1,
+          "ageDays": 39.2,
           "epicKey": "EXP-937",
           "lane": "Backlog"
         },
@@ -15432,7 +15448,7 @@
           "summary": "Compensation Page overhaul",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 45.9,
+          "ageDays": 46,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -15450,7 +15466,7 @@
           "summary": "Compensation Dashboard Update",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 54,
+          "ageDays": 54.1,
           "epicKey": null,
           "lane": "Backlog"
         },
@@ -15477,7 +15493,7 @@
           "summary": "Print preview + PDF export",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 67.9,
+          "ageDays": 68,
           "epicKey": "EXP-881",
           "lane": "Ready for Development"
         },
@@ -15486,7 +15502,7 @@
           "summary": "Setup Review screen",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 67.9,
+          "ageDays": 68,
           "epicKey": "EXP-881",
           "lane": "Done"
         },
@@ -15495,7 +15511,7 @@
           "summary": "Setup Mode banner + Activate Workforce",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 67.9,
+          "ageDays": 68,
           "epicKey": "EXP-881",
           "lane": "Done"
         },
@@ -15504,7 +15520,7 @@
           "summary": "Workforce Organization Builder",
           "status": "To Do",
           "type": "Project",
-          "ageDays": 67.9,
+          "ageDays": 68,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -15513,7 +15529,7 @@
           "summary": "Headcount - CHART view - Net Variance",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 70.1,
+          "ageDays": 70.2,
           "epicKey": "EXP-882",
           "lane": "Backlog"
         },
@@ -15522,7 +15538,7 @@
           "summary": "Headcount - CHART view - Terminations",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 70.1,
+          "ageDays": 70.2,
           "epicKey": "EXP-882",
           "lane": "Backlog"
         },
@@ -15531,7 +15547,7 @@
           "summary": "Headcount - CHART view - New Hires",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 70.1,
+          "ageDays": 70.2,
           "epicKey": "EXP-882",
           "lane": "Backlog"
         },
@@ -15540,7 +15556,7 @@
           "summary": "Headcount - CHART view - Total Headcount",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 70.1,
+          "ageDays": 70.2,
           "epicKey": "EXP-882",
           "lane": "Backlog"
         },
@@ -15549,7 +15565,7 @@
           "summary": "Retention - CHART view - Average Separated Tenure",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 70.1,
+          "ageDays": 70.2,
           "epicKey": "EXP-882",
           "lane": "Backlog"
         },
@@ -15558,7 +15574,7 @@
           "summary": "Retention - CHART view - Average Active Tenure",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 70.1,
+          "ageDays": 70.2,
           "epicKey": "EXP-882",
           "lane": "Backlog"
         },
@@ -15567,7 +15583,7 @@
           "summary": "Retention - CHART view - Turnover",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 70.1,
+          "ageDays": 70.2,
           "epicKey": "EXP-882",
           "lane": "Backlog"
         },
@@ -15576,7 +15592,7 @@
           "summary": "Retention - CHART view - Retention Rate",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 70.1,
+          "ageDays": 70.2,
           "epicKey": "EXP-882",
           "lane": "Backlog"
         },
@@ -15585,7 +15601,7 @@
           "summary": "Dashboard Grid - chart views",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 70.1,
+          "ageDays": 70.2,
           "epicKey": "EXP-804",
           "lane": "To Do"
         },
@@ -15603,7 +15619,7 @@
           "summary": "WF Dashboard - Tiles to React and logic change",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 88.1,
+          "ageDays": 88.2,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -15612,7 +15628,7 @@
           "summary": "EXP - Q2 Production Bugs 2026",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 103.1,
+          "ageDays": 103.2,
           "epicKey": null,
           "lane": "To Do"
         },
@@ -15621,7 +15637,7 @@
           "summary": "Workforce Q2 Bugs and Misc",
           "status": "In Progress",
           "type": "Epic",
-          "ageDays": 111,
+          "ageDays": 111.1,
           "epicKey": null,
           "lane": "In Development"
         },
@@ -15639,7 +15655,7 @@
           "summary": "Retention Dashboard",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 153.9,
+          "ageDays": 154,
           "epicKey": "EXP-804",
           "lane": "To Do"
         },
@@ -15648,7 +15664,7 @@
           "summary": "Headcount Dashboard",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 153.9,
+          "ageDays": 154,
           "epicKey": "EXP-804",
           "lane": "To Do"
         },
@@ -15657,7 +15673,7 @@
           "summary": "Workforce Dashboard Pages",
           "status": "In Progress",
           "type": "Project",
-          "ageDays": 153.9,
+          "ageDays": 154,
           "epicKey": "EXP-354",
           "lane": "In Development"
         },
@@ -15675,7 +15691,7 @@
           "summary": "WFP - Position Deletion modal enhancements ",
           "status": "Backlog",
           "type": "Bug",
-          "ageDays": 189,
+          "ageDays": 189.1,
           "epicKey": null,
           "lane": "Backlog"
         },
@@ -15756,7 +15772,7 @@
           "summary": "EXP Story template",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 451.2,
+          "ageDays": 451.3,
           "epicKey": null,
           "lane": "Backlog"
         },
@@ -15783,7 +15799,7 @@
           "summary": "Comp Change Request",
           "status": "In Progress",
           "type": "Project",
-          "ageDays": 544.1,
+          "ageDays": 544.2,
           "epicKey": "EXP-354",
           "lane": "In Development"
         },
@@ -15828,7 +15844,7 @@
           "summary": "SPIKE - Employee Notification Center - current Character limit max prohibits sufficient image attachments.",
           "status": "Ready for Release",
           "type": "Research Task",
-          "ageDays": 608,
+          "ageDays": 608.1,
           "epicKey": null,
           "lane": "Done"
         },
@@ -15882,7 +15898,7 @@
           "summary": "WFP - 3rd Party Pay Data",
           "status": "To Do",
           "type": "Project",
-          "ageDays": 745.8,
+          "ageDays": 745.9,
           "epicKey": "EXP-354",
           "lane": "To Do"
         },
@@ -15918,7 +15934,7 @@
           "summary": "Workforce Planning - 3rd Party Position Pay Integration",
           "status": "To Do",
           "type": "Epic",
-          "ageDays": 1134,
+          "ageDays": 1134.1,
           "epicKey": null,
           "lane": "To Do"
         }
@@ -15935,7 +15951,7 @@
         "sampleSize": 54
       },
       "flowEfficiencyPct": 32.9,
-      "throughput7d": 4,
+      "throughput7d": 3,
       "throughputWindowTotal": 54,
       "throughputAvgPerWeek": 6.8,
       "qualityLoopbackRatePct": 55.6,
@@ -15945,8 +15961,8 @@
       "weekly": [
         {
           "label": "Jun 1–Jun 8",
-          "weekStart": "2026-06-01T18:04:51.420Z",
-          "weekEnd": "2026-06-08T18:04:51.420Z",
+          "weekStart": "2026-06-01T19:06:20.976Z",
+          "weekEnd": "2026-06-08T19:06:20.976Z",
           "throughput": 9,
           "cycleTimeAvg": 11.4,
           "leadTimeAvg": 25.1,
@@ -15958,8 +15974,8 @@
         },
         {
           "label": "Jun 8–Jun 15",
-          "weekStart": "2026-06-08T18:04:51.420Z",
-          "weekEnd": "2026-06-15T18:04:51.420Z",
+          "weekStart": "2026-06-08T19:06:20.976Z",
+          "weekEnd": "2026-06-15T19:06:20.976Z",
           "throughput": 6,
           "cycleTimeAvg": 16.3,
           "leadTimeAvg": 38.3,
@@ -15971,8 +15987,8 @@
         },
         {
           "label": "Jun 15–Jun 22",
-          "weekStart": "2026-06-15T18:04:51.420Z",
-          "weekEnd": "2026-06-22T18:04:51.420Z",
+          "weekStart": "2026-06-15T19:06:20.976Z",
+          "weekEnd": "2026-06-22T19:06:20.976Z",
           "throughput": 6,
           "cycleTimeAvg": 11.6,
           "leadTimeAvg": 19.4,
@@ -15984,8 +16000,8 @@
         },
         {
           "label": "Jun 22–Jun 29",
-          "weekStart": "2026-06-22T18:04:51.420Z",
-          "weekEnd": "2026-06-29T18:04:51.420Z",
+          "weekStart": "2026-06-22T19:06:20.976Z",
+          "weekEnd": "2026-06-29T19:06:20.976Z",
           "throughput": 3,
           "cycleTimeAvg": 7.7,
           "leadTimeAvg": 26.8,
@@ -15997,8 +16013,8 @@
         },
         {
           "label": "Jun 29–Jul 6",
-          "weekStart": "2026-06-29T18:04:51.420Z",
-          "weekEnd": "2026-07-06T18:04:51.420Z",
+          "weekStart": "2026-06-29T19:06:20.976Z",
+          "weekEnd": "2026-07-06T19:06:20.976Z",
           "throughput": 10,
           "cycleTimeAvg": 15.5,
           "leadTimeAvg": 92,
@@ -16010,8 +16026,8 @@
         },
         {
           "label": "Jul 6–Jul 13",
-          "weekStart": "2026-07-06T18:04:51.420Z",
-          "weekEnd": "2026-07-13T18:04:51.420Z",
+          "weekStart": "2026-07-06T19:06:20.976Z",
+          "weekEnd": "2026-07-13T19:06:20.976Z",
           "throughput": 9,
           "cycleTimeAvg": 15.7,
           "leadTimeAvg": 39.1,
@@ -16023,35 +16039,35 @@
         },
         {
           "label": "Jul 13–Jul 20",
-          "weekStart": "2026-07-13T18:04:51.420Z",
-          "weekEnd": "2026-07-20T18:04:51.420Z",
-          "throughput": 7,
-          "cycleTimeAvg": 15.4,
-          "leadTimeAvg": 25,
-          "flowEfficiencyPct": 61.6,
-          "qualityLoopbackRatePct": 42.9,
-          "qualityLoopbackCount": 3,
-          "qualityLoopbackSampleSize": 7,
+          "weekStart": "2026-07-13T19:06:20.976Z",
+          "weekEnd": "2026-07-20T19:06:20.976Z",
+          "throughput": 8,
+          "cycleTimeAvg": 15,
+          "leadTimeAvg": 23.5,
+          "flowEfficiencyPct": 63.8,
+          "qualityLoopbackRatePct": 50,
+          "qualityLoopbackCount": 4,
+          "qualityLoopbackSampleSize": 8,
           "aiLeverageRatePct": 0
         },
         {
           "label": "Jul 20–Jul 27",
-          "weekStart": "2026-07-20T18:04:51.420Z",
-          "weekEnd": "2026-07-27T18:04:51.420Z",
-          "throughput": 4,
-          "cycleTimeAvg": 15.1,
-          "leadTimeAvg": 44.8,
-          "flowEfficiencyPct": 33.7,
-          "qualityLoopbackRatePct": 75,
-          "qualityLoopbackCount": 3,
-          "qualityLoopbackSampleSize": 4,
-          "aiLeverageRatePct": 75
+          "weekStart": "2026-07-20T19:06:20.976Z",
+          "weekEnd": "2026-07-27T19:06:20.976Z",
+          "throughput": 3,
+          "cycleTimeAvg": 16.7,
+          "leadTimeAvg": 55.4,
+          "flowEfficiencyPct": 30.1,
+          "qualityLoopbackRatePct": 66.7,
+          "qualityLoopbackCount": 2,
+          "qualityLoopbackSampleSize": 3,
+          "aiLeverageRatePct": 100
         }
       ],
       "ticketMetrics": [
         {
           "epicKey": "EXP-881",
-          "weekIndex": 7,
+          "weekIndex": 6,
           "cycleTimeDays": 11.853996712962964,
           "leadTimeDays": 12.96296855324074,
           "hadTransition": true,
@@ -16692,7 +16708,7 @@
         4,
         4,
         3,
-        3,
+        4,
         1,
         2,
         2
@@ -16720,6 +16736,7 @@
           "HR-352"
         ],
         [
+          "HR-203",
           "HR-360",
           "HR-352",
           "HR-237"
@@ -16749,7 +16766,7 @@
       "contextSwitchThisWeekAvg": 1,
       "contextSwitchFlagged": [],
       "contextSwitchThreshold": 2,
-      "sle85Days": 26.9,
+      "sle85Days": 27.1,
       "thisWeekSleAdherencePct": 66.7,
       "riskStatus": "At Risk",
       "wipByStatus": {
@@ -16941,7 +16958,7 @@
           "summary": "Online - Require Reassignment Reason (Org Setting Enforcement)",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 27.1,
+          "ageDays": 27.2,
           "epicKey": "HR-237",
           "lane": "Ready for Development"
         },
@@ -16959,7 +16976,7 @@
           "summary": "Export Active Reviews grid to CSV",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 31,
+          "ageDays": 31.1,
           "epicKey": "HR-360",
           "lane": "Done"
         },
@@ -16968,7 +16985,7 @@
           "summary": "Online - Reassign Reviewer Reason (Capture)",
           "status": "Ready for Code Review",
           "type": "Story",
-          "ageDays": 31.1,
+          "ageDays": 31.2,
           "epicKey": "HR-360",
           "lane": "Ready for Code Review"
         },
@@ -17283,7 +17300,7 @@
           "summary": "Campaign Dashboard Landing Page",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 481.8,
+          "ageDays": 481.9,
           "epicKey": "HR-238",
           "lane": "Backlog"
         },
@@ -17301,7 +17318,7 @@
           "summary": "Copy and convert legacy Review Templates to new review template scheme. ",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 500.8,
+          "ageDays": 500.9,
           "epicKey": "HR-241",
           "lane": "Backlog"
         },
@@ -17434,41 +17451,41 @@
       ],
       "windowDays": 56,
       "cycleTimeDays": {
-        "avg": 17.2,
-        "median": 20,
-        "sampleSize": 27
+        "avg": 17,
+        "median": 19.1,
+        "sampleSize": 26
       },
       "leadTimeDays": {
-        "avg": 84.7,
-        "median": 36.6,
-        "sampleSize": 32
+        "avg": 79.4,
+        "median": 35.2,
+        "sampleSize": 31
       },
-      "flowEfficiencyPct": 20.3,
+      "flowEfficiencyPct": 21.4,
       "throughput7d": 3,
-      "throughputWindowTotal": 32,
-      "throughputAvgPerWeek": 4,
-      "qualityLoopbackRatePct": 56.3,
-      "qualityLoopbackCount": 18,
-      "qualityLoopbackSampleSize": 32,
-      "aiLeverageRatePct": 3.1,
+      "throughputWindowTotal": 31,
+      "throughputAvgPerWeek": 3.9,
+      "qualityLoopbackRatePct": 54.8,
+      "qualityLoopbackCount": 17,
+      "qualityLoopbackSampleSize": 31,
+      "aiLeverageRatePct": 3.2,
       "weekly": [
         {
           "label": "Jun 1–Jun 8",
-          "weekStart": "2026-06-01T18:04:58.310Z",
-          "weekEnd": "2026-06-08T18:04:58.310Z",
-          "throughput": 5,
-          "cycleTimeAvg": 16.9,
-          "leadTimeAvg": 203.9,
+          "weekStart": "2026-06-01T19:06:29.834Z",
+          "weekEnd": "2026-06-08T19:06:29.834Z",
+          "throughput": 4,
+          "cycleTimeAvg": 15.9,
+          "leadTimeAvg": 192.4,
           "flowEfficiencyPct": 8.3,
-          "qualityLoopbackRatePct": 60,
-          "qualityLoopbackCount": 3,
-          "qualityLoopbackSampleSize": 5,
+          "qualityLoopbackRatePct": 50,
+          "qualityLoopbackCount": 2,
+          "qualityLoopbackSampleSize": 4,
           "aiLeverageRatePct": 0
         },
         {
           "label": "Jun 8–Jun 15",
-          "weekStart": "2026-06-08T18:04:58.310Z",
-          "weekEnd": "2026-06-15T18:04:58.310Z",
+          "weekStart": "2026-06-08T19:06:29.834Z",
+          "weekEnd": "2026-06-15T19:06:29.834Z",
           "throughput": 2,
           "cycleTimeAvg": 6.9,
           "leadTimeAvg": 16.7,
@@ -17480,8 +17497,8 @@
         },
         {
           "label": "Jun 15–Jun 22",
-          "weekStart": "2026-06-15T18:04:58.310Z",
-          "weekEnd": "2026-06-22T18:04:58.310Z",
+          "weekStart": "2026-06-15T19:06:29.834Z",
+          "weekEnd": "2026-06-22T19:06:29.834Z",
           "throughput": 6,
           "cycleTimeAvg": 14.9,
           "leadTimeAvg": 82.4,
@@ -17493,8 +17510,8 @@
         },
         {
           "label": "Jun 22–Jun 29",
-          "weekStart": "2026-06-22T18:04:58.310Z",
-          "weekEnd": "2026-06-29T18:04:58.310Z",
+          "weekStart": "2026-06-22T19:06:29.834Z",
+          "weekEnd": "2026-06-29T19:06:29.834Z",
           "throughput": 6,
           "cycleTimeAvg": 18.6,
           "leadTimeAvg": 104.8,
@@ -17506,8 +17523,8 @@
         },
         {
           "label": "Jun 29–Jul 6",
-          "weekStart": "2026-06-29T18:04:58.310Z",
-          "weekEnd": "2026-07-06T18:04:58.310Z",
+          "weekStart": "2026-06-29T19:06:29.834Z",
+          "weekEnd": "2026-07-06T19:06:29.834Z",
           "throughput": 4,
           "cycleTimeAvg": 22.3,
           "leadTimeAvg": 37.2,
@@ -17519,8 +17536,8 @@
         },
         {
           "label": "Jul 6–Jul 13",
-          "weekStart": "2026-07-06T18:04:58.310Z",
-          "weekEnd": "2026-07-13T18:04:58.310Z",
+          "weekStart": "2026-07-06T19:06:29.834Z",
+          "weekEnd": "2026-07-13T19:06:29.834Z",
           "throughput": 4,
           "cycleTimeAvg": 11.2,
           "leadTimeAvg": 24.7,
@@ -17532,8 +17549,8 @@
         },
         {
           "label": "Jul 13–Jul 20",
-          "weekStart": "2026-07-13T18:04:58.310Z",
-          "weekEnd": "2026-07-20T18:04:58.310Z",
+          "weekStart": "2026-07-13T19:06:29.834Z",
+          "weekEnd": "2026-07-20T19:06:29.834Z",
           "throughput": 2,
           "cycleTimeAvg": 23.4,
           "leadTimeAvg": 88.8,
@@ -17545,8 +17562,8 @@
         },
         {
           "label": "Jul 20–Jul 27",
-          "weekStart": "2026-07-20T18:04:58.310Z",
-          "weekEnd": "2026-07-27T18:04:58.310Z",
+          "weekStart": "2026-07-20T19:06:29.834Z",
+          "weekEnd": "2026-07-27T19:06:29.834Z",
           "throughput": 3,
           "cycleTimeAvg": 19.3,
           "leadTimeAvg": 36.2,
@@ -17788,15 +17805,6 @@
           "weekIndex": 0,
           "cycleTimeDays": 23.25484861111111,
           "leadTimeDays": 51.131764930555555,
-          "hadTransition": true,
-          "regressed": true,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "HR-237",
-          "weekIndex": 0,
-          "cycleTimeDays": 20.984595868055557,
-          "leadTimeDays": 249.97372212962964,
           "hadTransition": true,
           "regressed": true,
           "isAiTagged": false
