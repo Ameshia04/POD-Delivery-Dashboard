@@ -805,7 +805,7 @@ function populatePodDropdown(squadKey) {
     podSel.innerHTML = '';
     return;
   }
-  podSel.innerHTML = '<option value="">All pods</option>' + pods.map(p => `<option value="${p}">${p}</option>`).join('');
+  podSel.innerHTML = '<option value="">Squad view</option>' + pods.map(p => `<option value="${p}">${p}</option>`).join('');
   podSel.style.display = '';
   podLabel.style.display = '';
 }
@@ -1613,11 +1613,16 @@ function roadmapStatus(e) {
 
 function renderRoadmap(epics) {
   const container = document.getElementById('roadmapContainer');
-  if (!epics || !epics.length) {
-    container.innerHTML = '<p style="color:var(--muted)">No open epics for this squad.</p>';
+  // Only Epics with a Pod label belong on the Roadmap -- anything not yet
+  // tagged to a pod is excluded entirely (not shown in the timeline, and not
+  // shown in the "no delivery date" list below it) rather than showing up
+  // labeled "No pod label."
+  const podEpics = (epics || []).filter(e => e.podLabel);
+  if (!podEpics.length) {
+    container.innerHTML = '<p style="color:var(--muted)">No open epics with a Pod label for this squad yet.</p>';
     return;
   }
-  const withDue = epics.filter(e => e.dueDate).map(e => ({ ...e, _status: roadmapStatus(e) }));
+  const withDue = podEpics.filter(e => e.dueDate).map(e => ({ ...e, _status: roadmapStatus(e) }));
   const withoutDue = epics.filter(e => !e.dueDate);
 
   if (!withDue.length) {
@@ -1660,7 +1665,7 @@ function renderRoadmap(epics) {
       <div class="roadmap-row">
         <div class="roadmap-label">
           <span class="roadmap-key">${e.key}</span>
-          ${e.podLabel ? `<span class="roadmap-pod-pill">${e.podLabel}</span>` : `<span class="roadmap-pod-pill">No pod label</span>`}
+          <span class="roadmap-pod-pill">${e.podLabel}</span>
           <div class="roadmap-summary">${e.summary || ''}</div>
           <div class="roadmap-date ${e._status.cls}">${e._status.label}</div>
         </div>
@@ -1690,7 +1695,7 @@ function roadmapNoDateRows(withoutDue) {
       <div class="roadmap-no-date-row">
         <span class="roadmap-key">${e.key}</span>
         <span>${e.summary || ''}</span>
-        <span class="roadmap-pod-pill">${e.podLabel || 'No pod label'}</span>
+        <span class="roadmap-pod-pill">${e.podLabel}</span>
       </div>
     `).join('')}
   `;
