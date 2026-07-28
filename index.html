@@ -453,7 +453,6 @@
             </select>
             <input id="podObsBlockedWhich" placeholder="Which pod, and why" />
           </div>
-          <input id="podObsShoutout" placeholder="Shoutout" />
           <textarea id="podObsNotes" rows="3" placeholder="Observations (free text)"></textarea>
           <div style="display:flex;gap:8px">
             <button id="podObsSaveBtn" onclick="savePodObservation()">Save session</button>
@@ -660,7 +659,6 @@ function renderPodObsList(entries) {
       ${e.gotInWay ? `<div>What got in the way: ${e.gotInWay}</div>` : ''}
       ${e.tryNext ? `<div>Try next cycle: ${e.tryNext}</div>` : ''}
       ${e.blockedWhich ? `<div>Which: ${e.blockedWhich}</div>` : ''}
-      ${e.shoutout ? `<div>Shoutout: ${e.shoutout}</div>` : ''}
       ${e.notes ? `<div>Observations: ${e.notes}</div>` : ''}
       <div class="podobs-entry-meta">Logged ${e.savedAt}${e.submittedBy ? ` by ${e.submittedBy}` : ''}</div>
     </div>
@@ -707,7 +705,6 @@ function savePodObservation() {
     tryNext: document.getElementById('podObsTryNext').value.trim(),
     blockedByPod: document.getElementById('podObsBlockedByPod').value,
     blockedWhich: document.getElementById('podObsBlockedWhich').value.trim(),
-    shoutout: document.getElementById('podObsShoutout').value.trim(),
     notes: document.getElementById('podObsNotes').value.trim(),
     submittedBy,
     savedAt: new Date().toLocaleString(),
@@ -717,7 +714,7 @@ function savePodObservation() {
   entries.push(entry);
   try { localStorage.setItem(podObsStorageKey(CURRENT_SQUAD, CURRENT_POD), JSON.stringify(entries)); } catch {}
   renderPodObsList(entries);
-  ['podObsGotInWay','podObsTryNext','podObsBlockedWhich','podObsShoutout','podObsNotes'].forEach(id => document.getElementById(id).value = '');
+  ['podObsGotInWay','podObsTryNext','podObsBlockedWhich','podObsNotes'].forEach(id => document.getElementById(id).value = '');
   document.getElementById('podObsConfidence').selectedIndex = 0;
   document.getElementById('podObsCapacity').value = 'none';
   document.getElementById('podObsBlockedByPod').value = 'no';
@@ -735,7 +732,6 @@ function downloadPodObservations() {
     if (e.gotInWay) lines.push(`What got in the way: ${e.gotInWay}`);
     if (e.tryNext) lines.push(`Try next cycle: ${e.tryNext}`);
     lines.push(`Blocked by another pod: ${e.blockedByPod}${e.blockedWhich ? ` (${e.blockedWhich})` : ''}`);
-    if (e.shoutout) lines.push(`Shoutout: ${e.shoutout}`);
     if (e.notes) lines.push(`Observations: ${e.notes}`);
     lines.push('');
   }
@@ -1592,7 +1588,10 @@ function renderSingleProject(p) {
 
   renderContextSwitching(p.contextSwitchWeeklyAvg || [], p.contextSwitchThisWeekAvg, p.contextSwitchFlagged || [], labels);
 
-  renderRoadmap(p.epics || []);
+  // viewP.epics is already pod-scoped by applyPodScope() above -- when a
+  // specific Pod is selected this narrows the Roadmap to just that pod's
+  // Epics; with no pod selected (Squad view) it's the same as p.epics.
+  renderRoadmap(viewP.epics || []);
 }
 
 // ROADMAP: a per-squad timeline of open Epics that have a Jira due date.
@@ -1623,7 +1622,7 @@ function renderRoadmap(epics) {
     return;
   }
   const withDue = podEpics.filter(e => e.dueDate).map(e => ({ ...e, _status: roadmapStatus(e) }));
-  const withoutDue = epics.filter(e => !e.dueDate);
+  const withoutDue = podEpics.filter(e => !e.dueDate);
 
   if (!withDue.length) {
     container.innerHTML = '<p style="color:var(--muted);margin-bottom:12px">No open epics with a delivery date set yet.</p>' + roadmapNoDateRows(withoutDue);
@@ -1632,7 +1631,13 @@ function renderRoadmap(epics) {
 
   withDue.sort((a, b) => a._status.due - b._status.due);
 
-  const starts = withDue.map(e => e.createdDate ? new Date(e.createdDate + 'T00:00:00') : e._status.due);
+  // e.createdDate is Jira's "created" field -- already a full timestamp
+  // (e.g. "2026-01-15T09:23:11.000-0500"), unlike dueDate which is a bare
+  // "YYYY-MM-DD" date. Parse it directly; appending 'T00:00:00' here (like
+  // the dueDate handling below) would double up the time portion and
+  // produce an Invalid Date, which silently poisons every position on the
+  // whole timeline.
+  const starts = withDue.map(e => e.createdDate ? new Date(e.createdDate) : e._status.due);
   const ends = withDue.map(e => e._status.due);
   const today = new Date(); today.setHours(0,0,0,0);
   let rangeStart = new Date(Math.min(...starts, today));
@@ -1656,7 +1661,7 @@ function renderRoadmap(epics) {
     + `<div class="roadmap-today-tick" style="left:${pct(today)}%">Today</div>`;
 
   const rowsHtml = withDue.map(e => {
-    const start = e.createdDate ? new Date(e.createdDate + 'T00:00:00') : e._status.due;
+    const start = e.createdDate ? new Date(e.createdDate) : e._status.due;
     const left = pct(start);
     const right = pct(e._status.due);
     const width = Math.max(1.2, right - left);
