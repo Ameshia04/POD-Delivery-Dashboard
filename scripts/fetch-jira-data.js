@@ -54,6 +54,19 @@ const WINDOW_DAYS = 56; // rolling 8 weeks
 const WEEK_MS = 7 * 86400000;
 const AGING_WIP_THRESHOLD_DAYS = 14; // open issues older than this are flagged as "aging"
 
+// Issue types this dashboard counts as real delivery work. Everything else in
+// this Jira site (Epic, Project, Initiative, Sub-task, Design Task) is
+// excluded from every metric that queries the project's open/resolved
+// ticket pool directly -- Overview, WIP Status, Aging WIP, Dependencies,
+// Cycle Time, Lead Time, Throughput, Quality (Kick-Back), AI Leverage,
+// Context Switching, and the Focus Integrity weekly trend. The one deliberate
+// exception is Epic Completion (analyzeEpics()'s per-Epic children count,
+// and the childActive count it feeds into the Focus Integrity *snapshot*
+// number) -- that's meant to count every child work item under an Epic
+// regardless of type, so it's left querying `parent = <epicKey>` unfiltered.
+const WORK_ITEM_TYPES = ["Story", "Bug", "Dev Task", "Research Task", "QA Task"];
+const WORK_ITEM_TYPE_JQL = `issuetype in (${WORK_ITEM_TYPES.map((t) => `"${t}"`).join(",")})`;
+
 // Placeholder WIP-limit-per-lane, used only for the Pod Observations card's
 // "pulled from Jira" baseline. There's no formal WIP-limit policy set with
 // the team yet -- this is a starting default so the card has something real
@@ -221,7 +234,7 @@ function isAiPlanLabeled(labels) {
 async function aiWorkedIssueKeys(key) {
   if (!CLAUDE_BOT_ACCOUNT_ID) return null;
   const issues = await searchAll(
-    `project = ${key} AND resolutiondate >= -${WINDOW_DAYS}d AND worklogAuthor = "${CLAUDE_BOT_ACCOUNT_ID}"`,
+    `project = ${key} AND ${WORK_ITEM_TYPE_JQL} AND resolutiondate >= -${WINDOW_DAYS}d AND worklogAuthor = "${CLAUDE_BOT_ACCOUNT_ID}"`,
     ["key"]
   );
   return new Set(issues.map((i) => i.key));
@@ -374,7 +387,7 @@ async function analyzeContextSwitching(key, now) {
   // plus anything Done that changed within the window covers both cases --
   // same pattern already used for the wipIssues query above.
   const issues = await searchAll(
-    `project = ${key} AND (statusCategory != Done OR status changed after -${WINDOW_DAYS}d)`,
+    `project = ${key} AND ${WORK_ITEM_TYPE_JQL} AND (statusCategory != Done OR status changed after -${WINDOW_DAYS}d)`,
     ["assignee", "parent", "status", "created"],
     "changelog"
   );
@@ -425,7 +438,7 @@ async function analyzeFocusIntegrityWeekly(key, openEpicKeys, now) {
   if (!openEpicKeys.length) return { counts: Array(8).fill(0), epicsByWeek: Array.from({ length: 8 }, () => []) };
 
   const issues = await searchAll(
-    `project = ${key} AND parent in (${openEpicKeys.map((k) => `"${k}"`).join(",")}) AND (statusCategory != Done OR status changed after -${WINDOW_DAYS}d)`,
+    `project = ${key} AND ${WORK_ITEM_TYPE_JQL} AND parent in (${openEpicKeys.map((k) => `"${k}"`).join(",")}) AND (statusCategory != Done OR status changed after -${WINDOW_DAYS}d)`,
     ["parent", "status", "created"],
     "changelog"
   );
@@ -578,7 +591,7 @@ async function analyzeProject(key, statusCategoryByName) {
   // plain `statusCategory != Done` filter would silently exclude it -- add it
   // back explicitly so finished-but-not-yet-shipped work still shows up (in
   // the "Done" WIP lane, per STATUS_CANONICAL_MAP).
-  const wipIssues = await searchAll(`project = ${key} AND (statusCategory != Done OR status = "Ready for Release")`, ["status", "summary", "issuelinks", "components", "created", "issuetype", "parent"]);
+  const wipIssues = await searchAll(`project = ${key} AND ${WORK_ITEM_TYPE_JQL} AND (statusCategory != Done OR status = "Ready for Release")`, ["status", "summary", "issuelinks", "components", "created", "issuetype", "parent"]);
   const wipByStatus = {};
   for (const lane of WIP_LANES) wipByStatus[lane] = 0;
   let otherWipCount = 0;
@@ -644,6 +657,13 @@ async function analyzeProject(key, statusCategoryByName) {
     const cat = fields.status && fields.status.statusCategory ? fields.status.statusCategory.key : null;
     return cat ? cat !== "done" : true;
   };
+  // The ticket whose own record we pulled (thisIssue, from wipIssues) is
+  // already guaranteed to be one of WORK_ITEM_TYPES since wipIssues is
+  // filtered above. The ticket on the *other* end of a Jira "Blocks" link
+  // comes back via Jira's fixed minimal linked-issue field set, which does
+  // include issuetype -- so the same whitelist can be applied there too,
+  // keeping Epics/Sub-tasks/etc. out of the Dependencies graph on both ends.
+  const isWorkItemType = (fields) => !!(fields && fields.issuetype && WORK_ITEM_TYPES.includes(fields.issuetype.name));
   // Resolved (Done) blockers of currently-open tickets. These are excluded
   // from the live `dependencies` graph above (a finished ticket is no longer
   // an active constraint), but we keep them here so the per-Epic diagram can
@@ -667,31 +687,38 @@ async function analyzeProject(key, statusCategoryByName) {
     };
     for (const l of links) {
       if (!l.type || l.type.name !== "Blocks") continue;
-      // This issue is blocked by another (inward link).
+      // This issue is blocked by another (inward link). Skip entirely if the
+      // blocker isn't a whitelisted work item type (e.g. an Epic or Sub-task) --
+      // same rule as everywhere else, applied to the far end of the link too.
       if (l.inwardIssue) {
         const f = l.inwardIssue.fields || {};
-        const blocker = { key: l.inwardIssue.key, summary: f.summary || null, status: f.status ? f.status.name : null, epicKey: f.parent ? f.parent.key : null };
-        if (isOpenLinkedIssue(f)) {
-          addDependency(blocker, thisIssue);
-        } else {
-          const pairKey = `${blocker.key}->${thisIssue.key}`;
-          if (!seenResolvedPairs.has(pairKey)) {
-            seenResolvedPairs.add(pairKey);
-            resolvedBlockers.push({ blockerKey: blocker.key, blockerSummary: blocker.summary, blockedKey: thisIssue.key, blockedEpicKey: thisIssue.epicKey });
+        if (isWorkItemType(f)) {
+          const blocker = { key: l.inwardIssue.key, summary: f.summary || null, status: f.status ? f.status.name : null, epicKey: f.parent ? f.parent.key : null };
+          if (isOpenLinkedIssue(f)) {
+            addDependency(blocker, thisIssue);
+          } else {
+            const pairKey = `${blocker.key}->${thisIssue.key}`;
+            if (!seenResolvedPairs.has(pairKey)) {
+              seenResolvedPairs.add(pairKey);
+              resolvedBlockers.push({ blockerKey: blocker.key, blockerSummary: blocker.summary, blockedKey: thisIssue.key, blockedEpicKey: thisIssue.epicKey });
+            }
           }
         }
       }
-      // This issue blocks another (outward link).
-      if (l.outwardIssue && isOpenLinkedIssue(l.outwardIssue.fields || {})) {
+      // This issue blocks another (outward link). Same whitelist check on the
+      // blocked ticket before it's allowed onto the graph.
+      if (l.outwardIssue) {
         const f = l.outwardIssue.fields || {};
-        addDependency(thisIssue, { key: l.outwardIssue.key, summary: f.summary || null, status: f.status ? f.status.name : null, epicKey: f.parent ? f.parent.key : null });
+        if (isWorkItemType(f) && isOpenLinkedIssue(f)) {
+          addDependency(thisIssue, { key: l.outwardIssue.key, summary: f.summary || null, status: f.status ? f.status.name : null, epicKey: f.parent ? f.parent.key : null });
+        }
       }
     }
   }
 
   // Rolling 8-week window, relative to right now.
   const windowIssues = await searchAll(
-    `project = ${key} AND resolutiondate >= -${WINDOW_DAYS}d`,
+    `project = ${key} AND ${WORK_ITEM_TYPE_JQL} AND resolutiondate >= -${WINDOW_DAYS}d`,
     ["created", "resolutiondate", "components", "status", "description", "labels", "parent"],
     "changelog"
   );
