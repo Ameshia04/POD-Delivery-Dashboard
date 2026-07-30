@@ -1260,9 +1260,13 @@ function renderDepsDiagram(rows) {
           <div class="wave-column">
             <div class="wave-column-header">Wave ${i + 1}</div>
             ${col.map((n) => {
+              // "External ticket" (unknown-Epic) tagging was removed: the key prefix
+              // (e.g. BOA-1944 vs INV-987) already tells you when a ticket is from a
+              // different squad, so a separate label was redundant -- and worse, it
+              // mislabeled same-squad tickets whose Epic just couldn't be resolved
+              // from Jira's minimal linked-issue payload as if they were external.
               const differentEpic = DEPS_SELECTED_EPIC && DEPS_SELECTED_EPIC !== '__none__' && n.epicKey && n.epicKey !== DEPS_SELECTED_EPIC;
-              const unknownEpic = DEPS_SELECTED_EPIC && DEPS_SELECTED_EPIC !== '__none__' && !n.epicKey;
-              const tag = differentEpic ? '&middot; different Epic' : (unknownEpic ? '&middot; external ticket' : '');
+              const tag = differentEpic ? '&middot; different Epic' : '';
               return `
               <div class="wave-card ${criticalNodes.has(n.key) ? 'critical' : ''} ${tag ? 'external' : ''}" data-key="${n.key}">
                 <div class="wave-card-key">${n.key}</div>
