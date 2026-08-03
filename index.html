@@ -344,7 +344,7 @@
       <h3>Detail <span class="caret" onclick="toggleCollapse('detailBody', this)">▾</span></h3>
       <div id="detailBody">
         <table class="flow-table" id="cycleTable">
-          <thead><tr><th>Squad</th><th>Cycle Avg (d)</th><th>Cycle Median (d)</th><th>Lead Avg (d)</th><th>Lead Median (d)</th><th>Sample Size</th></tr></thead>
+          <thead id="cycleTableHead"><tr><th>Squad</th><th>Cycle Avg (d)</th><th>Cycle Median (d)</th><th>Lead Avg (d)</th><th>Lead Median (d)</th><th>Sample Size</th></tr></thead>
           <tbody></tbody>
         </table>
       </div>
@@ -960,6 +960,11 @@ function renderAllProjects(projects) {
     ] },
     options: { scales: { y: { beginAtZero: true } } }
   });
+  // All-Squads view: one row per squad, over the full rolling 8-week window --
+  // Cycle/Lead Median are real numbers here (a single median across every
+  // issue in the window), unlike the per-week Detail table in the
+  // single-squad/pod view below, where median was never computed per week.
+  document.getElementById('cycleTableHead').innerHTML = '<tr><th>Squad</th><th>Cycle Avg (d)</th><th>Cycle Median (d)</th><th>Lead Avg (d)</th><th>Lead Median (d)</th><th>Sample Size</th></tr>';
   document.querySelector('#cycleTable tbody').innerHTML = projects.map(p => `
     <tr><td>${p.key}</td><td>${fmt(p.cycleTimeDays.avg)}</td><td>${fmt(p.cycleTimeDays.median)}</td><td>${fmt(p.leadTimeDays.avg)}</td><td>${fmt(p.leadTimeDays.median)}</td><td>${p.cycleTimeDays.sampleSize}</td></tr>
   `).join('');
@@ -1524,8 +1529,17 @@ function renderSingleProject(p) {
     ] },
     options: { scales: { y: { beginAtZero: true } } }
   });
+  // Single Squad/Pod view: one row per week, not per squad -- "Squad" as a
+  // column header never made sense here. Cycle/Lead Median are dropped
+  // entirely rather than shown as a permanent "--": median was only ever
+  // computed once, across the whole rolling window (see the All-Squads
+  // header above), never recomputed per individual week, so these two
+  // columns could never show a real number in this view. The last column is
+  // relabeled "Throughput" to match what it actually is -- every issue
+  // resolved that week, not the (smaller) count that had a valid cycle time.
+  document.getElementById('cycleTableHead').innerHTML = '<tr><th>Week of</th><th>Cycle Avg (d)</th><th>Lead Avg (d)</th><th>Throughput</th></tr>';
   document.querySelector('#cycleTable tbody').innerHTML = weekly.map(w => `
-    <tr><td>${w.label}</td><td>${fmt(w.cycleTimeAvg)}</td><td>—</td><td>${fmt(w.leadTimeAvg)}</td><td>—</td><td>${w.throughput}</td></tr>
+    <tr><td>${w.label}</td><td>${fmt(w.cycleTimeAvg)}</td><td>${fmt(w.leadTimeAvg)}</td><td>${w.throughput}</td></tr>
   `).join('');
 
   document.getElementById('wipGrid').innerHTML = `
