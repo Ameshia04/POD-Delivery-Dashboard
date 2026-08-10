@@ -94,6 +94,8 @@
     .epic-row:last-child { margin-bottom: 0; }
     .epic-row-header { display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; margin-bottom: 4px; gap: 10px; }
     .epic-row-header .epic-key { font-weight: 700; }
+    .jira-link { color: inherit; text-decoration: none; }
+    .jira-link:hover { text-decoration: underline; }
     .epic-row-header .epic-summary { color: var(--muted); margin-left: 6px; }
     .epic-row-header .epic-pct { font-weight: 700; white-space: nowrap; }
     .epic-row-due { font-size: 12px; margin-bottom: 4px; font-weight: 600; }
@@ -514,6 +516,14 @@ function makeChart(id, config) {
   charts[id] = new Chart(document.getElementById(id), config);
 }
 function fmt(n, suffix = '') { return (n === null || n === undefined) ? '—' : `${n}${suffix}`; }
+
+// Every Epic key shown on the dashboard maps directly to a real Jira issue --
+// this wraps that key text in a link out to it, opened in a new tab so the
+// dashboard itself stays put.
+const JIRA_BASE = 'https://apspayroll.atlassian.net/browse/';
+function jiraLink(key, innerHtml) {
+  return `<a href="${JIRA_BASE}${key}" target="_blank" rel="noopener" class="jira-link">${innerHtml ?? key}</a>`;
+}
 
 // Squad vs. Pod scoping: when a Pod is selected, Dependencies, WIP Status,
 // Aging WIP, Squad Portfolio (Epic Completion), and the weekly-trend charts
@@ -1378,7 +1388,7 @@ function epicRows(epics) {
   return epics.map(e => `
     <div class="epic-row">
       <div class="epic-row-header">
-        <span><span class="epic-key">${e.key}</span><span class="epic-summary">${e.summary || ''}</span></span>
+        <span><span class="epic-key">${jiraLink(e.key)}</span><span class="epic-summary">${e.summary || ''}</span></span>
         <span class="epic-pct">${fmt(e.percentDone,'%')}${e.childTotal !== null && e.childTotal !== undefined ? ` (${e.childDone}/${e.childTotal})` : ''}</span>
       </div>
       ${epicDueDateLine(e)}
@@ -1693,7 +1703,7 @@ function renderRoadmap(epics) {
     return `
       <div class="roadmap-row">
         <div class="roadmap-label">
-          <span class="roadmap-key">${e.key}</span>
+          <span class="roadmap-key">${jiraLink(e.key)}</span>
           <span class="roadmap-pod-pill">${e.podLabel}</span>
           <div class="roadmap-summary">${e.summary || ''}</div>
           <div class="roadmap-date ${e._status.cls}">${e._status.label}</div>
@@ -1722,7 +1732,7 @@ function roadmapNoDateRows(withoutDue) {
     <div class="roadmap-no-date-heading">No delivery date set</div>
     ${withoutDue.map(e => `
       <div class="roadmap-no-date-row">
-        <span class="roadmap-key">${e.key}</span>
+        <span class="roadmap-key">${jiraLink(e.key)}</span>
         <span>${e.summary || ''}</span>
         <span class="roadmap-pod-pill">${e.podLabel}</span>
       </div>
