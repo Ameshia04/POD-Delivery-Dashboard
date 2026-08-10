@@ -523,9 +523,23 @@ function weekLabel(startMs, endMs) {
  * child work items, 5 of which are Done -- 50%, matching Jira's own "Child
  * work items" progress bar. Completed/Won't Do Epics are excluded entirely
  * (filtered at the JQL level, so they're never fetched) since the dashboard
- * only wants to surface Epics still in flight. */
+ * only wants to surface Epics still in flight.
+ *
+ * Epics tagged as "Insights" work (either "[Insights]"/"insights" in the
+ * summary, or an "insights" label) are excluded from this list -- that work
+ * is tracked for internal reporting purposes, not as delivery roadmap, so it
+ * shouldn't show up in the Epic Completion chart. Filtered client-side
+ * (after fetch, before the child-completion API calls) since JQL can't do a
+ * clean case-insensitive substring match against summary. */
+function isInsightsEpic(epic) {
+  const summary = epic.fields.summary || "";
+  const labels = epic.fields.labels || [];
+  return /insights/i.test(summary) || labels.some((l) => /insights/i.test(l));
+}
+
 async function analyzeEpics(key) {
-  const epics = await searchAll(`project = ${key} AND issuetype = Epic AND statusCategory != Done`, ["summary", "status", "duedate", "created", "labels"]);
+  const allEpics = await searchAll(`project = ${key} AND issuetype = Epic AND statusCategory != Done`, ["summary", "status", "duedate", "created", "labels"]);
+  const epics = allEpics.filter((epic) => !isInsightsEpic(epic));
   const results = [];
   for (const epic of epics) {
     const children = await searchAll(`parent = ${epic.key}`, ["status"]);
