@@ -1366,6 +1366,12 @@ function epicDueDateLine(e) {
 }
 
 function epicRows(epics) {
+  // Insights-tagged Epics (summary or label containing "insights") are internal
+  // reporting work, not delivery roadmap -- keep them out of Epic Completion.
+  // This is a client-side stopgap so it takes effect immediately; the real
+  // fix lives in fetch-jira-data.js's analyzeEpics(), which excludes them
+  // (by summary AND label) before they're ever written to data.json.
+  epics = (epics || []).filter(e => !/insights/i.test(e.summary || ''));
   if (!epics || !epics.length) {
     return '<p style="color:var(--muted);margin-bottom:14px">No epics found</p>';
   }
