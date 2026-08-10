@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-10T15:26:01.296Z",
+  "generatedAt": "2026-08-10T15:34:06.268Z",
   "windowDays": 56,
   "groupingNote": "Metrics are grouped by real Jira project (no Pod/DM field exists yet). Update PROJECTS + grouping in fetch-jira-data.js once Pods/DMs are tracked in Jira.",
   "projects": [
@@ -1318,7 +1318,7 @@
           "summary": "Implement a feature flag management system in Owl",
           "status": "Ready for QA",
           "type": "Story",
-          "ageDays": 11,
+          "ageDays": 11.1,
           "epicKey": "INV-1017",
           "lane": "Other"
         },
@@ -1408,7 +1408,7 @@
           "summary": "Storybook backfill for 6 expense components",
           "status": "Ready for Development",
           "type": "Dev Task",
-          "ageDays": 17.9,
+          "ageDays": 18,
           "epicKey": "INV-427",
           "lane": "Ready for Development"
         },
@@ -1417,7 +1417,7 @@
           "summary": "4008 preselectedFilter regression fix",
           "status": "Ready for Development",
           "type": "Dev Task",
-          "ageDays": 17.9,
+          "ageDays": 18,
           "epicKey": "INV-427",
           "lane": "Ready for Development"
         },
@@ -1426,7 +1426,7 @@
           "summary": "Quick Expense creation + management → React",
           "status": "Ready for Development",
           "type": "Dev Task",
-          "ageDays": 17.9,
+          "ageDays": 18,
           "epicKey": "INV-436",
           "lane": "Ready for Development"
         },
@@ -1435,7 +1435,7 @@
           "summary": "mSS manager modal surface → React",
           "status": "Ready for Development",
           "type": "Dev Task",
-          "ageDays": 17.9,
+          "ageDays": 18,
           "epicKey": "INV-436",
           "lane": "Ready for Development"
         },
@@ -1444,7 +1444,7 @@
           "summary": "mSS manager detail view → React",
           "status": "Ready for Development",
           "type": "Dev Task",
-          "ageDays": 17.9,
+          "ageDays": 18,
           "epicKey": "INV-436",
           "lane": "Ready for Development"
         },
@@ -1453,7 +1453,7 @@
           "summary": "mSS manager review queue → React",
           "status": "Ready for Development",
           "type": "Dev Task",
-          "ageDays": 17.9,
+          "ageDays": 18,
           "epicKey": "INV-436",
           "lane": "Ready for Development"
         },
@@ -1462,7 +1462,7 @@
           "summary": "eSS employee modal surface → React",
           "status": "Ready for Development",
           "type": "Dev Task",
-          "ageDays": 17.9,
+          "ageDays": 18,
           "epicKey": "INV-436",
           "lane": "Ready for Development"
         },
@@ -1471,7 +1471,7 @@
           "summary": "eSS employee report/expense detail view → React",
           "status": "Ready for Development",
           "type": "Dev Task",
-          "ageDays": 17.9,
+          "ageDays": 18,
           "epicKey": "INV-436",
           "lane": "Ready for Development"
         },
@@ -1480,7 +1480,7 @@
           "summary": "eSS employee dashboard → React",
           "status": "Ready for Development",
           "type": "Dev Task",
-          "ageDays": 17.9,
+          "ageDays": 18,
           "epicKey": "INV-436",
           "lane": "Ready for Development"
         },
@@ -1606,7 +1606,7 @@
           "summary": "Display the \"Onboarding Packet\" section in the company recap",
           "status": "In Development",
           "type": "Story",
-          "ageDays": 44.8,
+          "ageDays": 44.9,
           "epicKey": "INV-651",
           "lane": "In Development"
         },
@@ -1681,49 +1681,49 @@
         "sampleSize": 58
       },
       "leadTimeDays": {
-        "avg": 247.5,
-        "median": 78.9,
-        "sampleSize": 117
+        "avg": 72.1,
+        "median": 25.7,
+        "sampleSize": 58
       },
-      "flowEfficiencyPct": 5.9,
-      "throughput7d": 52,
-      "throughputWindowTotal": 117,
-      "throughputAvgPerWeek": 14.6,
-      "qualityLoopbackRatePct": 23.9,
-      "qualityLoopbackCount": 28,
-      "qualityLoopbackSampleSize": 117,
-      "aiLeverageRatePct": 18.8,
+      "flowEfficiencyPct": 20.2,
+      "throughput7d": 8,
+      "throughputWindowTotal": 58,
+      "throughputAvgPerWeek": 7.3,
+      "qualityLoopbackRatePct": 44.8,
+      "qualityLoopbackCount": 26,
+      "qualityLoopbackSampleSize": 58,
+      "aiLeverageRatePct": 27.6,
       "weekly": [
         {
           "label": "Jun 15–Jun 22",
-          "weekStart": "2026-06-15T15:25:05.935Z",
-          "weekEnd": "2026-06-22T15:25:05.935Z",
-          "throughput": 10,
+          "weekStart": "2026-06-15T15:33:20.935Z",
+          "weekEnd": "2026-06-22T15:33:20.935Z",
+          "throughput": 6,
           "cycleTimeAvg": 24,
-          "leadTimeAvg": 71.3,
-          "flowEfficiencyPct": 33.7,
-          "qualityLoopbackRatePct": 40,
-          "qualityLoopbackCount": 4,
-          "qualityLoopbackSampleSize": 10,
+          "leadTimeAvg": 103.5,
+          "flowEfficiencyPct": 23.2,
+          "qualityLoopbackRatePct": 50,
+          "qualityLoopbackCount": 3,
+          "qualityLoopbackSampleSize": 6,
           "aiLeverageRatePct": 0
         },
         {
           "label": "Jun 22–Jun 29",
-          "weekStart": "2026-06-22T15:25:05.935Z",
-          "weekEnd": "2026-06-29T15:25:05.935Z",
-          "throughput": 10,
+          "weekStart": "2026-06-22T15:33:20.935Z",
+          "weekEnd": "2026-06-29T15:33:20.935Z",
+          "throughput": 9,
           "cycleTimeAvg": 17,
-          "leadTimeAvg": 94.1,
-          "flowEfficiencyPct": 18.1,
-          "qualityLoopbackRatePct": 50,
+          "leadTimeAvg": 104.4,
+          "flowEfficiencyPct": 16.3,
+          "qualityLoopbackRatePct": 55.6,
           "qualityLoopbackCount": 5,
-          "qualityLoopbackSampleSize": 10,
+          "qualityLoopbackSampleSize": 9,
           "aiLeverageRatePct": 0
         },
         {
           "label": "Jun 29–Jul 6",
-          "weekStart": "2026-06-29T15:25:05.935Z",
-          "weekEnd": "2026-07-06T15:25:05.935Z",
+          "weekStart": "2026-06-29T15:33:20.935Z",
+          "weekEnd": "2026-07-06T15:33:20.935Z",
           "throughput": 8,
           "cycleTimeAvg": 9.8,
           "leadTimeAvg": 110.3,
@@ -1735,8 +1735,8 @@
         },
         {
           "label": "Jul 6–Jul 13",
-          "weekStart": "2026-07-06T15:25:05.935Z",
-          "weekEnd": "2026-07-13T15:25:05.935Z",
+          "weekStart": "2026-07-06T15:33:20.935Z",
+          "weekEnd": "2026-07-13T15:33:20.935Z",
           "throughput": 7,
           "cycleTimeAvg": 20.1,
           "leadTimeAvg": 67.1,
@@ -1748,55 +1748,55 @@
         },
         {
           "label": "Jul 13–Jul 20",
-          "weekStart": "2026-07-13T15:25:05.935Z",
-          "weekEnd": "2026-07-20T15:25:05.935Z",
-          "throughput": 6,
+          "weekStart": "2026-07-13T15:33:20.935Z",
+          "weekEnd": "2026-07-20T15:33:20.935Z",
+          "throughput": 5,
           "cycleTimeAvg": 6.9,
-          "leadTimeAvg": 10.1,
-          "flowEfficiencyPct": 68.3,
-          "qualityLoopbackRatePct": 50,
+          "leadTimeAvg": 9.3,
+          "flowEfficiencyPct": 74.2,
+          "qualityLoopbackRatePct": 60,
           "qualityLoopbackCount": 3,
-          "qualityLoopbackSampleSize": 6,
+          "qualityLoopbackSampleSize": 5,
           "aiLeverageRatePct": 0
         },
         {
           "label": "Jul 20–Jul 27",
-          "weekStart": "2026-07-20T15:25:05.935Z",
-          "weekEnd": "2026-07-27T15:25:05.935Z",
-          "throughput": 11,
+          "weekStart": "2026-07-20T15:33:20.935Z",
+          "weekEnd": "2026-07-27T15:33:20.935Z",
+          "throughput": 8,
           "cycleTimeAvg": 17.9,
-          "leadTimeAvg": 213.7,
-          "flowEfficiencyPct": 8.4,
-          "qualityLoopbackRatePct": 36.4,
+          "leadTimeAvg": 75.3,
+          "flowEfficiencyPct": 23.8,
+          "qualityLoopbackRatePct": 50,
           "qualityLoopbackCount": 4,
-          "qualityLoopbackSampleSize": 11,
-          "aiLeverageRatePct": 63.6
+          "qualityLoopbackSampleSize": 8,
+          "aiLeverageRatePct": 87.5
         },
         {
           "label": "Jul 27–Aug 3",
-          "weekStart": "2026-07-27T15:25:05.935Z",
-          "weekEnd": "2026-08-03T15:25:05.935Z",
-          "throughput": 13,
+          "weekStart": "2026-07-27T15:33:20.935Z",
+          "weekEnd": "2026-08-03T15:33:20.935Z",
+          "throughput": 7,
           "cycleTimeAvg": 14.1,
-          "leadTimeAvg": 39.5,
-          "flowEfficiencyPct": 35.7,
-          "qualityLoopbackRatePct": 15.4,
+          "leadTimeAvg": 67.3,
+          "flowEfficiencyPct": 21,
+          "qualityLoopbackRatePct": 28.6,
           "qualityLoopbackCount": 2,
-          "qualityLoopbackSampleSize": 13,
-          "aiLeverageRatePct": 84.6
+          "qualityLoopbackSampleSize": 7,
+          "aiLeverageRatePct": 71.4
         },
         {
           "label": "Aug 3–Aug 10",
-          "weekStart": "2026-08-03T15:25:05.935Z",
-          "weekEnd": "2026-08-10T15:25:05.935Z",
-          "throughput": 52,
+          "weekStart": "2026-08-03T15:33:20.935Z",
+          "weekEnd": "2026-08-10T15:33:20.935Z",
+          "throughput": 8,
           "cycleTimeAvg": 7.1,
-          "leadTimeAvg": 442.8,
-          "flowEfficiencyPct": 1.6,
-          "qualityLoopbackRatePct": 3.8,
-          "qualityLoopbackCount": 2,
-          "qualityLoopbackSampleSize": 52,
-          "aiLeverageRatePct": 7.7
+          "leadTimeAvg": 18.4,
+          "flowEfficiencyPct": 38.6,
+          "qualityLoopbackRatePct": 12.5,
+          "qualityLoopbackCount": 1,
+          "qualityLoopbackSampleSize": 8,
+          "aiLeverageRatePct": 50
         }
       ],
       "ticketMetrics": [
@@ -1862,60 +1862,6 @@
           "hadTransition": true,
           "regressed": false,
           "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-958",
-          "weekIndex": 6,
-          "cycleTimeDays": null,
-          "leadTimeDays": 7.000249826388889,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": true
-        },
-        {
-          "epicKey": "INV-958",
-          "weekIndex": 6,
-          "cycleTimeDays": null,
-          "leadTimeDays": 7.000340104166667,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": true
-        },
-        {
-          "epicKey": "INV-958",
-          "weekIndex": 6,
-          "cycleTimeDays": null,
-          "leadTimeDays": 7.000569791666667,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": true
-        },
-        {
-          "epicKey": "INV-958",
-          "weekIndex": 6,
-          "cycleTimeDays": null,
-          "leadTimeDays": 7.000688715277778,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": true
-        },
-        {
-          "epicKey": "INV-958",
-          "weekIndex": 6,
-          "cycleTimeDays": null,
-          "leadTimeDays": 7.000882291666667,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": true
-        },
-        {
-          "epicKey": "INV-958",
-          "weekIndex": 6,
-          "cycleTimeDays": null,
-          "leadTimeDays": 7.001123449074074,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": true
         },
         {
           "epicKey": "INV-964",
@@ -2026,15 +1972,6 @@
           "isAiTagged": false
         },
         {
-          "epicKey": "INV-618",
-          "weekIndex": 4,
-          "cycleTimeDays": null,
-          "leadTimeDays": 13.958608171296296,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
           "epicKey": "INV-964",
           "weekIndex": 4,
           "cycleTimeDays": 13.37734761574074,
@@ -2082,44 +2019,8 @@
         {
           "epicKey": "INV-652",
           "weekIndex": 1,
-          "cycleTimeDays": null,
-          "leadTimeDays": 2.051282824074074,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": null,
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.07149631944444444,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": null,
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.07167905092592593,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-652",
-          "weekIndex": 1,
           "cycleTimeDays": 2.0819374768518517,
           "leadTimeDays": 4.976706446759259,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": null,
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 50.14580267361111,
           "hadTransition": true,
           "regressed": false,
           "isAiTagged": false
@@ -2215,15 +2116,6 @@
           "isAiTagged": false
         },
         {
-          "epicKey": "INV-939",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 70.82881319444445,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
           "epicKey": "INV-730",
           "weekIndex": 1,
           "cycleTimeDays": 28.956977546296297,
@@ -2240,15 +2132,6 @@
           "hadTransition": true,
           "regressed": true,
           "isAiTagged": true
-        },
-        {
-          "epicKey": "INV-788",
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 30.03275554398148,
-          "hadTransition": true,
-          "regressed": true,
-          "isAiTagged": false
         },
         {
           "epicKey": "INV-604",
@@ -2325,28 +2208,10 @@
         {
           "epicKey": "INV-618",
           "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 61.78739989583333,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-618",
-          "weekIndex": 0,
           "cycleTimeDays": 36.02948131944444,
           "leadTimeDays": 63.84982554398148,
           "hadTransition": true,
           "regressed": true,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-789",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 129.11282721064813,
-          "hadTransition": true,
-          "regressed": false,
           "isAiTagged": false
         },
         {
@@ -2377,75 +2242,12 @@
           "isAiTagged": false
         },
         {
-          "epicKey": "INV-789",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 246.0729525925926,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": null,
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 247.06449564814815,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-789",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 266.8327897337963,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
           "epicKey": "INV-651",
           "weekIndex": 3,
           "cycleTimeDays": 29.12203133101852,
           "leadTimeDays": 241.92131309027778,
           "hadTransition": true,
           "regressed": true,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-653",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 269.09043108796294,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-653",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 269.0974344675926,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-653",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 269.09729806712966,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-653",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 269.0970744560185,
-          "hadTransition": true,
-          "regressed": false,
           "isAiTagged": false
         },
         {
@@ -2467,82 +2269,10 @@
           "isAiTagged": false
         },
         {
-          "epicKey": "INV-653",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 269.11376596064815,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-856",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 269.0202315162037,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-856",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 269.02025106481483,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
           "epicKey": "INV-618",
           "weekIndex": 0,
           "cycleTimeDays": 26.26385971064815,
           "leadTimeDays": 220.92579804398147,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-857",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 269.0321471527778,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-116",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 271.93841444444445,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-857",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 279.0695855787037,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-857",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 279.06958824074076,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-857",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 279.0695675925926,
           "hadTransition": true,
           "regressed": false,
           "isAiTagged": false
@@ -2584,273 +2314,12 @@
           "isAiTagged": true
         },
         {
-          "epicKey": "INV-653",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 341.98327305555557,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
           "epicKey": "INV-651",
           "weekIndex": 1,
           "cycleTimeDays": 21.35634525462963,
           "leadTimeDays": 300.0690808101852,
           "hadTransition": true,
           "regressed": true,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-653",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 359.0693683449074,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-856",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 358.90260668981483,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-856",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 358.9025946759259,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-526",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 443.1271328356481,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-526",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 461.17139313657407,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-526",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 503.072901724537,
-          "hadTransition": true,
-          "regressed": true,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-116",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 562.8319119212963,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-427",
-          "weekIndex": 5,
-          "cycleTimeDays": null,
-          "leadTimeDays": 582.7469954398148,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-427",
-          "weekIndex": 5,
-          "cycleTimeDays": null,
-          "leadTimeDays": 582.7469004282408,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-427",
-          "weekIndex": 5,
-          "cycleTimeDays": null,
-          "leadTimeDays": 583.07912625,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-116",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 671.9358885532407,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-315",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 672.9878726041667,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-315",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 755.0157285300926,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-116",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 817.9035448032407,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-116",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 854.8790896875,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-71",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 863.1035080787037,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-98",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 867.0850128125,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-70",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 870.1419138541667,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-116",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 871.0626580787037,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-116",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 874.8617295138889,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-116",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 883.8137314467592,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-71",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 883.7273263541666,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-71",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 883.7273079513889,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-98",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 883.8201611458334,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-98",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 887.9876976273148,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-70",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 889.7362595717592,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-116",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 891.8826500578704,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-116",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 891.882296550926,
-          "hadTransition": true,
-          "regressed": false,
           "isAiTagged": false
         }
       ]
@@ -4024,7 +3493,7 @@
           "summary": "Docs imported from HIRE into Online are showing an encryption error and cannot be eSigned by EEs.",
           "status": "Ready for Development",
           "type": "Bug",
-          "ageDays": 25.9,
+          "ageDays": 26,
           "epicKey": "APCOM-297",
           "lane": "Ready for Development"
         },
@@ -4567,49 +4036,49 @@
         "sampleSize": 84
       },
       "leadTimeDays": {
-        "avg": 34.8,
-        "median": 16.1,
-        "sampleSize": 88
+        "avg": 35.2,
+        "median": 17.1,
+        "sampleSize": 84
       },
-      "flowEfficiencyPct": 44.8,
-      "throughput7d": 16,
-      "throughputWindowTotal": 88,
-      "throughputAvgPerWeek": 11,
-      "qualityLoopbackRatePct": 31.8,
+      "flowEfficiencyPct": 44.3,
+      "throughput7d": 14,
+      "throughputWindowTotal": 84,
+      "throughputAvgPerWeek": 10.5,
+      "qualityLoopbackRatePct": 33.3,
       "qualityLoopbackCount": 28,
-      "qualityLoopbackSampleSize": 88,
-      "aiLeverageRatePct": 23.9,
+      "qualityLoopbackSampleSize": 84,
+      "aiLeverageRatePct": 25,
       "weekly": [
         {
           "label": "Jun 15–Jun 22",
-          "weekStart": "2026-06-15T15:25:16.342Z",
-          "weekEnd": "2026-06-22T15:25:16.342Z",
-          "throughput": 12,
+          "weekStart": "2026-06-15T15:33:28.603Z",
+          "weekEnd": "2026-06-22T15:33:28.603Z",
+          "throughput": 11,
           "cycleTimeAvg": 8.8,
-          "leadTimeAvg": 21.1,
-          "flowEfficiencyPct": 41.7,
-          "qualityLoopbackRatePct": 8.3,
+          "leadTimeAvg": 22.9,
+          "flowEfficiencyPct": 38.4,
+          "qualityLoopbackRatePct": 9.1,
           "qualityLoopbackCount": 1,
-          "qualityLoopbackSampleSize": 12,
+          "qualityLoopbackSampleSize": 11,
           "aiLeverageRatePct": 0
         },
         {
           "label": "Jun 22–Jun 29",
-          "weekStart": "2026-06-22T15:25:16.342Z",
-          "weekEnd": "2026-06-29T15:25:16.342Z",
-          "throughput": 25,
+          "weekStart": "2026-06-22T15:33:28.603Z",
+          "weekEnd": "2026-06-29T15:33:28.603Z",
+          "throughput": 24,
           "cycleTimeAvg": 10.6,
-          "leadTimeAvg": 14.1,
-          "flowEfficiencyPct": 75.2,
-          "qualityLoopbackRatePct": 24,
+          "leadTimeAvg": 14.7,
+          "flowEfficiencyPct": 72.1,
+          "qualityLoopbackRatePct": 25,
           "qualityLoopbackCount": 6,
-          "qualityLoopbackSampleSize": 25,
+          "qualityLoopbackSampleSize": 24,
           "aiLeverageRatePct": 0
         },
         {
           "label": "Jun 29–Jul 6",
-          "weekStart": "2026-06-29T15:25:16.342Z",
-          "weekEnd": "2026-07-06T15:25:16.342Z",
+          "weekStart": "2026-06-29T15:33:28.603Z",
+          "weekEnd": "2026-07-06T15:33:28.603Z",
           "throughput": 7,
           "cycleTimeAvg": 14.8,
           "leadTimeAvg": 78.3,
@@ -4621,8 +4090,8 @@
         },
         {
           "label": "Jul 6–Jul 13",
-          "weekStart": "2026-07-06T15:25:16.342Z",
-          "weekEnd": "2026-07-13T15:25:16.342Z",
+          "weekStart": "2026-07-06T15:33:28.603Z",
+          "weekEnd": "2026-07-13T15:33:28.603Z",
           "throughput": 6,
           "cycleTimeAvg": 19,
           "leadTimeAvg": 36.4,
@@ -4634,8 +4103,8 @@
         },
         {
           "label": "Jul 13–Jul 20",
-          "weekStart": "2026-07-13T15:25:16.342Z",
-          "weekEnd": "2026-07-20T15:25:16.342Z",
+          "weekStart": "2026-07-13T15:33:28.603Z",
+          "weekEnd": "2026-07-20T15:33:28.603Z",
           "throughput": 6,
           "cycleTimeAvg": 42.9,
           "leadTimeAvg": 54,
@@ -4647,8 +4116,8 @@
         },
         {
           "label": "Jul 20–Jul 27",
-          "weekStart": "2026-07-20T15:25:16.342Z",
-          "weekEnd": "2026-07-27T15:25:16.342Z",
+          "weekStart": "2026-07-20T15:33:28.603Z",
+          "weekEnd": "2026-07-27T15:33:28.603Z",
           "throughput": 11,
           "cycleTimeAvg": 10.8,
           "leadTimeAvg": 32.1,
@@ -4660,8 +4129,8 @@
         },
         {
           "label": "Jul 27–Aug 3",
-          "weekStart": "2026-07-27T15:25:16.342Z",
-          "weekEnd": "2026-08-03T15:25:16.342Z",
+          "weekStart": "2026-07-27T15:33:28.603Z",
+          "weekEnd": "2026-08-03T15:33:28.603Z",
           "throughput": 5,
           "cycleTimeAvg": 42.1,
           "leadTimeAvg": 66.6,
@@ -4673,16 +4142,16 @@
         },
         {
           "label": "Aug 3–Aug 10",
-          "weekStart": "2026-08-03T15:25:16.342Z",
-          "weekEnd": "2026-08-10T15:25:16.342Z",
-          "throughput": 16,
+          "weekStart": "2026-08-03T15:33:28.603Z",
+          "weekEnd": "2026-08-10T15:33:28.603Z",
+          "throughput": 14,
           "cycleTimeAvg": 11.3,
-          "leadTimeAvg": 42.3,
-          "flowEfficiencyPct": 26.7,
-          "qualityLoopbackRatePct": 25,
+          "leadTimeAvg": 41,
+          "flowEfficiencyPct": 27.6,
+          "qualityLoopbackRatePct": 28.6,
           "qualityLoopbackCount": 4,
-          "qualityLoopbackSampleSize": 16,
-          "aiLeverageRatePct": 75
+          "qualityLoopbackSampleSize": 14,
+          "aiLeverageRatePct": 85.7
         }
       ],
       "ticketMetrics": [
@@ -4721,15 +4190,6 @@
           "hadTransition": true,
           "regressed": false,
           "isAiTagged": true
-        },
-        {
-          "epicKey": "APCOM-127",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 1.0805249189814814,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
         },
         {
           "epicKey": "APCOM-272",
@@ -4858,15 +4318,6 @@
           "isAiTagged": true
         },
         {
-          "epicKey": "CORE-1253",
-          "weekIndex": 1,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.0025847453703703705,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
           "epicKey": null,
           "weekIndex": 1,
           "cycleTimeDays": 0.8370218287037037,
@@ -4937,15 +4388,6 @@
           "hadTransition": true,
           "regressed": false,
           "isAiTagged": true
-        },
-        {
-          "epicKey": "APCOM-66",
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.6897638541666666,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
         },
         {
           "epicKey": "INV-231",
@@ -5399,15 +4841,6 @@
         },
         {
           "epicKey": "APCOM-186",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 101.99270893518519,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "APCOM-186",
           "weekIndex": 6,
           "cycleTimeDays": 80.87945174768518,
           "leadTimeDays": 97.9841940162037,
@@ -5612,7 +5045,7 @@
       "contextSwitchThisWeekAvg": 1,
       "contextSwitchFlagged": [],
       "contextSwitchThreshold": 2,
-      "sle85Days": 14,
+      "sle85Days": 14.1,
       "thisWeekSleAdherencePct": 100,
       "riskStatus": "OK",
       "wipByStatus": {
@@ -6329,7 +5762,7 @@
           "summary": "Deleting an employee fails once the onboarding service tables exist",
           "status": "Backlog",
           "type": "Bug",
-          "ageDays": 4.7,
+          "ageDays": 4.8,
           "epicKey": "EMP-762",
           "lane": "Backlog"
         },
@@ -6500,7 +5933,7 @@
           "summary": "Feature 8: Required Forms attachment panel in template editor + migrate-in-flight handler",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 82.7,
+          "ageDays": 82.8,
           "epicKey": "EMP-762",
           "lane": "Backlog"
         },
@@ -6509,7 +5942,7 @@
           "summary": "Feature: Admin — Form Builder editor + dual-sided completion-order prompt",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 82.7,
+          "ageDays": 82.8,
           "epicKey": "EMP-925",
           "lane": "Backlog"
         },
@@ -6518,7 +5951,7 @@
           "summary": "Feature 7: APS Hire (CareerPlug) Data Ingest — webhook + Pending Assignment tab + prefill mapping",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 82.7,
+          "ageDays": 82.8,
           "epicKey": "EMP-762",
           "lane": "Backlog"
         },
@@ -6527,7 +5960,7 @@
           "summary": "Feature: EE Step 7 — Documents (review + upload) + Fillable PDF Filler",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 82.7,
+          "ageDays": 82.8,
           "epicKey": "EMP-762",
           "lane": "Backlog"
         },
@@ -6536,7 +5969,7 @@
           "summary": "Foundation: convert HR → Documents to a React InsightPage host (eDocs as a 7th category)",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 82.7,
+          "ageDays": 82.8,
           "epicKey": "EMP-925",
           "lane": "Ready for Development"
         },
@@ -6545,7 +5978,7 @@
           "summary": "Foundation: onboarding_replaces_eip_hires feature flag",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 82.7,
+          "ageDays": 82.8,
           "epicKey": "EMP-762",
           "lane": "Backlog"
         },
@@ -6554,7 +5987,7 @@
           "summary": "Foundation: form_* schema + Form controllers + thin flatten client to service/pdf",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 82.7,
+          "ageDays": 82.8,
           "epicKey": "EMP-925",
           "lane": "Backlog"
         },
@@ -6563,7 +5996,7 @@
           "summary": "Foundation: aps-ui PDF primitives — renderer in build/fill/read-only modes (POC complete)",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 82.7,
+          "ageDays": 82.8,
           "epicKey": "EMP-925",
           "lane": "Backlog"
         },
@@ -6606,67 +6039,67 @@
       ],
       "windowDays": 56,
       "cycleTimeDays": {
-        "avg": 7.1,
-        "median": 5.2,
-        "sampleSize": 33
+        "avg": 7.8,
+        "median": 5.9,
+        "sampleSize": 30
       },
       "leadTimeDays": {
-        "avg": 41.8,
-        "median": 13.9,
-        "sampleSize": 51
+        "avg": 42.3,
+        "median": 21.6,
+        "sampleSize": 30
       },
-      "flowEfficiencyPct": 17,
-      "throughput7d": 3,
-      "throughputWindowTotal": 51,
-      "throughputAvgPerWeek": 6.4,
-      "qualityLoopbackRatePct": 25.5,
+      "flowEfficiencyPct": 18.4,
+      "throughput7d": 2,
+      "throughputWindowTotal": 30,
+      "throughputAvgPerWeek": 3.8,
+      "qualityLoopbackRatePct": 43.3,
       "qualityLoopbackCount": 13,
-      "qualityLoopbackSampleSize": 51,
-      "aiLeverageRatePct": 51,
+      "qualityLoopbackSampleSize": 30,
+      "aiLeverageRatePct": 43.3,
       "weekly": [
         {
           "label": "Jun 15–Jun 22",
-          "weekStart": "2026-06-15T15:25:25.892Z",
-          "weekEnd": "2026-06-22T15:25:25.892Z",
-          "throughput": 10,
+          "weekStart": "2026-06-15T15:33:36.778Z",
+          "weekEnd": "2026-06-22T15:33:36.778Z",
+          "throughput": 6,
           "cycleTimeAvg": 11.1,
-          "leadTimeAvg": 107,
-          "flowEfficiencyPct": 10.4,
-          "qualityLoopbackRatePct": 50,
+          "leadTimeAvg": 60.1,
+          "flowEfficiencyPct": 18.5,
+          "qualityLoopbackRatePct": 83.3,
           "qualityLoopbackCount": 5,
-          "qualityLoopbackSampleSize": 10,
-          "aiLeverageRatePct": 30
-        },
-        {
-          "label": "Jun 22–Jun 29",
-          "weekStart": "2026-06-22T15:25:25.892Z",
-          "weekEnd": "2026-06-29T15:25:25.892Z",
-          "throughput": 14,
-          "cycleTimeAvg": 7.1,
-          "leadTimeAvg": 5.2,
-          "flowEfficiencyPct": 136.5,
-          "qualityLoopbackRatePct": 7.1,
-          "qualityLoopbackCount": 1,
-          "qualityLoopbackSampleSize": 14,
-          "aiLeverageRatePct": 78.6
-        },
-        {
-          "label": "Jun 29–Jul 6",
-          "weekStart": "2026-06-29T15:25:25.892Z",
-          "weekEnd": "2026-07-06T15:25:25.892Z",
-          "throughput": 4,
-          "cycleTimeAvg": 4.5,
-          "leadTimeAvg": 52,
-          "flowEfficiencyPct": 8.7,
-          "qualityLoopbackRatePct": 25,
-          "qualityLoopbackCount": 1,
-          "qualityLoopbackSampleSize": 4,
+          "qualityLoopbackSampleSize": 6,
           "aiLeverageRatePct": 50
         },
         {
+          "label": "Jun 22–Jun 29",
+          "weekStart": "2026-06-22T15:33:36.778Z",
+          "weekEnd": "2026-06-29T15:33:36.778Z",
+          "throughput": 3,
+          "cycleTimeAvg": 7.1,
+          "leadTimeAvg": 21.4,
+          "flowEfficiencyPct": 33.2,
+          "qualityLoopbackRatePct": 33.3,
+          "qualityLoopbackCount": 1,
+          "qualityLoopbackSampleSize": 3,
+          "aiLeverageRatePct": 0
+        },
+        {
+          "label": "Jun 29–Jul 6",
+          "weekStart": "2026-06-29T15:33:36.778Z",
+          "weekEnd": "2026-07-06T15:33:36.778Z",
+          "throughput": 3,
+          "cycleTimeAvg": 5.8,
+          "leadTimeAvg": 45.8,
+          "flowEfficiencyPct": 12.7,
+          "qualityLoopbackRatePct": 33.3,
+          "qualityLoopbackCount": 1,
+          "qualityLoopbackSampleSize": 3,
+          "aiLeverageRatePct": 33.3
+        },
+        {
           "label": "Jul 6–Jul 13",
-          "weekStart": "2026-07-06T15:25:25.892Z",
-          "weekEnd": "2026-07-13T15:25:25.892Z",
+          "weekStart": "2026-07-06T15:33:36.778Z",
+          "weekEnd": "2026-07-13T15:33:36.778Z",
           "throughput": 3,
           "cycleTimeAvg": 3.7,
           "leadTimeAvg": 27.9,
@@ -6678,34 +6111,34 @@
         },
         {
           "label": "Jul 13–Jul 20",
-          "weekStart": "2026-07-13T15:25:25.892Z",
-          "weekEnd": "2026-07-20T15:25:25.892Z",
-          "throughput": 3,
-          "cycleTimeAvg": 2.9,
-          "leadTimeAvg": 40.7,
-          "flowEfficiencyPct": 7.1,
-          "qualityLoopbackRatePct": 33.3,
+          "weekStart": "2026-07-13T15:33:36.778Z",
+          "weekEnd": "2026-07-20T15:33:36.778Z",
+          "throughput": 1,
+          "cycleTimeAvg": 5.8,
+          "leadTimeAvg": 48.9,
+          "flowEfficiencyPct": 11.9,
+          "qualityLoopbackRatePct": 100,
           "qualityLoopbackCount": 1,
-          "qualityLoopbackSampleSize": 3,
-          "aiLeverageRatePct": 33.3
+          "qualityLoopbackSampleSize": 1,
+          "aiLeverageRatePct": 100
         },
         {
           "label": "Jul 20–Jul 27",
-          "weekStart": "2026-07-20T15:25:25.892Z",
-          "weekEnd": "2026-07-27T15:25:25.892Z",
-          "throughput": 7,
+          "weekStart": "2026-07-20T15:33:36.778Z",
+          "weekEnd": "2026-07-27T15:33:36.778Z",
+          "throughput": 5,
           "cycleTimeAvg": 5.3,
-          "leadTimeAvg": 32.9,
-          "flowEfficiencyPct": 16.1,
-          "qualityLoopbackRatePct": 14.3,
+          "leadTimeAvg": 45.4,
+          "flowEfficiencyPct": 11.7,
+          "qualityLoopbackRatePct": 20,
           "qualityLoopbackCount": 1,
-          "qualityLoopbackSampleSize": 7,
-          "aiLeverageRatePct": 57.1
+          "qualityLoopbackSampleSize": 5,
+          "aiLeverageRatePct": 60
         },
         {
           "label": "Jul 27–Aug 3",
-          "weekStart": "2026-07-27T15:25:25.892Z",
-          "weekEnd": "2026-08-03T15:25:25.892Z",
+          "weekStart": "2026-07-27T15:33:36.778Z",
+          "weekEnd": "2026-08-03T15:33:36.778Z",
           "throughput": 7,
           "cycleTimeAvg": 11.2,
           "leadTimeAvg": 34.3,
@@ -6717,16 +6150,16 @@
         },
         {
           "label": "Aug 3–Aug 10",
-          "weekStart": "2026-08-03T15:25:25.892Z",
-          "weekEnd": "2026-08-10T15:25:25.892Z",
-          "throughput": 3,
-          "cycleTimeAvg": 2.5,
-          "leadTimeAvg": 35.9,
-          "flowEfficiencyPct": 7,
+          "weekStart": "2026-08-03T15:33:36.778Z",
+          "weekEnd": "2026-08-10T15:33:36.778Z",
+          "throughput": 2,
+          "cycleTimeAvg": 3.4,
+          "leadTimeAvg": 53.3,
+          "flowEfficiencyPct": 6.4,
           "qualityLoopbackRatePct": 0,
           "qualityLoopbackCount": 0,
-          "qualityLoopbackSampleSize": 3,
-          "aiLeverageRatePct": 33.3
+          "qualityLoopbackSampleSize": 2,
+          "aiLeverageRatePct": 50
         }
       ],
       "ticketMetrics": [
@@ -6740,15 +6173,6 @@
           "isAiTagged": true
         },
         {
-          "epicKey": "EMP-866",
-          "weekIndex": 7,
-          "cycleTimeDays": 0.6924722569444445,
-          "leadTimeDays": 0.9557078125,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
           "epicKey": "EMP-905",
           "weekIndex": 6,
           "cycleTimeDays": 3.1638199189814813,
@@ -6758,37 +6182,10 @@
           "isAiTagged": false
         },
         {
-          "epicKey": null,
-          "weekIndex": 5,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.04201398148148148,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": true
-        },
-        {
           "epicKey": "BOA-1943",
           "weekIndex": 7,
           "cycleTimeDays": 5.887572523148148,
           "leadTimeDays": 102.84966278935185,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": null,
-          "weekIndex": 5,
-          "cycleTimeDays": null,
-          "leadTimeDays": 3.0073794675925924,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "EMP-905",
-          "weekIndex": 4,
-          "cycleTimeDays": 0.0004653125,
-          "leadTimeDays": 1.6560503356481482,
           "hadTransition": true,
           "regressed": false,
           "isAiTagged": false
@@ -6884,105 +6281,6 @@
           "isAiTagged": false
         },
         {
-          "epicKey": "EMP-912",
-          "weekIndex": 1,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.7493326967592593,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": true
-        },
-        {
-          "epicKey": "EMP-912",
-          "weekIndex": 1,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.7493494907407408,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": true
-        },
-        {
-          "epicKey": "EMP-912",
-          "weekIndex": 1,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.749306875,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": true
-        },
-        {
-          "epicKey": "EMP-912",
-          "weekIndex": 1,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.7492733101851852,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": true
-        },
-        {
-          "epicKey": "EMP-911",
-          "weekIndex": 1,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.7493826388888889,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": true
-        },
-        {
-          "epicKey": "EMP-911",
-          "weekIndex": 1,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.7495066319444444,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": true
-        },
-        {
-          "epicKey": "EMP-911",
-          "weekIndex": 1,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.7495062037037037,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": true
-        },
-        {
-          "epicKey": "EMP-911",
-          "weekIndex": 1,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.7494882060185185,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": true
-        },
-        {
-          "epicKey": "EMP-911",
-          "weekIndex": 1,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.7495098148148148,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": true
-        },
-        {
-          "epicKey": "EMP-911",
-          "weekIndex": 1,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.7495330439814815,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": true
-        },
-        {
-          "epicKey": "EMP-911",
-          "weekIndex": 1,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.7496984953703704,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": true
-        },
-        {
           "epicKey": "EMP-770",
           "weekIndex": 2,
           "cycleTimeDays": 5.123851770833333,
@@ -6996,15 +6294,6 @@
           "weekIndex": 2,
           "cycleTimeDays": 5.242504456018518,
           "leadTimeDays": 10.803227106481481,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": null,
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.7933645949074074,
           "hadTransition": true,
           "regressed": false,
           "isAiTagged": false
@@ -7091,15 +6380,6 @@
           "isAiTagged": false
         },
         {
-          "epicKey": "EMP-770",
-          "weekIndex": 4,
-          "cycleTimeDays": null,
-          "leadTimeDays": 71.67729483796296,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
           "epicKey": "EMP-762",
           "weekIndex": 5,
           "cycleTimeDays": 0.9028855902777778,
@@ -7113,15 +6393,6 @@
           "weekIndex": 5,
           "cycleTimeDays": 0.9657088310185186,
           "leadTimeDays": 91.83371561342592,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": true
-        },
-        {
-          "epicKey": "EMP-762",
-          "weekIndex": 2,
-          "cycleTimeDays": 0.7426417476851852,
-          "leadTimeDays": 70.68209784722222,
           "hadTransition": true,
           "regressed": false,
           "isAiTagged": true
@@ -7160,33 +6431,6 @@
           "leadTimeDays": 232.16345563657407,
           "hadTransition": true,
           "regressed": true,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": null,
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 236.00883804398148,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": null,
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 236.0089636574074,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": null,
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 236.00915143518517,
-          "hadTransition": true,
-          "regressed": false,
           "isAiTagged": false
         }
       ]
@@ -7518,15 +6762,15 @@
         }
       ],
       "contextSwitchThreshold": 2,
-      "sle85Days": 39,
-      "thisWeekSleAdherencePct": 91.7,
+      "sle85Days": 36.8,
+      "thisWeekSleAdherencePct": 100,
       "riskStatus": "OK",
       "wipByStatus": {
         "Backlog": 89,
         "To Do": 0,
         "Ready for Development": 37,
-        "In Development": 8,
-        "Ready for Code Review": 0,
+        "In Development": 7,
+        "Ready for Code Review": 1,
         "In QA": 12,
         "Acceptance": 1,
         "Done": 19,
@@ -8341,7 +7585,7 @@
           "summary": "SUTA Multi Site Report - Add Dimensions",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 1417.8,
+          "ageDays": 1417.9,
           "epicKey": "CORE-1736",
           "lane": "Backlog"
         },
@@ -8530,11 +7774,11 @@
         {
           "key": "CORE-1708",
           "summary": "Payroll>Accrual Overage Check not flagging hours on Step 5 ",
-          "status": "In Development",
+          "status": "Ready for Code Review",
           "type": "Bug",
           "ageDays": 17.9,
           "epicKey": "CORE-1573",
-          "lane": "In Development"
+          "lane": "Ready for Code Review"
         },
         {
           "key": "CORE-1707",
@@ -8586,7 +7830,7 @@
           "summary": "APS Online allows DailyPay Direct Deposit accounts to be edited/deleted during Offboarding",
           "status": "Ready for QA",
           "type": "Bug",
-          "ageDays": 19,
+          "ageDays": 19.1,
           "epicKey": "CORE-1573",
           "lane": "Other"
         },
@@ -9450,7 +8694,7 @@
           "summary": "BOA - Gazelle | System Wide feature flag for Required Fields with Company Override",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 313.9,
+          "ageDays": 314,
           "epicKey": "CORE-1736",
           "lane": "Backlog"
         },
@@ -9567,7 +8811,7 @@
           "summary": "Backdated Check Dates - MVP - Online Functionality Prepay Checks",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 466.9,
+          "ageDays": 467,
           "epicKey": "CORE-1066",
           "lane": "Backlog"
         },
@@ -9738,7 +8982,7 @@
           "summary": "Money Service Admin - MVP - Direct Deposit Return Message",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 809,
+          "ageDays": 809.1,
           "epicKey": "CORE-804",
           "lane": "Backlog"
         },
@@ -9945,7 +9189,7 @@
           "summary": "SUTA Multi Site Report - Add Dimensions",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 1417.8,
+          "ageDays": 1417.9,
           "epicKey": "CORE-1736",
           "lane": "Backlog"
         },
@@ -9970,67 +9214,67 @@
       ],
       "windowDays": 56,
       "cycleTimeDays": {
-        "avg": 18.5,
+        "avg": 17.5,
         "median": 12,
-        "sampleSize": 100
+        "sampleSize": 94
       },
       "leadTimeDays": {
-        "avg": 262.2,
-        "median": 69,
-        "sampleSize": 147
+        "avg": 135,
+        "median": 40.3,
+        "sampleSize": 94
       },
-      "flowEfficiencyPct": 7.1,
-      "throughput7d": 27,
-      "throughputWindowTotal": 147,
-      "throughputAvgPerWeek": 18.4,
-      "qualityLoopbackRatePct": 21.1,
-      "qualityLoopbackCount": 31,
-      "qualityLoopbackSampleSize": 147,
-      "aiLeverageRatePct": 2,
+      "flowEfficiencyPct": 13,
+      "throughput7d": 11,
+      "throughputWindowTotal": 94,
+      "throughputAvgPerWeek": 11.8,
+      "qualityLoopbackRatePct": 28.7,
+      "qualityLoopbackCount": 27,
+      "qualityLoopbackSampleSize": 94,
+      "aiLeverageRatePct": 3.2,
       "weekly": [
         {
           "label": "Jun 15–Jun 22",
-          "weekStart": "2026-06-15T15:25:31.536Z",
-          "weekEnd": "2026-06-22T15:25:31.536Z",
-          "throughput": 36,
-          "cycleTimeAvg": 10.5,
-          "leadTimeAvg": 97,
-          "flowEfficiencyPct": 10.8,
-          "qualityLoopbackRatePct": 16.7,
-          "qualityLoopbackCount": 6,
-          "qualityLoopbackSampleSize": 36,
+          "weekStart": "2026-06-15T15:33:40.959Z",
+          "weekEnd": "2026-06-22T15:33:40.959Z",
+          "throughput": 15,
+          "cycleTimeAvg": 10.4,
+          "leadTimeAvg": 108,
+          "flowEfficiencyPct": 9.6,
+          "qualityLoopbackRatePct": 26.7,
+          "qualityLoopbackCount": 4,
+          "qualityLoopbackSampleSize": 15,
           "aiLeverageRatePct": 0
         },
         {
           "label": "Jun 22–Jun 29",
-          "weekStart": "2026-06-22T15:25:31.536Z",
-          "weekEnd": "2026-06-29T15:25:31.536Z",
-          "throughput": 26,
-          "cycleTimeAvg": 16.1,
-          "leadTimeAvg": 264.5,
-          "flowEfficiencyPct": 6.1,
-          "qualityLoopbackRatePct": 26.9,
-          "qualityLoopbackCount": 7,
-          "qualityLoopbackSampleSize": 26,
+          "weekStart": "2026-06-22T15:33:40.959Z",
+          "weekEnd": "2026-06-29T15:33:40.959Z",
+          "throughput": 18,
+          "cycleTimeAvg": 11.2,
+          "leadTimeAvg": 162.7,
+          "flowEfficiencyPct": 6.9,
+          "qualityLoopbackRatePct": 33.3,
+          "qualityLoopbackCount": 6,
+          "qualityLoopbackSampleSize": 18,
           "aiLeverageRatePct": 0
         },
         {
           "label": "Jun 29–Jul 6",
-          "weekStart": "2026-06-29T15:25:31.536Z",
-          "weekEnd": "2026-07-06T15:25:31.536Z",
-          "throughput": 9,
+          "weekStart": "2026-06-29T15:33:40.959Z",
+          "weekEnd": "2026-07-06T15:33:40.959Z",
+          "throughput": 4,
           "cycleTimeAvg": 9.3,
-          "leadTimeAvg": 472.6,
-          "flowEfficiencyPct": 2,
-          "qualityLoopbackRatePct": 11.1,
+          "leadTimeAvg": 375.5,
+          "flowEfficiencyPct": 2.5,
+          "qualityLoopbackRatePct": 25,
           "qualityLoopbackCount": 1,
-          "qualityLoopbackSampleSize": 9,
+          "qualityLoopbackSampleSize": 4,
           "aiLeverageRatePct": 0
         },
         {
           "label": "Jul 6–Jul 13",
-          "weekStart": "2026-07-06T15:25:31.536Z",
-          "weekEnd": "2026-07-13T15:25:31.536Z",
+          "weekStart": "2026-07-06T15:33:40.959Z",
+          "weekEnd": "2026-07-13T15:33:40.959Z",
           "throughput": 8,
           "cycleTimeAvg": 13.1,
           "leadTimeAvg": 107.1,
@@ -10042,8 +9286,8 @@
         },
         {
           "label": "Jul 13–Jul 20",
-          "weekStart": "2026-07-13T15:25:31.536Z",
-          "weekEnd": "2026-07-20T15:25:31.536Z",
+          "weekStart": "2026-07-13T15:33:40.959Z",
+          "weekEnd": "2026-07-20T15:33:40.959Z",
           "throughput": 11,
           "cycleTimeAvg": 22.8,
           "leadTimeAvg": 271.1,
@@ -10055,42 +9299,42 @@
         },
         {
           "label": "Jul 20–Jul 27",
-          "weekStart": "2026-07-20T15:25:31.536Z",
-          "weekEnd": "2026-07-27T15:25:31.536Z",
-          "throughput": 21,
-          "cycleTimeAvg": 26.7,
-          "leadTimeAvg": 88.3,
-          "flowEfficiencyPct": 30.2,
-          "qualityLoopbackRatePct": 38.1,
+          "weekStart": "2026-07-20T15:33:40.959Z",
+          "weekEnd": "2026-07-27T15:33:40.959Z",
+          "throughput": 19,
+          "cycleTimeAvg": 27.4,
+          "leadTimeAvg": 114.5,
+          "flowEfficiencyPct": 23.9,
+          "qualityLoopbackRatePct": 42.1,
           "qualityLoopbackCount": 8,
-          "qualityLoopbackSampleSize": 21,
+          "qualityLoopbackSampleSize": 19,
           "aiLeverageRatePct": 0
         },
         {
           "label": "Jul 27–Aug 3",
-          "weekStart": "2026-07-27T15:25:31.536Z",
-          "weekEnd": "2026-08-03T15:25:31.536Z",
-          "throughput": 9,
-          "cycleTimeAvg": 30,
-          "leadTimeAvg": 74.2,
-          "flowEfficiencyPct": 40.4,
+          "weekStart": "2026-07-27T15:33:40.959Z",
+          "weekEnd": "2026-08-03T15:33:40.959Z",
+          "throughput": 8,
+          "cycleTimeAvg": 28.9,
+          "leadTimeAvg": 42.6,
+          "flowEfficiencyPct": 67.8,
           "qualityLoopbackRatePct": 0,
           "qualityLoopbackCount": 0,
-          "qualityLoopbackSampleSize": 9,
+          "qualityLoopbackSampleSize": 8,
           "aiLeverageRatePct": 0
         },
         {
           "label": "Aug 3–Aug 10",
-          "weekStart": "2026-08-03T15:25:31.536Z",
-          "weekEnd": "2026-08-10T15:25:31.536Z",
-          "throughput": 27,
-          "cycleTimeAvg": 15.4,
-          "leadTimeAvg": 650.6,
-          "flowEfficiencyPct": 2.4,
-          "qualityLoopbackRatePct": 14.8,
-          "qualityLoopbackCount": 4,
-          "qualityLoopbackSampleSize": 27,
-          "aiLeverageRatePct": 7.4
+          "weekStart": "2026-08-03T15:33:40.959Z",
+          "weekEnd": "2026-08-10T15:33:40.959Z",
+          "throughput": 11,
+          "cycleTimeAvg": 13,
+          "leadTimeAvg": 26.1,
+          "flowEfficiencyPct": 49.8,
+          "qualityLoopbackRatePct": 27.3,
+          "qualityLoopbackCount": 3,
+          "qualityLoopbackSampleSize": 11,
+          "aiLeverageRatePct": 18.2
         }
       ],
       "ticketMetrics": [
@@ -10140,24 +9384,6 @@
           "isAiTagged": false
         },
         {
-          "epicKey": null,
-          "weekIndex": 5,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.012298506944444445,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": null,
-          "weekIndex": 5,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.012471261574074074,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
           "epicKey": "CORE-1573",
           "weekIndex": 6,
           "cycleTimeDays": 5.866969131944445,
@@ -10189,15 +9415,6 @@
           "weekIndex": 5,
           "cycleTimeDays": 1.2663919097222223,
           "leadTimeDays": 1.2984175810185186,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1573",
-          "weekIndex": 5,
-          "cycleTimeDays": null,
-          "leadTimeDays": 5.172375879629629,
           "hadTransition": true,
           "regressed": false,
           "isAiTagged": false
@@ -10410,15 +9627,6 @@
           "isAiTagged": false
         },
         {
-          "epicKey": "CORE-1411",
-          "weekIndex": 1,
-          "cycleTimeDays": 0.057863680555555554,
-          "leadTimeDays": 2.0242885416666665,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
           "epicKey": null,
           "weekIndex": 5,
           "cycleTimeDays": 28.865539074074075,
@@ -10434,15 +9642,6 @@
           "leadTimeDays": 3.1076927314814813,
           "hadTransition": true,
           "regressed": true,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": null,
-          "weekIndex": 1,
-          "cycleTimeDays": null,
-          "leadTimeDays": 2.650552615740741,
-          "hadTransition": true,
-          "regressed": false,
           "isAiTagged": false
         },
         {
@@ -10574,15 +9773,6 @@
         {
           "epicKey": "CORE-1499",
           "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 14.789631412037037,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1499",
-          "weekIndex": 0,
           "cycleTimeDays": 6.649798657407407,
           "leadTimeDays": 16.88836715277778,
           "hadTransition": true,
@@ -10623,15 +9813,6 @@
           "leadTimeDays": 69.76243413194445,
           "hadTransition": true,
           "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1437",
-          "weekIndex": 0,
-          "cycleTimeDays": 12.028851493055555,
-          "leadTimeDays": 27.009986400462964,
-          "hadTransition": true,
-          "regressed": true,
           "isAiTagged": false
         },
         {
@@ -10689,15 +9870,6 @@
           "isAiTagged": false
         },
         {
-          "epicKey": "CORE-1528",
-          "weekIndex": 1,
-          "cycleTimeDays": null,
-          "leadTimeDays": 45.079792094907404,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
           "epicKey": "CORE-1499",
           "weekIndex": 0,
           "cycleTimeDays": 7.805865393518519,
@@ -10747,105 +9919,6 @@
           "weekIndex": 0,
           "cycleTimeDays": 2.006037141203704,
           "leadTimeDays": 55.93970319444445,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1437",
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 68.95376797453704,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1437",
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 68.96888201388889,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1437",
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 68.97313313657408,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1437",
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 68.9766220486111,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1437",
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 68.98227809027777,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1437",
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 68.99925480324075,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1437",
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 69.00765806712963,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1437",
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 69.01209165509259,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1437",
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 69.02352164351852,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1437",
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 72.8618691087963,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1437",
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 73.81024701388888,
           "hadTransition": true,
           "regressed": false,
           "isAiTagged": false
@@ -10914,60 +9987,6 @@
           "isAiTagged": false
         },
         {
-          "epicKey": "CORE-1437",
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 97.01775952546296,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1437",
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 97.05652841435185,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1437",
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 100.65382527777778,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1437",
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 100.70130238425926,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1437",
-          "weekIndex": 0,
-          "cycleTimeDays": 10.835980451388888,
-          "leadTimeDays": 100.9909981712963,
-          "hadTransition": true,
-          "regressed": true,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1437",
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 101.0033684837963,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
           "epicKey": "CORE-1253",
           "weekIndex": 1,
           "cycleTimeDays": 44.84912064814815,
@@ -11005,24 +10024,6 @@
         },
         {
           "epicKey": "CORE-1411",
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 226.69237599537038,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1411",
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 237.99949217592592,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1411",
           "weekIndex": 1,
           "cycleTimeDays": 1.4144541550925926,
           "leadTimeDays": 272.9564972337963,
@@ -11032,20 +10033,11 @@
         },
         {
           "epicKey": "CORE-1101",
-          "weekIndex": 6,
+          "weekIndex": 5,
           "cycleTimeDays": 39.03106402777778,
           "leadTimeDays": 327.00777693287034,
           "hadTransition": true,
           "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1411",
-          "weekIndex": 1,
-          "cycleTimeDays": 137.06358725694443,
-          "leadTimeDays": 301.21115172453705,
-          "hadTransition": true,
-          "regressed": true,
           "isAiTagged": false
         },
         {
@@ -11062,24 +10054,6 @@
           "weekIndex": 1,
           "cycleTimeDays": 14.064819699074073,
           "leadTimeDays": 324.973313587963,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1411",
-          "weekIndex": 2,
-          "cycleTimeDays": null,
-          "leadTimeDays": 335.9740025115741,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "INV-526",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 388.0068774652778,
           "hadTransition": true,
           "regressed": false,
           "isAiTagged": false
@@ -11121,15 +10095,6 @@
           "isAiTagged": false
         },
         {
-          "epicKey": "CORE-1469",
-          "weekIndex": 7,
-          "cycleTimeDays": 40.94812355324074,
-          "leadTimeDays": 463.9992971064815,
-          "hadTransition": true,
-          "regressed": true,
-          "isAiTagged": false
-        },
-        {
           "epicKey": "CORE-1411",
           "weekIndex": 4,
           "cycleTimeDays": 19.87331491898148,
@@ -11139,37 +10104,10 @@
           "isAiTagged": false
         },
         {
-          "epicKey": "CORE-446",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 500.85804974537035,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
           "epicKey": "CORE-1411",
           "weekIndex": 4,
           "cycleTimeDays": 13.395917743055556,
           "leadTimeDays": 491.0115773611111,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1411",
-          "weekIndex": 2,
-          "cycleTimeDays": null,
-          "leadTimeDays": 480.71929144675926,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1411",
-          "weekIndex": 2,
-          "cycleTimeDays": null,
-          "leadTimeDays": 489.81777028935187,
           "hadTransition": true,
           "regressed": false,
           "isAiTagged": false
@@ -11212,27 +10150,9 @@
         },
         {
           "epicKey": "CORE-1411",
-          "weekIndex": 2,
-          "cycleTimeDays": null,
-          "leadTimeDays": 691.0137967939814,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1411",
           "weekIndex": 3,
           "cycleTimeDays": 12.930873923611111,
           "leadTimeDays": 747.7884338773148,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1411",
-          "weekIndex": 2,
-          "cycleTimeDays": null,
-          "leadTimeDays": 753.8124881018518,
           "hadTransition": true,
           "regressed": false,
           "isAiTagged": false
@@ -11248,47 +10168,11 @@
         },
         {
           "epicKey": "CORE-439",
-          "weekIndex": 1,
-          "cycleTimeDays": null,
-          "leadTimeDays": 835.2572115625,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-439",
           "weekIndex": 4,
           "cycleTimeDays": 14.73652761574074,
           "leadTimeDays": 852.9436525,
           "hadTransition": true,
           "regressed": true,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1411",
-          "weekIndex": 1,
-          "cycleTimeDays": null,
-          "leadTimeDays": 841.1040527546296,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1411",
-          "weekIndex": 1,
-          "cycleTimeDays": 0.07731465277777778,
-          "leadTimeDays": 888.0866170833333,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-446",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 934.6927392939815,
-          "hadTransition": true,
-          "regressed": false,
           "isAiTagged": false
         },
         {
@@ -11298,123 +10182,6 @@
           "leadTimeDays": 924.9442841203704,
           "hadTransition": true,
           "regressed": true,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-34",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 1052.9428613773148,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1411",
-          "weekIndex": 1,
-          "cycleTimeDays": null,
-          "leadTimeDays": 1034.0096314467592,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-34",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 1078.8786574537037,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-34",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 1116.7856475462963,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-194",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 1120.8592263194444,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-194",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 1133.7734576157407,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-194",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 1147.9025326967592,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-194",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 1150.0364467939814,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-34",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 1437.7389092824073,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-194",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 1144.9597561342594,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-194",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 1154.9820894675927,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-194",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 1157.7654501157408,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "CORE-1411",
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 2295.6384454861113,
-          "hadTransition": true,
-          "regressed": false,
           "isAiTagged": false
         }
       ]
@@ -11464,7 +10231,7 @@
           "status": "To Do",
           "childTotal": 57,
           "childDone": 53,
-          "childActive": 4,
+          "childActive": 3,
           "percentDone": 93,
           "dueDate": "2026-09-30",
           "createdDate": "2026-05-22T10:21:40.310-0500",
@@ -11661,11 +10428,11 @@
         "To Do": 1,
         "Ready for Development": 2,
         "In Development": 1,
-        "Ready for Code Review": 2,
+        "Ready for Code Review": 1,
         "In QA": 4,
         "Acceptance": 4,
         "Done": 83,
-        "Other": 3
+        "Other": 4
       },
       "wipTotal": 115,
       "dependencies": [
@@ -12191,7 +10958,7 @@
           "summary": "DailyPay - Dashboard (API)",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 361.7,
+          "ageDays": 361.8,
           "epicKey": "MOBILE-586",
           "lane": "Done"
         }
@@ -12211,7 +10978,7 @@
           "summary": "Mobile Time Clock Displays Prior Day Punches And Errors on Clock in",
           "status": "In Development",
           "type": "Bug",
-          "ageDays": 4,
+          "ageDays": 4.1,
           "epicKey": "MOBILE-1029",
           "lane": "In Development"
         },
@@ -12247,7 +11014,7 @@
           "summary": "Mobile: Expense management - Itineraries, E2E Testing",
           "status": "In QA",
           "type": "Story",
-          "ageDays": 9.8,
+          "ageDays": 9.9,
           "epicKey": "MOBILE-816",
           "lane": "In QA"
         },
@@ -12263,18 +11030,18 @@
         {
           "key": "MOBILE-1097",
           "summary": "Mobile: Storybook [CG5] — remaining misc card stories (9 components)",
-          "status": "Ready for Code Review",
+          "status": "Ready for QA",
           "type": "Story",
-          "ageDays": 10,
+          "ageDays": 10.1,
           "epicKey": "MOBILE-989",
-          "lane": "Ready for Code Review"
+          "lane": "Other"
         },
         {
           "key": "MOBILE-1096",
           "summary": "Mobile: Storybook [CG4] — employee & info card stories (8 components)",
           "status": "In QA",
           "type": "Story",
-          "ageDays": 10,
+          "ageDays": 10.1,
           "epicKey": "MOBILE-989",
           "lane": "In QA"
         },
@@ -12283,7 +11050,7 @@
           "summary": "Mobile: Storybook [CG3] — manager & staff card stories (6 components)",
           "status": "In QA",
           "type": "Story",
-          "ageDays": 10,
+          "ageDays": 10.1,
           "epicKey": "MOBILE-989",
           "lane": "In QA"
         },
@@ -12292,7 +11059,7 @@
           "summary": "Mobile: Storybook [CG2] — pay card stories (5 components)",
           "status": "Ready for Acceptance",
           "type": "Story",
-          "ageDays": 10,
+          "ageDays": 10.1,
           "epicKey": "MOBILE-989",
           "lane": "Acceptance"
         },
@@ -12301,7 +11068,7 @@
           "summary": "Mobile: Storybook [CG1] — time card stories (6 components)",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 10,
+          "ageDays": 10.1,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -12310,7 +11077,7 @@
           "summary": "Mobile: Storybook [Spike] — render-verify the 3 highest-risk cards before sizing the card groups",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 10,
+          "ageDays": 10.1,
           "epicKey": "MOBILE-989",
           "lane": "Done"
         },
@@ -12490,7 +11257,7 @@
           "summary": "MOBILE APP REVIEW: \"What can we do to improve?\" Text Entry covered by device keyboard (ANDROID ONLY)",
           "status": "Ready for Release",
           "type": "Bug",
-          "ageDays": 13.8,
+          "ageDays": 13.9,
           "epicKey": null,
           "lane": "Done"
         },
@@ -13174,7 +11941,7 @@
           "summary": "Mobile: App Review - A Dev modal needs to be created for testing",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 116,
+          "ageDays": 116.1,
           "epicKey": "MOBILE-783",
           "lane": "Done"
         },
@@ -13192,7 +11959,7 @@
           "summary": "DailyPay - Dashboard (API)",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 361.7,
+          "ageDays": 361.8,
           "epicKey": "MOBILE-586",
           "lane": "Done"
         },
@@ -13235,28 +12002,28 @@
       ],
       "windowDays": 56,
       "cycleTimeDays": {
-        "avg": 9.4,
-        "median": 6.6,
-        "sampleSize": 80
+        "avg": 9.7,
+        "median": 7.1,
+        "sampleSize": 78
       },
       "leadTimeDays": {
-        "avg": 31.2,
-        "median": 18.1,
-        "sampleSize": 87
+        "avg": 24,
+        "median": 18.2,
+        "sampleSize": 78
       },
-      "flowEfficiencyPct": 30.1,
-      "throughput7d": 10,
-      "throughputWindowTotal": 87,
-      "throughputAvgPerWeek": 10.9,
-      "qualityLoopbackRatePct": 20.7,
-      "qualityLoopbackCount": 18,
-      "qualityLoopbackSampleSize": 87,
-      "aiLeverageRatePct": 11.5,
+      "flowEfficiencyPct": 40.4,
+      "throughput7d": 9,
+      "throughputWindowTotal": 78,
+      "throughputAvgPerWeek": 9.8,
+      "qualityLoopbackRatePct": 21.8,
+      "qualityLoopbackCount": 17,
+      "qualityLoopbackSampleSize": 78,
+      "aiLeverageRatePct": 12.8,
       "weekly": [
         {
           "label": "Jun 15–Jun 22",
-          "weekStart": "2026-06-15T15:25:43.743Z",
-          "weekEnd": "2026-06-22T15:25:43.743Z",
+          "weekStart": "2026-06-15T15:33:50.725Z",
+          "weekEnd": "2026-06-22T15:33:50.725Z",
           "throughput": 10,
           "cycleTimeAvg": 4.1,
           "leadTimeAvg": 10.2,
@@ -13268,8 +12035,8 @@
         },
         {
           "label": "Jun 22–Jun 29",
-          "weekStart": "2026-06-22T15:25:43.743Z",
-          "weekEnd": "2026-06-29T15:25:43.743Z",
+          "weekStart": "2026-06-22T15:33:50.725Z",
+          "weekEnd": "2026-06-29T15:33:50.725Z",
           "throughput": 3,
           "cycleTimeAvg": 8.1,
           "leadTimeAvg": 22.1,
@@ -13281,60 +12048,60 @@
         },
         {
           "label": "Jun 29–Jul 6",
-          "weekStart": "2026-06-29T15:25:43.743Z",
-          "weekEnd": "2026-07-06T15:25:43.743Z",
-          "throughput": 10,
+          "weekStart": "2026-06-29T15:33:50.725Z",
+          "weekEnd": "2026-07-06T15:33:50.725Z",
+          "throughput": 7,
           "cycleTimeAvg": 10.4,
-          "leadTimeAvg": 66.6,
-          "flowEfficiencyPct": 15.6,
-          "qualityLoopbackRatePct": 40,
-          "qualityLoopbackCount": 4,
-          "qualityLoopbackSampleSize": 10,
-          "aiLeverageRatePct": 20
+          "leadTimeAvg": 27.9,
+          "flowEfficiencyPct": 37.3,
+          "qualityLoopbackRatePct": 42.9,
+          "qualityLoopbackCount": 3,
+          "qualityLoopbackSampleSize": 7,
+          "aiLeverageRatePct": 28.6
         },
         {
           "label": "Jul 6–Jul 13",
-          "weekStart": "2026-07-06T15:25:43.743Z",
-          "weekEnd": "2026-07-13T15:25:43.743Z",
-          "throughput": 8,
+          "weekStart": "2026-07-06T15:33:50.725Z",
+          "weekEnd": "2026-07-13T15:33:50.725Z",
+          "throughput": 6,
           "cycleTimeAvg": 12.5,
-          "leadTimeAvg": 49.1,
-          "flowEfficiencyPct": 25.5,
-          "qualityLoopbackRatePct": 12.5,
+          "leadTimeAvg": 39.7,
+          "flowEfficiencyPct": 31.5,
+          "qualityLoopbackRatePct": 16.7,
           "qualityLoopbackCount": 1,
-          "qualityLoopbackSampleSize": 8,
-          "aiLeverageRatePct": 37.5
+          "qualityLoopbackSampleSize": 6,
+          "aiLeverageRatePct": 50
         },
         {
           "label": "Jul 13–Jul 20",
-          "weekStart": "2026-07-13T15:25:43.743Z",
-          "weekEnd": "2026-07-20T15:25:43.743Z",
-          "throughput": 14,
-          "cycleTimeAvg": 12.3,
-          "leadTimeAvg": 33,
-          "flowEfficiencyPct": 37.3,
-          "qualityLoopbackRatePct": 28.6,
+          "weekStart": "2026-07-13T15:33:50.725Z",
+          "weekEnd": "2026-07-20T15:33:50.725Z",
+          "throughput": 12,
+          "cycleTimeAvg": 13.3,
+          "leadTimeAvg": 37.7,
+          "flowEfficiencyPct": 35.3,
+          "qualityLoopbackRatePct": 33.3,
           "qualityLoopbackCount": 4,
-          "qualityLoopbackSampleSize": 14,
-          "aiLeverageRatePct": 7.1
+          "qualityLoopbackSampleSize": 12,
+          "aiLeverageRatePct": 8.3
         },
         {
           "label": "Jul 20–Jul 27",
-          "weekStart": "2026-07-20T15:25:43.743Z",
-          "weekEnd": "2026-07-27T15:25:43.743Z",
-          "throughput": 21,
-          "cycleTimeAvg": 9.8,
-          "leadTimeAvg": 22.3,
-          "flowEfficiencyPct": 43.9,
-          "qualityLoopbackRatePct": 23.8,
+          "weekStart": "2026-07-20T15:33:50.725Z",
+          "weekEnd": "2026-07-27T15:33:50.725Z",
+          "throughput": 20,
+          "cycleTimeAvg": 10.2,
+          "leadTimeAvg": 22.8,
+          "flowEfficiencyPct": 44.7,
+          "qualityLoopbackRatePct": 25,
           "qualityLoopbackCount": 5,
-          "qualityLoopbackSampleSize": 21,
-          "aiLeverageRatePct": 9.5
+          "qualityLoopbackSampleSize": 20,
+          "aiLeverageRatePct": 10
         },
         {
           "label": "Jul 27–Aug 3",
-          "weekStart": "2026-07-27T15:25:43.743Z",
-          "weekEnd": "2026-08-03T15:25:43.743Z",
+          "weekStart": "2026-07-27T15:33:50.725Z",
+          "weekEnd": "2026-08-03T15:33:50.725Z",
           "throughput": 11,
           "cycleTimeAvg": 10.2,
           "leadTimeAvg": 22.6,
@@ -13346,15 +12113,15 @@
         },
         {
           "label": "Aug 3–Aug 10",
-          "weekStart": "2026-08-03T15:25:43.743Z",
-          "weekEnd": "2026-08-10T15:25:43.743Z",
-          "throughput": 10,
+          "weekStart": "2026-08-03T15:33:50.725Z",
+          "weekEnd": "2026-08-10T15:33:50.725Z",
+          "throughput": 9,
           "cycleTimeAvg": 7.1,
-          "leadTimeAvg": 30.8,
-          "flowEfficiencyPct": 23.1,
-          "qualityLoopbackRatePct": 10,
+          "leadTimeAvg": 12.7,
+          "flowEfficiencyPct": 55.9,
+          "qualityLoopbackRatePct": 11.1,
           "qualityLoopbackCount": 1,
-          "qualityLoopbackSampleSize": 10,
+          "qualityLoopbackSampleSize": 9,
           "aiLeverageRatePct": 0
         }
       ],
@@ -13427,15 +12194,6 @@
           "weekIndex": 7,
           "cycleTimeDays": 7.728225821759259,
           "leadTimeDays": 12.935456076388888,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": null,
-          "weekIndex": 4,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.012504363425925926,
           "hadTransition": true,
           "regressed": false,
           "isAiTagged": false
@@ -13514,15 +12272,6 @@
         },
         {
           "epicKey": "MOBILE-989",
-          "weekIndex": 5,
-          "cycleTimeDays": 0.7868862152777778,
-          "leadTimeDays": 12.811159189814814,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "MOBILE-989",
           "weekIndex": 6,
           "cycleTimeDays": 6.201726851851852,
           "leadTimeDays": 18.198501666666665,
@@ -13546,15 +12295,6 @@
           "leadTimeDays": 18.199620891203704,
           "hadTransition": true,
           "regressed": true,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "MOBILE-989",
-          "weekIndex": 4,
-          "cycleTimeDays": 0.01341542824074074,
-          "leadTimeDays": 9.792779872685186,
-          "hadTransition": true,
-          "regressed": false,
           "isAiTagged": false
         },
         {
@@ -13666,15 +12406,6 @@
           "isAiTagged": false
         },
         {
-          "epicKey": "MOBILE-945",
-          "weekIndex": 3,
-          "cycleTimeDays": null,
-          "leadTimeDays": 1.056212048611111,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
           "epicKey": "MOBILE-1036",
           "weekIndex": 7,
           "cycleTimeDays": 8.870998229166666,
@@ -13699,24 +12430,6 @@
           "leadTimeDays": 16.99061490740741,
           "hadTransition": true,
           "regressed": true,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": null,
-          "weekIndex": 2,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.09553418981481482,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": null,
-          "weekIndex": 2,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.14710752314814815,
-          "hadTransition": true,
-          "regressed": false,
           "isAiTagged": false
         },
         {
@@ -14114,33 +12827,6 @@
           "hadTransition": true,
           "regressed": false,
           "isAiTagged": false
-        },
-        {
-          "epicKey": null,
-          "weekIndex": 3,
-          "cycleTimeDays": null,
-          "leadTimeDays": 153.04068270833332,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": null,
-          "weekIndex": 7,
-          "cycleTimeDays": null,
-          "leadTimeDays": 193.8624710300926,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": null,
-          "weekIndex": 2,
-          "cycleTimeDays": null,
-          "leadTimeDays": 469.9901156597222,
-          "hadTransition": true,
-          "regressed": true,
-          "isAiTagged": false
         }
       ]
     },
@@ -14350,7 +13036,7 @@
       "contextSwitchThisWeekAvg": 1,
       "contextSwitchFlagged": [],
       "contextSwitchThreshold": 2,
-      "sle85Days": 22.4,
+      "sle85Days": 22.5,
       "thisWeekSleAdherencePct": 100,
       "riskStatus": "OK",
       "wipByStatus": {
@@ -14614,7 +13300,7 @@
           "summary": "eSS - Comp Change Request Pay Rate Increase Modal: Comment field accepts unlimited characters with no length validation",
           "status": "Estimate",
           "type": "Bug",
-          "ageDays": 11.8,
+          "ageDays": 11.9,
           "epicKey": "EXP-968",
           "lane": "Other"
         },
@@ -14704,7 +13390,7 @@
           "summary": "End to End Testing Final",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 34,
+          "ageDays": 34.1,
           "epicKey": "EXP-881",
           "lane": "Ready for Development"
         },
@@ -14963,28 +13649,28 @@
       ],
       "windowDays": 56,
       "cycleTimeDays": {
-        "avg": 13.4,
+        "avg": 13.7,
         "median": 13,
-        "sampleSize": 45
+        "sampleSize": 44
       },
       "leadTimeDays": {
-        "avg": 42,
+        "avg": 29.5,
         "median": 25.5,
-        "sampleSize": 48
+        "sampleSize": 44
       },
-      "flowEfficiencyPct": 31.9,
+      "flowEfficiencyPct": 46.4,
       "throughput7d": 3,
-      "throughputWindowTotal": 48,
-      "throughputAvgPerWeek": 6,
-      "qualityLoopbackRatePct": 54.2,
-      "qualityLoopbackCount": 26,
-      "qualityLoopbackSampleSize": 48,
-      "aiLeverageRatePct": 41.7,
+      "throughputWindowTotal": 44,
+      "throughputAvgPerWeek": 5.5,
+      "qualityLoopbackRatePct": 56.8,
+      "qualityLoopbackCount": 25,
+      "qualityLoopbackSampleSize": 44,
+      "aiLeverageRatePct": 38.6,
       "weekly": [
         {
           "label": "Jun 15–Jun 22",
-          "weekStart": "2026-06-15T15:25:50.847Z",
-          "weekEnd": "2026-06-22T15:25:50.847Z",
+          "weekStart": "2026-06-15T15:33:57.047Z",
+          "weekEnd": "2026-06-22T15:33:57.047Z",
           "throughput": 6,
           "cycleTimeAvg": 11.6,
           "leadTimeAvg": 19.4,
@@ -14996,8 +13682,8 @@
         },
         {
           "label": "Jun 22–Jun 29",
-          "weekStart": "2026-06-22T15:25:50.847Z",
-          "weekEnd": "2026-06-29T15:25:50.847Z",
+          "weekStart": "2026-06-22T15:33:57.047Z",
+          "weekEnd": "2026-06-29T15:33:57.047Z",
           "throughput": 3,
           "cycleTimeAvg": 7.7,
           "leadTimeAvg": 26.8,
@@ -15009,21 +13695,21 @@
         },
         {
           "label": "Jun 29–Jul 6",
-          "weekStart": "2026-06-29T15:25:50.847Z",
-          "weekEnd": "2026-07-06T15:25:50.847Z",
-          "throughput": 10,
+          "weekStart": "2026-06-29T15:33:57.047Z",
+          "weekEnd": "2026-07-06T15:33:57.047Z",
+          "throughput": 9,
           "cycleTimeAvg": 15.5,
-          "leadTimeAvg": 92,
-          "flowEfficiencyPct": 16.8,
-          "qualityLoopbackRatePct": 70,
+          "leadTimeAvg": 28.4,
+          "flowEfficiencyPct": 54.6,
+          "qualityLoopbackRatePct": 77.8,
           "qualityLoopbackCount": 7,
-          "qualityLoopbackSampleSize": 10,
-          "aiLeverageRatePct": 10
+          "qualityLoopbackSampleSize": 9,
+          "aiLeverageRatePct": 11.1
         },
         {
           "label": "Jul 6–Jul 13",
-          "weekStart": "2026-07-06T15:25:50.847Z",
-          "weekEnd": "2026-07-13T15:25:50.847Z",
+          "weekStart": "2026-07-06T15:33:57.047Z",
+          "weekEnd": "2026-07-13T15:33:57.047Z",
           "throughput": 9,
           "cycleTimeAvg": 15.7,
           "leadTimeAvg": 39.1,
@@ -15035,8 +13721,8 @@
         },
         {
           "label": "Jul 13–Jul 20",
-          "weekStart": "2026-07-13T15:25:50.847Z",
-          "weekEnd": "2026-07-20T15:25:50.847Z",
+          "weekStart": "2026-07-13T15:33:57.047Z",
+          "weekEnd": "2026-07-20T15:33:57.047Z",
           "throughput": 7,
           "cycleTimeAvg": 15.4,
           "leadTimeAvg": 25,
@@ -15048,34 +13734,34 @@
         },
         {
           "label": "Jul 20–Jul 27",
-          "weekStart": "2026-07-20T15:25:50.847Z",
-          "weekEnd": "2026-07-27T15:25:50.847Z",
-          "throughput": 4,
+          "weekStart": "2026-07-20T15:33:57.047Z",
+          "weekEnd": "2026-07-27T15:33:57.047Z",
+          "throughput": 3,
           "cycleTimeAvg": 15.1,
-          "leadTimeAvg": 44.8,
-          "flowEfficiencyPct": 33.7,
-          "qualityLoopbackRatePct": 75,
+          "leadTimeAvg": 45.6,
+          "flowEfficiencyPct": 33.1,
+          "qualityLoopbackRatePct": 100,
           "qualityLoopbackCount": 3,
-          "qualityLoopbackSampleSize": 4,
-          "aiLeverageRatePct": 75
+          "qualityLoopbackSampleSize": 3,
+          "aiLeverageRatePct": 66.7
         },
         {
           "label": "Jul 27–Aug 3",
-          "weekStart": "2026-07-27T15:25:50.847Z",
-          "weekEnd": "2026-08-03T15:25:50.847Z",
-          "throughput": 6,
-          "cycleTimeAvg": 4.4,
-          "leadTimeAvg": 19.8,
-          "flowEfficiencyPct": 22.2,
+          "weekStart": "2026-07-27T15:33:57.047Z",
+          "weekEnd": "2026-08-03T15:33:57.047Z",
+          "throughput": 4,
+          "cycleTimeAvg": 5.6,
+          "leadTimeAvg": 26.3,
+          "flowEfficiencyPct": 21.3,
           "qualityLoopbackRatePct": 50,
-          "qualityLoopbackCount": 3,
-          "qualityLoopbackSampleSize": 6,
+          "qualityLoopbackCount": 2,
+          "qualityLoopbackSampleSize": 4,
           "aiLeverageRatePct": 100
         },
         {
           "label": "Aug 3–Aug 10",
-          "weekStart": "2026-08-03T15:25:50.847Z",
-          "weekEnd": "2026-08-10T15:25:50.847Z",
+          "weekStart": "2026-08-03T15:33:57.047Z",
+          "weekEnd": "2026-08-10T15:33:57.047Z",
           "throughput": 3,
           "cycleTimeAvg": 18.1,
           "leadTimeAvg": 24.9,
@@ -15088,30 +13774,12 @@
       ],
       "ticketMetrics": [
         {
-          "epicKey": null,
-          "weekIndex": 6,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.9126978587962963,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": true
-        },
-        {
           "epicKey": "EXP-881",
           "weekIndex": 7,
           "cycleTimeDays": 21.97722318287037,
           "leadTimeDays": 22.767614444444444,
           "hadTransition": true,
           "regressed": false,
-          "isAiTagged": true
-        },
-        {
-          "epicKey": "EXP-881",
-          "weekIndex": 6,
-          "cycleTimeDays": 0.013169259259259259,
-          "leadTimeDays": 12.27934488425926,
-          "hadTransition": true,
-          "regressed": true,
           "isAiTagged": true
         },
         {
@@ -15257,15 +13925,6 @@
           "hadTransition": true,
           "regressed": true,
           "isAiTagged": false
-        },
-        {
-          "epicKey": "EXP-881",
-          "weekIndex": 5,
-          "cycleTimeDays": null,
-          "leadTimeDays": 42.090909305555556,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": true
         },
         {
           "epicKey": "EXP-881",
@@ -15509,15 +14168,6 @@
           "hadTransition": true,
           "regressed": true,
           "isAiTagged": false
-        },
-        {
-          "epicKey": null,
-          "weekIndex": 2,
-          "cycleTimeDays": null,
-          "leadTimeDays": 663.9500151620371,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
         }
       ]
     },
@@ -15638,7 +14288,7 @@
       "focusIntegrityWeekly": [
         2,
         3,
-        2,
+        3,
         1,
         2,
         2,
@@ -15656,6 +14306,7 @@
           "HR-352"
         ],
         [
+          "HR-360",
           "HR-352",
           "HR-237"
         ],
@@ -15693,7 +14344,7 @@
       "contextSwitchThisWeekAvg": 1,
       "contextSwitchFlagged": [],
       "contextSwitchThreshold": 2,
-      "sle85Days": 34.6,
+      "sle85Days": 34.9,
       "thisWeekSleAdherencePct": 50,
       "riskStatus": "At Risk",
       "wipByStatus": {
@@ -16074,7 +14725,7 @@
           "summary": "Warn when approving a DED plan enrollment with $0 or null employer contribution",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 48.9,
+          "ageDays": 49,
           "epicKey": "HR-375",
           "lane": "Backlog"
         },
@@ -16083,7 +14734,7 @@
           "summary": "Manage Individual Enrollments: view and edit Employee and Employer contributions on Available Benefits",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 48.9,
+          "ageDays": 49,
           "epicKey": "HR-375",
           "lane": "Backlog"
         },
@@ -16092,7 +14743,7 @@
           "summary": "Configure a default Employer (ER) contribution on DED interface benefit plans",
           "status": "Backlog",
           "type": "Story",
-          "ageDays": 48.9,
+          "ageDays": 49,
           "epicKey": "HR-375",
           "lane": "Backlog"
         },
@@ -16101,7 +14752,7 @@
           "summary": "Online/eSS - Hide categories with nothing for the current respondent to view or answer",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 69.8,
+          "ageDays": 69.9,
           "epicKey": "HR-237",
           "lane": "Done"
         },
@@ -16110,7 +14761,7 @@
           "summary": "Performance Reviews - Expanded Performance Management Settings (Defaults & Required Fields)",
           "status": "Ready for Release",
           "type": "Story",
-          "ageDays": 75.9,
+          "ageDays": 76,
           "epicKey": "HR-237",
           "lane": "Done"
         },
@@ -16119,7 +14770,7 @@
           "summary": "Performance Reviews - Export Completed Review to PDF",
           "status": "Ready for Development",
           "type": "Story",
-          "ageDays": 75.9,
+          "ageDays": 76,
           "epicKey": "HR-360",
           "lane": "Ready for Development"
         },
@@ -16279,54 +14930,54 @@
       ],
       "windowDays": 56,
       "cycleTimeDays": {
-        "avg": 20.2,
-        "median": 20.1,
-        "sampleSize": 26
+        "avg": 20.9,
+        "median": 20.2,
+        "sampleSize": 25
       },
       "leadTimeDays": {
-        "avg": 70.4,
-        "median": 40,
-        "sampleSize": 28
+        "avg": 64,
+        "median": 41.1,
+        "sampleSize": 25
       },
-      "flowEfficiencyPct": 28.7,
+      "flowEfficiencyPct": 32.7,
       "throughput7d": 4,
-      "throughputWindowTotal": 28,
-      "throughputAvgPerWeek": 3.5,
-      "qualityLoopbackRatePct": 67.9,
-      "qualityLoopbackCount": 19,
-      "qualityLoopbackSampleSize": 28,
+      "throughputWindowTotal": 25,
+      "throughputAvgPerWeek": 3.1,
+      "qualityLoopbackRatePct": 72,
+      "qualityLoopbackCount": 18,
+      "qualityLoopbackSampleSize": 25,
       "aiLeverageRatePct": 0,
       "weekly": [
         {
           "label": "Jun 15–Jun 22",
-          "weekStart": "2026-06-15T15:25:56.800Z",
-          "weekEnd": "2026-06-22T15:25:56.800Z",
-          "throughput": 5,
+          "weekStart": "2026-06-15T15:34:01.930Z",
+          "weekEnd": "2026-06-22T15:34:01.930Z",
+          "throughput": 4,
           "cycleTimeAvg": 14.9,
-          "leadTimeAvg": 98.8,
-          "flowEfficiencyPct": 15.1,
-          "qualityLoopbackRatePct": 60,
+          "leadTimeAvg": 30.8,
+          "flowEfficiencyPct": 48.4,
+          "qualityLoopbackRatePct": 75,
           "qualityLoopbackCount": 3,
-          "qualityLoopbackSampleSize": 5,
+          "qualityLoopbackSampleSize": 4,
           "aiLeverageRatePct": 0
         },
         {
           "label": "Jun 22–Jun 29",
-          "weekStart": "2026-06-22T15:25:56.800Z",
-          "weekEnd": "2026-06-29T15:25:56.800Z",
-          "throughput": 7,
-          "cycleTimeAvg": 17.6,
-          "leadTimeAvg": 89.9,
-          "flowEfficiencyPct": 19.6,
-          "qualityLoopbackRatePct": 42.9,
-          "qualityLoopbackCount": 3,
-          "qualityLoopbackSampleSize": 7,
+          "weekStart": "2026-06-22T15:34:01.930Z",
+          "weekEnd": "2026-06-29T15:34:01.930Z",
+          "throughput": 5,
+          "cycleTimeAvg": 20.7,
+          "leadTimeAvg": 125.4,
+          "flowEfficiencyPct": 16.5,
+          "qualityLoopbackRatePct": 40,
+          "qualityLoopbackCount": 2,
+          "qualityLoopbackSampleSize": 5,
           "aiLeverageRatePct": 0
         },
         {
           "label": "Jun 29–Jul 6",
-          "weekStart": "2026-06-29T15:25:56.800Z",
-          "weekEnd": "2026-07-06T15:25:56.800Z",
+          "weekStart": "2026-06-29T15:34:01.930Z",
+          "weekEnd": "2026-07-06T15:34:01.930Z",
           "throughput": 3,
           "cycleTimeAvg": 22.3,
           "leadTimeAvg": 47.6,
@@ -16338,8 +14989,8 @@
         },
         {
           "label": "Jul 6–Jul 13",
-          "weekStart": "2026-07-06T15:25:56.800Z",
-          "weekEnd": "2026-07-13T15:25:56.800Z",
+          "weekStart": "2026-07-06T15:34:01.930Z",
+          "weekEnd": "2026-07-13T15:34:01.930Z",
           "throughput": 2,
           "cycleTimeAvg": 11.2,
           "leadTimeAvg": 24.5,
@@ -16351,8 +15002,8 @@
         },
         {
           "label": "Jul 13–Jul 20",
-          "weekStart": "2026-07-13T15:25:56.800Z",
-          "weekEnd": "2026-07-20T15:25:56.800Z",
+          "weekStart": "2026-07-13T15:34:01.930Z",
+          "weekEnd": "2026-07-20T15:34:01.930Z",
           "throughput": 2,
           "cycleTimeAvg": 19.4,
           "leadTimeAvg": 88.8,
@@ -16364,8 +15015,8 @@
         },
         {
           "label": "Jul 20–Jul 27",
-          "weekStart": "2026-07-20T15:25:56.800Z",
-          "weekEnd": "2026-07-27T15:25:56.800Z",
+          "weekStart": "2026-07-20T15:34:01.930Z",
+          "weekEnd": "2026-07-27T15:34:01.930Z",
           "throughput": 3,
           "cycleTimeAvg": 19.1,
           "leadTimeAvg": 36.2,
@@ -16377,8 +15028,8 @@
         },
         {
           "label": "Jul 27–Aug 3",
-          "weekStart": "2026-07-27T15:25:56.800Z",
-          "weekEnd": "2026-08-03T15:25:56.800Z",
+          "weekStart": "2026-07-27T15:34:01.930Z",
+          "weekEnd": "2026-08-03T15:34:01.930Z",
           "throughput": 2,
           "cycleTimeAvg": 39.7,
           "leadTimeAvg": 81.6,
@@ -16390,8 +15041,8 @@
         },
         {
           "label": "Aug 3–Aug 10",
-          "weekStart": "2026-08-03T15:25:56.800Z",
-          "weekEnd": "2026-08-10T15:25:56.800Z",
+          "weekStart": "2026-08-03T15:34:01.930Z",
+          "weekEnd": "2026-08-10T15:34:01.930Z",
           "throughput": 4,
           "cycleTimeAvg": 23.8,
           "leadTimeAvg": 51.9,
@@ -16446,24 +15097,6 @@
           "leadTimeDays": 41.14300894675926,
           "hadTransition": true,
           "regressed": true,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "HR-237",
-          "weekIndex": 1,
-          "cycleTimeDays": 1.8532181018518519,
-          "leadTimeDays": 2.0753647106481483,
-          "hadTransition": true,
-          "regressed": true,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "HR-375",
-          "weekIndex": 1,
-          "cycleTimeDays": null,
-          "leadTimeDays": 0.0033070486111111113,
-          "hadTransition": true,
-          "regressed": false,
           "isAiTagged": false
         },
         {
@@ -16642,15 +15275,6 @@
           "weekIndex": 1,
           "cycleTimeDays": 32.97117994212963,
           "leadTimeDays": 271.0572527199074,
-          "hadTransition": true,
-          "regressed": false,
-          "isAiTagged": false
-        },
-        {
-          "epicKey": "HR-241",
-          "weekIndex": 0,
-          "cycleTimeDays": null,
-          "leadTimeDays": 370.8496671875,
           "hadTransition": true,
           "regressed": false,
           "isAiTagged": false
