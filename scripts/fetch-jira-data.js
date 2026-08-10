@@ -747,8 +747,15 @@ async function analyzeProject(key, statusCategoryByName) {
   }
 
   // Rolling 8-week window, relative to right now.
+  // "Won't Do" resolutions are excluded here -- they're backlog-grooming
+  // closures, not delivered work, and a batch close-out of old tickets (seen
+  // on INV and CORE in early August 2026, some dating back to 2020-2024)
+  // otherwise drags that week's Cycle Time / Lead Time / Throughput / Quality
+  // Loopback averages up with created->resolved spans of years, not real
+  // delivery. Excluding at the JQL level means these never enter any metric
+  // derived from `windowIssues` below.
   const windowIssues = await searchAll(
-    `project = ${key} AND ${WORK_ITEM_TYPE_JQL} AND resolutiondate >= -${WINDOW_DAYS}d`,
+    `project = ${key} AND ${WORK_ITEM_TYPE_JQL} AND resolutiondate >= -${WINDOW_DAYS}d AND status != "Won't Do"`,
     ["created", "resolutiondate", "components", "status", "description", "labels", "parent"],
     "changelog"
   );
