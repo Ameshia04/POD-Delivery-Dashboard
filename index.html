@@ -11,19 +11,6 @@
       --text: #e2e8f0; --muted: #8892a4; --accent: #6c63ff;
       --green: #22c55e; --yellow: #f59e0b; --red: #ef4444; --blue: #38bdf8; --purple: #a78bfa;
     }
-    [data-theme="light"] {
-      --bg: #ece4d3; --surface: #faf5e9; --surface2: #f1e9d8; --border: #ddd0b3;
-      --text: #14161f; --muted: #6b7280; --accent: #6c63ff;
-      --green: #15803d; --yellow: #b45309; --red: #b91c1c; --blue: #0369a1; --purple: #7c3aed;
-    }
-    /* A few badge/chip elements below are styled with fixed dark-tint
-       backgrounds rather than the theme variables above (a deliberate "chip"
-       look) -- override them explicitly here so they don't read as a stray
-       dark box once the rest of the page has switched to light mode. */
-    [data-theme="light"] .live-badge { background: #dcfce7; border-color: #86efac; }
-    [data-theme="light"] .deps-built-row { background: #dcfce7; border-color: #86efac; }
-    [data-theme="light"] .error-banner { background: #fee2e2; color: #991b1b; }
-    #themeToggleBtn { background: var(--surface2); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 7px 12px; font-size: 12px; font-weight: 600; cursor: pointer; }
     * { box-sizing: border-box; margin: 0; padding: 0; }
     body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', system-ui, sans-serif; font-size: 14px; min-height: 100vh; }
     header { background: var(--surface); border-bottom: 1px solid var(--border); padding: 16px 28px; display: flex; align-items: center; justify-content: space-between; position: sticky; top: 0; z-index: 100; flex-wrap: wrap; gap: 10px; }
@@ -94,8 +81,6 @@
     .epic-row:last-child { margin-bottom: 0; }
     .epic-row-header { display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; margin-bottom: 4px; gap: 10px; }
     .epic-row-header .epic-key { font-weight: 700; }
-    .jira-link { color: inherit; text-decoration: none; }
-    .jira-link:hover { text-decoration: underline; }
     .epic-row-header .epic-summary { color: var(--muted); margin-left: 6px; }
     .epic-row-header .epic-pct { font-weight: 700; white-space: nowrap; }
     .epic-row-due { font-size: 12px; margin-bottom: 4px; font-weight: 600; }
@@ -104,29 +89,6 @@
     .epic-row-due.at-risk { color: var(--yellow); }
     .epic-row-due.on-track { color: var(--green); }
     .epic-bar-track { background: var(--surface2); border-radius: 6px; height: 8px; overflow: hidden; }
-    .roadmap-card { background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 18px 20px; }
-    .roadmap-scroll { position: relative; }
-    .roadmap-months { display: flex; margin-left: 260px; border-bottom: 1px solid var(--border); padding-bottom: 8px; margin-bottom: 12px; position: relative; height: 20px; }
-    .roadmap-month-tick { position: absolute; top: 0; font-size: 11px; color: var(--muted); transform: translateX(-4px); border-left: 1px solid var(--border); padding-left: 6px; height: 20px; }
-    .roadmap-today-tick { position: absolute; top: 0; font-size: 11px; font-weight: 700; color: var(--accent); border-left: 2px solid var(--accent); padding-left: 6px; height: 20px; }
-    .roadmap-row { display: flex; align-items: flex-start; gap: 0; margin-bottom: 14px; position: relative; }
-    .roadmap-label { width: 260px; flex-shrink: 0; padding-right: 14px; }
-    .roadmap-key { font-weight: 700; font-size: 12.5px; margin-right: 6px; }
-    .roadmap-pod-pill { display: inline-block; background: var(--surface2); color: var(--muted); font-size: 10.5px; font-weight: 600; padding: 2px 8px; border-radius: 999px; border: 1px solid var(--border); }
-    .roadmap-summary { font-size: 12px; color: var(--text); margin-top: 2px; }
-    .roadmap-date { font-size: 11.5px; font-weight: 600; margin-top: 3px; }
-    .roadmap-date.overdue { color: var(--red); } .roadmap-date.at-risk { color: var(--yellow); } .roadmap-date.on-track { color: var(--green); } .roadmap-date.neutral { color: var(--muted); font-weight: 400; }
-    .roadmap-track-wrap { flex: 1; position: relative; height: 34px; }
-    .roadmap-track-line { position: absolute; top: 0; bottom: 0; border-left: 1px solid var(--border); }
-    .roadmap-track-today { position: absolute; top: 0; bottom: -14px; border-left: 2px solid var(--accent); z-index: 2; }
-    .roadmap-bar { position: absolute; top: 8px; height: 18px; border-radius: 9px; background: var(--surface2); border: 1px solid var(--border); overflow: hidden; }
-    .roadmap-bar-fill { height: 100%; border-radius: 9px 0 0 9px; }
-    .roadmap-bar.overdue { border-color: var(--red); } .roadmap-bar.overdue .roadmap-bar-fill { background: var(--red); }
-    .roadmap-bar.at-risk { border-color: var(--yellow); } .roadmap-bar.at-risk .roadmap-bar-fill { background: var(--yellow); }
-    .roadmap-bar.on-track { border-color: var(--green); } .roadmap-bar.on-track .roadmap-bar-fill { background: var(--green); }
-    .roadmap-no-date-heading { color: var(--muted); font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.6px; margin: 20px 0 10px; }
-    .roadmap-no-date-row { display: flex; align-items: center; gap: 10px; padding: 4px 0; font-size: 12.5px; }
-    .roadmap-no-date-row .roadmap-key { color: var(--text); }
     .epic-bar-fill { background: var(--accent); height: 100%; border-radius: 6px; }
     .epic-project-heading { font-size: 13px; font-weight: 700; margin: 16px 0 8px; }
     .epic-project-heading:first-child { margin-top: 0; }
@@ -150,24 +112,16 @@
       padding: 8px 10px; font-size: 12px; font-family: inherit; resize: vertical;
     }
     .pulse-form select:focus, .pulse-form textarea:focus, .pulse-form input:focus { outline: none; border-color: var(--accent); }
+    #pulseSaveBtn {
+      background: var(--accent); color: #fff; border: none; border-radius: 8px;
+      padding: 8px 16px; font-size: 12px; font-weight: 600; cursor: pointer; align-self: flex-start;
+    }
+    #pulseSaveBtn:hover { opacity: 0.9; }
     .pulse-current { border-top: 1px solid var(--border); padding-top: 10px; font-size: 13px; min-height: 20px; }
     .pulse-chip { display: inline-block; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
     .pulse-chip.green { background: #10331f; color: var(--green); }
     .pulse-chip.yellow { background: #3a2f10; color: var(--yellow); }
     .pulse-chip.red { background: #3a1a1a; color: var(--red); }
-    .podobs-row { display: flex; gap: 8px; }
-    .podobs-row > * { flex: 1; }
-    .podobs-baseline { display: flex; gap: 10px; margin-bottom: 14px; }
-    .podobs-baseline-chip { flex: 1; background: var(--surface2); border-radius: 8px; padding: 10px 12px; }
-    .podobs-baseline-chip .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; margin-right: 6px; }
-    .podobs-baseline-chip .label { font-size: 12.5px; font-weight: 600; }
-    .podobs-baseline-chip .value { font-size: 12px; color: var(--muted); margin-top: 4px; }
-    #podObsSaveBtn { background: var(--accent); color: #fff; border: none; border-radius: 8px; padding: 8px 16px; font-size: 12px; font-weight: 600; cursor: pointer; }
-    #podObsSaveBtn:hover { opacity: 0.9; }
-    #podObsDownloadBtn { background: var(--surface2); color: var(--text); border: 1px solid var(--border); border-radius: 8px; padding: 8px 16px; font-size: 12px; font-weight: 600; cursor: pointer; }
-    #podObsDownloadBtn:hover { opacity: 0.9; }
-    .podobs-entry { border-top: 1px solid var(--border); padding: 8px 0; font-size: 12.5px; }
-    .podobs-entry-meta { color: var(--muted); font-size: 11px; margin-top: 4px; }
     .cs-section { margin-top: 16px; padding-top: 12px; border-top: 1px solid var(--border); }
     .cs-heading { font-size: 13px; font-weight: 700; margin-bottom: 4px; }
     .cs-sub { font-size: 12px; color: var(--muted); margin-bottom: 10px; }
@@ -262,7 +216,6 @@
   <div class="header-right">
     <span class="live-badge" id="liveBadge">● Loading…</span>
     <span class="date-label" id="dateLabel"></span>
-    <button id="themeToggleBtn" onclick="toggleTheme()">Light mode</button>
     <button id="printBtn" onclick="window.print()">🖨️ Export PDF</button>
   </div>
 </header>
@@ -271,21 +224,18 @@
   <div class="tab active" onclick="showTab('overview', event)">Overview</div>
   <div class="tab" onclick="showTab('cycle-time', event)">Cycle &amp; Lead Time</div>
   <div class="tab" onclick="showTab('wip', event)">WIP Status</div>
-  <div class="tab" onclick="showTab('portfolio', event)">Squad Portfolio</div>
+  <div class="tab" onclick="showTab('portfolio', event)">Project Portfolio</div>
   <div class="tab" onclick="showTab('five-signals', event)">Five Signals</div>
-  <div class="tab" onclick="showTab('roadmap', event)">Roadmaps</div>
 </div>
 
 <main>
   <div id="errorBanner" class="error-banner" style="display:none"></div>
   <div class="overview-filter-row">
-    <label for="projectFilter">Squad</label>
+    <label for="projectFilter">Project</label>
     <select id="projectFilter" onchange="onProjectChange()"></select>
-    <label for="podFilter" id="podFilterLabel" style="display:none">Pod</label>
-    <select id="podFilter" onchange="onPodChange()" style="display:none"></select>
   </div>
-  <div class="note-card" id="scopeNoteCard">
-    Grouped by real Jira project, relabeled here as Squad (INV, APCOM, EMP, CORE, MOBILE, EXP, HR). All metrics are a rolling 8-week (56-day) window ending today. Use the Squad dropdown above to switch between a cross-squad comparison ("All Squads") and a single squad's week-by-week trend. Pick a squad to reveal the Pod dropdown and drill down further — both stay put no matter which tab you're on.
+  <div class="note-card">
+    Grouped by real Jira project (INV, APCOM, EMP, CORE, MOBILE, BOA, EXP, HR) — there is no Pod/Delivery Manager field in Jira yet. All metrics are a rolling 8-week (56-day) window ending today. Use the project dropdown above to switch between a cross-project comparison ("All Projects") and a single project's week-by-week trend — it stays put no matter which tab you're on.
   </div>
 
   <!-- OVERVIEW -->
@@ -293,18 +243,18 @@
     <div class="summary-grid" id="overviewCards"></div>
     <div class="two-col">
       <div class="chart-card">
-        <h3 id="cycleTimeChartTitle">Cycle Time by Squad</h3>
+        <h3 id="cycleTimeChartTitle">Cycle Time by Project</h3>
         <p id="cycleTimeChartSub">Avg days, first entry into In Dev/In CR/In QA/In Acceptance/Ready for Release to resolution · rolling 8 weeks</p>
         <canvas id="cycleTimeChart"></canvas>
       </div>
       <div class="chart-card">
-        <h3 id="wipOverviewChartTitle">Current WIP by Squad</h3>
-        <p>Open issues (not Done) per squad — always as-of-now, not part of the 8-week window</p>
+        <h3 id="wipOverviewChartTitle">Current WIP by Project</h3>
+        <p>Open issues (not Done) per project — always as-of-now, not part of the 8-week window</p>
         <canvas id="wipOverviewChart"></canvas>
       </div>
     </div>
     <div class="chart-card" style="margin-bottom:24px">
-      <h3 id="loopbackChartTitle">Quality Kick-Back Rate</h3>
+      <h3 id="loopbackChartTitle">Quality Loop-Back Rate</h3>
       <p id="loopbackChartSub">% of transitioned issues that regressed to an earlier stage · rolling 8 weeks</p>
       <canvas id="loopbackChart"></canvas>
     </div>
@@ -338,7 +288,7 @@
   <!-- CYCLE TIME -->
   <div id="tab-cycle-time" class="tab-content">
     <div class="chart-card" style="margin-bottom:20px">
-      <h3 id="cycleAllChartTitle">Cycle Time &amp; Lead Time — All Squads</h3>
+      <h3 id="cycleAllChartTitle">Cycle Time &amp; Lead Time — All Projects</h3>
       <p id="cycleAllChartSub">Avg days · rolling 8 weeks</p>
       <canvas id="cycleAllChart"></canvas>
     </div>
@@ -346,7 +296,7 @@
       <h3>Detail <span class="caret" onclick="toggleCollapse('detailBody', this)">▾</span></h3>
       <div id="detailBody">
         <table class="flow-table" id="cycleTable">
-          <thead id="cycleTableHead"><tr><th>Squad</th><th>Cycle Avg (d)</th><th>Cycle Median (d)</th><th>Lead Avg (d)</th><th>Lead Median (d)</th><th>Sample Size</th></tr></thead>
+          <thead><tr><th>Project</th><th>Cycle Avg (d)</th><th>Cycle Median (d)</th><th>Lead Avg (d)</th><th>Lead Median (d)</th><th>Sample Size</th></tr></thead>
           <tbody></tbody>
         </table>
       </div>
@@ -357,7 +307,7 @@
   <div id="tab-wip" class="tab-content">
     <div class="chart-card" style="margin-bottom:20px">
       <div class="section-header">
-        <h2>WIP Status — By Squad</h2>
+        <h2>WIP Status — By Project</h2>
         <p>Current open issues, grouped by status</p>
       </div>
       <div class="project-grid" id="wipGrid"></div>
@@ -368,7 +318,7 @@
       <div id="agingBody">
         <div class="deps-summary" id="agingSummary"></div>
         <table class="flow-table" id="agingTable">
-          <thead><tr><th id="agingProjectCol">Squad</th><th>Issue</th><th>Type</th><th>Status</th><th>Age (days)</th></tr></thead>
+          <thead><tr><th id="agingProjectCol">Project</th><th>Issue</th><th>Type</th><th>Status</th><th>Age (days)</th></tr></thead>
           <tbody></tbody>
         </table>
         <p id="agingEmpty" style="display:none;margin-top:8px">No open issues right now</p>
@@ -391,7 +341,7 @@
   <!-- FIVE SIGNALS -->
   <div id="tab-five-signals" class="tab-content">
     <div class="note-card">
-      Throughput, Quality, AI Leverage, and Focus Integrity are computed from Jira — Focus Integrity here is a proposed proxy (distinct Epics with active WIP) pending a formal definition with the team. Pod Observations only appears once a Pod is selected above.
+      Throughput, Quality, AI Leverage, and Focus Integrity are computed from Jira — Focus Integrity here is a proposed proxy (distinct Epics with active WIP) pending a formal definition with the team. Team Pulse has no Jira data source; it's a manual signal entered by the Delivery Manager below.
     </div>
     <div class="three-col">
       <div class="chart-card">
@@ -401,7 +351,7 @@
       </div>
       <div class="chart-card">
         <h3 id="qualityChartTitle">Quality</h3>
-        <p id="qualityChartSub">Kick-back rate (%) per project · rolling 8 weeks</p>
+        <p id="qualityChartSub">Loop-back rate (%) per project · rolling 8 weeks</p>
         <canvas id="qualityChart"></canvas>
       </div>
       <div class="chart-card">
@@ -423,55 +373,37 @@
           </div>
         </div>
       </div>
-      <div class="chart-card" id="podObservationsCard" style="display:none">
-        <h3>Pod Observations</h3>
-        <p>Filled in live by the DM during the pod feedback session. Baseline pulls from Jira; the rest is captured live. No Sheets/Excel connection yet, so this saves as text — an on-screen running list for this session, plus a download button.</p>
-        <div class="podobs-baseline" id="podObsBaseline"></div>
+      <div class="chart-card" id="teamPulseCard">
+        <h3>Team Pulse</h3>
+        <p>Human signal — sentiment &amp; sustainability. No Jira data source; entered by the Delivery Manager, saved to a shared Google Sheet.</p>
+        <div class="pulse-criteria">
+          <div class="pulse-criteria-label">What to weigh before rating</div>
+          <ul>
+            <li>Team energy &amp; morale — engaged, or running on fumes?</li>
+            <li>Sustainable pace — late nights, weekend work, or burnout signs?</li>
+            <li>Confidence in the current plan — does the team believe the work is achievable?</li>
+            <li>Psychological safety — are blockers and disagreement raised openly?</li>
+            <li>Team friction — interpersonal or cross-team tension affecting delivery?</li>
+          </ul>
+        </div>
         <div class="pulse-form">
-          <select id="podObsSubmittedBy">
+          <select id="pulseProject"></select>
+          <select id="pulseRating">
+            <option value="green">🟢 Green — healthy</option>
+            <option value="yellow">🟡 Yellow — watch</option>
+            <option value="red">🔴 Red — at risk</option>
+          </select>
+          <select id="pulseSubmittedBy">
             <option value="" disabled selected>Your name</option>
             <option value="Ameshia Doll">Ameshia Doll</option>
             <option value="Brandon Bauer">Brandon Bauer</option>
             <option value="Parker Sikes">Parker Sikes</option>
           </select>
-          <div class="podobs-row">
-            <select id="podObsConfidence">
-              <option value="" disabled selected>Team confidence</option>
-              <option value="High">High</option>
-              <option value="Medium">Medium</option>
-              <option value="Low">Low</option>
-            </select>
-            <select id="podObsCapacity">
-              <option value="none" selected>Capacity heads-up: none</option>
-              <option value="yes">Capacity heads-up: yes</option>
-            </select>
-          </div>
-          <input id="podObsGotInWay" placeholder="What got in the way" />
-          <input id="podObsTryNext" placeholder="Try next cycle" />
-          <div class="podobs-row">
-            <select id="podObsBlockedByPod">
-              <option value="no" selected>Blocked by another pod: no</option>
-              <option value="yes">Blocked by another pod: yes</option>
-            </select>
-            <input id="podObsBlockedWhich" placeholder="Which pod, and why" />
-          </div>
-          <textarea id="podObsNotes" rows="3" placeholder="Observations (free text)"></textarea>
-          <div style="display:flex;gap:8px">
-            <button id="podObsSaveBtn" onclick="savePodObservation()">Save session</button>
-            <button id="podObsDownloadBtn" onclick="downloadPodObservations()">Download .txt</button>
-          </div>
+          <textarea id="pulseNotes" rows="3" placeholder="What's driving this rating? (optional notes)"></textarea>
+          <button id="pulseSaveBtn" onclick="saveTeamPulse()">Save</button>
         </div>
-        <div class="pulse-current" id="podObsList"></div>
+        <div class="pulse-current" id="pulseCurrent"></div>
       </div>
-    </div>
-  </div>
-
-  <!-- ROADMAPS -->
-  <div id="tab-roadmap" class="tab-content">
-    <div class="roadmap-card">
-      <h2>Roadmap</h2>
-      <p style="font-size:12px;color:var(--muted);margin-bottom:16px">Open Epics with a Jira delivery date, laid out on a timeline · bars run from creation date to due date, filled by % complete</p>
-      <div id="roadmapContainer"><p style="color:var(--muted)">Select a squad to see its roadmap.</p></div>
     </div>
   </div>
 </main>
@@ -517,322 +449,172 @@ function makeChart(id, config) {
 }
 function fmt(n, suffix = '') { return (n === null || n === undefined) ? '—' : `${n}${suffix}`; }
 
-// Every Epic key shown on the dashboard maps directly to a real Jira issue --
-// this wraps that key text in a link out to it, opened in a new tab so the
-// dashboard itself stays put.
-const JIRA_BASE = 'https://apspayroll.atlassian.net/browse/';
-function jiraLink(key, innerHtml) {
-  return `<a href="${JIRA_BASE}${key}" target="_blank" rel="noopener" class="jira-link">${innerHtml ?? key}</a>`;
-}
+// Team Pulse: the one signal with no Jira data source (see Darius's Slack
+// note that it's "DM-observation-led feeding an aggregator"). Backed by a
+// shared Google Sheet through a small Apps Script Web App -- see
+// scripts/team-pulse-apps-script.gs for the code to paste into Google's Apps
+// Script editor and the one-time setup steps. Paste the deployed Web App URL
+// below once that's done (in BOTH index.html copies you maintain); until
+// then, entries fall back to this browser's localStorage and data.json's
+// manual.teamPulse, so the card still works, just without cross-device sync.
+const TEAM_PULSE_APPS_SCRIPT_URL = ''; // e.g. 'https://script.google.com/macros/s/AKfycb.../exec'
+const PULSE_LABELS = { green: '🟢 Green — healthy', yellow: '🟡 Yellow — watch', red: '🔴 Red — at risk' };
 
-// Squad vs. Pod scoping: when a Pod is selected, Dependencies, WIP Status,
-// Aging WIP, Squad Portfolio (Epic Completion), and the weekly-trend charts
-// (Cycle & Lead Time, Throughput, Quality, AI Leverage, Focus Integrity)
-// narrow to that pod's own tickets -- joined via each Epic's podLabel, same
-// technique as the Pod Observations baseline. Context Switching stays
-// whole-squad: it's tracked per assignee across all their work, not per
-// Epic, so a per-pod split isn't a clean read on an individual's switching
-// behavior the way the other five signals are.
-function epicKeysForPod(project, podLabel) {
-  return new Set((project.epics || []).filter(e => e.podLabel === podLabel).map(e => e.key));
-}
+function pulseStorageKey(projectKey) { return `deliveryDashboard.teamPulse.${projectKey}`; }
 
-function applyPodScope(p, podLabel) {
-  if (!podLabel) return p;
-  const podEpicKeys = epicKeysForPod(p, podLabel);
-  const epics = (p.epics || []).filter(e => e.podLabel === podLabel);
-  const dependencies = (p.dependencies || []).filter(d =>
-    (d.blockerEpicKey && podEpicKeys.has(d.blockerEpicKey)) || (d.blockedEpicKey && podEpicKeys.has(d.blockedEpicKey)));
-  const resolvedBlockers = (p.resolvedBlockers || []).filter(b => b.blockedEpicKey && podEpicKeys.has(b.blockedEpicKey));
-  const wipDetailed = (p.wipDetailed || []).filter(w => w.epicKey && podEpicKeys.has(w.epicKey));
-
-  const wipByStatus = {};
-  for (const lane of Object.keys(p.wipByStatus || {})) wipByStatus[lane] = 0;
-  for (const w of wipDetailed) wipByStatus[w.lane] = (wipByStatus[w.lane] || 0) + 1;
-
-  const agingWipIssues = [...wipDetailed].sort((a, b) => b.ageDays - a.ageDays).slice(0, 5);
-  const agingWipCount = wipDetailed.filter(w => w.ageDays > AGING_WIP_THRESHOLD_DAYS).length;
-  const oldestWipAgeDays = wipDetailed.length ? Math.max(...wipDetailed.map(w => w.ageDays)) : null;
-
-  return {
-    ...p,
-    epics,
-    dependencies,
-    dependencyCount: dependencies.length,
-    resolvedBlockers,
-    wipDetailed,
-    wipByStatus,
-    wipTotal: wipDetailed.length,
-    agingWipIssues,
-    agingWipCount,
-    oldestWipAgeDays,
-  };
-}
-
-function podScopeNote(podLabel) { return podLabel ? ` — ${podLabel}` : ''; }
-
-function round1Client(n) { return (n === null || n === undefined) ? null : Math.round(n * 10) / 10; }
-function avgClient(arr) { return arr.length ? arr.reduce((a, b) => a + b, 0) / arr.length : null; }
-
-// Re-aggregates the weekly-trend metrics (Cycle Time, Lead Time, Throughput,
-// Quality Loop-back, AI Leverage, Focus Integrity) scoped to one pod, using
-// the per-ticket records (ticketMetrics) and per-week active-Epic lists
-// (focusIntegrityWeeklyEpics) fetch-jira-data.js now exports alongside the
-// pre-aggregated whole-squad `weekly`/`focusIntegrityWeekly` arrays. Mirrors
-// the same avg/rate math as summarize() server-side, just re-run over a
-// pod-filtered ticket set instead of the whole squad's. Falls back to the
-// unscoped squad-wide numbers when no pod is selected, or if a data.json
-// predates this change and doesn't have ticketMetrics yet.
-function computePodWeekly(p, podLabel) {
-  const baseWeekly = p.weekly || [];
-  if (!podLabel || !p.ticketMetrics) {
-    return {
-      weekly: baseWeekly,
-      focusIntegrityWeekly: p.focusIntegrityWeekly || [],
-      focusIntegrityTotalEpics: p.focusIntegrityTotalEpics ?? 0,
-      overallCycleTimeAvg: p.cycleTimeDays ? p.cycleTimeDays.avg : null,
-      overallLeadTimeAvg: p.leadTimeDays ? p.leadTimeDays.avg : null,
-      overallQualityLoopbackRatePct: p.qualityLoopbackRatePct ?? null,
-      overallQualityLoopbackCount: p.qualityLoopbackCount ?? 0,
-      overallQualityLoopbackSampleSize: p.qualityLoopbackSampleSize ?? 0,
-    };
-  }
-  const podEpicKeys = epicKeysForPod(p, podLabel);
-  const tickets = p.ticketMetrics.filter(t => t.epicKey && podEpicKeys.has(t.epicKey));
-
-  const weekly = baseWeekly.map((w, i) => {
-    const wk = tickets.filter(t => t.weekIndex === i);
-    const withCycle = wk.filter(t => t.cycleTimeDays !== null && t.cycleTimeDays !== undefined).map(t => t.cycleTimeDays);
-    const withLead = wk.filter(t => t.leadTimeDays !== null && t.leadTimeDays !== undefined).map(t => t.leadTimeDays);
-    const withTransition = wk.filter(t => t.hadTransition);
-    const regressed = withTransition.filter(t => t.regressed);
-    const aiTagged = wk.filter(t => t.isAiTagged);
-    return {
-      label: w.label,
-      throughput: wk.length,
-      cycleTimeAvg: round1Client(avgClient(withCycle)),
-      leadTimeAvg: round1Client(avgClient(withLead)),
-      qualityLoopbackRatePct: withTransition.length ? round1Client((regressed.length / withTransition.length) * 100) : null,
-      qualityLoopbackCount: regressed.length,
-      qualityLoopbackSampleSize: withTransition.length,
-      aiLeverageRatePct: wk.length ? round1Client((aiTagged.length / wk.length) * 100) : null,
-    };
-  });
-
-  const focusIntegrityWeekly = (p.focusIntegrityWeeklyEpics || baseWeekly.map(() => null)).map(weekEpics =>
-    weekEpics ? weekEpics.filter(k => podEpicKeys.has(k)).length : null
-  );
-
-  const withCycleAll = tickets.filter(t => t.cycleTimeDays !== null && t.cycleTimeDays !== undefined).map(t => t.cycleTimeDays);
-  const withLeadAll = tickets.filter(t => t.leadTimeDays !== null && t.leadTimeDays !== undefined).map(t => t.leadTimeDays);
-  const withTransitionAll = tickets.filter(t => t.hadTransition);
-  const regressedAll = withTransitionAll.filter(t => t.regressed);
-
-  return {
-    weekly,
-    focusIntegrityWeekly,
-    focusIntegrityTotalEpics: podEpicKeys.size,
-    overallCycleTimeAvg: round1Client(avgClient(withCycleAll)),
-    overallLeadTimeAvg: round1Client(avgClient(withLeadAll)),
-    overallQualityLoopbackRatePct: withTransitionAll.length ? round1Client((regressedAll.length / withTransitionAll.length) * 100) : null,
-    overallQualityLoopbackCount: regressedAll.length,
-    overallQualityLoopbackSampleSize: withTransitionAll.length,
-  };
-}
-
-// Pod Observations: replaces Team Pulse. No Sheets/Excel connection yet, so
-// this is text-only -- an on-screen running list for the session (this
-// browser's localStorage, keyed by squad+pod) plus a "Download .txt" button
-// for a real, shareable record. Only shown once a specific Pod is selected
-// (see initPodObservations, called from render()).
-function podObsStorageKey(squadKey, podLabel) { return `deliveryDashboard.podObs.${squadKey}.${podLabel}`; }
-
-function loadPodObservations(squadKey, podLabel) {
+function loadTeamPulseFromStorage(projectKey) {
   try {
-    const raw = localStorage.getItem(podObsStorageKey(squadKey, podLabel));
-    return raw ? JSON.parse(raw) : [];
+    const raw = localStorage.getItem(pulseStorageKey(projectKey));
+    return raw ? JSON.parse(raw) : null;
   } catch {
-    return [];
+    return null;
   }
 }
 
-function renderPodObsList(entries) {
-  const el = document.getElementById('podObsList');
+function saveTeamPulseToStorage(projectKey, entry) {
+  try { localStorage.setItem(pulseStorageKey(projectKey), JSON.stringify(entry)); } catch {}
+}
+
+function renderTeamPulseCurrent(entry, sourceLabel) {
+  const el = document.getElementById('pulseCurrent');
   if (!el) return;
-  if (!entries.length) {
-    el.innerHTML = '<p style="color:var(--muted)">No sessions logged yet for this pod.</p>';
+  if (!entry || !entry.rating) {
+    el.innerHTML = `<p style="color:var(--muted)">No pulse entered yet${sourceLabel ? ` · ${sourceLabel}` : ''}.</p>`;
     return;
   }
-  el.innerHTML = entries.slice().reverse().map(e => `
-    <div class="podobs-entry">
-      <div><b>Confidence: ${e.teamConfidence || '—'}</b>${e.capacityHeadsUp === 'yes' ? ' · capacity heads-up' : ''}${e.blockedByPod === 'yes' ? ' · blocked by another pod' : ''}</div>
-      ${e.gotInWay ? `<div>What got in the way: ${e.gotInWay}</div>` : ''}
-      ${e.tryNext ? `<div>Try next cycle: ${e.tryNext}</div>` : ''}
-      ${e.blockedWhich ? `<div>Which: ${e.blockedWhich}</div>` : ''}
-      ${e.notes ? `<div>Observations: ${e.notes}</div>` : ''}
-      <div class="podobs-entry-meta">Logged ${e.savedAt}${e.submittedBy ? ` by ${e.submittedBy}` : ''}</div>
-    </div>
-  `).join('');
-}
-
-// Baseline stats scoped to a single pod: filters wipDetailed (full per-issue
-// WIP list, with epicKey attached) down to the tickets whose parent Epic
-// carries this pod's label, via the epics list's podLabel field.
-function renderPodObsBaseline(project, podLabel) {
-  const el = document.getElementById('podObsBaseline');
-  if (!el || !project) return;
-  const podEpicKeys = new Set((project.epics || []).filter(e => e.podLabel === podLabel).map(e => e.key));
-  const podWip = (project.wipDetailed || []).filter(w => w.epicKey && podEpicKeys.has(w.epicKey));
-  const agingItems = podWip.filter(w => w.ageDays > AGING_WIP_THRESHOLD_DAYS);
-  const oldestAge = podWip.length ? Math.max(...podWip.map(w => w.ageDays)) : null;
-
-  const laneCounts = {};
-  for (const w of podWip) laneCounts[w.lane] = (laneCounts[w.lane] || 0) + 1;
-  const overLane = Object.entries(WIP_LANE_LIMIT_CLIENT).find(([lane, limit]) => (laneCounts[lane] || 0) > limit);
-
+  const when = entry.savedAt || (entry.date && entry.time ? `${entry.date} ${entry.time}` : '');
   el.innerHTML = `
-    <div class="podobs-baseline-chip">
-      <div><span class="dot" style="background:${agingItems.length ? 'var(--red)' : 'var(--green)'}"></span><span class="label">Aging WIP</span></div>
-      <div class="value">${podWip.length ? `${agingItems.length} item${agingItems.length === 1 ? '' : 's'}, oldest ${oldestAge} days` : 'No WIP for this pod yet'}</div>
-    </div>
-    <div class="podobs-baseline-chip">
-      <div><span class="dot" style="background:${overLane ? 'var(--yellow)' : 'var(--green)'}"></span><span class="label">WIP limit</span></div>
-      <div class="value">${overLane ? `${overLane[0]}: ${laneCounts[overLane[0]]} of ${overLane[1]}, over` : 'Within limits'}</div>
-    </div>
+    <div class="pulse-chip ${entry.rating}">${PULSE_LABELS[entry.rating] || entry.rating}</div>
+    ${entry.notes ? `<p style="margin-top:8px">${entry.notes}</p>` : ''}
+    <p style="color:var(--muted);font-size:11px;margin-top:6px">${when ? `Saved ${when}` : ''}${entry.submittedBy ? ` by ${entry.submittedBy}` : ''}${sourceLabel ? ` · ${sourceLabel}` : ''}</p>
   `;
 }
-// Mirrors WIP_LANE_LIMIT in fetch-jira-data.js -- same placeholder caveat:
-// no formal WIP-limit policy is set with the team yet.
-const WIP_LANE_LIMIT_CLIENT = { "In Development": 6 };
 
-function savePodObservation() {
-  if (!CURRENT_POD) return;
-  const submittedBy = document.getElementById('podObsSubmittedBy').value.trim();
-  const entry = {
-    teamConfidence: document.getElementById('podObsConfidence').value,
-    capacityHeadsUp: document.getElementById('podObsCapacity').value,
-    gotInWay: document.getElementById('podObsGotInWay').value.trim(),
-    tryNext: document.getElementById('podObsTryNext').value.trim(),
-    blockedByPod: document.getElementById('podObsBlockedByPod').value,
-    blockedWhich: document.getElementById('podObsBlockedWhich').value.trim(),
-    notes: document.getElementById('podObsNotes').value.trim(),
-    submittedBy,
-    savedAt: new Date().toLocaleString(),
-  };
-  try { localStorage.setItem('deliveryDashboard.podObs.submittedBy', submittedBy); } catch {}
-  const entries = loadPodObservations(CURRENT_SQUAD, CURRENT_POD);
-  entries.push(entry);
-  try { localStorage.setItem(podObsStorageKey(CURRENT_SQUAD, CURRENT_POD), JSON.stringify(entries)); } catch {}
-  renderPodObsList(entries);
-  ['podObsGotInWay','podObsTryNext','podObsBlockedWhich','podObsNotes'].forEach(id => document.getElementById(id).value = '');
-  document.getElementById('podObsConfidence').selectedIndex = 0;
-  document.getElementById('podObsCapacity').value = 'none';
-  document.getElementById('podObsBlockedByPod').value = 'no';
-}
+let CURRENT_PULSE_PROJECT = 'All';
 
-function downloadPodObservations() {
-  if (!CURRENT_POD) return;
-  const entries = loadPodObservations(CURRENT_SQUAD, CURRENT_POD);
-  if (!entries.length) return;
-  const lines = [`Pod Observations — ${CURRENT_SQUAD} / ${CURRENT_POD}`, ''];
-  for (const e of entries) {
-    lines.push(`Logged ${e.savedAt}${e.submittedBy ? ` by ${e.submittedBy}` : ''}`);
-    lines.push(`Team confidence: ${e.teamConfidence || '—'}`);
-    lines.push(`Capacity heads-up: ${e.capacityHeadsUp}`);
-    if (e.gotInWay) lines.push(`What got in the way: ${e.gotInWay}`);
-    if (e.tryNext) lines.push(`Try next cycle: ${e.tryNext}`);
-    lines.push(`Blocked by another pod: ${e.blockedByPod}${e.blockedWhich ? ` (${e.blockedWhich})` : ''}`);
-    if (e.notes) lines.push(`Observations: ${e.notes}`);
-    lines.push('');
-  }
-  const blob = new Blob([lines.join('\n')], { type: 'text/plain;charset=utf-8;' });
+// No live database is connected (Team Pulse's Google Sheet integration is
+// blocked on a Workspace admin policy -- see scripts/team-pulse-apps-script.gs
+// for the full story), so every Save also downloads the entry as a .csv --
+// a real, shareable record the Delivery Manager can attach to an email or
+// drop in a shared folder, instead of the data only living in this one
+// browser's localStorage.
+function downloadTeamPulseCsv(entry) {
+  const esc = (v) => `"${String(v ?? '').replace(/"/g, '""')}"`;
+  const header = ['Date', 'Time', 'Project', 'Rating', 'Notes', 'Submitted By'];
+  const now = new Date();
+  const row = [
+    now.toLocaleDateString(),
+    now.toLocaleTimeString(),
+    entry.project,
+    entry.rating,
+    entry.notes,
+    entry.submittedBy,
+  ];
+  const csv = header.map(esc).join(',') + '\n' + row.map(esc).join(',') + '\n';
+  const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  a.download = `pod-observations-${CURRENT_SQUAD}-${CURRENT_POD}-${new Date().toISOString().slice(0,10)}.txt`;
+  a.download = `team-pulse-${entry.project}-${now.toISOString().slice(0, 10)}.csv`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
 }
 
-let CURRENT_SQUAD = '__all__';
-let CURRENT_POD = '';
+// Saves to the shared Google Sheet (via the Apps Script Web App) when
+// TEAM_PULSE_APPS_SCRIPT_URL is configured; always also writes a same-browser
+// localStorage copy and downloads a .csv, since there's currently no live
+// database this can rely on. This is a GET request with the data as query
+// params (?action=save&...), not a POST with a body -- Google Apps Script
+// Web Apps redirect script.google.com requests to script.googleusercontent.com,
+// and fetch() dropped the POST body when following that redirect, so doPost
+// never actually received any data. A GET has no body to lose, which is why
+// saving is routed this way; see scripts/team-pulse-apps-script.gs for the
+// matching server-side change.
+async function saveTeamPulse() {
+  const project = document.getElementById('pulseProject').value || 'All';
+  const rating = document.getElementById('pulseRating').value;
+  const notes = document.getElementById('pulseNotes').value.trim();
+  const submittedBy = document.getElementById('pulseSubmittedBy').value.trim();
+  const entry = { project, rating, notes, submittedBy, savedAt: new Date().toLocaleString() };
 
-// Only visible once a specific Pod is selected -- squad-wide (or All Squads)
-// view hides the card entirely, per the "only narrow when a pod is clicked"
-// rule the rest of the dashboard follows.
-function initPodObservations(project, podLabel) {
-  const card = document.getElementById('podObservationsCard');
-  if (!card) return;
-  CURRENT_POD = podLabel || '';
-  if (!podLabel || !project) {
-    card.style.display = 'none';
+  try { localStorage.setItem('deliveryDashboard.teamPulse.submittedBy', submittedBy); } catch {}
+  saveTeamPulseToStorage(project, entry);
+  downloadTeamPulseCsv(entry);
+
+  if (!TEAM_PULSE_APPS_SCRIPT_URL) {
+    renderTeamPulseCurrent(entry, 'saved in this browser + downloaded as .csv (no shared database connected)');
     return;
   }
-  card.style.display = '';
-  renderPodObsBaseline(project, podLabel);
-  renderPodObsList(loadPodObservations(CURRENT_SQUAD, podLabel));
-  const nameField = document.getElementById('podObsSubmittedBy');
-  if (nameField && !nameField.value) {
-    try { nameField.value = localStorage.getItem('deliveryDashboard.podObs.submittedBy') || ''; } catch {}
+  renderTeamPulseCurrent(entry, 'saving to Google Sheet…');
+  try {
+    const params = new URLSearchParams({ action: 'save', project, rating, notes, submittedBy });
+    const res = await fetch(`${TEAM_PULSE_APPS_SCRIPT_URL}?${params.toString()}`, { cache: 'no-store' });
+    const saved = await res.json();
+    saveTeamPulseToStorage(project, saved);
+    renderTeamPulseCurrent(saved, 'saved to shared Google Sheet + downloaded as .csv');
+  } catch {
+    renderTeamPulseCurrent(entry, 'saved in this browser + downloaded as .csv (could not reach Google Sheet)');
   }
+}
+
+// Team Pulse now tracks whichever project is selected in the main dropdown
+// (like every other Five Signals chart), via the projectKey passed in from
+// render(). "All" reads/writes the org-wide entry; a project key reads/writes
+// that project's own entry. The Apps Script's doGet walks the Sheet backwards
+// for the most recent row matching the requested project, falling back to the
+// most recent "All" row, then to the most recent row of any kind.
+async function initTeamPulse(projectKey) {
+  CURRENT_PULSE_PROJECT = projectKey || 'All';
+  const projectSel = document.getElementById('pulseProject');
+  if (projectSel) projectSel.value = CURRENT_PULSE_PROJECT;
+  // Clear rating/notes on every project switch so stale text from a
+  // previously viewed project doesn't linger if the new project has no
+  // saved entry yet -- both get repopulated below if a real entry is found.
+  const notesField = document.getElementById('pulseNotes');
+  if (notesField) notesField.value = '';
+  const ratingField = document.getElementById('pulseRating');
+  if (ratingField) ratingField.selectedIndex = 0;
+  const nameField = document.getElementById('pulseSubmittedBy');
+  if (nameField && !nameField.value) {
+    try { nameField.value = localStorage.getItem('deliveryDashboard.teamPulse.submittedBy') || ''; } catch {}
+  }
+
+  if (TEAM_PULSE_APPS_SCRIPT_URL) {
+    try {
+      const res = await fetch(`${TEAM_PULSE_APPS_SCRIPT_URL}?project=${encodeURIComponent(CURRENT_PULSE_PROJECT)}`, { cache: 'no-store' });
+      const remote = await res.json();
+      if (remote && remote.rating) {
+        document.getElementById('pulseRating').value = remote.rating;
+        document.getElementById('pulseNotes').value = remote.notes || '';
+        renderTeamPulseCurrent(remote, 'from shared Google Sheet');
+      } else {
+        renderTeamPulseCurrent(null, 'from shared Google Sheet');
+      }
+      return;
+    } catch {
+      // Sheet configured but unreachable (offline, URL typo, etc.) -- fall
+      // through to the local/data.json fallback below.
+    }
+  }
+
+  const stored = loadTeamPulseFromStorage(CURRENT_PULSE_PROJECT);
+  let initial = stored;
+  if (!initial && CURRENT_PULSE_PROJECT === 'All' && DATA && DATA.manual && DATA.manual.teamPulse) {
+    initial = DATA.manual.teamPulse;
+  }
+  if (initial) {
+    if (initial.rating) document.getElementById('pulseRating').value = initial.rating;
+    if (initial.notes) document.getElementById('pulseNotes').value = initial.notes;
+  }
+  renderTeamPulseCurrent(initial, TEAM_PULSE_APPS_SCRIPT_URL ? 'could not reach Google Sheet' : 'Google Sheet not connected yet');
 }
 
 let DATA = null;
 
 function onProjectChange() {
-  populatePodDropdown(document.getElementById('projectFilter').value);
   render(document.getElementById('projectFilter').value);
-}
-
-function onPodChange() {
-  render(document.getElementById('projectFilter').value);
-}
-
-// Pod dropdown only appears once a real squad (not "All Squads") is picked,
-// and only lists pods that actually have a labeled Epic in that squad right
-// now (see fetch-jira-data.js's podLabel extraction).
-function populatePodDropdown(squadKey) {
-  const podSel = document.getElementById('podFilter');
-  const podLabel = document.getElementById('podFilterLabel');
-  podSel.value = '';
-  if (!DATA || squadKey === '__all__') {
-    podSel.style.display = 'none';
-    podLabel.style.display = 'none';
-    podSel.innerHTML = '';
-    return;
-  }
-  const project = DATA.projects.find(p => p.key === squadKey);
-  const pods = [...new Set((project && project.epics || []).map(e => e.podLabel).filter(Boolean))].sort();
-  if (!pods.length) {
-    podSel.style.display = 'none';
-    podLabel.style.display = 'none';
-    podSel.innerHTML = '';
-    return;
-  }
-  podSel.innerHTML = '<option value="">Squad view</option>' + pods.map(p => `<option value="${p}">${p}</option>`).join('');
-  podSel.style.display = '';
-  podLabel.style.display = '';
-}
-
-function toggleAtRiskPopout() {
-  const card = document.getElementById('atRiskCard');
-  if (!card) return;
-  const existing = document.getElementById('atRiskPopout');
-  if (existing) { existing.remove(); return; }
-  const keys = JSON.parse(card.dataset.atRiskKeys || '[]');
-  if (!keys.length) return;
-  const isLight = document.documentElement.getAttribute('data-theme') === 'light';
-  const popout = document.createElement('div');
-  popout.id = 'atRiskPopout';
-  popout.style.cssText = isLight
-    ? 'position:absolute;margin-top:8px;background:#ffffff;border:1px solid #d9dce6;border-radius:8px;padding:10px 14px;font-size:13px;color:#14161f;z-index:20;box-shadow:0 4px 12px rgba(0,0,0,0.15)'
-    : 'position:absolute;margin-top:8px;background:#1a1d29;border:1px solid rgba(255,255,255,0.12);border-radius:8px;padding:10px 14px;font-size:13px;color:#f2f3f7;z-index:20;box-shadow:0 4px 12px rgba(0,0,0,0.4)';
-  popout.innerHTML = '<div style="font-weight:600;margin-bottom:6px">At risk</div>' +
-    keys.map(k => `<div style="padding:2px 0;color:${isLight ? '#4b5563' : '#c3c7d1'}">${k}</div>`).join('');
-  card.style.position = 'relative';
-  card.appendChild(popout);
 }
 
 async function load() {
@@ -868,8 +650,14 @@ async function load() {
   const sortedProjects = [...projects].sort((a, b) => a.key.localeCompare(b.key));
 
   const sel = document.getElementById('projectFilter');
-  sel.innerHTML = '<option value="__all__">All Squads</option>' +
+  sel.innerHTML = '<option value="__all__">All Projects</option>' +
     sortedProjects.map(p => `<option value="${p.key}">${p.key}</option>`).join('');
+
+  const pulseSel = document.getElementById('pulseProject');
+  if (pulseSel) {
+    pulseSel.innerHTML = '<option value="All">All Projects</option>' +
+      sortedProjects.map(p => `<option value="${p.key}">${p.key}</option>`).join('');
+  }
 
   render('__all__');
 }
@@ -877,19 +665,14 @@ async function load() {
 function render(selection) {
   if (!DATA) return;
   const projects = DATA.projects.filter(p => !p.error);
-  CURRENT_SQUAD = selection;
-  const podValue = document.getElementById('podFilter').value || '';
 
   if (selection === '__all__') {
-    initPodObservations(null, '');
     renderAllProjects(projects);
   } else {
     const p = projects.find(pr => pr.key === selection);
-    if (p) {
-      renderSingleProject(p);
-      initPodObservations(p, podValue);
-    }
+    if (p) renderSingleProject(p);
   }
+  initTeamPulse(selection === '__all__' ? 'All' : selection);
 }
 
 function renderAllProjects(projects) {
@@ -907,16 +690,12 @@ function renderAllProjects(projects) {
   document.getElementById('overviewCards').innerHTML = `
     <div class="card blue"><div class="card-label">Avg Cycle Time</div><div class="card-value">${avgCycle}<span style="font-size:14px;font-weight:400"> d</span></div><div class="card-sub">Rolling 8 weeks</div></div>
     <div class="card purple"><div class="card-label">Avg Lead Time</div><div class="card-value">${avgLead}<span style="font-size:14px;font-weight:400"> d</span></div><div class="card-sub">Created → Done</div></div>
-    <div class="card"><div class="card-label">Total WIP</div><div class="card-value">${totalWip}</div><div class="card-sub">Open issues, all squads</div></div>
+    <div class="card"><div class="card-label">Total WIP</div><div class="card-value">${totalWip}</div><div class="card-sub">Open issues, all projects</div></div>
     <div class="card yellow"><div class="card-label">Dependencies</div><div class="card-value">${totalDependencies}</div><div class="card-sub">Open "Blocks" links</div></div>
-    <div class="card red" id="atRiskCard" style="cursor:${atRisk > 0 ? 'pointer' : 'default'}" onclick="toggleAtRiskPopout()"><div class="card-label">Squads at Risk</div><div class="card-value">${atRisk}</div><div class="card-sub">Missing their own 85% SLE this week${atRisk > 0 ? ' · click to see which' : ''}</div></div>
+    <div class="card red"><div class="card-label">Projects at Risk</div><div class="card-value">${atRisk}</div><div class="card-sub">Missing their own 85% SLE this week</div></div>
   `;
-  document.getElementById('atRiskCard').dataset.atRiskKeys = JSON.stringify(projects.filter(p => p.riskStatus === 'At Risk').map(p => p.key));
 
-  document.getElementById('roadmapContainer').innerHTML = '<p style="color:var(--muted)">Select a squad to see its roadmap.</p>';
-  document.getElementById('scopeNoteCard').textContent = 'Grouped by real Jira project, relabeled here as Squad (INV, APCOM, EMP, CORE, MOBILE, EXP, HR). All metrics are a rolling 8-week (56-day) window ending today. Use the Squad dropdown above to switch between a cross-squad comparison ("All Squads") and a single squad\'s week-by-week trend. Pick a squad to reveal the Pod dropdown and drill down further -- both stay put no matter which tab you\'re on.';
-
-  document.getElementById('cycleTimeChartTitle').textContent = 'Cycle Time by Squad';
+  document.getElementById('cycleTimeChartTitle').textContent = 'Cycle Time by Project';
   document.getElementById('cycleTimeChartSub').textContent = 'Avg days, first entry into In Dev/In CR/In QA/In Acceptance/Ready for Release to resolution · rolling 8 weeks';
   makeChart('cycleTimeChart', {
     type: 'bar',
@@ -930,11 +709,11 @@ function renderAllProjects(projects) {
     options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
   });
 
-  document.getElementById('loopbackChartTitle').textContent = 'Quality Kick-Back Rate';
+  document.getElementById('loopbackChartTitle').textContent = 'Quality Loop-Back Rate';
   document.getElementById('loopbackChartSub').textContent = '% of transitioned issues that regressed to an earlier stage · rolling 8 weeks';
   makeChart('loopbackChart', {
     type: 'bar',
-    data: { labels, datasets: [{ label: 'Kick-back rate (%)', data: projects.map(p => p.qualityLoopbackRatePct), backgroundColor: '#f59e0b' }] },
+    data: { labels, datasets: [{ label: 'Loop-back rate (%)', data: projects.map(p => p.qualityLoopbackRatePct), backgroundColor: '#f59e0b' }] },
     options: { plugins: { legend: { display: false }, tooltip: { callbacks: { label: (ctx) => {
       const p = projects[ctx.dataIndex];
       return `${fmt(p.qualityLoopbackRatePct,'%')} (${p.qualityLoopbackCount ?? 0} of ${p.qualityLoopbackSampleSize ?? 0})`;
@@ -948,6 +727,7 @@ function renderAllProjects(projects) {
   // projects.
   document.getElementById('depsCard').style.display = 'none';
   document.getElementById('agingCard').style.display = 'none';
+  document.getElementById('teamPulseCard').style.display = 'none';
 
   // Epics only show for a single selected project, not the All Projects view.
   document.getElementById('portfolioEpicsCard').style.display = 'none';
@@ -960,7 +740,7 @@ function renderAllProjects(projects) {
   }
 
   // Cycle & Lead Time tab
-  document.getElementById('cycleAllChartTitle').textContent = 'Cycle Time & Lead Time — All Squads';
+  document.getElementById('cycleAllChartTitle').textContent = 'Cycle Time & Lead Time — All Projects';
   document.getElementById('cycleAllChartSub').textContent = 'Avg days · rolling 8 weeks';
   makeChart('cycleAllChart', {
     type: 'bar',
@@ -970,11 +750,6 @@ function renderAllProjects(projects) {
     ] },
     options: { scales: { y: { beginAtZero: true } } }
   });
-  // All-Squads view: one row per squad, over the full rolling 8-week window --
-  // Cycle/Lead Median are real numbers here (a single median across every
-  // issue in the window), unlike the per-week Detail table in the
-  // single-squad/pod view below, where median was never computed per week.
-  document.getElementById('cycleTableHead').innerHTML = '<tr><th>Squad</th><th>Cycle Avg (d)</th><th>Cycle Median (d)</th><th>Lead Avg (d)</th><th>Lead Median (d)</th><th>Sample Size</th></tr>';
   document.querySelector('#cycleTable tbody').innerHTML = projects.map(p => `
     <tr><td>${p.key}</td><td>${fmt(p.cycleTimeDays.avg)}</td><td>${fmt(p.cycleTimeDays.median)}</td><td>${fmt(p.leadTimeDays.avg)}</td><td>${fmt(p.leadTimeDays.median)}</td><td>${p.cycleTimeDays.sampleSize}</td></tr>
   `).join('');
@@ -994,7 +769,7 @@ function renderAllProjects(projects) {
       <div class="project-stat-row">
         <div><div class="p-stat-val" style="color:${p.riskStatus === 'At Risk' ? 'var(--red)' : 'var(--text)'}">${fmt(p.cycleTimeDays.avg)}</div><div class="p-stat-lbl">Cycle (d)</div></div>
         <div><div class="p-stat-val">${fmt(p.leadTimeDays.avg)}</div><div class="p-stat-lbl">Lead (d)</div></div>
-        <div><div class="p-stat-val">${fmt(p.qualityLoopbackRatePct,'%')}</div><div class="p-stat-lbl">Kick-back (${p.qualityLoopbackCount ?? 0}/${p.qualityLoopbackSampleSize ?? 0})</div></div>
+        <div><div class="p-stat-val">${fmt(p.qualityLoopbackRatePct,'%')}</div><div class="p-stat-lbl">Loop-back (${p.qualityLoopbackCount ?? 0}/${p.qualityLoopbackSampleSize ?? 0})</div></div>
         <div><div class="p-stat-val" style="color:${p.dependencyCount > 0 ? 'var(--yellow)' : 'var(--green)'}">${p.dependencyCount ?? 0}</div><div class="p-stat-lbl">Dependencies</div></div>
       </div>
     </div>
@@ -1009,10 +784,10 @@ function renderAllProjects(projects) {
     options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
   });
   document.getElementById('qualityChartTitle').textContent = 'Quality';
-  document.getElementById('qualityChartSub').textContent = 'Kick-back rate (%) per project · rolling 8 weeks';
+  document.getElementById('qualityChartSub').textContent = 'Loop-back rate (%) per project · rolling 8 weeks';
   makeChart('qualityChart', {
     type: 'bar',
-    data: { labels, datasets: [{ label: 'Kick-back %', data: projects.map(p => p.qualityLoopbackRatePct), backgroundColor: '#f59e0b' }] },
+    data: { labels, datasets: [{ label: 'Loop-back %', data: projects.map(p => p.qualityLoopbackRatePct), backgroundColor: '#f59e0b' }] },
     options: { plugins: { legend: { display: false }, tooltip: { callbacks: { label: (ctx) => {
       const p = projects[ctx.dataIndex];
       return `${fmt(p.qualityLoopbackRatePct,'%')} (${p.qualityLoopbackCount ?? 0} of ${p.qualityLoopbackSampleSize ?? 0})`;
@@ -1275,13 +1050,9 @@ function renderDepsDiagram(rows) {
           <div class="wave-column">
             <div class="wave-column-header">Wave ${i + 1}</div>
             ${col.map((n) => {
-              // "External ticket" (unknown-Epic) tagging was removed: the key prefix
-              // (e.g. BOA-1944 vs INV-987) already tells you when a ticket is from a
-              // different squad, so a separate label was redundant -- and worse, it
-              // mislabeled same-squad tickets whose Epic just couldn't be resolved
-              // from Jira's minimal linked-issue payload as if they were external.
               const differentEpic = DEPS_SELECTED_EPIC && DEPS_SELECTED_EPIC !== '__none__' && n.epicKey && n.epicKey !== DEPS_SELECTED_EPIC;
-              const tag = differentEpic ? '&middot; different Epic' : '';
+              const unknownEpic = DEPS_SELECTED_EPIC && DEPS_SELECTED_EPIC !== '__none__' && !n.epicKey;
+              const tag = differentEpic ? '&middot; different Epic' : (unknownEpic ? '&middot; external ticket' : '');
               return `
               <div class="wave-card ${criticalNodes.has(n.key) ? 'critical' : ''} ${tag ? 'external' : ''}" data-key="${n.key}">
                 <div class="wave-card-key">${n.key}</div>
@@ -1376,19 +1147,13 @@ function epicDueDateLine(e) {
 }
 
 function epicRows(epics) {
-  // Insights-tagged Epics (summary or label containing "insights") are internal
-  // reporting work, not delivery roadmap -- keep them out of Epic Completion.
-  // This is a client-side stopgap so it takes effect immediately; the real
-  // fix lives in fetch-jira-data.js's analyzeEpics(), which excludes them
-  // (by summary AND label) before they're ever written to data.json.
-  epics = (epics || []).filter(e => !/insights/i.test(e.summary || ''));
   if (!epics || !epics.length) {
     return '<p style="color:var(--muted);margin-bottom:14px">No epics found</p>';
   }
   return epics.map(e => `
     <div class="epic-row">
       <div class="epic-row-header">
-        <span><span class="epic-key">${jiraLink(e.key)}</span><span class="epic-summary">${e.summary || ''}</span></span>
+        <span><span class="epic-key">${e.key}</span><span class="epic-summary">${e.summary || ''}</span></span>
         <span class="epic-pct">${fmt(e.percentDone,'%')}${e.childTotal !== null && e.childTotal !== undefined ? ` (${e.childDone}/${e.childTotal})` : ''}</span>
       </div>
       ${epicDueDateLine(e)}
@@ -1473,25 +1238,18 @@ function renderContextSwitching(weeklyAvg, thisWeekAvg, flagged, labels) {
 }
 
 function renderSingleProject(p) {
-  const podValue = document.getElementById('podFilter').value || '';
-  const viewP = applyPodScope(p, podValue);
-  const scopeNote = podScopeNote(podValue);
-  const podWeekly = computePodWeekly(p, podValue);
-  const weekly = podWeekly.weekly;
+  const weekly = p.weekly || [];
   const labels = weekly.map(w => w.label);
-  document.getElementById('scopeNoteCard').textContent = podValue
-    ? `Showing ${podValue} only: all cards and trend charts -- Dependencies, WIP Status, Aging WIP, Squad Portfolio, Cycle & Lead Time, Throughput, Quality, AI Leverage, and Focus Integrity -- are scoped to this pod's own tickets. Context Switching still shows the whole ${p.key} squad, since it's tracked per assignee across all their work, not per Epic.`
-    : `Grouped by real Jira project, relabeled here as Squad (INV, APCOM, EMP, CORE, MOBILE, EXP, HR). All metrics are a rolling 8-week (56-day) window ending today. Use the Squad dropdown above to switch between a cross-squad comparison ("All Squads") and a single squad's week-by-week trend. Pick a squad to reveal the Pod dropdown and drill down further -- both stay put no matter which tab you're on.`;
 
   document.getElementById('overviewCards').innerHTML = `
-    <div class="card blue"><div class="card-label">Avg Cycle Time</div><div class="card-value">${fmt(podWeekly.overallCycleTimeAvg)}<span style="font-size:14px;font-weight:400"> d</span></div><div class="card-sub">${p.key}${scopeNote} · rolling 8 weeks</div></div>
-    <div class="card purple"><div class="card-label">Avg Lead Time</div><div class="card-value">${fmt(podWeekly.overallLeadTimeAvg)}<span style="font-size:14px;font-weight:400"> d</span></div><div class="card-sub">Created → Done${scopeNote}</div></div>
-    <div class="card"><div class="card-label">Current WIP</div><div class="card-value">${viewP.wipTotal}</div><div class="card-sub">Open issues${scopeNote}</div></div>
-    <div class="card yellow"><div class="card-label">Dependencies</div><div class="card-value">${viewP.dependencyCount ?? 0}</div><div class="card-sub">Open "Blocks" links${scopeNote}</div></div>
+    <div class="card blue"><div class="card-label">Avg Cycle Time</div><div class="card-value">${fmt(p.cycleTimeDays.avg)}<span style="font-size:14px;font-weight:400"> d</span></div><div class="card-sub">${p.key} · rolling 8 weeks</div></div>
+    <div class="card purple"><div class="card-label">Avg Lead Time</div><div class="card-value">${fmt(p.leadTimeDays.avg)}<span style="font-size:14px;font-weight:400"> d</span></div><div class="card-sub">Created → Done</div></div>
+    <div class="card"><div class="card-label">Current WIP</div><div class="card-value">${p.wipTotal}</div><div class="card-sub">Open issues, right now</div></div>
+    <div class="card yellow"><div class="card-label">Dependencies</div><div class="card-value">${p.dependencyCount ?? 0}</div><div class="card-sub">Open "Blocks" links</div></div>
     <div class="card ${p.riskStatus === 'At Risk' ? 'red' : 'green'}"><div class="card-label">Risk Status</div><div class="card-value">${p.riskStatus || 'OK'}</div><div class="card-sub">SLE: 85% within ${fmt(p.sle85Days)}d${p.thisWeekSleAdherencePct !== null && p.thisWeekSleAdherencePct !== undefined ? ` · this week ${fmt(p.thisWeekSleAdherencePct,'%')}` : ' · nothing resolved this week yet'}</div></div>
   `;
 
-  document.getElementById('cycleTimeChartTitle').textContent = `${p.key} — Cycle & Lead Time Trend${scopeNote}`;
+  document.getElementById('cycleTimeChartTitle').textContent = `${p.key} — Cycle & Lead Time Trend`;
   document.getElementById('cycleTimeChartSub').textContent = 'Weekly avg days, oldest → newest (8 weeks)';
   makeChart('cycleTimeChart', {
     type: 'line',
@@ -1504,38 +1262,36 @@ function renderSingleProject(p) {
 
   makeChart('wipOverviewChart', {
     type: 'bar',
-    data: { labels: Object.keys(viewP.wipByStatus), datasets: [{ label: 'Open issues', data: Object.values(viewP.wipByStatus), backgroundColor: '#6c63ff' }] },
+    data: { labels: Object.keys(p.wipByStatus), datasets: [{ label: 'Open issues', data: Object.values(p.wipByStatus), backgroundColor: '#6c63ff' }] },
     options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
   });
 
-  document.getElementById('loopbackChartTitle').textContent = `${p.key} — Quality Kick-Back Rate Trend${scopeNote}`;
+  document.getElementById('loopbackChartTitle').textContent = `${p.key} — Quality Loop-Back Rate Trend`;
   document.getElementById('loopbackChartSub').textContent = 'Weekly %, oldest → newest (8 weeks)';
   makeChart('loopbackChart', {
     type: 'bar',
-    data: { labels, datasets: [{ label: 'Kick-back rate (%)', data: weekly.map(w => w.qualityLoopbackRatePct), backgroundColor: '#f59e0b' }] },
+    data: { labels, datasets: [{ label: 'Loop-back rate (%)', data: weekly.map(w => w.qualityLoopbackRatePct), backgroundColor: '#f59e0b' }] },
     options: { plugins: { legend: { display: false }, tooltip: { callbacks: { label: (ctx) => {
       const w = weekly[ctx.dataIndex];
       return `${fmt(w.qualityLoopbackRatePct,'%')} (${w.qualityLoopbackCount ?? 0} of ${w.qualityLoopbackSampleSize ?? 0})`;
     } } } }, scales: { y: { beginAtZero: true, max: 100 } } }
   });
 
-  // Dependencies, Aging WIP, and Epics are single-project-only views (hidden
-  // in renderAllProjects above) -- restore them here. All three read from
-  // viewP, so they narrow to the selected Pod's own tickets once one is
-  // picked, and show the whole squad otherwise.
+  // Dependencies, Aging WIP, and Team Pulse are single-project-only views
+  // (hidden in renderAllProjects above) -- restore them here.
   document.getElementById('depsCard').style.display = '';
   document.getElementById('agingCard').style.display = '';
-  document.getElementById('depsSub').textContent = `Ticket-to-ticket dependencies, from Jira's "Blocks" linked work items${scopeNote}`;
-  renderDependencies(viewP.dependencies || [], viewP.epics || [], viewP.resolvedBlockers || []);
+  document.getElementById('teamPulseCard').style.display = '';
+  renderDependencies(p.dependencies || [], p.epics || [], p.resolvedBlockers || []);
 
-  // Epics: only shown in single-project view, on the Squad Portfolio tab.
+  // Epics: only shown in single-project view, on the Project Portfolio tab.
   document.getElementById('portfolioEpicsCard').style.display = '';
-  renderEpics(viewP.epics || [], false);
+  renderEpics(p.epics || [], false);
 
-  renderAgingWip((viewP.agingWipIssues || []).map(w => ({ ...w, project: p.key })), false);
-  renderAgingSummary(viewP.oldestWipAgeDays ?? null, viewP.agingWipCount || 0);
+  renderAgingWip((p.agingWipIssues || []).map(w => ({ ...w, project: p.key })), false);
+  renderAgingSummary(p.oldestWipAgeDays ?? null, p.agingWipCount || 0);
 
-  document.getElementById('cycleAllChartTitle').textContent = `${p.key} — Cycle & Lead Time Trend${scopeNote}`;
+  document.getElementById('cycleAllChartTitle').textContent = `${p.key} — Cycle & Lead Time Trend`;
   document.getElementById('cycleAllChartSub').textContent = 'Weekly avg days, oldest → newest (8 weeks)';
   makeChart('cycleAllChart', {
     type: 'line',
@@ -1545,56 +1301,47 @@ function renderSingleProject(p) {
     ] },
     options: { scales: { y: { beginAtZero: true } } }
   });
-  // Single Squad/Pod view: one row per week, not per squad -- "Squad" as a
-  // column header never made sense here. Cycle/Lead Median are dropped
-  // entirely rather than shown as a permanent "--": median was only ever
-  // computed once, across the whole rolling window (see the All-Squads
-  // header above), never recomputed per individual week, so these two
-  // columns could never show a real number in this view. The last column is
-  // relabeled "Throughput" to match what it actually is -- every issue
-  // resolved that week, not the (smaller) count that had a valid cycle time.
-  document.getElementById('cycleTableHead').innerHTML = '<tr><th>Week of</th><th>Cycle Avg (d)</th><th>Lead Avg (d)</th><th>Throughput</th></tr>';
   document.querySelector('#cycleTable tbody').innerHTML = weekly.map(w => `
-    <tr><td>${w.label}</td><td>${fmt(w.cycleTimeAvg)}</td><td>${fmt(w.leadTimeAvg)}</td><td>${w.throughput}</td></tr>
+    <tr><td>${w.label}</td><td>${fmt(w.cycleTimeAvg)}</td><td>—</td><td>${fmt(w.leadTimeAvg)}</td><td>—</td><td>${w.throughput}</td></tr>
   `).join('');
 
   document.getElementById('wipGrid').innerHTML = `
     <div class="project-card">
-      <div class="project-header"><div class="project-name">${p.key}${scopeNote}</div><div class="project-key">${viewP.wipTotal} open</div></div>
-      <div class="wip-list">${Object.entries(viewP.wipByStatus).map(([status,count]) => `${status}: <span>${count}</span>`).join('<br>') || 'No open issues'}</div>
+      <div class="project-header"><div class="project-name">${p.key}</div><div class="project-key">${p.wipTotal} open</div></div>
+      <div class="wip-list">${Object.entries(p.wipByStatus).map(([status,count]) => `${status}: <span>${count}</span>`).join('<br>') || 'No open issues'}</div>
     </div>
   `;
 
   document.getElementById('portfolioGrid').innerHTML = `
     <div class="project-card">
-      <div class="project-header"><div class="project-name">${p.key}${scopeNote}</div><div class="project-key">${viewP.wipTotal} WIP</div></div>
+      <div class="project-header"><div class="project-name">${p.key}</div><div class="project-key">${p.wipTotal} WIP</div></div>
       <div class="project-stat-row">
-        <div><div class="p-stat-val" style="color:${p.riskStatus === 'At Risk' ? 'var(--red)' : 'var(--text)'}">${fmt(podWeekly.overallCycleTimeAvg)}</div><div class="p-stat-lbl">Cycle (d)</div></div>
-        <div><div class="p-stat-val">${fmt(podWeekly.overallLeadTimeAvg)}</div><div class="p-stat-lbl">Lead (d)</div></div>
-        <div><div class="p-stat-val">${fmt(podWeekly.overallQualityLoopbackRatePct,'%')}</div><div class="p-stat-lbl">Kick-back (${podWeekly.overallQualityLoopbackCount ?? 0}/${podWeekly.overallQualityLoopbackSampleSize ?? 0})</div></div>
-        <div><div class="p-stat-val" style="color:${viewP.dependencyCount > 0 ? 'var(--yellow)' : 'var(--green)'}">${viewP.dependencyCount ?? 0}</div><div class="p-stat-lbl">Dependencies</div></div>
+        <div><div class="p-stat-val" style="color:${p.riskStatus === 'At Risk' ? 'var(--red)' : 'var(--text)'}">${fmt(p.cycleTimeDays.avg)}</div><div class="p-stat-lbl">Cycle (d)</div></div>
+        <div><div class="p-stat-val">${fmt(p.leadTimeDays.avg)}</div><div class="p-stat-lbl">Lead (d)</div></div>
+        <div><div class="p-stat-val">${fmt(p.qualityLoopbackRatePct,'%')}</div><div class="p-stat-lbl">Loop-back (${p.qualityLoopbackCount ?? 0}/${p.qualityLoopbackSampleSize ?? 0})</div></div>
+        <div><div class="p-stat-val" style="color:${p.dependencyCount > 0 ? 'var(--yellow)' : 'var(--green)'}">${p.dependencyCount ?? 0}</div><div class="p-stat-lbl">Dependencies</div></div>
       </div>
     </div>
   `;
 
-  document.getElementById('throughputChartTitle').textContent = `${p.key} — Throughput Trend${scopeNote}`;
+  document.getElementById('throughputChartTitle').textContent = `${p.key} — Throughput Trend`;
   document.getElementById('throughputChartSub').textContent = 'Issues resolved per week (8 weeks)';
   makeChart('throughputChart', {
     type: 'line',
     data: { labels, datasets: [{ label: 'Resolved', data: weekly.map(w => w.throughput), borderColor: '#22c55e', backgroundColor: '#22c55e', tension: 0.3 }] },
     options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true } } }
   });
-  document.getElementById('qualityChartTitle').textContent = `${p.key} — Quality Trend${scopeNote}`;
-  document.getElementById('qualityChartSub').textContent = 'Kick-back rate (%) per week (8 weeks)';
+  document.getElementById('qualityChartTitle').textContent = `${p.key} — Quality Trend`;
+  document.getElementById('qualityChartSub').textContent = 'Loop-back rate (%) per week (8 weeks)';
   makeChart('qualityChart', {
     type: 'line',
-    data: { labels, datasets: [{ label: 'Kick-back %', data: weekly.map(w => w.qualityLoopbackRatePct), borderColor: '#f59e0b', backgroundColor: '#f59e0b', tension: 0.3 }] },
+    data: { labels, datasets: [{ label: 'Loop-back %', data: weekly.map(w => w.qualityLoopbackRatePct), borderColor: '#f59e0b', backgroundColor: '#f59e0b', tension: 0.3 }] },
     options: { plugins: { legend: { display: false }, tooltip: { callbacks: { label: (ctx) => {
       const w = weekly[ctx.dataIndex];
       return `${fmt(w.qualityLoopbackRatePct,'%')} (${w.qualityLoopbackCount ?? 0} of ${w.qualityLoopbackSampleSize ?? 0})`;
     } } } }, scales: { y: { beginAtZero: true, max: 100 } } }
   });
-  document.getElementById('aiChartTitle').textContent = `${p.key} — AI Leverage Trend${scopeNote}`;
+  document.getElementById('aiChartTitle').textContent = `${p.key} — AI Leverage Trend`;
   document.getElementById('aiChartSub').textContent = '% of resolved issues tagged with an AI/Claude component, per week (8 weeks)';
   makeChart('aiChart', {
     type: 'line',
@@ -1610,147 +1357,18 @@ function renderSingleProject(p) {
   // all 8 weeks are real from the very first run instead of filling in
   // slowly over real time. The All Projects view's cross-project snapshot
   // bar chart (above, in renderAllProjects) is unaffected by this.
-  document.getElementById('focusIntegrityChartTitle').textContent = `${p.key} — Focus Integrity Trend${scopeNote}`;
+  document.getElementById('focusIntegrityChartTitle').textContent = `${p.key} — Focus Integrity Trend`;
   document.getElementById('focusIntegrityChartSub').textContent = 'Weekly active Epics, oldest → newest (8 weeks) · reconstructed from Jira\'s changelog';
   makeChart('focusIntegrityChart', {
     type: 'line',
-    data: { labels, datasets: [{ label: 'Active Epics', data: podWeekly.focusIntegrityWeekly || [], borderColor: '#eab308', backgroundColor: '#eab308', tension: 0.3, spanGaps: false }] },
+    data: { labels, datasets: [{ label: 'Active Epics', data: p.focusIntegrityWeekly || [], borderColor: '#eab308', backgroundColor: '#eab308', tension: 0.3, spanGaps: false }] },
     options: { plugins: { legend: { display: false }, tooltip: { callbacks: { label: (ctx) =>
-      `${ctx.parsed.y ?? 0} active of ${podWeekly.focusIntegrityTotalEpics ?? 0} open epics`
+      `${ctx.parsed.y ?? 0} active of ${p.focusIntegrityTotalEpics ?? 0} open epics`
     } } }, scales: { y: { beginAtZero: true } } }
   });
 
   renderContextSwitching(p.contextSwitchWeeklyAvg || [], p.contextSwitchThisWeekAvg, p.contextSwitchFlagged || [], labels);
-
-  // viewP.epics is already pod-scoped by applyPodScope() above -- when a
-  // specific Pod is selected this narrows the Roadmap to just that pod's
-  // Epics; with no pod selected (Squad view) it's the same as p.epics.
-  renderRoadmap(viewP.epics || []);
 }
-
-// ROADMAP: a per-squad timeline of open Epics that have a Jira due date.
-// Bar spans createdDate -> dueDate, filled by percentDone, colored by the
-// same traffic-light thresholds as epicDueDateLine. Epics with no due date
-// are listed separately below, un-plotted.
-function roadmapStatus(e) {
-  if (!e.dueDate) return { cls: 'neutral', label: 'No delivery date set' };
-  const due = new Date(e.dueDate + 'T00:00:00');
-  const label = due.toLocaleDateString('en-US', { month: 'short', day: 'numeric', year: 'numeric' });
-  const done = (e.percentDone ?? 0) >= 100;
-  const daysUntilDue = (due.getTime() - Date.now()) / 86400000;
-  if (done) return { cls: 'on-track', label: `${label} (delivered)`, due };
-  if (daysUntilDue < 0) return { cls: 'overdue', label: `${label} (past due)`, due };
-  if (daysUntilDue <= 14) return { cls: 'at-risk', label: `${label} (due soon)`, due };
-  return { cls: 'on-track', label: `${label} (on track)`, due };
-}
-
-function renderRoadmap(epics) {
-  const container = document.getElementById('roadmapContainer');
-  // Only Epics with a Pod label belong on the Roadmap -- anything not yet
-  // tagged to a pod is excluded entirely (not shown in the timeline, and not
-  // shown in the "no delivery date" list below it) rather than showing up
-  // labeled "No pod label."
-  const podEpics = (epics || []).filter(e => e.podLabel);
-  if (!podEpics.length) {
-    container.innerHTML = '<p style="color:var(--muted)">No open epics with a Pod label for this squad yet.</p>';
-    return;
-  }
-  const withDue = podEpics.filter(e => e.dueDate).map(e => ({ ...e, _status: roadmapStatus(e) }));
-  const withoutDue = podEpics.filter(e => !e.dueDate);
-
-  if (!withDue.length) {
-    container.innerHTML = '<p style="color:var(--muted);margin-bottom:12px">No open epics with a delivery date set yet.</p>' + roadmapNoDateRows(withoutDue);
-    return;
-  }
-
-  withDue.sort((a, b) => a._status.due - b._status.due);
-
-  // e.createdDate is Jira's "created" field -- already a full timestamp
-  // (e.g. "2026-01-15T09:23:11.000-0500"), unlike dueDate which is a bare
-  // "YYYY-MM-DD" date. Parse it directly; appending 'T00:00:00' here (like
-  // the dueDate handling below) would double up the time portion and
-  // produce an Invalid Date, which silently poisons every position on the
-  // whole timeline.
-  const starts = withDue.map(e => e.createdDate ? new Date(e.createdDate) : e._status.due);
-  const ends = withDue.map(e => e._status.due);
-  const today = new Date(); today.setHours(0,0,0,0);
-  let rangeStart = new Date(Math.min(...starts, today));
-  let rangeEnd = new Date(Math.max(...ends, today));
-  // pad a couple weeks on each side so bars/today marker aren't flush to the edge
-  rangeStart.setDate(rangeStart.getDate() - 10);
-  rangeEnd.setDate(rangeEnd.getDate() + 10);
-  const totalMs = rangeEnd - rangeStart;
-  const pct = (d) => Math.max(0, Math.min(100, ((d - rangeStart) / totalMs) * 100));
-
-  // Month ticks: first of each month within range
-  const ticks = [];
-  const cursor = new Date(rangeStart.getFullYear(), rangeStart.getMonth(), 1);
-  if (cursor < rangeStart) cursor.setMonth(cursor.getMonth() + 1);
-  while (cursor <= rangeEnd) {
-    ticks.push(new Date(cursor));
-    cursor.setMonth(cursor.getMonth() + 1);
-  }
-
-  const monthsHtml = ticks.map(t => `<div class="roadmap-month-tick" style="left:${pct(t)}%">${t.toLocaleDateString('en-US',{month:'short',year:'2-digit'})}</div>`).join('')
-    + `<div class="roadmap-today-tick" style="left:${pct(today)}%">Today</div>`;
-
-  const rowsHtml = withDue.map(e => {
-    const start = e.createdDate ? new Date(e.createdDate) : e._status.due;
-    const left = pct(start);
-    const right = pct(e._status.due);
-    const width = Math.max(1.2, right - left);
-    const fillPct = Math.max(0, Math.min(100, e.percentDone ?? 0));
-    return `
-      <div class="roadmap-row">
-        <div class="roadmap-label">
-          <span class="roadmap-key">${jiraLink(e.key)}</span>
-          <span class="roadmap-pod-pill">${e.podLabel}</span>
-          <div class="roadmap-summary">${e.summary || ''}</div>
-          <div class="roadmap-date ${e._status.cls}">${e._status.label}</div>
-        </div>
-        <div class="roadmap-track-wrap">
-          <div class="roadmap-track-today" style="left:${pct(today)}%"></div>
-          <div class="roadmap-bar ${e._status.cls}" style="left:${left}%;width:${width}%">
-            <div class="roadmap-bar-fill" style="width:${fillPct}%"></div>
-          </div>
-        </div>
-      </div>`;
-  }).join('');
-
-  container.innerHTML = `
-    <div class="roadmap-scroll">
-      <div class="roadmap-months">${monthsHtml}</div>
-      ${rowsHtml}
-    </div>
-    ${roadmapNoDateRows(withoutDue)}
-  `;
-}
-
-function roadmapNoDateRows(withoutDue) {
-  if (!withoutDue.length) return '';
-  return `
-    <div class="roadmap-no-date-heading">No delivery date set</div>
-    ${withoutDue.map(e => `
-      <div class="roadmap-no-date-row">
-        <span class="roadmap-key">${jiraLink(e.key)}</span>
-        <span>${e.summary || ''}</span>
-        <span class="roadmap-pod-pill">${e.podLabel}</span>
-      </div>
-    `).join('')}
-  `;
-}
-
-function applyTheme(theme) {
-  document.documentElement.setAttribute('data-theme', theme);
-  const btn = document.getElementById('themeToggleBtn');
-  if (btn) btn.textContent = theme === 'light' ? 'Dark mode' : 'Light mode';
-  localStorage.setItem('podDeliveryDashboard.theme', theme);
-}
-function toggleTheme() {
-  const current = document.documentElement.getAttribute('data-theme') || 'dark';
-  applyTheme(current === 'dark' ? 'light' : 'dark');
-}
-applyTheme(localStorage.getItem('podDeliveryDashboard.theme') || 'dark');
 
 // Keep the dependency diagram's arrows aligned to their cards as the window
 // (and therefore the card grid) reflows. Debounced since resize fires rapidly.
