@@ -89,7 +89,10 @@
     .deps-chip { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; padding: 8px 16px; font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 600; }
     .deps-chip b { display: block; font-size: 18px; text-transform: none; letter-spacing: 0; margin-bottom: 2px; }
     .deps-chip.blue b { color: var(--blue); } .deps-chip.purple b { color: var(--purple); } .deps-chip.yellow b { color: var(--yellow); }
-    .deps-chip.red b { color: var(--red); }
+    .deps-chip.red b { color: var(--red); } .deps-chip.green b { color: var(--green); }
+    .deps-category { margin-bottom: 28px; }
+    .deps-category:last-child { margin-bottom: 0; }
+    .deps-category-title { font-size: 12px; font-weight: 700; color: var(--text); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 10px; }
     .epic-row { margin-bottom: 14px; }
     .epic-row:last-child { margin-bottom: 0; }
     .epic-row-header { display: flex; justify-content: space-between; align-items: baseline; font-size: 12px; margin-bottom: 4px; gap: 10px; }
@@ -191,12 +194,13 @@
        fights against forcing clean WAVE 1/2/3 columns with physics-based
        auto-layout. */
     .view-toggle { display: flex; gap: 6px; margin-bottom: 12px; }
-    .deps-view-btn {
+    .deps-view-btn, .rel-category-btn {
       background: var(--surface2); color: var(--muted); border: 1px solid var(--border); border-radius: 6px;
       padding: 5px 12px; font-size: 11px; font-weight: 600; cursor: pointer;
     }
-    .deps-view-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
-    .deps-view-btn:hover:not(.active) { border-color: var(--accent); color: var(--text); }
+    .deps-view-btn.active, .rel-category-btn.active { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .deps-view-btn:hover:not(.active), .rel-category-btn:hover:not(.active) { border-color: var(--accent); color: var(--text); }
+    .rel-category-toggle { margin-bottom: 18px; }
     .view-toggle-divider { width: 1px; height: 18px; background: var(--border); margin: 0 6px; align-self: center; }
     .deps-epic-label { font-size: 11px; color: var(--muted); align-self: center; }
     .deps-epic-select {
@@ -309,28 +313,60 @@
       <canvas id="loopbackChart"></canvas>
     </div>
     <div class="chart-card" id="depsCard">
-      <h3 id="depsTitle">Dependencies <span class="caret" onclick="toggleCollapse('depsBody', this)">▾</span></h3>
-      <p id="depsSub">Ticket-to-ticket dependencies, from Jira's "Blocks" linked work items</p>
-      <div class="view-toggle" id="depsViewToggle">
-        <button class="deps-view-btn active" data-mode="list" onclick="setDepsView('list')">List</button>
-        <button class="deps-view-btn" data-mode="diagram" onclick="setDepsView('diagram')">Diagram</button>
-        <div class="view-toggle-divider" id="depsEpicDivider" style="display:none"></div>
-        <span class="deps-epic-label" id="depsEpicLabel" style="display:none">Epic</span>
-        <select id="depsEpicSelect" class="deps-epic-select" style="display:none" onchange="onDepsEpicChange()"></select>
-      </div>
+      <h3 id="depsTitle">Ticket Relationships <span class="caret" onclick="toggleCollapse('depsBody', this)">▾</span></h3>
+      <p id="depsSub">Ticket-to-ticket relationships from Jira: Blocked (hard blocker), Depends On (sequencing risk, not necessarily a hard stop), and Related (informational only)</p>
       <div id="depsBody">
-        <div id="depsListView">
-          <div class="filter-row">
-            <input type="text" id="depsFilterInput" placeholder="Filter by blocker (e.g. INV or INV-935)" oninput="onDepsFilterChange()" />
+        <div class="view-toggle rel-category-toggle" id="relCategoryToggle">
+          <button class="rel-category-btn active" data-cat="blocked" onclick="setRelCategory('blocked')">Blocked</button>
+          <button class="rel-category-btn" data-cat="dependsOn" onclick="setRelCategory('dependsOn')">Depends On</button>
+          <button class="rel-category-btn" data-cat="related" onclick="setRelCategory('related')">Related</button>
+        </div>
+
+        <div class="deps-category" id="depsCategoryBlocked">
+          <div class="view-toggle" id="depsViewToggle">
+            <button class="deps-view-btn active" data-mode="list" onclick="setDepsView('list')">List</button>
+            <button class="deps-view-btn" data-mode="diagram" onclick="setDepsView('diagram')">Diagram</button>
+            <div class="view-toggle-divider" id="depsEpicDivider" style="display:none"></div>
+            <span class="deps-epic-label" id="depsEpicLabel" style="display:none">Epic</span>
+            <select id="depsEpicSelect" class="deps-epic-select" style="display:none" onchange="onDepsEpicChange()"></select>
           </div>
-          <div class="deps-summary" id="depsSummary"></div>
-          <table class="flow-table" id="depsTable">
-            <thead><tr><th>Blocker</th><th>Status</th><th></th><th>Blocked</th><th>Status</th></tr></thead>
+          <div id="depsListView">
+            <div class="filter-row">
+              <input type="text" id="depsFilterInput" placeholder="Filter by blocker (e.g. INV or INV-935)" oninput="onDepsFilterChange()" />
+            </div>
+            <div class="deps-summary" id="depsSummary"></div>
+            <table class="flow-table" id="depsTable">
+              <thead><tr><th>Blocker</th><th>Status</th><th></th><th>Blocked</th><th>Status</th></tr></thead>
+              <tbody></tbody>
+            </table>
+            <p id="depsEmpty" style="display:none;margin-top:8px">No open blockers right now 🎉</p>
+          </div>
+          <div id="depsDiagramView" style="display:none"></div>
+        </div>
+
+        <div class="deps-category" id="depsCategoryDependsOn" style="display:none">
+          <div class="filter-row">
+            <input type="text" id="dependsOnFilterInput" placeholder="Filter by ticket (e.g. INV or INV-935)" oninput="onDependsOnFilterChange()" />
+          </div>
+          <div class="deps-summary" id="dependsOnSummary"></div>
+          <table class="flow-table" id="dependsOnTable">
+            <thead><tr><th>Ticket</th><th>Status</th><th></th><th>Depends On</th><th>Status</th></tr></thead>
             <tbody></tbody>
           </table>
-          <p id="depsEmpty" style="display:none;margin-top:8px">No open dependencies right now 🎉</p>
+          <p id="dependsOnEmpty" style="display:none;margin-top:8px">No open "Depends On" relationships right now</p>
         </div>
-        <div id="depsDiagramView" style="display:none"></div>
+
+        <div class="deps-category" id="depsCategoryRelated" style="display:none">
+          <div class="filter-row">
+            <input type="text" id="relatedFilterInput" placeholder="Filter by ticket (e.g. INV or INV-935)" oninput="onRelatedFilterChange()" />
+          </div>
+          <div class="deps-summary" id="relatedSummary"></div>
+          <table class="flow-table" id="relatedTable">
+            <thead><tr><th>Ticket</th><th>Status</th><th></th><th>Related To</th><th>Status</th></tr></thead>
+            <tbody></tbody>
+          </table>
+          <p id="relatedEmpty" style="display:none;margin-top:8px">No open "Related" tickets right now</p>
+        </div>
       </div>
     </div>
   </div>
@@ -544,6 +580,10 @@ function applyPodScope(p, podLabel) {
   const dependencies = (p.dependencies || []).filter(d =>
     (d.blockerEpicKey && podEpicKeys.has(d.blockerEpicKey)) || (d.blockedEpicKey && podEpicKeys.has(d.blockedEpicKey)));
   const resolvedBlockers = (p.resolvedBlockers || []).filter(b => b.blockedEpicKey && podEpicKeys.has(b.blockedEpicKey));
+  const dependsOn = (p.dependsOn || []).filter(d =>
+    (d.fromEpicKey && podEpicKeys.has(d.fromEpicKey)) || (d.toEpicKey && podEpicKeys.has(d.toEpicKey)));
+  const related = (p.related || []).filter(r =>
+    (r.aEpicKey && podEpicKeys.has(r.aEpicKey)) || (r.bEpicKey && podEpicKeys.has(r.bEpicKey)));
   const wipDetailed = (p.wipDetailed || []).filter(w => w.epicKey && podEpicKeys.has(w.epicKey));
 
   const wipByStatus = {};
@@ -560,6 +600,10 @@ function applyPodScope(p, podLabel) {
     dependencies,
     dependencyCount: dependencies.length,
     resolvedBlockers,
+    dependsOn,
+    dependsOnCount: dependsOn.length,
+    related,
+    relatedCount: related.length,
     wipDetailed,
     wipByStatus,
     wipTotal: wipDetailed.length,
@@ -1091,6 +1135,18 @@ function onDepsFilterChange() {
   renderDepsTable(applyDepsFilter(LAST_DEPENDENCY_ROWS));
 }
 
+// Splits a set of rows into "internal" (both sides belong to the same real
+// Jira project) and "external" (the two sides are in different projects) --
+// shared by all three Ticket Relationships categories below.
+function splitByScope(rows, aProjectField, bProjectField) {
+  let internal = 0, external = 0;
+  rows.forEach((r) => {
+    if ((r[aProjectField] || '') && r[aProjectField] === r[bProjectField]) internal++;
+    else external++;
+  });
+  return { internal, external };
+}
+
 function renderDepsTable(rows) {
   const tbody = document.querySelector('#depsTable tbody');
   const empty = document.getElementById('depsEmpty');
@@ -1105,7 +1161,12 @@ function renderDepsTable(rows) {
       <tr><td>${d.blockerKey}</td><td>${d.blockerStatus || '—'}</td><td style="color:var(--muted)">blocks →</td><td>${d.blockedKey}</td><td>${d.blockedStatus || '—'}</td></tr>
     `).join('');
   }
-  document.getElementById('depsSummary').innerHTML = `<div class="deps-chip blue"><b>${rows.length}</b>Dependencies</div>`;
+  const scope = splitByScope(rows, 'blockerProject', 'blockedProject');
+  document.getElementById('depsSummary').innerHTML = `
+    <div class="deps-chip blue"><b>${rows.length}</b>Blocked</div>
+    <div class="deps-chip green"><b>${scope.internal}</b>Internal</div>
+    <div class="deps-chip yellow"><b>${scope.external}</b>External</div>
+  `;
 }
 
 function renderDependencies(rows, epics, resolvedBlockers) {
@@ -1115,6 +1176,118 @@ function renderDependencies(rows, epics, resolvedBlockers) {
   renderDepsTable(applyDepsFilter(deduped));
   populateDepsEpicSelect(epics || [], deduped);
   if (DEPS_VIEW_MODE === 'diagram') renderDepsDiagramForSelectedEpic();
+  return deduped;
+}
+
+// "Depends On" (Jira's "Dependency" link type -- directional, sequencing
+// risk, not necessarily a hard blocker) and "Related" (Jira's "Relates" link
+// type -- symmetric, informational only) follow the exact same List-only
+// pattern as Blocked above, minus the Diagram/build-order view -- neither
+// relationship implies a build order the way a hard Blocks link does.
+
+function dedupeBySides(rows, aKeyField, bKeyField, symmetric) {
+  const seen = new Set();
+  const out = [];
+  for (const r of rows) {
+    const pair = symmetric
+      ? [r[aKeyField], r[bKeyField]].sort().join('<->')
+      : `${r[aKeyField]}->${r[bKeyField]}`;
+    if (seen.has(pair)) continue;
+    seen.add(pair);
+    out.push(r);
+  }
+  return out;
+}
+
+let LAST_DEPENDS_ON_ROWS = [];
+
+function applyDependsOnFilter(rows) {
+  const input = document.getElementById('dependsOnFilterInput');
+  const q = (input && input.value || '').trim().toLowerCase();
+  if (!q) return rows;
+  return rows.filter(d =>
+    d.fromKey.toLowerCase().includes(q) ||
+    (d.fromProject || '').toLowerCase().includes(q) ||
+    (d.fromSummary || '').toLowerCase().includes(q)
+  );
+}
+
+function onDependsOnFilterChange() {
+  renderDependsOnTable(applyDependsOnFilter(LAST_DEPENDS_ON_ROWS));
+}
+
+function renderDependsOnTable(rows) {
+  const tbody = document.querySelector('#dependsOnTable tbody');
+  const empty = document.getElementById('dependsOnEmpty');
+  if (!rows.length) {
+    tbody.innerHTML = '';
+    document.getElementById('dependsOnTable').style.display = 'none';
+    empty.style.display = 'block';
+  } else {
+    document.getElementById('dependsOnTable').style.display = '';
+    empty.style.display = 'none';
+    tbody.innerHTML = rows.map(d => `
+      <tr><td>${d.fromKey}</td><td>${d.fromStatus || '—'}</td><td style="color:var(--muted)">depends on →</td><td>${d.toKey}</td><td>${d.toStatus || '—'}</td></tr>
+    `).join('');
+  }
+  const scope = splitByScope(rows, 'fromProject', 'toProject');
+  document.getElementById('dependsOnSummary').innerHTML = `
+    <div class="deps-chip purple"><b>${rows.length}</b>Depends On</div>
+    <div class="deps-chip green"><b>${scope.internal}</b>Internal</div>
+    <div class="deps-chip yellow"><b>${scope.external}</b>External</div>
+  `;
+}
+
+function renderDependsOn(rows) {
+  const deduped = dedupeBySides(rows || [], 'fromKey', 'toKey', false);
+  LAST_DEPENDS_ON_ROWS = deduped;
+  renderDependsOnTable(applyDependsOnFilter(deduped));
+  return deduped;
+}
+
+let LAST_RELATED_ROWS = [];
+
+function applyRelatedFilter(rows) {
+  const input = document.getElementById('relatedFilterInput');
+  const q = (input && input.value || '').trim().toLowerCase();
+  if (!q) return rows;
+  return rows.filter(d =>
+    d.aKey.toLowerCase().includes(q) ||
+    (d.aProject || '').toLowerCase().includes(q) ||
+    (d.aSummary || '').toLowerCase().includes(q)
+  );
+}
+
+function onRelatedFilterChange() {
+  renderRelatedTable(applyRelatedFilter(LAST_RELATED_ROWS));
+}
+
+function renderRelatedTable(rows) {
+  const tbody = document.querySelector('#relatedTable tbody');
+  const empty = document.getElementById('relatedEmpty');
+  if (!rows.length) {
+    tbody.innerHTML = '';
+    document.getElementById('relatedTable').style.display = 'none';
+    empty.style.display = 'block';
+  } else {
+    document.getElementById('relatedTable').style.display = '';
+    empty.style.display = 'none';
+    tbody.innerHTML = rows.map(d => `
+      <tr><td>${d.aKey}</td><td>${d.aStatus || '—'}</td><td style="color:var(--muted)">relates to</td><td>${d.bKey}</td><td>${d.bStatus || '—'}</td></tr>
+    `).join('');
+  }
+  const scope = splitByScope(rows, 'aProject', 'bProject');
+  document.getElementById('relatedSummary').innerHTML = `
+    <div class="deps-chip blue"><b>${rows.length}</b>Related</div>
+    <div class="deps-chip green"><b>${scope.internal}</b>Internal</div>
+    <div class="deps-chip yellow"><b>${scope.external}</b>External</div>
+  `;
+}
+
+function renderRelated(rows) {
+  const deduped = dedupeBySides(rows || [], 'aKey', 'bKey', true);
+  LAST_RELATED_ROWS = deduped;
+  renderRelatedTable(applyRelatedFilter(deduped));
   return deduped;
 }
 
@@ -1131,6 +1304,27 @@ let DEPS_VIEW_MODE = 'list';
 let LAST_DEPS_DIAGRAM = { edges: [], criticalEdges: new Set() };
 let LAST_RESOLVED_BLOCKERS = [];
 let DEPS_SELECTED_EPIC = null;
+
+// Which of the three Ticket Relationships categories (Blocked/Depends On/
+// Related) is currently showing -- click-through tabs instead of stacking
+// all three, so the card doesn't run long. Only Blocked has a List/Diagram
+// toggle (build-order only makes sense for a hard blocker); Depends On and
+// Related are List-only.
+let REL_CATEGORY = 'blocked';
+function setRelCategory(cat) {
+  REL_CATEGORY = cat;
+  document.getElementById('depsCategoryBlocked').style.display = cat === 'blocked' ? '' : 'none';
+  document.getElementById('depsCategoryDependsOn').style.display = cat === 'dependsOn' ? '' : 'none';
+  document.getElementById('depsCategoryRelated').style.display = cat === 'related' ? '' : 'none';
+  document.querySelectorAll('.rel-category-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
+  // Diagram arrows measure card positions via getBoundingClientRect(), which
+  // reports zero for elements hidden by display:none -- redraw once the
+  // Blocked category (and its Diagram view, if selected) becomes visible
+  // again, same fix already used for the tab-switching case.
+  if (cat === 'blocked' && DEPS_VIEW_MODE === 'diagram') {
+    requestAnimationFrame(() => drawDepsDiagramArrows(LAST_DEPS_DIAGRAM.edges, LAST_DEPS_DIAGRAM.criticalEdges));
+  }
+}
 
 function setDepsView(mode) {
   DEPS_VIEW_MODE = mode;
@@ -1527,6 +1721,8 @@ function renderSingleProject(p) {
   document.getElementById('agingCard').style.display = '';
   document.getElementById('depsSub').textContent = `Ticket-to-ticket dependencies, from Jira's "Blocks" linked work items${scopeNote}`;
   renderDependencies(viewP.dependencies || [], viewP.epics || [], viewP.resolvedBlockers || []);
+  renderDependsOn(viewP.dependsOn || []);
+  renderRelated(viewP.related || []);
 
   // Epics: only shown in single-project view, on the Squad Portfolio tab.
   document.getElementById('portfolioEpicsCard').style.display = '';
