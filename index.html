@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -345,27 +346,47 @@
         </div>
 
         <div class="deps-category" id="depsCategoryDependsOn" style="display:none">
-          <div class="filter-row">
-            <input type="text" id="dependsOnFilterInput" placeholder="Filter by ticket (e.g. INV or INV-935)" oninput="onDependsOnFilterChange()" />
+          <div class="view-toggle" id="dependsOnViewToggle">
+            <button class="deps-view-btn active" data-mode="list" onclick="setDependsOnView('list')">List</button>
+            <button class="deps-view-btn" data-mode="diagram" onclick="setDependsOnView('diagram')">Diagram</button>
+            <div class="view-toggle-divider" id="dependsOnEpicDivider" style="display:none"></div>
+            <span class="deps-epic-label" id="dependsOnEpicLabel" style="display:none">Epic</span>
+            <select id="dependsOnEpicSelect" class="deps-epic-select" style="display:none" onchange="onDependsOnEpicChange()"></select>
           </div>
-          <div class="deps-summary" id="dependsOnSummary"></div>
-          <table class="flow-table" id="dependsOnTable">
-            <thead><tr><th>Ticket</th><th>Status</th><th></th><th>Depends On</th><th>Status</th></tr></thead>
-            <tbody></tbody>
-          </table>
-          <p id="dependsOnEmpty" style="display:none;margin-top:8px">No open "Depends On" relationships right now</p>
+          <div id="dependsOnListView">
+            <div class="filter-row">
+              <input type="text" id="dependsOnFilterInput" placeholder="Filter by ticket (e.g. INV or INV-935)" oninput="onDependsOnFilterChange()" />
+            </div>
+            <div class="deps-summary" id="dependsOnSummary"></div>
+            <table class="flow-table" id="dependsOnTable">
+              <thead><tr><th>Ticket</th><th>Status</th><th></th><th>Depends On</th><th>Status</th></tr></thead>
+              <tbody></tbody>
+            </table>
+            <p id="dependsOnEmpty" style="display:none;margin-top:8px">No open "Depends On" relationships right now</p>
+          </div>
+          <div id="dependsOnDiagramView" style="display:none"></div>
         </div>
 
         <div class="deps-category" id="depsCategoryRelated" style="display:none">
-          <div class="filter-row">
-            <input type="text" id="relatedFilterInput" placeholder="Filter by ticket (e.g. INV or INV-935)" oninput="onRelatedFilterChange()" />
+          <div class="view-toggle" id="relatedViewToggle">
+            <button class="deps-view-btn active" data-mode="list" onclick="setRelatedView('list')">List</button>
+            <button class="deps-view-btn" data-mode="diagram" onclick="setRelatedView('diagram')">Diagram</button>
+            <div class="view-toggle-divider" id="relatedEpicDivider" style="display:none"></div>
+            <span class="deps-epic-label" id="relatedEpicLabel" style="display:none">Epic</span>
+            <select id="relatedEpicSelect" class="deps-epic-select" style="display:none" onchange="onRelatedEpicChange()"></select>
           </div>
-          <div class="deps-summary" id="relatedSummary"></div>
-          <table class="flow-table" id="relatedTable">
-            <thead><tr><th>Ticket</th><th>Status</th><th></th><th>Related To</th><th>Status</th></tr></thead>
-            <tbody></tbody>
-          </table>
-          <p id="relatedEmpty" style="display:none;margin-top:8px">No open "Related" tickets right now</p>
+          <div id="relatedListView">
+            <div class="filter-row">
+              <input type="text" id="relatedFilterInput" placeholder="Filter by ticket (e.g. INV or INV-935)" oninput="onRelatedFilterChange()" />
+            </div>
+            <div class="deps-summary" id="relatedSummary"></div>
+            <table class="flow-table" id="relatedTable">
+              <thead><tr><th>Ticket</th><th>Status</th><th></th><th>Related To</th><th>Status</th></tr></thead>
+              <tbody></tbody>
+            </table>
+            <p id="relatedEmpty" style="display:none;margin-top:8px">No open "Related" tickets right now</p>
+          </div>
+          <div id="relatedDiagramView" style="display:none"></div>
         </div>
       </div>
     </div>
@@ -523,8 +544,12 @@ function showTab(name, event) {
   // The dependency diagram's arrows are measured via getBoundingClientRect(),
   // which returns zero-size rects while the Overview tab is display:none --
   // so redraw once it's visible again, on whichever project is currently shown.
-  if (name === 'overview' && DEPS_VIEW_MODE === 'diagram') {
-    requestAnimationFrame(() => drawDepsDiagramArrows(LAST_DEPS_DIAGRAM.edges, LAST_DEPS_DIAGRAM.criticalEdges));
+  if (name === 'overview') {
+    requestAnimationFrame(() => {
+      if (DEPS_VIEW_MODE === 'diagram') drawGraphEdges('depsDiagramView', 'depsDiagramSvg', LAST_DEPS_DIAGRAM.edges, LAST_DEPS_DIAGRAM.criticalEdges);
+      if (DEPENDS_ON_VIEW_MODE === 'diagram') drawGraphEdges('dependsOnDiagramView', 'dependsOnDiagramSvg', LAST_DEPENDS_ON_DIAGRAM.edges, LAST_DEPENDS_ON_DIAGRAM.criticalEdges);
+      if (RELATED_VIEW_MODE === 'diagram') drawGraphEdges('relatedDiagramView', 'relatedDiagramSvg', LAST_RELATED_DIAGRAM.edges, LAST_RELATED_DIAGRAM.crossEpicEdges, { arrowless: true });
+    });
   }
 }
 
@@ -1238,10 +1263,12 @@ function renderDependsOnTable(rows) {
   `;
 }
 
-function renderDependsOn(rows) {
+function renderDependsOn(rows, epics) {
   const deduped = dedupeBySides(rows || [], 'fromKey', 'toKey', false);
   LAST_DEPENDS_ON_ROWS = deduped;
   renderDependsOnTable(applyDependsOnFilter(deduped));
+  populateDependsOnEpicSelect(epics || [], deduped);
+  if (DEPENDS_ON_VIEW_MODE === 'diagram') renderDependsOnDiagramForSelectedEpic();
   return deduped;
 }
 
@@ -1284,32 +1311,33 @@ function renderRelatedTable(rows) {
   `;
 }
 
-function renderRelated(rows) {
+function renderRelated(rows, epics) {
   const deduped = dedupeBySides(rows || [], 'aKey', 'bKey', true);
   LAST_RELATED_ROWS = deduped;
+  LAST_RELATED_EPICS = epics || [];
   renderRelatedTable(applyRelatedFilter(deduped));
+  populateRelatedEpicSelect(LAST_RELATED_EPICS, deduped);
+  if (RELATED_VIEW_MODE === 'diagram') renderRelatedDiagramForSelectedEpic();
   return deduped;
 }
 
-// Dependency "Build Order" diagram -- List/Diagram toggle for the
-// Dependencies card. DEPS_VIEW_MODE tracks which view is showing;
-// LAST_DEPS_DIAGRAM holds the last-rendered edges/critical-path so arrows can
-// be redrawn (on window resize, or when the Overview tab becomes visible
-// again) without recomputing the whole graph. The Diagram view is further
-// scoped to a single Epic at a time (DEPS_SELECTED_EPIC) -- a project's full
-// dependency graph gets crowded and hard to read fast, so it's grouped by
-// whichever Epic the *blocked* ticket belongs to, with a "No Epic parent"
-// fallback bucket for edges Jira can't attribute to any Epic.
 let DEPS_VIEW_MODE = 'list';
 let LAST_DEPS_DIAGRAM = { edges: [], criticalEdges: new Set() };
 let LAST_RESOLVED_BLOCKERS = [];
 let DEPS_SELECTED_EPIC = null;
+let DEPENDS_ON_VIEW_MODE = 'list';
+let LAST_DEPENDS_ON_DIAGRAM = { edges: [], criticalEdges: new Set() };
+let DEPENDS_ON_SELECTED_EPIC = null;
+let RELATED_VIEW_MODE = 'list';
+let LAST_RELATED_DIAGRAM = { edges: [], crossEpicEdges: new Set() };
+let LAST_RELATED_EPICS = [];
 
 // Which of the three Ticket Relationships categories (Blocked/Depends On/
 // Related) is currently showing -- click-through tabs instead of stacking
-// all three, so the card doesn't run long. Only Blocked has a List/Diagram
-// toggle (build-order only makes sense for a hard blocker); Depends On and
-// Related are List-only.
+// all three, so the card doesn't run long. All three now have their own
+// List/Diagram toggle: Blocked and Depends On share the build-order-wave
+// diagram (both are directional), Related gets its own grouped-by-Epic
+// diagram (it's symmetric, so "build order" doesn't apply to it).
 let REL_CATEGORY = 'blocked';
 function setRelCategory(cat) {
   REL_CATEGORY = cat;
@@ -1318,28 +1346,82 @@ function setRelCategory(cat) {
   document.getElementById('depsCategoryRelated').style.display = cat === 'related' ? '' : 'none';
   document.querySelectorAll('.rel-category-btn').forEach(b => b.classList.toggle('active', b.dataset.cat === cat));
   // Diagram arrows measure card positions via getBoundingClientRect(), which
-  // reports zero for elements hidden by display:none -- redraw once the
-  // Blocked category (and its Diagram view, if selected) becomes visible
-  // again, same fix already used for the tab-switching case.
-  if (cat === 'blocked' && DEPS_VIEW_MODE === 'diagram') {
-    requestAnimationFrame(() => drawDepsDiagramArrows(LAST_DEPS_DIAGRAM.edges, LAST_DEPS_DIAGRAM.criticalEdges));
-  }
+  // reports zero for elements hidden by display:none -- redraw whichever
+  // diagram just became visible.
+  requestAnimationFrame(() => {
+    if (cat === 'blocked' && DEPS_VIEW_MODE === 'diagram') drawGraphEdges('depsDiagramView', 'depsDiagramSvg', LAST_DEPS_DIAGRAM.edges, LAST_DEPS_DIAGRAM.criticalEdges);
+    if (cat === 'dependsOn' && DEPENDS_ON_VIEW_MODE === 'diagram') drawGraphEdges('dependsOnDiagramView', 'dependsOnDiagramSvg', LAST_DEPENDS_ON_DIAGRAM.edges, LAST_DEPENDS_ON_DIAGRAM.criticalEdges);
+    if (cat === 'related' && RELATED_VIEW_MODE === 'diagram') drawGraphEdges('relatedDiagramView', 'relatedDiagramSvg', LAST_RELATED_DIAGRAM.edges, LAST_RELATED_DIAGRAM.crossEpicEdges, { arrowless: true });
+  });
 }
 
 function setDepsView(mode) {
   DEPS_VIEW_MODE = mode;
   document.getElementById('depsListView').style.display = mode === 'list' ? '' : 'none';
   document.getElementById('depsDiagramView').style.display = mode === 'diagram' ? '' : 'none';
-  document.querySelectorAll('.deps-view-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
+  document.querySelectorAll('#depsViewToggle .deps-view-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
   document.getElementById('depsEpicDivider').style.display = mode === 'diagram' ? '' : 'none';
   document.getElementById('depsEpicLabel').style.display = mode === 'diagram' ? '' : 'none';
   document.getElementById('depsEpicSelect').style.display = mode === 'diagram' ? '' : 'none';
   if (mode === 'diagram') renderDepsDiagramForSelectedEpic();
 }
 
-// Builds the Epic dropdown from whichever Epics actually have a dependency
-// edge attributed to them (no point listing Epics with nothing to show), plus
-// a "No Epic parent" option whenever at least one edge's blocked ticket has
+function setDependsOnView(mode) {
+  DEPENDS_ON_VIEW_MODE = mode;
+  document.getElementById('dependsOnListView').style.display = mode === 'list' ? '' : 'none';
+  document.getElementById('dependsOnDiagramView').style.display = mode === 'diagram' ? '' : 'none';
+  document.querySelectorAll('#dependsOnViewToggle .deps-view-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
+  document.getElementById('dependsOnEpicDivider').style.display = mode === 'diagram' ? '' : 'none';
+  document.getElementById('dependsOnEpicLabel').style.display = mode === 'diagram' ? '' : 'none';
+  document.getElementById('dependsOnEpicSelect').style.display = mode === 'diagram' ? '' : 'none';
+  if (mode === 'diagram') renderDependsOnDiagramForSelectedEpic();
+}
+
+function setRelatedView(mode) {
+  RELATED_VIEW_MODE = mode;
+  document.getElementById('relatedListView').style.display = mode === 'list' ? '' : 'none';
+  document.getElementById('relatedDiagramView').style.display = mode === 'diagram' ? '' : 'none';
+  document.querySelectorAll('#relatedViewToggle .deps-view-btn').forEach(b => b.classList.toggle('active', b.dataset.mode === mode));
+  document.getElementById('relatedEpicDivider').style.display = mode === 'diagram' ? '' : 'none';
+  document.getElementById('relatedEpicLabel').style.display = mode === 'diagram' ? '' : 'none';
+  document.getElementById('relatedEpicSelect').style.display = mode === 'diagram' ? '' : 'none';
+  if (mode === 'diagram') renderRelatedDiagramForSelectedEpic();
+}
+
+// Same Epic-dropdown pattern as Blocked/Depends On, generalized for a
+// symmetric relationship: an edge counts toward an Epic if EITHER side
+// belongs to it (aEpicKey or bEpicKey), since there's no "waiting" side
+// here the way there is for a directional link.
+let RELATED_SELECTED_EPIC = null;
+function populateRelatedEpicSelect(epics, deduped) {
+  const sel = document.getElementById('relatedEpicSelect');
+  if (!sel) return;
+  const epicKeysWithRel = new Set();
+  deduped.forEach((d) => { if (d.aEpicKey) epicKeysWithRel.add(d.aEpicKey); if (d.bEpicKey) epicKeysWithRel.add(d.bEpicKey); });
+  const relevantEpics = epics.filter((e) => epicKeysWithRel.has(e.key)).sort((a, b) => a.key.localeCompare(b.key));
+  const hasUnassigned = deduped.some((d) => !d.aEpicKey || !d.bEpicKey);
+  const options = relevantEpics.map((e) => `<option value="${e.key}">${e.key} - ${(e.summary || '').slice(0, 40)}</option>`);
+  if (hasUnassigned || !options.length) options.push('<option value="__none__">No Epic parent</option>');
+  sel.innerHTML = options.join('');
+  RELATED_SELECTED_EPIC = relevantEpics[0] ? relevantEpics[0].key : '__none__';
+  sel.value = RELATED_SELECTED_EPIC;
+}
+
+function onRelatedEpicChange() {
+  RELATED_SELECTED_EPIC = document.getElementById('relatedEpicSelect').value;
+  renderRelatedDiagramForSelectedEpic();
+}
+
+function renderRelatedDiagramForSelectedEpic() {
+  const rows = LAST_RELATED_ROWS.filter((d) =>
+    RELATED_SELECTED_EPIC === '__none__' ? (!d.aEpicKey || !d.bEpicKey) : (d.aEpicKey === RELATED_SELECTED_EPIC || d.bEpicKey === RELATED_SELECTED_EPIC)
+  );
+  renderRelatedDiagram(rows, LAST_RELATED_EPICS, RELATED_SELECTED_EPIC);
+}
+
+// Builds the Epic dropdown from whichever Epics actually have an edge
+// attributed to them (no point listing Epics with nothing to show), plus a
+// "No Epic parent" option whenever at least one edge's "waiting" ticket has
 // no Epic (or its Epic couldn't be determined).
 function populateDepsEpicSelect(epics, deduped) {
   const sel = document.getElementById('depsEpicSelect');
@@ -1363,18 +1445,56 @@ function renderDepsDiagramForSelectedEpic() {
   const rows = LAST_DEPENDENCY_ROWS.filter(d =>
     DEPS_SELECTED_EPIC === '__none__' ? !d.blockedEpicKey : d.blockedEpicKey === DEPS_SELECTED_EPIC
   );
-  renderDepsDiagram(rows);
+  LAST_DEPS_DIAGRAM = renderBuildOrderDiagram('depsDiagramView', 'depsDiagramSvg', rows, DEPS_SELECTED_EPIC, LAST_RESOLVED_BLOCKERS);
 }
 
-// Computes build-order "waves" from deduped blocker->blocked rows: Wave 1 =
-// issues with no open blockers; each later wave = 1 + the deepest wave among
-// its own blockers (a longest-path-from-source topological level, not just
-// "one step past its nearest blocker" -- an issue blocked by something 3
-// waves deep is itself at least 4 waves deep, even if it also has a
-// same-wave blocker). The "critical path" is the single longest blocker
-// chain in the graph -- a reasonable stand-in for critical-path highlighting
-// using only the dependency data Jira actually gives us (no duration/estimate
-// data to weight edges by).
+// Same Epic-dropdown pattern as Blocked, but keyed off fromEpicKey -- in
+// "fromKey depends on toKey," fromKey is the one waiting, same role blockedKey
+// plays for Blocks.
+function populateDependsOnEpicSelect(epics, deduped) {
+  const sel = document.getElementById('dependsOnEpicSelect');
+  if (!sel) return;
+  const epicKeysWithDeps = new Set(deduped.map(d => d.fromEpicKey).filter(Boolean));
+  const relevantEpics = epics.filter(e => epicKeysWithDeps.has(e.key)).sort((a, b) => a.key.localeCompare(b.key));
+  const hasUnassigned = deduped.some(d => !d.fromEpicKey);
+  const options = relevantEpics.map(e => `<option value="${e.key}">${e.key} - ${(e.summary || '').slice(0, 40)}</option>`);
+  if (hasUnassigned || !options.length) options.push('<option value="__none__">No Epic parent</option>');
+  sel.innerHTML = options.join('');
+  DEPENDS_ON_SELECTED_EPIC = relevantEpics[0] ? relevantEpics[0].key : '__none__';
+  sel.value = DEPENDS_ON_SELECTED_EPIC;
+}
+
+function onDependsOnEpicChange() {
+  DEPENDS_ON_SELECTED_EPIC = document.getElementById('dependsOnEpicSelect').value;
+  renderDependsOnDiagramForSelectedEpic();
+}
+
+function renderDependsOnDiagramForSelectedEpic() {
+  const rows = LAST_DEPENDS_ON_ROWS.filter(d =>
+    DEPENDS_ON_SELECTED_EPIC === '__none__' ? !d.fromEpicKey : d.fromEpicKey === DEPENDS_ON_SELECTED_EPIC
+  );
+  // Map fromKey/toKey onto blockerKey/blockedKey so the shared build-order
+  // renderer can be reused as-is: "fromKey depends on toKey" means toKey has
+  // to resolve first -- the same shape as Blocks' blocker/blocked, just
+  // relabeled, so the wave math underneath is identical.
+  const mapped = rows.map(r => ({
+    blockerKey: r.toKey, blockerSummary: r.toSummary, blockerStatus: r.toStatus, blockerEpicKey: r.toEpicKey,
+    blockedKey: r.fromKey, blockedSummary: r.fromSummary, blockedStatus: r.fromStatus, blockedEpicKey: r.fromEpicKey,
+  }));
+  LAST_DEPENDS_ON_DIAGRAM = renderBuildOrderDiagram('dependsOnDiagramView', 'dependsOnDiagramSvg', mapped, DEPENDS_ON_SELECTED_EPIC, []);
+}
+
+// Computes build-order "waves" from deduped predecessor->successor rows:
+// Wave 1 = issues with no open predecessors; each later wave = 1 + the
+// deepest wave among its own predecessors (a longest-path-from-source
+// topological level, not just "one step past its nearest predecessor" -- an
+// issue that's two steps behind something 3 waves deep is itself at least 4
+// waves deep, even if it also has a same-wave predecessor). The "critical
+// path" is the single longest chain in the graph -- a reasonable stand-in for
+// critical-path highlighting using only the link data Jira actually gives us
+// (no duration/estimate data to weight edges by). Shared by Blocked and
+// Depends On -- both are directional, just relabeled (see the mapping in
+// renderDependsOnDiagramForSelectedEpic above).
 function computeDependencyWaves(rows) {
   const nodes = new Map();
   const blockersOf = new Map();
@@ -1388,7 +1508,7 @@ function computeDependencyWaves(rows) {
   const waveOf = new Map();
   function waveFor(key, visiting) {
     if (waveOf.has(key)) return waveOf.get(key);
-    if (visiting.has(key)) return 0; // defensive cycle guard -- real "Blocks" links shouldn't cycle
+    if (visiting.has(key)) return 0; // defensive cycle guard -- real link data shouldn't cycle
     visiting.add(key);
     const blockers = blockersOf.get(key) || [];
     const wave = blockers.length ? 1 + Math.max(...blockers.map((b) => waveFor(b, visiting))) : 0;
@@ -1399,7 +1519,7 @@ function computeDependencyWaves(rows) {
   nodes.forEach((_, key) => waveFor(key, new Set()));
 
   // Walk back from whichever node landed at the deepest wave, always
-  // following the blocker that produced that wave, to trace the longest chain.
+  // following the predecessor that produced that wave, to trace the longest chain.
   let deepestKey = null, deepestWave = -1;
   nodes.forEach((_, key) => { if (waveOf.get(key) > deepestWave) { deepestWave = waveOf.get(key); deepestKey = key; } });
   const criticalNodes = new Set();
@@ -1432,13 +1552,18 @@ function depsStatusColor(status) {
   return 'var(--muted)';
 }
 
-function renderDepsDiagram(rows) {
-  const container = document.getElementById('depsDiagramView');
-  if (!container) return;
+// Shared by Blocked and Depends On -- renders the build-order-wave diagram
+// into the given container/svg ids and returns {edges, criticalEdges} for
+// the caller to hold onto (for resize redraws and category-switch redraws).
+// builtRows (Blocked's resolvedBlockers) is optional -- Depends On passes an
+// empty array since fetch-jira-data.js doesn't track resolved "Dependency"
+// links the same way yet.
+function renderBuildOrderDiagram(containerId, svgId, rows, selectedEpic, builtRows) {
+  const container = document.getElementById(containerId);
+  if (!container) return { edges: [], criticalEdges: new Set() };
   if (!rows.length) {
-    container.innerHTML = '<p style="color:var(--muted)">No open dependencies right now 🎉</p>';
-    LAST_DEPS_DIAGRAM = { edges: [], criticalEdges: new Set() };
-    return;
+    container.innerHTML = '<p style="color:var(--muted)">No open relationships right now 🎉</p>';
+    return { edges: [], criticalEdges: new Set() };
   }
 
   const { columns, edges, criticalEdges, criticalNodes, criticalChain } = computeDependencyWaves(rows);
@@ -1448,7 +1573,7 @@ function renderDepsDiagram(rows) {
     : '';
 
   const nodeKeysInView = new Set(columns.flat().map((n) => n.key));
-  const relevantBuilt = (LAST_RESOLVED_BLOCKERS || []).filter((r) => nodeKeysInView.has(r.blockedKey));
+  const relevantBuilt = (builtRows || []).filter((r) => nodeKeysInView.has(r.blockedKey));
   const builtHtml = relevantBuilt.length
     ? `
       <div class="deps-built-heading">Already built &middot; no longer blocking</div>
@@ -1469,12 +1594,7 @@ function renderDepsDiagram(rows) {
           <div class="wave-column">
             <div class="wave-column-header">Wave ${i + 1}</div>
             ${col.map((n) => {
-              // "External ticket" (unknown-Epic) tagging was removed: the key prefix
-              // (e.g. BOA-1944 vs INV-987) already tells you when a ticket is from a
-              // different squad, so a separate label was redundant -- and worse, it
-              // mislabeled same-squad tickets whose Epic just couldn't be resolved
-              // from Jira's minimal linked-issue payload as if they were external.
-              const differentEpic = DEPS_SELECTED_EPIC && DEPS_SELECTED_EPIC !== '__none__' && n.epicKey && n.epicKey !== DEPS_SELECTED_EPIC;
+              const differentEpic = selectedEpic && selectedEpic !== '__none__' && n.epicKey && n.epicKey !== selectedEpic;
               const tag = differentEpic ? '&middot; different Epic' : '';
               return `
               <div class="wave-card ${criticalNodes.has(n.key) ? 'critical' : ''} ${tag ? 'external' : ''}" data-key="${n.key}">
@@ -1488,36 +1608,109 @@ function renderDepsDiagram(rows) {
           </div>
         `).join('')}
       </div>
-      <svg class="deps-diagram-svg" id="depsDiagramSvg"></svg>
+      <svg class="deps-diagram-svg" id="${svgId}"></svg>
     </div>
     ${builtHtml}
-    <p class="deps-diagram-note">Wave 1 = issues with no open blockers; each later wave = build order once its own blockers clear. <span style="color:var(--accent)">Highlighted</span> cards/arrows are the longest blocker chain in this Epic's graph. Dashed cards belong to a different (or unknown) Epic but still block work in this one. Diagram shows one Epic at a time -- the blocker filter above only applies to the List view.</p>
+    <p class="deps-diagram-note">Wave 1 = issues with no open predecessors; each later wave = build order once its own predecessors clear. <span style="color:var(--accent)">Highlighted</span> cards/arrows are the longest chain in this Epic's graph. Dashed cards belong to a different (or unknown) Epic but still connect to work in this one. Diagram shows one Epic at a time -- the filter above only applies to the List view.</p>
   `;
 
-  LAST_DEPS_DIAGRAM = { edges, criticalEdges };
-  requestAnimationFrame(() => drawDepsDiagramArrows(edges, criticalEdges));
+  requestAnimationFrame(() => drawGraphEdges(containerId, svgId, edges, criticalEdges));
+  return { edges, criticalEdges };
 }
 
-// Draws blocker->blocked arrows as an absolutely-positioned SVG overlay sized
-// to the full (unscrolled) content, with card positions measured via
+// Related has no direction, so "build order waves" don't apply the way they
+// do for Blocked/Depends On. Instead, group tickets by their own Epic (one
+// column per Epic, "No Epic parent" fallback for anything Jira couldn't
+// attribute), and draw a plain connector line between each related pair.
+// Lines that cross from one Epic's column into another's are highlighted --
+// a relationship spanning two Epics is the one most worth noticing, since
+// everything inside a single Epic is already visible on that Epic's own board.
+function computeRelatedGroups(rows) {
+  const nodes = new Map();
+  rows.forEach((r) => {
+    if (!nodes.has(r.aKey)) nodes.set(r.aKey, { key: r.aKey, summary: r.aSummary, status: r.aStatus, epicKey: r.aEpicKey || null });
+    if (!nodes.has(r.bKey)) nodes.set(r.bKey, { key: r.bKey, summary: r.bSummary, status: r.bStatus, epicKey: r.bEpicKey || null });
+  });
+  const epicKeys = Array.from(new Set(Array.from(nodes.values()).map((n) => n.epicKey)))
+    .sort((a, b) => (a === null ? 1 : b === null ? -1 : a.localeCompare(b)));
+  const columns = epicKeys.map((ek) => ({
+    epicKey: ek,
+    nodes: Array.from(nodes.values()).filter((n) => n.epicKey === ek).sort((a, b) => a.key.localeCompare(b.key)),
+  }));
+  const crossEpicEdges = new Set();
+  const edges = rows.map((r) => {
+    if ((r.aEpicKey || null) !== (r.bEpicKey || null)) crossEpicEdges.add(`${r.aKey}<->${r.bKey}`);
+    return { from: r.aKey, to: r.bKey };
+  });
+  return { columns, edges, crossEpicEdges };
+}
+
+function renderRelatedDiagram(rows, epics, selectedEpic) {
+  const container = document.getElementById('relatedDiagramView');
+  if (!container) return;
+  if (!rows.length) {
+    container.innerHTML = '<p style="color:var(--muted)">No open related tickets right now</p>';
+    LAST_RELATED_DIAGRAM = { edges: [], crossEpicEdges: new Set() };
+    return;
+  }
+  const { columns, edges, crossEpicEdges } = computeRelatedGroups(rows);
+  const epicSummaryByKey = new Map((epics || []).map((e) => [e.key, e.summary]));
+
+  container.innerHTML = `
+    <div class="deps-diagram-scroll">
+      <div class="deps-diagram-columns">
+        ${columns.map((col) => `
+          <div class="wave-column">
+            <div class="wave-column-header">${col.epicKey ? `${col.epicKey} &middot; ${(epicSummaryByKey.get(col.epicKey) || '').slice(0, 30)}` : 'No Epic parent'}</div>
+            ${col.nodes.map((n) => {
+              const differentEpic = selectedEpic && selectedEpic !== '__none__' && n.epicKey && n.epicKey !== selectedEpic;
+              const tag = differentEpic ? '&middot; different Epic' : '';
+              return `
+              <div class="wave-card ${tag ? 'external' : ''}" data-key="${n.key}">
+                <div class="wave-card-key">${n.key}</div>
+                ${tag ? `<div class="wave-card-tag">${tag}</div>` : ''}
+                <div class="wave-card-status" style="color:${depsStatusColor(n.status)}">${n.status || '—'}</div>
+                <div class="wave-card-summary">${(n.summary || '').slice(0, 70)}</div>
+              </div>
+            `;
+            }).join('')}
+          </div>
+        `).join('')}
+      </div>
+      <svg class="deps-diagram-svg" id="relatedDiagramSvg"></svg>
+    </div>
+    <p class="deps-diagram-note">Grouped by Epic, not build order -- Related has no direction. <span style="color:var(--accent)">Highlighted</span> lines cross from one Epic into another; everything else relates within the same Epic. Dashed cards belong to a different Epic than the one selected above. Diagram shows one Epic at a time -- the filter above only applies to the List view.</p>
+  `;
+
+  LAST_RELATED_DIAGRAM = { edges, crossEpicEdges };
+  requestAnimationFrame(() => drawGraphEdges('relatedDiagramView', 'relatedDiagramSvg', edges, crossEpicEdges, { arrowless: true }));
+}
+
+// Draws edges as an absolutely-positioned SVG overlay sized to the full
+// (unscrolled) content, with card positions measured via
 // getBoundingClientRect() and converted back into the scroll container's own
-// coordinate space. Re-run on resize and whenever the Overview tab becomes
-// visible again, since hidden (display:none) elements report zero-size rects.
-function drawDepsDiagramArrows(edges, criticalEdges) {
-  const svg = document.getElementById('depsDiagramSvg');
-  const scroll = document.querySelector('#depsDiagramView .deps-diagram-scroll');
+// coordinate space. Shared by all three Ticket Relationships diagrams --
+// containerId/svgId select which one. Re-run on resize and whenever a
+// diagram becomes visible again, since hidden (display:none) elements report
+// zero-size rects. `opts.arrowless` skips the arrowhead marker (used by
+// Related, since a connector line there doesn't imply a direction).
+function drawGraphEdges(containerId, svgId, edges, highlightEdges, opts) {
+  opts = opts || {};
+  const svg = document.getElementById(svgId);
+  const scroll = document.querySelector(`#${containerId} .deps-diagram-scroll`);
   if (!svg || !scroll || !edges || !edges.length) return;
   const scrollRect = scroll.getBoundingClientRect();
   if (!scrollRect.width) return; // container hidden right now -- nothing to measure yet
   svg.setAttribute('width', scroll.scrollWidth);
   svg.setAttribute('height', scroll.scrollHeight);
 
-  const defs = `
+  const arrowless = !!opts.arrowless;
+  const defs = arrowless ? '' : `
     <defs>
-      <marker id="depsArrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <marker id="${svgId}Arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
         <path d="M0,0 L6,3 L0,6 Z" fill="#8892a4" />
       </marker>
-      <marker id="depsArrowCritical" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <marker id="${svgId}ArrowCritical" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
         <path d="M0,0 L6,3 L0,6 Z" fill="#6c63ff" />
       </marker>
     </defs>`;
@@ -1531,25 +1724,15 @@ function drawDepsDiagramArrows(edges, criticalEdges) {
     const y1 = fr.top + fr.height / 2 - scrollRect.top + scroll.scrollTop;
     const x2 = tr.left - scrollRect.left + scroll.scrollLeft;
     const y2 = tr.top + tr.height / 2 - scrollRect.top + scroll.scrollTop;
-    const isCritical = criticalEdges.has(`${e.from}->${e.to}`);
+    const isHighlighted = highlightEdges.has(`${e.from}->${e.to}`) || highlightEdges.has(`${e.from}<->${e.to}`) || highlightEdges.has(`${e.to}<->${e.from}`);
     const midX = (x1 + x2) / 2;
-    return `<path d="M${x1},${y1} C${midX},${y1} ${midX},${y2} ${x2},${y2}" fill="none" stroke="${isCritical ? '#6c63ff' : '#8892a4'}" stroke-width="${isCritical ? 2.5 : 1.5}" opacity="${isCritical ? 1 : 0.55}" marker-end="url(#${isCritical ? 'depsArrowCritical' : 'depsArrow'})" />`;
+    const marker = arrowless ? '' : ` marker-end="url(#${isHighlighted ? svgId + 'ArrowCritical' : svgId + 'Arrow'})"`;
+    return `<path d="M${x1},${y1} C${midX},${y1} ${midX},${y2} ${x2},${y2}" fill="none" stroke="${isHighlighted ? '#6c63ff' : '#8892a4'}" stroke-width="${isHighlighted ? 2.5 : 1.5}" opacity="${isHighlighted ? 1 : 0.55}"${marker} />`;
   }).join('');
 
   svg.innerHTML = defs + paths;
 }
 
-// Epics: renders a progress bar per Epic showing % of its child work items
-// (Stories/Tasks/Bugs, via Jira's parent field) that are Done. In the
-// all-projects view, epics are grouped under a heading per project.
-// Delivery date: Jira's native Epic "Due date" field -- the closest thing to
-// a target ship date this tool has without a formal roadmap field. Traffic-
-// light coloring: green once the Epic is 100% done (delivered), red once the
-// due date has passed with work still open, yellow inside a 14-day warning
-// window (reusing the same 14-day convention as Aging WIP) so a slipping
-// Epic is visible before it's actually overdue, green otherwise. Epics with
-// nothing set in Jira show an explicit "No delivery date set" (neutral,
-// unstyled) rather than silently omitting the line.
 function epicDueDateLine(e) {
   if (!e.dueDate) return '<div class="epic-row-due neutral">No delivery date set</div>';
   const due = new Date(e.dueDate + 'T00:00:00');
@@ -1721,8 +1904,8 @@ function renderSingleProject(p) {
   document.getElementById('agingCard').style.display = '';
   document.getElementById('depsSub').textContent = `Ticket-to-ticket dependencies, from Jira's "Blocks" linked work items${scopeNote}`;
   renderDependencies(viewP.dependencies || [], viewP.epics || [], viewP.resolvedBlockers || []);
-  renderDependsOn(viewP.dependsOn || []);
-  renderRelated(viewP.related || []);
+  renderDependsOn(viewP.dependsOn || [], viewP.epics || []);
+  renderRelated(viewP.related || [], viewP.epics || []);
 
   // Epics: only shown in single-project view, on the Squad Portfolio tab.
   document.getElementById('portfolioEpicsCard').style.display = '';
@@ -1951,9 +2134,12 @@ applyTheme(localStorage.getItem('podDeliveryDashboard.theme') || 'dark');
 // Keep the dependency diagram's arrows aligned to their cards as the window
 // (and therefore the card grid) reflows. Debounced since resize fires rapidly.
 window.addEventListener('resize', () => {
-  if (DEPS_VIEW_MODE !== 'diagram') return;
   clearTimeout(window.__depsResizeTimer);
-  window.__depsResizeTimer = setTimeout(() => drawDepsDiagramArrows(LAST_DEPS_DIAGRAM.edges, LAST_DEPS_DIAGRAM.criticalEdges), 150);
+  window.__depsResizeTimer = setTimeout(() => {
+    if (DEPS_VIEW_MODE === 'diagram') drawGraphEdges('depsDiagramView', 'depsDiagramSvg', LAST_DEPS_DIAGRAM.edges, LAST_DEPS_DIAGRAM.criticalEdges);
+    if (DEPENDS_ON_VIEW_MODE === 'diagram') drawGraphEdges('dependsOnDiagramView', 'dependsOnDiagramSvg', LAST_DEPENDS_ON_DIAGRAM.edges, LAST_DEPENDS_ON_DIAGRAM.criticalEdges);
+    if (RELATED_VIEW_MODE === 'diagram') drawGraphEdges('relatedDiagramView', 'relatedDiagramSvg', LAST_RELATED_DIAGRAM.edges, LAST_RELATED_DIAGRAM.crossEpicEdges, { arrowless: true });
+  }, 150);
 });
 
 load();
