@@ -38,9 +38,9 @@
  * IMPORTANT / CURRENT STATE (July 2026):
  * There is no "Pod" or "Delivery Manager" field in Jira today, so this
  * script reports metrics per real Jira PROJECT (INV, APCOM, EMP, CORE,
- * MOBILE, EXP, HR). BOA is excluded -- it isn't part of the Pod model.
- * When Pods/DMs are introduced in Jira, update PROJECTS below and the
- * grouping logic in main() -- the JQL and math stay the same.
+ * MOBILE, BOA, EXP, HR). When Pods/DMs are introduced in Jira, update
+ * PROJECTS below and the grouping logic in main() -- the JQL and math
+ * stay the same.
  *
  * NOTE: Uses Jira Cloud's POST /rest/api/3/search/jql endpoint (the old
  * GET /rest/api/3/search endpoint was retired by Atlassian -- see
@@ -49,29 +49,10 @@
  * 400 "Invalid request payload".
  */
 
-const PROJECTS = ["INV", "APCOM", "EMP", "CORE", "MOBILE", "EXP", "HR"]; // BOA excluded -- not part of the Pod model
+const PROJECTS = ["INV", "APCOM", "EMP", "CORE", "MOBILE", "BOA", "EXP", "HR"];
 const WINDOW_DAYS = 56; // rolling 8 weeks
 const WEEK_MS = 7 * 86400000;
 const AGING_WIP_THRESHOLD_DAYS = 14; // open issues older than this are flagged as "aging"
-
-// Issue types this dashboard counts as real delivery work. Everything else in
-// this Jira site (Epic, Project, Initiative, Sub-task, Design Task) is
-// excluded from every metric that queries the project's open/resolved
-// ticket pool directly -- Overview, WIP Status, Aging WIP, Dependencies,
-// Cycle Time, Lead Time, Throughput, Quality (Kick-Back), AI Leverage,
-// Context Switching, and the Focus Integrity weekly trend. The one deliberate
-// exception is Epic Completion (analyzeEpics()'s per-Epic children count,
-// and the childActive count it feeds into the Focus Integrity *snapshot*
-// number) -- that's meant to count every child work item under an Epic
-// regardless of type, so it's left querying `parent = <epicKey>` unfiltered.
-const WORK_ITEM_TYPES = ["Story", "Bug", "Dev Task", "Research Task", "QA Task"];
-const WORK_ITEM_TYPE_JQL = `issuetype in (${WORK_ITEM_TYPES.map((t) => `"${t}"`).join(",")})`;
-
-// Placeholder WIP-limit-per-lane, used only for the Pod Observations card's
-// "pulled from Jira" baseline. There's no formal WIP-limit policy set with
-// the team yet -- this is a starting default so the card has something real
-// to show; tune (or make per-pod) once real limits are agreed.
-const WIP_LANE_LIMIT = { "In Development": 6 };
 
 const BASE_URL = process.env.JIRA_BASE_URL;
 const EMAIL = process.env.JIRA_EMAIL;
@@ -234,7 +215,7 @@ function isAiPlanLabeled(labels) {
 async function aiWorkedIssueKeys(key) {
   if (!CLAUDE_BOT_ACCOUNT_ID) return null;
   const issues = await searchAll(
-    `project = ${key} AND ${WORK_ITEM_TYPE_JQL} AND resolutiondate >= -${WINDOW_DAYS}d AND worklogAuthor = "${CLAUDE_BOT_ACCOUNT_ID}"`,
+    `project = ${key} AND resolutiondate >= -${WINDOW_DAYS}d AND worklogAuthor = "${CLAUDE_BOT_ACCOUNT_ID}"`,
     ["key"]
   );
   return new Set(issues.map((i) => i.key));
@@ -333,12 +314,7 @@ function analyzeIssue(issue, statusCategoryByName, aiWorkedKeys) {
       isAiWorkflowTagged(issue.fields.description) ||
       isAiPlanLabeled(issue.fields.labels);
 
-  // epicKey -- carried through so the weekly trend metrics below can be
-  // re-aggregated per pod client-side (join against each Epic's podLabel),
-  // the same pattern already used for wipDetailed.
-  const epicKey = issue.fields.parent ? issue.fields.parent.key : null;
-
-  return { cycleTimeDays, leadTimeDays, regressed: regressions > 0, hadTransition, isAiTagged, resolved, epicKey };
+  return { cycleTimeDays, leadTimeDays, regressed: regressions > 0, hadTransition, isAiTagged, resolved };
 }
 
 // Shared by Focus Integrity and Context Switching: reconstructs, for one
@@ -387,7 +363,7 @@ async function analyzeContextSwitching(key, now) {
   // plus anything Done that changed within the window covers both cases --
   // same pattern already used for the wipIssues query above.
   const issues = await searchAll(
-    `project = ${key} AND ${WORK_ITEM_TYPE_JQL} AND (statusCategory != Done OR status changed after -${WINDOW_DAYS}d)`,
+    `project = ${key} AND (statusCategory != Done OR status changed after -${WINDOW_DAYS}d)`,
     ["assignee", "parent", "status", "created"],
     "changelog"
   );
@@ -435,10 +411,10 @@ async function analyzeContextSwitching(key, now) {
 // out what status each child was in as of each week's end boundary, and
 // count how many distinct Epics had at least one active child that week.
 async function analyzeFocusIntegrityWeekly(key, openEpicKeys, now) {
-  if (!openEpicKeys.length) return { counts: Array(8).fill(0), epicsByWeek: Array.from({ length: 8 }, () => []) };
+  if (!openEpicKeys.length) return Array(8).fill(0);
 
   const issues = await searchAll(
-    `project = ${key} AND ${WORK_ITEM_TYPE_JQL} AND parent in (${openEpicKeys.map((k) => `"${k}"`).join(",")}) AND (statusCategory != Done OR status changed after -${WINDOW_DAYS}d)`,
+    `project = ${key} AND parent in (${openEpicKeys.map((k) => `"${k}"`).join(",")}) AND (statusCategory != Done OR status changed after -${WINDOW_DAYS}d)`,
     ["parent", "status", "created"],
     "changelog"
   );
@@ -455,14 +431,7 @@ async function analyzeFocusIntegrityWeekly(key, openEpicKeys, now) {
     });
   }
 
-  // counts: the plain per-week number the Overview/Five Signals cards chart.
-  // epicsByWeek: which specific Epics were active each week -- not shown
-  // directly, but lets index.html re-count "active epics" scoped to just one
-  // pod's Epics (via podLabel) instead of the whole squad.
-  return {
-    counts: activeEpicsByWeek.map((s) => s.size),
-    epicsByWeek: activeEpicsByWeek.map((s) => Array.from(s)),
-  };
+  return activeEpicsByWeek.map((s) => s.size);
 }
 
 async function fetchStatusCategoryMap() {
@@ -523,23 +492,9 @@ function weekLabel(startMs, endMs) {
  * child work items, 5 of which are Done -- 50%, matching Jira's own "Child
  * work items" progress bar. Completed/Won't Do Epics are excluded entirely
  * (filtered at the JQL level, so they're never fetched) since the dashboard
- * only wants to surface Epics still in flight.
- *
- * Epics tagged as "Insights" work (either "[Insights]"/"insights" in the
- * summary, or an "insights" label) are excluded from this list -- that work
- * is tracked for internal reporting purposes, not as delivery roadmap, so it
- * shouldn't show up in the Epic Completion chart. Filtered client-side
- * (after fetch, before the child-completion API calls) since JQL can't do a
- * clean case-insensitive substring match against summary. */
-function isInsightsEpic(epic) {
-  const summary = epic.fields.summary || "";
-  const labels = epic.fields.labels || [];
-  return /insights/i.test(summary) || labels.some((l) => /insights/i.test(l));
-}
-
+ * only wants to surface Epics still in flight. */
 async function analyzeEpics(key) {
-  const allEpics = await searchAll(`project = ${key} AND issuetype = Epic AND statusCategory != Done`, ["summary", "status", "duedate", "created", "labels"]);
-  const epics = allEpics.filter((epic) => !isInsightsEpic(epic));
+  const epics = await searchAll(`project = ${key} AND issuetype = Epic AND statusCategory != Done`, ["summary", "status", "duedate"]);
   const results = [];
   for (const epic of epics) {
     const children = await searchAll(`parent = ${epic.key}`, ["status"]);
@@ -564,14 +519,6 @@ async function analyzeEpics(key) {
       // thing to a delivery date this tool has without a formal
       // roadmap/target-date field. Null when nobody has set one.
       dueDate: epic.fields.duedate || null,
-      // Epic creation date -- used only as a rough timeline start point for
-      // the Roadmap card (there's no formal "start date" field on Epics in
-      // this Jira instance).
-      createdDate: epic.fields.created || null,
-      // Pod identifier -- a Jira label matching pod-<abbrev>-NN (e.g.
-      // pod-apc-01). Not a dedicated Jira field. Null when the Epic has no
-      // such label yet.
-      podLabel: (epic.fields.labels || []).find(l => /^pod-[a-z0-9]+-\d+$/i.test(l)) || null,
     });
   }
   return results;
@@ -593,9 +540,7 @@ async function analyzeProject(key, statusCategoryByName) {
   // analyzeFocusIntegrityWeekly() above) rather than accumulated one real
   // snapshot per Action run -- all 8 weeks are real immediately, no waiting
   // for future runs to fill in blank weeks.
-  const focusIntegrityWeeklyResult = await analyzeFocusIntegrityWeekly(key, epics.map((e) => e.key), now);
-  const focusIntegrityWeekly = focusIntegrityWeeklyResult.counts;
-  const focusIntegrityWeeklyEpics = focusIntegrityWeeklyResult.epicsByWeek;
+  const focusIntegrityWeekly = await analyzeFocusIntegrityWeekly(key, epics.map((e) => e.key), now);
 
   // WIP snapshot: all currently open issues, grouped by status (not time-windowed).
   // Also pull issuelinks so we can surface real "blocked by" dependencies, not just a
@@ -605,7 +550,7 @@ async function analyzeProject(key, statusCategoryByName) {
   // plain `statusCategory != Done` filter would silently exclude it -- add it
   // back explicitly so finished-but-not-yet-shipped work still shows up (in
   // the "Done" WIP lane, per STATUS_CANONICAL_MAP).
-  const wipIssues = await searchAll(`project = ${key} AND ${WORK_ITEM_TYPE_JQL} AND (statusCategory != Done OR status = "Ready for Release")`, ["status", "summary", "issuelinks", "components", "created", "issuetype", "parent"]);
+  const wipIssues = await searchAll(`project = ${key} AND (statusCategory != Done OR status = "Ready for Release")`, ["status", "summary", "issuelinks", "components", "created", "issuetype", "parent"]);
   const wipByStatus = {};
   for (const lane of WIP_LANES) wipByStatus[lane] = 0;
   let otherWipCount = 0;
@@ -631,11 +576,6 @@ async function analyzeProject(key, statusCategoryByName) {
     status: issue.fields.status.name,
     type: issue.fields.issuetype ? issue.fields.issuetype.name : null,
     ageDays: round1((now - new Date(issue.fields.created).getTime()) / 86400000),
-    // epicKey/lane -- not shown in the Aging WIP table, but let the Pod
-    // Observations card (index.html) filter this list down to a single
-    // pod's tickets (via each Epic's podLabel) for its Jira baseline.
-    epicKey: issue.fields.parent ? issue.fields.parent.key : null,
-    lane: canonicalStatus(issue.fields.status.name) || "Other",
   }));
   const oldestWipAgeDays = wipWithAge.length ? Math.max(...wipWithAge.map((w) => w.ageDays)) : null;
   const agingWipCount = wipWithAge.filter((w) => w.ageDays > AGING_WIP_THRESHOLD_DAYS).length;
@@ -671,29 +611,6 @@ async function analyzeProject(key, statusCategoryByName) {
     const cat = fields.status && fields.status.statusCategory ? fields.status.statusCategory.key : null;
     return cat ? cat !== "done" : true;
   };
-  // The ticket whose own record we pulled (thisIssue, from wipIssues) is
-  // already guaranteed to be one of WORK_ITEM_TYPES since wipIssues is
-  // filtered above. The ticket on the *other* end of a Jira "Blocks" link
-  // comes back via Jira's fixed minimal linked-issue field set, which does
-  // include issuetype -- so the same whitelist can be applied there too,
-  // keeping Epics/Sub-tasks/etc. out of the Dependencies graph on both ends.
-  const isWorkItemType = (fields) => !!(fields && fields.issuetype && WORK_ITEM_TYPES.includes(fields.issuetype.name));
-  // Canonical key -> epicKey lookup, built from wipIssues itself, which has
-  // reliable "parent" data for every ticket in this project (it's requested
-  // in that query's field list). Fixes a real bug: whichever ticket sits on
-  // the *other* end of a "Blocks" link only comes back with Jira's fixed
-  // minimal linked-issue field set, which usually omits parent -- so without
-  // this lookup, a same-project ticket's epic was only correct if its own
-  // turn in this loop happened to insert the edge first; if the *other*
-  // ticket's turn got there first, the null/unreliable epicKey stuck
-  // permanently (addDependency dedupes by pairKey and keeps the first
-  // insertion). Confirmed live: INV-992 through INV-1000 all have a real
-  // parent Epic in Jira (INV-436 or INV-427) but were showing up under "No
-  // Epic parent" in the Diagram view before this fix. Only covers
-  // same-project tickets -- a genuinely cross-squad blocker still falls back
-  // to its own linked-issue field, best-effort, same as before.
-  const epicKeyByTicket = new Map(wipIssues.map((i) => [i.key, i.fields.parent ? i.fields.parent.key : null]));
-  const resolveEpicKey = (key, fallback) => (epicKeyByTicket.has(key) ? epicKeyByTicket.get(key) : fallback);
   // Resolved (Done) blockers of currently-open tickets. These are excluded
   // from the live `dependencies` graph above (a finished ticket is no longer
   // an active constraint), but we keep them here so the per-Epic diagram can
@@ -717,46 +634,32 @@ async function analyzeProject(key, statusCategoryByName) {
     };
     for (const l of links) {
       if (!l.type || l.type.name !== "Blocks") continue;
-      // This issue is blocked by another (inward link). Skip entirely if the
-      // blocker isn't a whitelisted work item type (e.g. an Epic or Sub-task) --
-      // same rule as everywhere else, applied to the far end of the link too.
+      // This issue is blocked by another (inward link).
       if (l.inwardIssue) {
         const f = l.inwardIssue.fields || {};
-        if (isWorkItemType(f)) {
-          const blocker = { key: l.inwardIssue.key, summary: f.summary || null, status: f.status ? f.status.name : null, epicKey: resolveEpicKey(l.inwardIssue.key, f.parent ? f.parent.key : null) };
-          if (isOpenLinkedIssue(f)) {
-            addDependency(blocker, thisIssue);
-          } else {
-            const pairKey = `${blocker.key}->${thisIssue.key}`;
-            if (!seenResolvedPairs.has(pairKey)) {
-              seenResolvedPairs.add(pairKey);
-              resolvedBlockers.push({ blockerKey: blocker.key, blockerSummary: blocker.summary, blockedKey: thisIssue.key, blockedEpicKey: thisIssue.epicKey });
-            }
+        const blocker = { key: l.inwardIssue.key, summary: f.summary || null, status: f.status ? f.status.name : null, epicKey: f.parent ? f.parent.key : null };
+        if (isOpenLinkedIssue(f)) {
+          addDependency(blocker, thisIssue);
+        } else {
+          const pairKey = `${blocker.key}->${thisIssue.key}`;
+          if (!seenResolvedPairs.has(pairKey)) {
+            seenResolvedPairs.add(pairKey);
+            resolvedBlockers.push({ blockerKey: blocker.key, blockerSummary: blocker.summary, blockedKey: thisIssue.key, blockedEpicKey: thisIssue.epicKey });
           }
         }
       }
-      // This issue blocks another (outward link). Same whitelist check on the
-      // blocked ticket before it's allowed onto the graph.
-      if (l.outwardIssue) {
+      // This issue blocks another (outward link).
+      if (l.outwardIssue && isOpenLinkedIssue(l.outwardIssue.fields || {})) {
         const f = l.outwardIssue.fields || {};
-        if (isWorkItemType(f) && isOpenLinkedIssue(f)) {
-          addDependency(thisIssue, { key: l.outwardIssue.key, summary: f.summary || null, status: f.status ? f.status.name : null, epicKey: resolveEpicKey(l.outwardIssue.key, f.parent ? f.parent.key : null) });
-        }
+        addDependency(thisIssue, { key: l.outwardIssue.key, summary: f.summary || null, status: f.status ? f.status.name : null, epicKey: f.parent ? f.parent.key : null });
       }
     }
   }
 
   // Rolling 8-week window, relative to right now.
-  // "Won't Do" resolutions are excluded here -- they're backlog-grooming
-  // closures, not delivered work, and a batch close-out of old tickets (seen
-  // on INV and CORE in early August 2026, some dating back to 2020-2024)
-  // otherwise drags that week's Cycle Time / Lead Time / Throughput / Quality
-  // Loopback averages up with created->resolved spans of years, not real
-  // delivery. Excluding at the JQL level means these never enter any metric
-  // derived from `windowIssues` below.
   const windowIssues = await searchAll(
-    `project = ${key} AND ${WORK_ITEM_TYPE_JQL} AND resolutiondate >= -${WINDOW_DAYS}d AND status != "Won't Do"`,
-    ["created", "resolutiondate", "components", "status", "description", "labels", "parent"],
+    `project = ${key} AND resolutiondate >= -${WINDOW_DAYS}d`,
+    ["created", "resolutiondate", "components", "status", "description", "labels"],
     "changelog"
   );
   const aiWorkedKeys = await aiWorkedIssueKeys(key);
@@ -764,26 +667,12 @@ async function analyzeProject(key, statusCategoryByName) {
 
   // Weekly buckets: index 0 = oldest week (49-56 days ago), index 7 = this week (0-7 days ago).
   const buckets = Array.from({ length: 8 }, () => []);
-  // ticketMetrics: the same per-ticket records as `buckets` above, flattened
-  // and tagged with epicKey + weekIndex -- not shown directly, but lets
-  // index.html re-run summarize()-equivalent math scoped to just one pod's
-  // Epics (via podLabel), for every week, instead of only the whole squad.
-  const ticketMetrics = [];
   for (const a of analyzed) {
     if (!a.resolved) continue;
     const daysAgo = (now - a.resolved) / 86400000;
     const weekFromToday = Math.min(7, Math.floor(daysAgo / 7)); // 0 = this week ... 7 = oldest week
     const bucketIndex = 7 - weekFromToday; // flip so array is oldest -> newest
     buckets[bucketIndex].push(a);
-    ticketMetrics.push({
-      epicKey: a.epicKey || null,
-      weekIndex: bucketIndex,
-      cycleTimeDays: a.cycleTimeDays,
-      leadTimeDays: a.leadTimeDays,
-      hadTransition: a.hadTransition,
-      regressed: a.regressed,
-      isAiTagged: a.isAiTagged,
-    });
   }
 
   const weekly = buckets.map((bucketIssues, i) => {
@@ -841,10 +730,6 @@ async function analyzeProject(key, statusCategoryByName) {
     focusIntegrityActiveEpics,
     focusIntegrityTotalEpics,
     focusIntegrityWeekly,
-    // Which specific Epics were active each week -- lets index.html re-count
-    // "active epics" scoped to one pod (join against epics[].podLabel)
-    // instead of only the whole squad's total.
-    focusIntegrityWeeklyEpics,
     ...contextSwitching,
     sle85Days: overall.sle85Days,
     thisWeekSleAdherencePct,
@@ -857,10 +742,6 @@ async function analyzeProject(key, statusCategoryByName) {
     oldestWipAgeDays,
     agingWipCount,
     agingWipIssues,
-    // Full per-issue WIP list (not just the aging table's top 5), carrying
-    // epicKey + lane -- lets the Pod Observations card compute an
-    // aging-WIP / WIP-limit baseline scoped to a single pod, client-side.
-    wipDetailed: wipWithAge,
     windowDays: WINDOW_DAYS,
     cycleTimeDays: { avg: overall.cycleTimeAvg, median: overall.cycleTimeMedian, sampleSize: overall.cycleTimeSampleSize },
     leadTimeDays: { avg: overall.leadTimeAvg, median: overall.leadTimeMedian, sampleSize: overall.leadTimeSampleSize },
@@ -873,13 +754,6 @@ async function analyzeProject(key, statusCategoryByName) {
     qualityLoopbackSampleSize: overall.qualityLoopbackSampleSize,
     aiLeverageRatePct: overall.aiLeverageRatePct,
     weekly,
-    // Per-ticket dated records behind the `weekly` averages above, tagged
-    // with epicKey -- lets index.html re-aggregate Cycle Time, Lead Time,
-    // Throughput, Quality Loopback, and AI Leverage on a per-week, per-pod
-    // basis client-side (joined against epics[].podLabel), instead of only
-    // showing the whole squad's pre-computed weekly averages regardless of
-    // which pod is selected.
-    ticketMetrics,
   };
 }
 
