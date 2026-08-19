@@ -701,6 +701,37 @@ async function analyzeProject(key, statusCategoryByName) {
   // mid-story with no sense of what came before it.
   const resolvedBlockers = [];
   const seenResolvedPairs = new Set();
+
+  // "Depends On" (Jira's "Dependency" link type -- directional, sequencing
+  // risk, not necessarily a hard stop the way Blocks is) and "Related"
+  // (Jira's "Relates" link type -- symmetric, informational only). Scoped
+  // and whitelisted the exact same way as Blocks above (open, whitelisted
+  // work-item types only), based on real usage counts across the tracked
+  // projects (Blocks 218, Relates 106, Dependency 16, out of Fixes/Issue
+  // split/Polaris/Similar which are either unused or not delivery-relevant).
+  const dependsOn = [];
+  const seenDependsOnPairs = new Set();
+  const addDependsOn = (from, to) => {
+    const pairKey = `${from.key}->${to.key}`;
+    if (seenDependsOnPairs.has(pairKey)) return;
+    seenDependsOnPairs.add(pairKey);
+    dependsOn.push({
+      fromKey: from.key, fromSummary: from.summary, fromStatus: from.status, fromProject: from.key.split("-")[0], fromEpicKey: from.epicKey || null,
+      toKey: to.key, toSummary: to.summary, toStatus: to.status, toProject: to.key.split("-")[0], toEpicKey: to.epicKey || null,
+    });
+  };
+  const related = [];
+  const seenRelatedPairs = new Set();
+  const addRelated = (a, b) => {
+    const pairKey = [a.key, b.key].sort().join("<->");
+    if (seenRelatedPairs.has(pairKey)) return;
+    seenRelatedPairs.add(pairKey);
+    related.push({
+      aKey: a.key, aSummary: a.summary, aStatus: a.status, aProject: a.key.split("-")[0], aEpicKey: a.epicKey || null,
+      bKey: b.key, bSummary: b.summary, bStatus: b.status, bProject: b.key.split("-")[0], bEpicKey: b.epicKey || null,
+    });
+  };
+
   for (const issue of wipIssues) {
     const links = issue.fields.issuelinks || [];
     const thisIssue = {
@@ -716,31 +747,63 @@ async function analyzeProject(key, statusCategoryByName) {
       epicKey: issue.fields.parent ? issue.fields.parent.key : null,
     };
     for (const l of links) {
-      if (!l.type || l.type.name !== "Blocks") continue;
-      // This issue is blocked by another (inward link). Skip entirely if the
-      // blocker isn't a whitelisted work item type (e.g. an Epic or Sub-task) --
-      // same rule as everywhere else, applied to the far end of the link too.
-      if (l.inwardIssue) {
-        const f = l.inwardIssue.fields || {};
-        if (isWorkItemType(f)) {
-          const blocker = { key: l.inwardIssue.key, summary: f.summary || null, status: f.status ? f.status.name : null, epicKey: resolveEpicKey(l.inwardIssue.key, f.parent ? f.parent.key : null) };
-          if (isOpenLinkedIssue(f)) {
-            addDependency(blocker, thisIssue);
-          } else {
-            const pairKey = `${blocker.key}->${thisIssue.key}`;
-            if (!seenResolvedPairs.has(pairKey)) {
-              seenResolvedPairs.add(pairKey);
-              resolvedBlockers.push({ blockerKey: blocker.key, blockerSummary: blocker.summary, blockedKey: thisIssue.key, blockedEpicKey: thisIssue.epicKey });
+      if (!l.type) continue;
+      if (l.type.name === "Blocks") {
+        // This issue is blocked by another (inward link). Skip entirely if the
+        // blocker isn't a whitelisted work item type (e.g. an Epic or Sub-task) --
+        // same rule as everywhere else, applied to the far end of the link too.
+        if (l.inwardIssue) {
+          const f = l.inwardIssue.fields || {};
+          if (isWorkItemType(f)) {
+            const blocker = { key: l.inwardIssue.key, summary: f.summary || null, status: f.status ? f.status.name : null, epicKey: resolveEpicKey(l.inwardIssue.key, f.parent ? f.parent.key : null) };
+            if (isOpenLinkedIssue(f)) {
+              addDependency(blocker, thisIssue);
+            } else {
+              const pairKey = `${blocker.key}->${thisIssue.key}`;
+              if (!seenResolvedPairs.has(pairKey)) {
+                seenResolvedPairs.add(pairKey);
+                resolvedBlockers.push({ blockerKey: blocker.key, blockerSummary: blocker.summary, blockedKey: thisIssue.key, blockedEpicKey: thisIssue.epicKey });
+              }
             }
           }
         }
-      }
-      // This issue blocks another (outward link). Same whitelist check on the
-      // blocked ticket before it's allowed onto the graph.
-      if (l.outwardIssue) {
-        const f = l.outwardIssue.fields || {};
-        if (isWorkItemType(f) && isOpenLinkedIssue(f)) {
-          addDependency(thisIssue, { key: l.outwardIssue.key, summary: f.summary || null, status: f.status ? f.status.name : null, epicKey: resolveEpicKey(l.outwardIssue.key, f.parent ? f.parent.key : null) });
+        // This issue blocks another (outward link). Same whitelist check on the
+        // blocked ticket before it's allowed onto the graph.
+        if (l.outwardIssue) {
+          const f = l.outwardIssue.fields || {};
+          if (isWorkItemType(f) && isOpenLinkedIssue(f)) {
+            addDependency(thisIssue, { key: l.outwardIssue.key, summary: f.summary || null, status: f.status ? f.status.name : null, epicKey: resolveEpicKey(l.outwardIssue.key, f.parent ? f.parent.key : null) });
+          }
+        }
+      } else if (l.type.name === "Dependency") {
+        // Outward "depends on": this issue depends on the outward issue.
+        if (l.outwardIssue) {
+          const f = l.outwardIssue.fields || {};
+          if (isWorkItemType(f) && isOpenLinkedIssue(f)) {
+            addDependsOn(thisIssue, { key: l.outwardIssue.key, summary: f.summary || null, status: f.status ? f.status.name : null, epicKey: resolveEpicKey(l.outwardIssue.key, f.parent ? f.parent.key : null) });
+          }
+        }
+        // Inward "is depended on by": the inward issue depends on this one.
+        if (l.inwardIssue) {
+          const f = l.inwardIssue.fields || {};
+          if (isWorkItemType(f) && isOpenLinkedIssue(f)) {
+            addDependsOn({ key: l.inwardIssue.key, summary: f.summary || null, status: f.status ? f.status.name : null, epicKey: resolveEpicKey(l.inwardIssue.key, f.parent ? f.parent.key : null) }, thisIssue);
+          }
+        }
+      } else if (l.type.name === "Relates") {
+        // Symmetric -- either side can carry inwardIssue/outwardIssue, and it
+        // means the same thing either way, so just add both sides seen.
+        if (l.inwardIssue) {
+          const f = l.inwardIssue.fields || {};
+          if (isWorkItemType(f) && isOpenLinkedIssue(f)) {
+            addRelated(thisIssue, { key: l.inwardIssue.key, summary: f.summary || null, status: f.status ? f.status.name : null, epicKey: resolveEpicKey(l.inwardIssue.key, f.parent ? f.parent.key : null) });
+          }
+        }
+        if (l.outwardIssue) {
+          const f = l.outwardIssue.fields || {};
+          if (isWorkItemType(f) && isOpenLinkedIssue(f)) {
+            addRelated(thisIssue, { key: l.outwardIssue.key, summary: f.summary || null, status: f.status ? f.status.name : null, epicKey: resolveEpicKey(l.outwardIssue.key, f.parent ? f.parent.key : null) });
+          }
         }
       }
     }
@@ -854,6 +917,10 @@ async function analyzeProject(key, statusCategoryByName) {
     dependencies,
     dependencyCount: dependencies.length,
     resolvedBlockers,
+    dependsOn,
+    dependsOnCount: dependsOn.length,
+    related,
+    relatedCount: related.length,
     oldestWipAgeDays,
     agingWipCount,
     agingWipIssues,
